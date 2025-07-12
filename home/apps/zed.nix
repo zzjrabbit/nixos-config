@@ -1,11 +1,18 @@
 # Zed editor configuration module
 # This module configures the Zed code editor
 
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs;[
+    nixd
+    nil
+  ];
+  
   programs.zed-editor = {
     enable = true;
+    package = pkgs.zed-editor-fhs;
+    
     extensions = [
       "nix"
       "fleet-themes"
@@ -49,6 +56,15 @@
           milliseconds = 0;
         };
       };
+      
+      # lsp = {
+      #   rust-analyzer = {
+      #     binary = {
+      #       path = "/home/raca/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer";
+      #       args = [ ];
+      #     };
+      #   };
+      # };
     };
   };
 }

@@ -6,17 +6,13 @@
     ./apps/term.nix
     ./apps/firefox.nix
     ./apps/zed.nix
+    ./apps/vbox.nix
+    ./apps/nvim.nix
 
     ./desktop/fuzzel.nix
     ./desktop/niri.nix
     ./desktop/swaync.nix
     ./desktop/waybar.nix
-
-    ./devenv/builders.nix
-    ./devenv/compiler.nix
-    ./devenv/lib.nix
-    ./devenv/lsp.nix
-    ./devenv/tools.nix
     
     ./system/fcitx5.nix
     ./system/git.nix

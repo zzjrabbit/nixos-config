@@ -20,10 +20,11 @@
     polkit_gnome
     proxychains
     krb5
-    linuxKernel.packages.linux_latest_libre.perf
+    linuxPackages_latest.perf
     heaptrack
     greetd.tuigreet
     pavucontrol
+    perf-tools
   ];
 
   nixpkgs.config.allowUnfree = true;

@@ -1,5 +1,7 @@
 { pkgs, lib, config, ... }:
 {
+  virtualisation.virtualbox.host.enable = true;
+  
   networking.enableIPv6 = true;
   networking.firewall = {
     allowPing = true;

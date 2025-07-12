@@ -31,6 +31,7 @@
       ".xmake"
       ".zplug"
       ".zsh"
+      "zsh-nix-shell"
 
       # Application data
       ".mozilla"
@@ -42,6 +43,7 @@
       ".cache/keepassxc"
       
       ".config/nekoray"
+      ".config/nvim"
 
       # System directories that may contain user data
       ".local/share/keyrings"
