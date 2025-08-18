@@ -13,9 +13,9 @@
       # System logs and state
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/regreet"
       "/var/lib/systemd/coredump"
-      "/var/cache/tuigreet"
-      "var/lib/bluetooth"
+      "/var/lib/bluetooth"
     ];
 
     # Individual files that need to persist

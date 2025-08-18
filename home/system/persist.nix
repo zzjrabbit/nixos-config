@@ -43,8 +43,15 @@
       ".cache/keepassxc"
       
       ".config/nekoray"
+      
       ".config/nvim"
-
+      ".cache/nvim"
+      ".local/share/nvim"
+      
+      ".local/share/hmcl"
+      
+      ".config/microsoft-edge"
+      
       # System directories that may contain user data
       ".local/share/keyrings"
       ".local/share/mcfly"
@@ -57,7 +64,6 @@
       ".zsh_history"
       ".p10k.zsh"
       ".zshenv"
-      
 
       # Cache files
       ".cache/fuzzel"

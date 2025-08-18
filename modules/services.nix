@@ -51,25 +51,28 @@
         TimeoutStopSec = 10;
       };
     };
- };
- 
+  };
+  
+  programs.regreet = {
+    enable = true;
+    settings = {
+      background = {
+        path = ../wallpaper/universe.jpg;
+        fit = "Fill";
+      };
+    };
+  };
+  
   services.greetd = {
     enable = true;
     settings = {
       default_session = let
-        tuigreet = "${lib.getExe pkgs.greetd.tuigreet}";
-        baseSessionsDir = "${config.services.displayManager.sessionData.desktops}";
-        xSessions = "${baseSessionsDir}/share/xsessions";
-        waylandSessions = "${baseSessionsDir}/share/wayland-sessions";
-        tuigreetOptions = [
-          "--time"
-          "--remember"
-          "--remember-session"
-          "--sessions ${waylandSessions}:${xSessions}"
-        ];
-        flags = lib.concatStringsSep " " tuigreetOptions;
+      sway-conf = pkgs.writeText "sway-gtkgreet-config" ''
+          exec "${config.programs.regreet.package}/bin/regreet; ${config.programs.sway.package}/bin/swaymsg exit"
+          include /etc/sway/config.d/*
+        '';
       in {
-        command = "${tuigreet} ${flags}";
+        command = "${config.programs.sway.package}/bin/sway --config ${sway-conf}";
         user = "greeter";
       };
     };

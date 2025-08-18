@@ -22,7 +22,6 @@
     krb5
     linuxPackages_latest.perf
     heaptrack
-    greetd.tuigreet
     pavucontrol
     perf-tools
   ];

@@ -38,7 +38,6 @@
           ./modules/services.nix
           ./modules/proxy.nix
           ./modules/snapper.nix
-          ./modules/nvidia.nix
           (
             { pkgs, ... }:
             {
