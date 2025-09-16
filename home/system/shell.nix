@@ -9,7 +9,7 @@
     };
     
     shellAliases = {};
-    history.size = 10000;
+    history.path = "/persist/home/raca/.zsh_history";
     
     initContent = ''
       source ~/.p10k.zsh

@@ -78,10 +78,10 @@
       @define-color noti-bg-focus rgba(48, 48, 51, 0.6);
       @define-color text-color #ffffff;
       @define-color text-color-disabled #949494;
-      @define-color bg-selected #3584e4;
+      @define-color bg-selected #8FD0FF;
 
       * {
-          font-family: SourceCodePro;
+          font-family: FiraCode;
           font-weight: bold;
           box-shadow: none;
       }
@@ -172,7 +172,7 @@
       }
 
       .close-button {
-          background: #3584e4;
+          background: #7FBFFF;
           color: @cc-bg;
           text-shadow: none;
           padding: 0px;
@@ -181,7 +181,7 @@
 
       .close-button:hover {
           box-shadow: none;
-          background: #62a0ea;
+          background: #6F7FF0;
           transition: all .15s ease-in-out;
           border: none
       }
@@ -205,7 +205,7 @@
       }
 
       .widget-title>button:hover {
-          background: #3584e4;
+          background: #7FBFFF;
           color: @cc-bg;
       }
 
@@ -225,7 +225,7 @@
 
       .widget-dnd>switch:checked {
           background: #3584e4;
-          border: 1px solid #3584e4;
+          border: 1px solid #7FD0FF;
       }
 
       .widget-dnd>switch slider {
@@ -282,7 +282,7 @@
       }
 
       .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-          background: #3584e4;
+          background: #7FBFFF;
           color: @cc-bg;
       }
 

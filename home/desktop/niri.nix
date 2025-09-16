@@ -10,6 +10,10 @@
         disable-power-key-handling
     }
     
+    workspace ""
+    workspace ""
+    workspace "󱋊"
+    
     layout {
         gaps 8
         default-column-width { proportion 0.5; }
@@ -25,6 +29,7 @@
         DISPLAY ":0"
         QT_QPA_PLATFORM "wayland"
         QT_STYLE_OVERRIDE "kvantum"
+        DEEPSEEK_API_KEY "${builtins.readFile /persist/secret/dpsk_api}"
     }
     
     spawn-at-startup "xwayland-satellite"

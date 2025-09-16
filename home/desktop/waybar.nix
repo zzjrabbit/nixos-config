@@ -15,17 +15,15 @@
 
         # Modules positioning
         modules-left = [
-          "custom/appmenu"
-          "clock"
+		  "custom/logo"
+          "niri/workspaces"
         ];
         modules-center = [
-          "niri/workspaces"
+          "clock"
         ];
         modules-right = [
           "tray"
           "pulseaudio"
-          "cpu"
-          "memory"
           "keyboard-state"
           "battery"
           "custom/notification"
@@ -36,12 +34,6 @@
           format = "{icon}";
         };
 
-        "custom/appmenu" = {
-          format = "Apps";
-          on-click = "fuzzel";
-          tooltip = false;
-        };
-
         tray = {
           icon-size = 16;
           spacing = 16;
@@ -49,16 +41,7 @@
 
         clock = {
           tooltip = false;
-          format = "{:%H:%M}  ";
-          format-alt = "{:%b %d, %Y (%a)} 󰃰 ";
-        };
-
-        cpu = {
-          format = "| C {usage}% ";
-        };
-
-        memory = {
-          format = "| M {}% ";
+          format = "{:%Y/%m/%d %H:%M}";
         };
 
         battery = {
@@ -66,8 +49,8 @@
             warning = 30;
             critical = 15;
           };
-          format = "{capacity}% {icon}";
-          format-icons = [" " " " " " " " " "];
+          format = "{icon} {capacity}%";
+          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰁹"];
         };
 
         pulseaudio = {
@@ -104,12 +87,16 @@
           "on-click-right" = "swaync-client -d -sw";
           escape = true;
         };
+
+		"custom/logo" = {
+			format = "";
+			tooltip = false;
+			"on-click" = "fuzzel";
+		};
       };
     };
     style = ''
-      @define-color background #FFFFFF;
-      @define-color workspacesbackground1 #FFFFFF;
-      @define-color workspacesbackground2 #CCCCCC;
+	  @define-color workspacebackground transparent;
       @define-color bordercolor #FFFFFF;
       @define-color textcolor1 #000000;
       @define-color textcolor2 #FFFFFF;
@@ -120,13 +107,13 @@
        * ----------------------------------------------------- */
 
       * {
-          font-family: "SauceCodePro Nerd Font";
+          font-family: "Fira Code Nerd Font";
           border: none;
           border-radius: 0px;
       }
 
       window#waybar {
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: transparent;
           border-bottom: 0px solid #ffffff;
           transition-property: background-color;
           transition-duration: 0.5s;
@@ -137,37 +124,37 @@
        * ----------------------------------------------------- */
 
       #workspaces {
-          margin: 5px 1px 6px 1px;
-          padding: 0px 1px;
-          border-radius: 15px;
-          border: 0px;
-          font-weight: bold;
-          font-style: normal;
-          font-size: 14px;
-          color: @textcolor1;
+          background-color: transparent;
       }
 
       #workspaces button {
-          padding: 0px 5px;
-          margin: 4px 3px;
-          border-radius: 15px;
-          border: 0px;
-          color: @textcolor2;
-          transition: all 0.3s ease-in-out;
+          all: initial;
+          min-width: 0;
+          box-shadow: inset 0 -3px transparent;
+          
+          padding: 6px 18px;
+          margin: 10px 3px;
+          border-radius: 8px;
+
+		  background-color: transparent;
+		  color: @textcolor2;
       }
 
       #workspaces button.active {
-          color: @textcolor1;
-          background: @workspacesbackground2;
-          border-radius: 15px;
-          min-width: 40px;
-          transition: all 0.3s ease-in-out;
+          color: #c0e8ff;
+          background-color: transparent;
+          padding: 2px 32px;
       }
 
       #workspaces button:hover {
-          color: @textcolor1;
-          background: @workspacesbackground2;
-          border-radius: 15px;
+          box-shadow: inherit;
+          text-shadow: inherit;
+          color: #c0e8ff;
+          background-color: @workspacesbackground;
+      }
+      
+      #workspaces button.urgent {
+          background-color: @workspacebackground;
       }
 
       /* -----------------------------------------------------
@@ -175,103 +162,55 @@
        * ----------------------------------------------------- */
 
       tooltip {
-          border-radius: 8px;
+          border-radius: 4px;
           background: @background;
           text-shadow: none;
+		  background-color: transparent;
       }
 
       tooltip label {
-          color: @textcolor1;
+          color: @textcolor2;
       }
-
-      /* -----------------------------------------------------
-       * Window
-       * ----------------------------------------------------- */
-
-      #window {
-          background: @background;
-          margin: 10px 15px 10px 0px;
-          padding: 2px 10px 0px 10px;
-          border-radius: 12px;
-          color: @textcolor1;
-          font-size: 14px;
-          font-weight: normal;
-      }
-
-      window#waybar.empty #window {
-          background-color: transparent;
-      }
-
-      /* -----------------------------------------------------
-       * Modules
-       * ----------------------------------------------------- */
-
-      .modules-left > widget:first-child > #workspaces {
-          margin-left: 0;
-      }
-
-      .modules-right > widget:last-child > #workspaces {
-          margin-right: 0;
-      }
-
-      /* -----------------------------------------------------
-       * Custom Quicklinks
-       * ----------------------------------------------------- */
 
       #pulseaudio,
       #battery,
       #custom-notification,
-      #custom-appmenu,
       #clock {
           font-weight: bold;
           color: @iconcolor;
           padding: 4px 10px 4px 10px;
           font-size: 14px;
       }
-
-      /* -----------------------------------------------------
-       * Custom Modules
-       * ----------------------------------------------------- */
-
-      #custom-appmenu {
-          background-color: @background;
-          color: @textcolor1;
-          border-radius: 15px;
-          margin: 10px 10px 10px 10px;
-      }
-
-      /* -----------------------------------------------------
-       * Custom Notification
-       * ----------------------------------------------------- */
-
+      
       #custom-notification {
-          margin: 2px 20px 0px 8px;
-          padding: 0px;
-          color: @iconcolor;
-      }
-
-      /* -----------------------------------------------------
-       * Hardware Group
-       * ----------------------------------------------------- */
-
-      #memory,
-      #cpu {
-          margin: 0px;
-          padding: 0px;
+		  background-color: transparent;
           font-size: 14px;
-          color: @iconcolor;
+          color: #ffffff;
+          border-radius: 6px;
+          margin-top: 6px;
+		  margin-bottom: 6px;
+		  margin-left: 3px;
+		  margin-right: 16px;
+          padding: 6px 12px;
       }
 
-      /* -----------------------------------------------------
-       * Clock
-       * ----------------------------------------------------- */
+	  #custom-logo {
+			padding-right: 10px;
+  		padding-left: 10px;
+  		margin-left: 16px;
+  		margin-right: 8px;
+      font-size: 15px;
+  		border-radius: 8px 0px 0px 8px;
+  		color: #e0e8ff;
+	  }
 
       #clock {
-          background-color: @background;
+          background-color: transparent;
           font-size: 14px;
-          color: @textcolor1;
-          border-radius: 15px;
-          margin: 10px 7px 10px 0px;
+          color: @textcolor2;
+          border-radius: 6px;
+          margin: 4px 3px;
+          padding: 12px 24px;
       }
 
       /* -----------------------------------------------------
@@ -279,16 +218,17 @@
        * ----------------------------------------------------- */
 
       #pulseaudio {
-          background-color: @background;
+		  background-color: transparent;
           font-size: 14px;
-          color: @textcolor1;
-          border-radius: 15px;
-          margin: 10px 10px 10px 0px;
+          color: @textcolor2;
+          border-radius: 4px;
+          margin: 6px 3px;
+          padding: 6px 12px;
       }
 
       #pulseaudio.muted {
-          background-color: @background;
-          color: @textcolor1;
+		  background-color: transparent;
+          color: @textcolor2;
       }
 
       /* -----------------------------------------------------
@@ -296,28 +236,29 @@
        * ----------------------------------------------------- */
 
       #battery {
-          background-color: @background;
+		  background-color: transparent;
           font-size: 14px;
-          color: @textcolor1;
-          border-radius: 15px;
-          margin: 10px 10px 10px 0px;
+          color: @textcolor2;
+          border-radius: 6px;
+          margin: 6px 3px;
+          padding: 6px 12px;
       }
 
       #battery.charging,
       #battery.plugged {
-          color: @textcolor1;
-          background-color: @background;
+          color: @textcolor2;
+		  background-color: transparent;
       }
 
       @keyframes blink {
           to {
-              background-color: @background;
-              color: @textcolor1;
+              background-color: rgb(0x10, 0x10, 0x20);
+              color: @textcolor2;
           }
       }
 
       #battery.critical:not(.charging) {
-          background-color: #f53c3c;
+		  background-color: transparent;
           color: @textcolor2;
           animation-name: blink;
           animation-duration: 0.5s;
@@ -331,7 +272,10 @@
        * ----------------------------------------------------- */
 
       #tray {
-          margin: 0px 10px 0px 0px;
+          border-radius: 6px;
+          margin: 4px 3px;
+          padding: 12px 12px;
+		  background-color: transparent;
       }
 
       #tray > .passive {
@@ -340,7 +284,7 @@
 
       #tray > .needs-attention {
           -gtk-icon-effect: highlight;
-          background-color: #eb4d4b;
+		  background-color: transparent;
       }
     '';
   };

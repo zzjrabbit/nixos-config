@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, config, ... }:
 {
   virtualisation.virtualbox.host.enable = true;
   
@@ -57,9 +57,21 @@
     enable = true;
     settings = {
       background = {
-        path = ../wallpaper/universe.jpg;
+        path = ../wallpaper/sea.jpg;
         fit = "Fill";
       };
+    };
+    font = {
+      name = "Fira Code";
+      package = pkgs.fira-code;
+    };
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
   };
   

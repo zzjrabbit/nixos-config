@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   dconf = {
@@ -12,7 +12,7 @@
 
   gtk = {
     enable = true;
-    font.name = "Source Han Sans SC";
+    font.name = "Fira Code";
     theme = {
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
