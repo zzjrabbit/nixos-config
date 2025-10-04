@@ -1,7 +1,7 @@
 # System services module
 # This module configures user-level systemd services for the desktop environment
 
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services.wpaperd = {
@@ -22,20 +22,23 @@
     };
   };
   
-  # X Wayland Satellite
   systemd.user.services = {
-    xwayland-satellite = {
-      Unit = {
-        PartOf = [ "niri.service" ];
-        After = [ "niri.service" ];
+      polkit-gnome-agent = {
+        Unit = {
+          description = "PolicyKit Authentication Agent";
+          Wants = [ "graphical-session.target" ];
+          After = [ "graphical-session.target" ];
+        };
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
+        };
+        Service = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
       };
-
-      Service = {
-        ExecStart = lib.getExe pkgs.xwayland-satellite;
-        Restart = "on-failure";
-      };
-
-      Install.WantedBy = ["niri.service"];
     };
-  };
 }

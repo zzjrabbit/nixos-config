@@ -89,4 +89,8 @@
       };
     };
   };
+  
+  services.gvfs = {
+    enable = true;
+  };
 }

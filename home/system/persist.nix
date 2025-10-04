@@ -44,7 +44,6 @@
       
       ".config/nekoray"
       
-      ".config/nvim"
       ".cache/nvim"
       ".local/share/nvim"
       

@@ -20,10 +20,6 @@
         name = "p10k";
         src = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.p10k.zsh";
       }
-      {
-        name = "zsh-nix-shell";
-        src = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/zsh-nix-shell/nix-shell.plugin.zsh";
-      }
     ];
     
     zplug = {

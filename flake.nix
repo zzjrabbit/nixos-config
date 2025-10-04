@@ -1,6 +1,16 @@
 {
   description = "UEFIer's NixOS Configuration";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://niri.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -44,6 +54,7 @@
               programs.niri.enable = true;
               nixpkgs.overlays = [ inputs.niri.overlays.niri ];
               programs.niri.package = pkgs.niri-unstable;
+              systemd.user.services.niri-flake-polkit.enable = false;
             }
           )
 
