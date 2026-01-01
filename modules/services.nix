@@ -1,6 +1,12 @@
 { pkgs, config, ... }:
 {
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless.enable = true;
+    };
+  };
   
   networking.enableIPv6 = true;
   networking.firewall = {
@@ -66,7 +72,7 @@
       package = pkgs.fira-code;
     };
     theme = {
-      name = "adw-gtk3-dark";
+      name = "Adwaita-Dark";
       package = pkgs.adw-gtk3;
     };
     iconTheme = {

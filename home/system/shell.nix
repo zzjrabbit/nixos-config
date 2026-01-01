@@ -7,6 +7,7 @@
     syntaxHighlighting = {
       enable = true;
     };
+    dotDir = config.home.homeDirectory;
     
     shellAliases = {};
     history.path = "/persist/home/raca/.zsh_history";

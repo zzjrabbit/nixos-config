@@ -8,7 +8,9 @@
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-gtk
-        fcitx5-chinese-addons
+        qt6Packages.fcitx5-chinese-addons
+        fcitx5-rime
+        rime-data
       ];
       settings = {
         inputMethod = {
@@ -16,10 +18,10 @@
           "Groups/0" = {
             Name = "Default";
             "Default Layout" = "us";
-            DefaultIM = "shuangpin";
+            DefaultIM = "rime";
           };
           "Groups/0/Items/0".Name = "keyboard-us";
-          "Groups/0/Items/1".Name = "shuangpin";
+          "Groups/0/Items/1".Name = "rime";
         };
         addons = {
           pinyin = {
@@ -32,6 +34,7 @@
           classicui.globalSection = {
             Theme = "adwaita-dark";
             Font = "Source Han Sans SC 12";
+            "Vertical Candidate List" = "True";
           };
         };
       };

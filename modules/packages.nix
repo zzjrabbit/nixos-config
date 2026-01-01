@@ -18,12 +18,12 @@
     networkmanagerapplet
     hypridle
     polkit_gnome
-    proxychains
     krb5
-    linuxPackages_latest.perf
+    perf
     heaptrack
     pavucontrol
     perf-tools
+    docker
   ];
 
   nixpkgs.config.allowUnfree = true;

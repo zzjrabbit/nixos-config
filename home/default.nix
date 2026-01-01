@@ -6,8 +6,9 @@
     ./apps/term.nix
     ./apps/edge.nix
     ./apps/zed.nix
-    ./apps/vbox.nix
+    # ./apps/vbox.nix
     ./apps/nvim.nix
+    ./apps/vsc.nix
 
     ./desktop/fuzzel.nix
     ./desktop/niri.nix

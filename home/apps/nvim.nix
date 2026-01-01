@@ -3,6 +3,7 @@
 in {
   home.packages = with pkgs; [
     neovim
+    vimPlugins.telescope-fzf-native-nvim
   ];
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink nvimPath;
 }

@@ -14,6 +14,7 @@
       efiSupport = true;
       useOSProber = true;
       configurationLimit = 10;
+      theme = pkgs.catppuccin-grub;
     };
   };
 
@@ -26,7 +27,7 @@
     inputMethod = {
       type = "fcitx5";
       enable = true;
-      fcitx5.addons = with pkgs; [ fcitx5-chinese-addons fcitx5-gtk ];
+      fcitx5.addons = with pkgs; [ qt6Packages.fcitx5-chinese-addons fcitx5-gtk ];
     };
   };
 
@@ -64,8 +65,8 @@
 
   nix.settings.substituters = [
     "https://mirror.sjtu.edu.cn/nix-channels/store"
-    "https://cache.nixos.org"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://niri.cachix.org"
   ];
 

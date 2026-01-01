@@ -2,11 +2,15 @@
   description = "UEFIer's NixOS Configuration";
 
   nixConfig = {
-    extra-substituters = [
+    substituters = [
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://niri.cachix.org"
     ];
 
-    extra-trusted-public-keys = [
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
     ];
   };
@@ -20,6 +24,7 @@
     niri.url = "github:sodiboo/niri-flake";
     nur.url = "github:nix-community/NUR";
     impermanence.url = "github:nix-community/impermanence/home-manager-v2";
+    chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
   };
 
   outputs =
@@ -30,6 +35,7 @@
       niri,
       nur,
       impermanence,
+      chinese-fonts-overlay,
       ...
     }:
     {
@@ -55,6 +61,24 @@
               nixpkgs.overlays = [ inputs.niri.overlays.niri ];
               programs.niri.package = pkgs.niri-unstable;
               systemd.user.services.niri-flake-polkit.enable = false;
+            }
+          )
+
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs = {
+                config.allowUnfree = true;
+                overlays = [
+                  inputs.chinese-fonts-overlay.overlays.default # 所有字体
+                ];
+              };
+              fonts.packages = with pkgs; [
+                foundertypeFonts.FZHTK
+                foundertypeFonts.FZSSK
+                foundertypeFonts.FZFSK
+                foundertypeFonts.FZKTK
+              ];
             }
           )
 

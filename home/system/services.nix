@@ -6,7 +6,7 @@
 {
   services.wpaperd = {
     enable = true;
-    settings.any.path = ../../wallpaper/universe.jpg;
+    settings.any.path = ../../wallpaper/wandering.jpg;
   };
   
   services.hypridle = {

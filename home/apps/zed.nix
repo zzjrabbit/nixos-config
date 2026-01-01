@@ -52,6 +52,13 @@
       ui_font_family = "Fira Code";
       buffer_font_family = "Fira Code";
       minimap = { show = "auto"; thumb = "hover"; };
+      
+      colorize_brackets = true;
+      
+      inlay_hints = {
+        enabled = true;
+        show_background = true;
+      };
 
       autosave = {
         after_delay = {
@@ -62,7 +69,7 @@
       lsp = {
         rust-analyzer = {
           binary = {
-            path = "/home/raca/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer";
+            path = "${pkgs.rust-analyzer}/bin/rust-analyzer";
             arguments = [ ];
           };
         };

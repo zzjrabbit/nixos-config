@@ -49,12 +49,8 @@
     window-rule {
         geometry-corner-radius 8
         clip-to-geometry true
-    }
-    
-    // Firefox picture-in-picture player as floating by default.
-    window-rule {
-        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-        open-floating true
+        opacity 0.95
+        draw-border-with-background false
     }
     
     binds {

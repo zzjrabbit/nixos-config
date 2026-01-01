@@ -67,3 +67,4 @@ for name, icon in pairs(symbols) do
 	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
 end
 
+vim.lsp.inlay_hint.enable(true)

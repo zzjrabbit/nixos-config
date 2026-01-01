@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>', opt)
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', opt)
 
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', opt)
 vim.keymap.set('n', '<leader>fs', ':Telescope live_grep<CR>', opt)
@@ -19,4 +19,7 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
+
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 
