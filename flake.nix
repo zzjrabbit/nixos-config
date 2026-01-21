@@ -23,7 +23,7 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     nur.url = "github:nix-community/NUR";
-    impermanence.url = "github:nix-community/impermanence/home-manager-v2";
+    impermanence.url = "github:nix-community/impermanence";
     chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
   };
 

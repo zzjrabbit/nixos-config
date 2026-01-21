@@ -1,10 +1,6 @@
-{ inputs, ... }:
+{ ... }:
 
 {
-  imports = [
-    inputs.impermanence.homeManagerModules.impermanence
-  ];
-
   home.persistence."/persist" = {
     hideMounts = true;
 
@@ -78,6 +74,8 @@
       ".cache/fuzzel"
       
       ".hmcl.json"
+      
+      ".wakatime.cfg"
       
       "密码.kdbx"
     ];

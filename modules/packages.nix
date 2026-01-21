@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  programs.adb.enable = true;
   programs.niri.enable = true;
   programs.nm-applet.enable = true;
 
@@ -24,6 +23,7 @@
     pavucontrol
     perf-tools
     docker
+    android-tools
   ];
 
   nixpkgs.config.allowUnfree = true;
