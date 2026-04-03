@@ -40,6 +40,7 @@
   networking.networkmanager = {
     enable = true;
     dns = "default";
+    wifi.powersave = false;
   };
   
   security.polkit.enable = true;

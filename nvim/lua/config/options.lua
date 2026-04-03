@@ -24,8 +24,6 @@ vim.g.mapleader = " "
 
 vim.o.number = true
 
-vim.o.shell = "zsh"
-
 vim.o.winblend = 0
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

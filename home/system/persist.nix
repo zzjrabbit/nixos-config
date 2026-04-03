@@ -27,10 +27,6 @@
       ".java"
       ".xmake"
       ".nix"
-      
-      ".zplug"
-      ".zsh"
-      "zsh-nix-shell"
 
       # Application data
       ".mozilla"
@@ -51,10 +47,12 @@
       
       ".local/share/hmcl"
       
-      ".config/microsoft-edge"
       ".config/Code"
-      
       ".vscode"
+
+      ".config/microsoft-edge"
+      ".cache/microsoft-edge"
+      ".cache/Microsoft"
       
       # System directories that may contain user data
       ".local/share/keyrings"
@@ -65,14 +63,11 @@
     ];
 
     files = [
-      # Shell configuration
-      ".zsh_history"
-      ".p10k.zsh"
-      ".zshenv"
-
       # Cache files
       ".cache/fuzzel"
-      
+
+      ".config/nushell/history.txt"
+
       ".hmcl.json"
       
       ".wakatime.cfg"

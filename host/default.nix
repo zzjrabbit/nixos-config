@@ -44,17 +44,20 @@
     ];
   };
 
+  users.defaultUserShell = pkgs.dash;
+  users.users.root.shell = pkgs.dash;
   users.users.raca = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
+    useDefaultShell = true;
     ignoreShellProgramCheck = true;
     hashedPasswordFile = "/persist/secret/raca";
     packages = with pkgs; [
       tree
     ];
   };
-  
+  environment.systemPackages = [ pkgs.dash ];
+
   users.mutableUsers = false;
   
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

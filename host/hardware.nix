@@ -10,7 +10,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
   boot.kernelParams = [ "amdgpu.backlight=0" "acpi_backlight=none" ];
   boot.kernel.sysctl = { "vm.swappiness" = 200; };
   boot.supportedFilesystems = [ "ntfs" ];
@@ -58,7 +58,9 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
+  networking = {
+    useDHCP = lib.mkDefault true;
+  };
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

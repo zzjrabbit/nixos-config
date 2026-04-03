@@ -30,24 +30,20 @@
       theme = {
         mode = "system";
         light = "One Light";
-        dark = "Fleet Dark";
+        dark = "Deep Dark";
       };
       terminal = {
-	  	dock = "bottom";
-		font_family = "Fira Code";
-	  };
-      icon_theme = "Bearded Icon Theme";
-      agent = {
-        default_model = {
-          provider = "zed.dev";
-          model = "claude-sonnet-4-thinking-latest";
+        shell = {
+          program = "dash";
         };
-        default_profile = "write";
-        always_allow_tool_actions = true;
-        stream_edits = true;
+        dock = "bottom";
+        font_family = "Fira Code";
       };
-      buffer_line_height = { custom = 1.35; };
+      icon_theme = "Bearded Icon Theme";
+      buffer_line_height = { custom = 1.55; };
       ui_font_size = 18;
+      ui_font_weight = 600;
+      buffer_font_weight = 800;
       buffer_font_size = 18;
       ui_font_family = "Fira Code";
       buffer_font_family = "Fira Code";

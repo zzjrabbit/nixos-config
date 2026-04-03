@@ -3,9 +3,7 @@
 
   nixConfig = {
     substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
       "https://niri.cachix.org"
     ];
 
@@ -16,7 +14,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +38,7 @@
     }:
     {
       nixosConfigurations.raca = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           niri.nixosModules.niri
           home-manager.nixosModules.home-manager

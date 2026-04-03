@@ -1,34 +1,16 @@
-{ config, ... }:
-
-{ 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting = {
-      enable = true;
-    };
-    dotDir = config.home.homeDirectory;
-    
-    shellAliases = {};
-    history.path = "/persist/home/raca/.zsh_history";
-    
-    initContent = ''
-      source ~/.p10k.zsh
-    '';
-    
-    plugins = [
-      {
-        name = "p10k";
-        src = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.p10k.zsh";
-      }
-    ];
-    
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
-      ];
-    };
-  };
+{ config, ... }: {
+  xdg.configFile."nushell/config.nu".source = config.lib.file.mkOutOfStoreSymlink ./config.nu;
+  programs.nushell.enable = true;
+  
+  home.file.".profile".text = ''
+    export VTERM='alacritty'
+    export ENV='$HOME/.config/dashrc'
+  '';
+  home.file.".config/dashrc".text = ''
+    if ! [ "$TERM" = "dumb" ]; then
+        # Disable C-s freezing the terminal
+        stty -ixon
+        exec nu
+    fi
+  '';
 }
