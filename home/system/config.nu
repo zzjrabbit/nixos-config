@@ -15,3 +15,4 @@ def devenv [] {
 }
 
 $env.config.show_banner = false
+$env.ZED_ACCEPT_PREDICTION_URL = "https://localhost:4444/accept"

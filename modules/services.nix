@@ -36,6 +36,16 @@
   services.xserver.enable = true;
   services.udisks2.enable = true;
   services.printing.enable = true;
+
+  environment.systemPackages = [ pkgs.fprintd pkgs.imagemagick ];
+  services.fprintd = {
+    enable = true;
+    package = pkgs.fprintd-tod;
+    tod = {
+      enable = true;
+      driver = pkgs.libfprint-2-tod1-goodix;
+    };
+  };
   
   networking.networkmanager = {
     enable = true;
