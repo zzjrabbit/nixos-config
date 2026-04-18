@@ -28,6 +28,6 @@
   home.username = "raca";
   home.homeDirectory = "/home/raca";
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
   programs.home-manager.enable = true;
 }

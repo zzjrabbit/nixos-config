@@ -1,7 +1,8 @@
-{ config, ... }: {
-  xdg.configFile."nushell/config.nu".source = config.lib.file.mkOutOfStoreSymlink ./config.nu;
-  programs.nushell.enable = true;
-  
+{ ... }: {
+  programs.nushell = {
+    enable = true;
+    extraConfig = builtins.readFile ./config.nu;
+  };
   home.file.".profile".text = ''
     export VTERM='alacritty'
     export ENV='$HOME/.config/dashrc'

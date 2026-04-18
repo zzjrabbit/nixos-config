@@ -9,7 +9,6 @@
     wine
     wine-staging
     wine-wayland
-    luanti
     openjdk21
   ];
 }

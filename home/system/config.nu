@@ -2,8 +2,8 @@ def flake_update [] {
     proxychains4 -q nix flake update
 }
 
-def nixos_rebuild [] {
-    sudo nixos-rebuild switch --flake ~/nixos --impure --accept-flake-config
+def nixos_rebuild [host: string] {
+    sudo nixos-rebuild switch --flake $"/home/raca/nixos#$host" --impure --accept-flake-config
 }
 
 def zed [] {

@@ -29,64 +29,17 @@
     inputs@{
       self,
       nixpkgs,
-      home-manager,
-      niri,
-      nur,
-      impermanence,
-      chinese-fonts-overlay,
       ...
     }:
-    {
-      nixosConfigurations.raca = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          niri.nixosModules.niri
-          home-manager.nixosModules.home-manager
-          nur.modules.nixos.default
-          impermanence.nixosModules.impermanence
-
-          ./host
-
-          ./modules/persist.nix
-          ./modules/packages.nix
-          ./modules/services.nix
-          ./modules/proxy.nix
-          ./modules/snapper.nix
-          (
-            { pkgs, ... }:
-            {
-              programs.niri.enable = true;
-              nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-              programs.niri.package = pkgs.niri-unstable;
-              systemd.user.services.niri-flake-polkit.enable = false;
-            }
-          )
-
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs = {
-                config.allowUnfree = true;
-                overlays = [
-                  inputs.chinese-fonts-overlay.overlays.default # 所有字体
-                ];
-              };
-              fonts.packages = with pkgs; [
-                foundertypeFonts.FZHTK
-                foundertypeFonts.FZSSK
-                foundertypeFonts.FZFSK
-                foundertypeFonts.FZKTK
-              ];
-            }
-          )
-
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.raca = import ./home;
-          }
-        ];
+    let
+      mkHost = import ./lib/mkHost.nix {
+        inherit nixpkgs;
+        inherit inputs;
+      };
+    in {
+      nixosConfigurations = {
+        laptop = mkHost "laptop" [];
+        desktop = mkHost "desktop" [];
       };
     };
 }

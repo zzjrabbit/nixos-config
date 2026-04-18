@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   dconf = {
@@ -12,6 +12,7 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     font.name = "Fira Code";
     theme = {
       name = "adw-gtk3-dark";
