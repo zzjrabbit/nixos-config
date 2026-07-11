@@ -1,7 +1,6 @@
-{ nixpkgs, inputs }:
+{ nixpkgs, inputs, }:
 
-name:
-extraModules:
+name: extraModules:
 
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
@@ -10,9 +9,8 @@ nixpkgs.lib.nixosSystem {
     inherit inputs;
   };
 
-  modules =
-    [
-      ../host/${name}
-    ]
-    ++ extraModules;
+  modules = [
+    ../host/${name}
+  ]
+  ++ extraModules;
 }

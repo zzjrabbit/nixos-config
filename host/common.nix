@@ -1,22 +1,34 @@
 { inputs, pkgs, ... }:
+let
+  inherit (pkgs.stdenv.hostPlatform) system;
+  niriPackage = inputs.niri.packages.${system}.niri-unstable;
+in
 {
   imports =
     [
       ./common_hw.nix
       inputs.niri.nixosModules.niri
       inputs.home-manager.nixosModules.home-manager
-      inputs.nur.modules.nixos.default
       inputs.impermanence.nixosModules.impermanence
-    
+      inputs.sops-nix.nixosModules.sops
+
       ../modules/persist.nix
       ../modules/packages.nix
       ../modules/services.nix
       ../modules/proxy.nix
       ../modules/snapper.nix
+      ../modules/greetd.nix
   ];
+
+  sops = {
+    defaultSopsFile = ../../secrets/dpsk_api_key.yaml;
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  };
   
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri = {
+    enable = true;
+    package = niriPackage;
+  };
   systemd.user.services.niri-flake-polkit.enable = false;
   
   nixpkgs = {
@@ -60,10 +72,10 @@
 
   fonts = {
     packages = with pkgs; [
-      foundertypeFonts.FZHTK
-      foundertypeFonts.FZSSK
-      foundertypeFonts.FZFSK
-      foundertypeFonts.FZKTK
+      foundertypePackages.fzheiti
+      foundertypePackages.fzshusong
+      foundertypePackages.fzfangsong
+      foundertypePackages.fzkaiti
       
       noto-fonts
       noto-fonts-cjk-sans
@@ -99,10 +111,14 @@
   nix.settings.trusted-users = [ "raca" ];
 
   nix.settings.substituters = [
-    "https://mirror.sjtu.edu.cn/nix-channels/store"
-    "https://mirrors.ustc.edu.cn/nix-channels/store"
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://niri.cachix.org"
+    "https://cache.nixos.org"
+	"https://mirrors.ustc.edu.cn/nix-channels/store"
+  ];
+  nix.settings.trusted-public-keys = [ 
+    "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
+    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
   ];
 
   nix.gc = {
@@ -113,9 +129,5 @@
 
   nix.settings.auto-optimise-store = true;
 
-  # system.nixos-init.enable = true;
-  # system.etc.overlay.enable = true;
-  # services.userborn.enable = true;
-  
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

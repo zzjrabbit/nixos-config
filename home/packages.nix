@@ -5,10 +5,14 @@
     hmcl
     keepassxc
     libreoffice-fresh
-    clapper
+    vlc
     wine
     wine-staging
     wine-wayland
     openjdk21
+    parted
+    exfatprogs
+    tokei
+    wechat
   ];
 }

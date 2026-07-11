@@ -1,0 +1,9272 @@
+{
+  "hs-{}": {
+    "prefix": "\\{}",
+    "body": "{$0}",
+    "description": "Haskell: {} -> {}"
+  },
+  "hs-{}_": {
+    "prefix": "\\{}_",
+    "body": "{$0}_",
+    "description": "Haskell: {}_ -> {}_"
+  },
+  "hs-{{}}": {
+    "prefix": "\\{{}}",
+    "body": "⦃$0⦄",
+    "description": "Haskell: {{}} -> ⦃⦄"
+  },
+  "hs-[]": {
+    "prefix": "\\[]",
+    "body": "[$0]",
+    "description": "Haskell: [] -> []"
+  },
+  "hs-[]_": {
+    "prefix": "\\[]_",
+    "body": "[$0]_",
+    "description": "Haskell: []_ -> []_"
+  },
+  "hs-[[]]": {
+    "prefix": "\\[[]]",
+    "body": "⟦$0⟧",
+    "description": "Haskell: [[]] -> ⟦⟧"
+  },
+  "hs-<>": {
+    "prefix": "\\<>",
+    "body": "⟨$0⟩",
+    "description": "Haskell: <> -> ⟨⟩"
+  },
+  "hs-()": {
+    "prefix": "\\()",
+    "body": "($0)",
+    "description": "Haskell: () -> ()"
+  },
+  "hs-()_": {
+    "prefix": "\\()_",
+    "body": "($0)_",
+    "description": "Haskell: ()_ -> ()_"
+  },
+  "hs-([])'": {
+    "prefix": "\\([])'",
+    "body": "⟮$0⟯",
+    "description": "Haskell: ([])' -> ⟮⟯"
+  },
+  "hs-(())": {
+    "prefix": "\\(())",
+    "body": "⸨$0⸩",
+    "description": "Haskell: (()) -> ⸨⸩"
+  },
+  "hs-f<>": {
+    "prefix": "\\f<>",
+    "body": "‹$0›",
+    "description": "Haskell: f<> -> ‹›"
+  },
+  "hs-f<<>>": {
+    "prefix": "\\f<<>>",
+    "body": "«$0»",
+    "description": "Haskell: f<<>> -> «»"
+  },
+  "hs-[--]": {
+    "prefix": "\\[--]",
+    "body": "⁅$0⁆",
+    "description": "Haskell: [--] -> ⁅⁆"
+  },
+  "hs-||||": {
+    "prefix": "\\||||",
+    "body": "‖$0‖",
+    "description": "Haskell: |||| -> ‖‖"
+  },
+  "hs-nnnorm": {
+    "prefix": "\\nnnorm",
+    "body": "‖$0‖₊",
+    "description": "Haskell: nnnorm -> ‖‖₊"
+  },
+  "hs-norm": {
+    "prefix": "\\norm",
+    "body": "‖$0‖",
+    "description": "Haskell: norm -> ‖‖"
+  },
+  "hs-floor": {
+    "prefix": "\\floor",
+    "body": "⌊$0⌋",
+    "description": "Haskell: floor -> ⌊⌋"
+  },
+  "hs-ceil": {
+    "prefix": "\\ceil",
+    "body": "⌈$0⌉",
+    "description": "Haskell: ceil -> ⌈⌉"
+  },
+  "hs-nfloor": {
+    "prefix": "\\nfloor",
+    "body": "⌊$0⌋₊",
+    "description": "Haskell: nfloor -> ⌊⌋₊"
+  },
+  "hs-nceil": {
+    "prefix": "\\nceil",
+    "body": "⌈$0⌉₊",
+    "description": "Haskell: nceil -> ⌈⌉₊"
+  },
+  "hs-s[]": {
+    "prefix": "\\s[]",
+    "body": "⦋$0⦌",
+    "description": "Haskell: s[] -> ⦋⦌"
+  },
+  "hs-simplex": {
+    "prefix": "\\simplex",
+    "body": "⦋$0⦌",
+    "description": "Haskell: simplex -> ⦋⦌"
+  },
+  "hs-a": {
+    "prefix": "\\a",
+    "body": "α",
+    "description": "Haskell: a -> α"
+  },
+  "hs-b": {
+    "prefix": "\\b",
+    "body": "β",
+    "description": "Haskell: b -> β"
+  },
+  "hs-c": {
+    "prefix": "\\c",
+    "body": "χ",
+    "description": "Haskell: c -> χ"
+  },
+  "hs-d": {
+    "prefix": "\\d",
+    "body": "↓",
+    "description": "Haskell: d -> ↓"
+  },
+  "hs-e": {
+    "prefix": "\\e",
+    "body": "ε",
+    "description": "Haskell: e -> ε"
+  },
+  "hs-g": {
+    "prefix": "\\g",
+    "body": "γ",
+    "description": "Haskell: g -> γ"
+  },
+  "hs-i": {
+    "prefix": "\\i",
+    "body": "∩",
+    "description": "Haskell: i -> ∩"
+  },
+  "hs-m": {
+    "prefix": "\\m",
+    "body": "μ",
+    "description": "Haskell: m -> μ"
+  },
+  "hs-n": {
+    "prefix": "\\n",
+    "body": "\\n",
+    "description": "Haskell: n -> \\n"
+  },
+  "hs-o": {
+    "prefix": "\\o",
+    "body": "∘",
+    "description": "Haskell: o -> ∘"
+  },
+  "hs-p": {
+    "prefix": "\\p",
+    "body": "Π",
+    "description": "Haskell: p -> Π"
+  },
+  "hs-t": {
+    "prefix": "\\t",
+    "body": "▸",
+    "description": "Haskell: t -> ▸"
+  },
+  "hs-r": {
+    "prefix": "\\r",
+    "body": "→",
+    "description": "Haskell: r -> →"
+  },
+  "hs-u": {
+    "prefix": "\\u",
+    "body": "↑",
+    "description": "Haskell: u -> ↑"
+  },
+  "hs-v": {
+    "prefix": "\\v",
+    "body": "∨",
+    "description": "Haskell: v -> ∨"
+  },
+  "hs-x": {
+    "prefix": "\\x",
+    "body": "×",
+    "description": "Haskell: x -> ×"
+  },
+  "hs--": {
+    "prefix": "\\-",
+    "body": "⁻¹",
+    "description": "Haskell: - -> ⁻¹"
+  },
+  "hs-~": {
+    "prefix": "\\~",
+    "body": "∼",
+    "description": "Haskell: ~ -> ∼"
+  },
+  "hs-.": {
+    "prefix": "\\.",
+    "body": "·",
+    "description": "Haskell: . -> ·"
+  },
+  "hs-*": {
+    "prefix": "\\*",
+    "body": "⋆",
+    "description": "Haskell: * -> ⋆"
+  },
+  "hs-!": {
+    "prefix": "\\!",
+    "body": "¬",
+    "description": "Haskell: ! -> ¬"
+  },
+  "hs-?": {
+    "prefix": "\\?",
+    "body": "¿",
+    "description": "Haskell: ? -> ¿"
+  },
+  "hs-1": {
+    "prefix": "\\1",
+    "body": "₁",
+    "description": "Haskell: 1 -> ₁"
+  },
+  "hs-2": {
+    "prefix": "\\2",
+    "body": "₂",
+    "description": "Haskell: 2 -> ₂"
+  },
+  "hs-3": {
+    "prefix": "\\3",
+    "body": "₃",
+    "description": "Haskell: 3 -> ₃"
+  },
+  "hs-4": {
+    "prefix": "\\4",
+    "body": "₄",
+    "description": "Haskell: 4 -> ₄"
+  },
+  "hs-5": {
+    "prefix": "\\5",
+    "body": "₅",
+    "description": "Haskell: 5 -> ₅"
+  },
+  "hs-6": {
+    "prefix": "\\6",
+    "body": "₆",
+    "description": "Haskell: 6 -> ₆"
+  },
+  "hs-7": {
+    "prefix": "\\7",
+    "body": "₇",
+    "description": "Haskell: 7 -> ₇"
+  },
+  "hs-8": {
+    "prefix": "\\8",
+    "body": "₈",
+    "description": "Haskell: 8 -> ₈"
+  },
+  "hs-9": {
+    "prefix": "\\9",
+    "body": "₉",
+    "description": "Haskell: 9 -> ₉"
+  },
+  "hs-0": {
+    "prefix": "\\0",
+    "body": "₀",
+    "description": "Haskell: 0 -> ₀"
+  },
+  "hs-l": {
+    "prefix": "\\l",
+    "body": "←",
+    "description": "Haskell: l -> ←"
+  },
+  "hs-<": {
+    "prefix": "\\<",
+    "body": "⟨",
+    "description": "Haskell: < -> ⟨"
+  },
+  "hs->": {
+    "prefix": "\\>",
+    "body": "⟩",
+    "description": "Haskell: > -> ⟩"
+  },
+  "hs-O": {
+    "prefix": "\\O",
+    "body": "Ø",
+    "description": "Haskell: O -> Ø"
+  },
+  "hs-&": {
+    "prefix": "\\&",
+    "body": "⅋",
+    "description": "Haskell: & -> ⅋"
+  },
+  "hs-A": {
+    "prefix": "\\A",
+    "body": "𝔸",
+    "description": "Haskell: A -> 𝔸"
+  },
+  "hs-C": {
+    "prefix": "\\C",
+    "body": "ℂ",
+    "description": "Haskell: C -> ℂ"
+  },
+  "hs-D": {
+    "prefix": "\\D",
+    "body": "Δ",
+    "description": "Haskell: D -> Δ"
+  },
+  "hs-F": {
+    "prefix": "\\F",
+    "body": "𝔽",
+    "description": "Haskell: F -> 𝔽"
+  },
+  "hs-G": {
+    "prefix": "\\G",
+    "body": "Γ",
+    "description": "Haskell: G -> Γ"
+  },
+  "hs-H": {
+    "prefix": "\\H",
+    "body": "ℍ",
+    "description": "Haskell: H -> ℍ"
+  },
+  "hs-I": {
+    "prefix": "\\I",
+    "body": "⋂",
+    "description": "Haskell: I -> ⋂"
+  },
+  "hs-I0": {
+    "prefix": "\\I0",
+    "body": "⋂₀",
+    "description": "Haskell: I0 -> ⋂₀"
+  },
+  "hs-K": {
+    "prefix": "\\K",
+    "body": "𝕂",
+    "description": "Haskell: K -> 𝕂"
+  },
+  "hs-L": {
+    "prefix": "\\L",
+    "body": "Λ",
+    "description": "Haskell: L -> Λ"
+  },
+  "hs-N": {
+    "prefix": "\\N",
+    "body": "ℕ",
+    "description": "Haskell: N -> ℕ"
+  },
+  "hs-P": {
+    "prefix": "\\P",
+    "body": "Π",
+    "description": "Haskell: P -> Π"
+  },
+  "hs-Q": {
+    "prefix": "\\Q",
+    "body": "ℚ",
+    "description": "Haskell: Q -> ℚ"
+  },
+  "hs-R": {
+    "prefix": "\\R",
+    "body": "ℝ",
+    "description": "Haskell: R -> ℝ"
+  },
+  "hs-S": {
+    "prefix": "\\S",
+    "body": "Σ",
+    "description": "Haskell: S -> Σ"
+  },
+  "hs-U": {
+    "prefix": "\\U",
+    "body": "⋃",
+    "description": "Haskell: U -> ⋃"
+  },
+  "hs-U0": {
+    "prefix": "\\U0",
+    "body": "⋃₀",
+    "description": "Haskell: U0 -> ⋃₀"
+  },
+  "hs-Z": {
+    "prefix": "\\Z",
+    "body": "ℤ",
+    "description": "Haskell: Z -> ℤ"
+  },
+  "hs-#": {
+    "prefix": "\\#",
+    "body": "♯",
+    "description": "Haskell: # -> ♯"
+  },
+  "hs-:": {
+    "prefix": "\\:",
+    "body": "∶",
+    "description": "Haskell: : -> ∶"
+  },
+  "hs-|": {
+    "prefix": "\\|",
+    "body": "∣",
+    "description": "Haskell: | -> ∣"
+  },
+  "hs-rw": {
+    "prefix": "\\rw",
+    "body": "▸",
+    "description": "Haskell: rw -> ▸"
+  },
+  "hs-coe": {
+    "prefix": "\\coe",
+    "body": "↑",
+    "description": "Haskell: coe -> ↑"
+  },
+  "hs-be": {
+    "prefix": "\\be",
+    "body": "β",
+    "description": "Haskell: be -> β"
+  },
+  "hs-ga": {
+    "prefix": "\\ga",
+    "body": "γ",
+    "description": "Haskell: ga -> γ"
+  },
+  "hs-de": {
+    "prefix": "\\de",
+    "body": "δ",
+    "description": "Haskell: de -> δ"
+  },
+  "hs-ep": {
+    "prefix": "\\ep",
+    "body": "ε",
+    "description": "Haskell: ep -> ε"
+  },
+  "hs-ze": {
+    "prefix": "\\ze",
+    "body": "ζ",
+    "description": "Haskell: ze -> ζ"
+  },
+  "hs-et": {
+    "prefix": "\\et",
+    "body": "η",
+    "description": "Haskell: et -> η"
+  },
+  "hs-th": {
+    "prefix": "\\th",
+    "body": "θ",
+    "description": "Haskell: th -> θ"
+  },
+  "hs-io": {
+    "prefix": "\\io",
+    "body": "ι",
+    "description": "Haskell: io -> ι"
+  },
+  "hs-ka": {
+    "prefix": "\\ka",
+    "body": "κ",
+    "description": "Haskell: ka -> κ"
+  },
+  "hs-la": {
+    "prefix": "\\la",
+    "body": "λ",
+    "description": "Haskell: la -> λ"
+  },
+  "hs-mu": {
+    "prefix": "\\mu",
+    "body": "μ",
+    "description": "Haskell: mu -> μ"
+  },
+  "hs-nu": {
+    "prefix": "\\nu",
+    "body": "ν",
+    "description": "Haskell: nu -> ν"
+  },
+  "hs-xi": {
+    "prefix": "\\xi",
+    "body": "ξ",
+    "description": "Haskell: xi -> ξ"
+  },
+  "hs-pi": {
+    "prefix": "\\pi",
+    "body": "π",
+    "description": "Haskell: pi -> π"
+  },
+  "hs-rh": {
+    "prefix": "\\rh",
+    "body": "ρ",
+    "description": "Haskell: rh -> ρ"
+  },
+  "hs-vsi": {
+    "prefix": "\\vsi",
+    "body": "ς",
+    "description": "Haskell: vsi -> ς"
+  },
+  "hs-si": {
+    "prefix": "\\si",
+    "body": "σ",
+    "description": "Haskell: si -> σ"
+  },
+  "hs-ta": {
+    "prefix": "\\ta",
+    "body": "τ",
+    "description": "Haskell: ta -> τ"
+  },
+  "hs-ph": {
+    "prefix": "\\ph",
+    "body": "φ",
+    "description": "Haskell: ph -> φ"
+  },
+  "hs-ch": {
+    "prefix": "\\ch",
+    "body": "χ",
+    "description": "Haskell: ch -> χ"
+  },
+  "hs-ps": {
+    "prefix": "\\ps",
+    "body": "ψ",
+    "description": "Haskell: ps -> ψ"
+  },
+  "hs-om": {
+    "prefix": "\\om",
+    "body": "ω",
+    "description": "Haskell: om -> ω"
+  },
+  "hs-`A": {
+    "prefix": "\\`A",
+    "body": "À",
+    "description": "Haskell: `A -> À"
+  },
+  "hs-'A": {
+    "prefix": "\\'A",
+    "body": "Á",
+    "description": "Haskell: 'A -> Á"
+  },
+  "hs-^{A}": {
+    "prefix": "\\^{A}",
+    "body": "Â",
+    "description": "Haskell: ^{A} -> Â"
+  },
+  "hs-~A": {
+    "prefix": "\\~A",
+    "body": "Ã",
+    "description": "Haskell: ~A -> Ã"
+  },
+  "hs-\"A": {
+    "prefix": "\\\"A",
+    "body": "Ä",
+    "description": "Haskell: \"A -> Ä"
+  },
+  "hs--{A}": {
+    "prefix": "\\-{A}",
+    "body": "Ā",
+    "description": "Haskell: -{A} -> Ā"
+  },
+  "hs-cC": {
+    "prefix": "\\cC",
+    "body": "Ç",
+    "description": "Haskell: cC -> Ç"
+  },
+  "hs-`E": {
+    "prefix": "\\`E",
+    "body": "È",
+    "description": "Haskell: `E -> È"
+  },
+  "hs-'E": {
+    "prefix": "\\'E",
+    "body": "É",
+    "description": "Haskell: 'E -> É"
+  },
+  "hs-^{E}": {
+    "prefix": "\\^{E}",
+    "body": "Ê",
+    "description": "Haskell: ^{E} -> Ê"
+  },
+  "hs-\"E": {
+    "prefix": "\\\"E",
+    "body": "Ë",
+    "description": "Haskell: \"E -> Ë"
+  },
+  "hs--{E}": {
+    "prefix": "\\-{E}",
+    "body": "Ē",
+    "description": "Haskell: -{E} -> Ē"
+  },
+  "hs-`I": {
+    "prefix": "\\`I",
+    "body": "Ì",
+    "description": "Haskell: `I -> Ì"
+  },
+  "hs-'I": {
+    "prefix": "\\'I",
+    "body": "Í",
+    "description": "Haskell: 'I -> Í"
+  },
+  "hs-^{I}": {
+    "prefix": "\\^{I}",
+    "body": "Î",
+    "description": "Haskell: ^{I} -> Î"
+  },
+  "hs-\"I": {
+    "prefix": "\\\"I",
+    "body": "Ï",
+    "description": "Haskell: \"I -> Ï"
+  },
+  "hs--{I}": {
+    "prefix": "\\-{I}",
+    "body": "Ī",
+    "description": "Haskell: -{I} -> Ī"
+  },
+  "hs-~N": {
+    "prefix": "\\~N",
+    "body": "Ñ",
+    "description": "Haskell: ~N -> Ñ"
+  },
+  "hs-`O": {
+    "prefix": "\\`O",
+    "body": "Ò",
+    "description": "Haskell: `O -> Ò"
+  },
+  "hs-'O": {
+    "prefix": "\\'O",
+    "body": "Ó",
+    "description": "Haskell: 'O -> Ó"
+  },
+  "hs-^{O}": {
+    "prefix": "\\^{O}",
+    "body": "Ô",
+    "description": "Haskell: ^{O} -> Ô"
+  },
+  "hs-~O": {
+    "prefix": "\\~O",
+    "body": "Õ",
+    "description": "Haskell: ~O -> Õ"
+  },
+  "hs-\"O": {
+    "prefix": "\\\"O",
+    "body": "Ö",
+    "description": "Haskell: \"O -> Ö"
+  },
+  "hs-/O": {
+    "prefix": "\\/O",
+    "body": "Ø",
+    "description": "Haskell: /O -> Ø"
+  },
+  "hs--{O}": {
+    "prefix": "\\-{O}",
+    "body": "Ō",
+    "description": "Haskell: -{O} -> Ō"
+  },
+  "hs-`U": {
+    "prefix": "\\`U",
+    "body": "Ù",
+    "description": "Haskell: `U -> Ù"
+  },
+  "hs-'U": {
+    "prefix": "\\'U",
+    "body": "Ú",
+    "description": "Haskell: 'U -> Ú"
+  },
+  "hs-^{U}": {
+    "prefix": "\\^{U}",
+    "body": "Û",
+    "description": "Haskell: ^{U} -> Û"
+  },
+  "hs-\"U": {
+    "prefix": "\\\"U",
+    "body": "Ü",
+    "description": "Haskell: \"U -> Ü"
+  },
+  "hs--{U}": {
+    "prefix": "\\-{U}",
+    "body": "Ū",
+    "description": "Haskell: -{U} -> Ū"
+  },
+  "hs-'Y": {
+    "prefix": "\\'Y",
+    "body": "Ý",
+    "description": "Haskell: 'Y -> Ý"
+  },
+  "hs-`a": {
+    "prefix": "\\`a",
+    "body": "à",
+    "description": "Haskell: `a -> à"
+  },
+  "hs-'a": {
+    "prefix": "\\'a",
+    "body": "á",
+    "description": "Haskell: 'a -> á"
+  },
+  "hs-^{a}": {
+    "prefix": "\\^{a}",
+    "body": "â",
+    "description": "Haskell: ^{a} -> â"
+  },
+  "hs-~a": {
+    "prefix": "\\~a",
+    "body": "ã",
+    "description": "Haskell: ~a -> ã"
+  },
+  "hs-\"a": {
+    "prefix": "\\\"a",
+    "body": "ä",
+    "description": "Haskell: \"a -> ä"
+  },
+  "hs--{a}": {
+    "prefix": "\\-{a}",
+    "body": "ā",
+    "description": "Haskell: -{a} -> ā"
+  },
+  "hs-cc": {
+    "prefix": "\\cc",
+    "body": "ç",
+    "description": "Haskell: cc -> ç"
+  },
+  "hs-`e": {
+    "prefix": "\\`e",
+    "body": "è",
+    "description": "Haskell: `e -> è"
+  },
+  "hs-'e": {
+    "prefix": "\\'e",
+    "body": "é",
+    "description": "Haskell: 'e -> é"
+  },
+  "hs-^{e}": {
+    "prefix": "\\^{e}",
+    "body": "ê",
+    "description": "Haskell: ^{e} -> ê"
+  },
+  "hs-\"e": {
+    "prefix": "\\\"e",
+    "body": "ë",
+    "description": "Haskell: \"e -> ë"
+  },
+  "hs--{e}": {
+    "prefix": "\\-{e}",
+    "body": "ē",
+    "description": "Haskell: -{e} -> ē"
+  },
+  "hs-`i": {
+    "prefix": "\\`i",
+    "body": "ì",
+    "description": "Haskell: `i -> ì"
+  },
+  "hs-'i": {
+    "prefix": "\\'i",
+    "body": "í",
+    "description": "Haskell: 'i -> í"
+  },
+  "hs-^{i}": {
+    "prefix": "\\^{i}",
+    "body": "î",
+    "description": "Haskell: ^{i} -> î"
+  },
+  "hs-\"i": {
+    "prefix": "\\\"i",
+    "body": "ï",
+    "description": "Haskell: \"i -> ï"
+  },
+  "hs--{i}": {
+    "prefix": "\\-{i}",
+    "body": "ī",
+    "description": "Haskell: -{i} -> ī"
+  },
+  "hs-~{n}": {
+    "prefix": "\\~{n}",
+    "body": "ñ",
+    "description": "Haskell: ~{n} -> ñ"
+  },
+  "hs-`o": {
+    "prefix": "\\`o",
+    "body": "ò",
+    "description": "Haskell: `o -> ò"
+  },
+  "hs-'o": {
+    "prefix": "\\'o",
+    "body": "ó",
+    "description": "Haskell: 'o -> ó"
+  },
+  "hs-^{o}": {
+    "prefix": "\\^{o}",
+    "body": "ô",
+    "description": "Haskell: ^{o} -> ô"
+  },
+  "hs-~o": {
+    "prefix": "\\~o",
+    "body": "õ",
+    "description": "Haskell: ~o -> õ"
+  },
+  "hs-\"o": {
+    "prefix": "\\\"o",
+    "body": "ö",
+    "description": "Haskell: \"o -> ö"
+  },
+  "hs-/o": {
+    "prefix": "\\/o",
+    "body": "ø",
+    "description": "Haskell: /o -> ø"
+  },
+  "hs--{o}": {
+    "prefix": "\\-{o}",
+    "body": "ō",
+    "description": "Haskell: -{o} -> ō"
+  },
+  "hs-`u": {
+    "prefix": "\\`u",
+    "body": "ù",
+    "description": "Haskell: `u -> ù"
+  },
+  "hs-'u": {
+    "prefix": "\\'u",
+    "body": "ú",
+    "description": "Haskell: 'u -> ú"
+  },
+  "hs-^{u}": {
+    "prefix": "\\^{u}",
+    "body": "û",
+    "description": "Haskell: ^{u} -> û"
+  },
+  "hs-\"u": {
+    "prefix": "\\\"u",
+    "body": "ü",
+    "description": "Haskell: \"u -> ü"
+  },
+  "hs--{u}": {
+    "prefix": "\\-{u}",
+    "body": "ū",
+    "description": "Haskell: -{u} -> ū"
+  },
+  "hs-'y": {
+    "prefix": "\\'y",
+    "body": "ý",
+    "description": "Haskell: 'y -> ý"
+  },
+  "hs-\"y": {
+    "prefix": "\\\"y",
+    "body": "ÿ",
+    "description": "Haskell: \"y -> ÿ"
+  },
+  "hs-/L": {
+    "prefix": "\\/L",
+    "body": "Ł",
+    "description": "Haskell: /L -> Ł"
+  },
+  "hs-note": {
+    "prefix": "\\note",
+    "body": "♩",
+    "description": "Haskell: note -> ♩"
+  },
+  "hs-not": {
+    "prefix": "\\not",
+    "body": "¬",
+    "description": "Haskell: not -> ¬"
+  },
+  "hs-notin": {
+    "prefix": "\\notin",
+    "body": "∉",
+    "description": "Haskell: notin -> ∉"
+  },
+  "hs-notlt": {
+    "prefix": "\\notlt",
+    "body": "≮",
+    "description": "Haskell: notlt -> ≮"
+  },
+  "hs-nomisma": {
+    "prefix": "\\nomisma",
+    "body": "𐆎",
+    "description": "Haskell: nomisma -> 𐆎"
+  },
+  "hs-nin": {
+    "prefix": "\\nin",
+    "body": "∉",
+    "description": "Haskell: nin -> ∉"
+  },
+  "hs-nni": {
+    "prefix": "\\nni",
+    "body": "∌",
+    "description": "Haskell: nni -> ∌"
+  },
+  "hs-ni": {
+    "prefix": "\\ni",
+    "body": "∋",
+    "description": "Haskell: ni -> ∋"
+  },
+  "hs-nattrans": {
+    "prefix": "\\nattrans",
+    "body": "⟹",
+    "description": "Haskell: nattrans -> ⟹"
+  },
+  "hs-nat_trans": {
+    "prefix": "\\nat_trans",
+    "body": "⟹",
+    "description": "Haskell: nat_trans -> ⟹"
+  },
+  "hs-natural": {
+    "prefix": "\\natural",
+    "body": "♮",
+    "description": "Haskell: natural -> ♮"
+  },
+  "hs-nat": {
+    "prefix": "\\nat",
+    "body": "ℕ",
+    "description": "Haskell: nat -> ℕ"
+  },
+  "hs-naira": {
+    "prefix": "\\naira",
+    "body": "₦",
+    "description": "Haskell: naira -> ₦"
+  },
+  "hs-nabla": {
+    "prefix": "\\nabla",
+    "body": "∇",
+    "description": "Haskell: nabla -> ∇"
+  },
+  "hs-napprox": {
+    "prefix": "\\napprox",
+    "body": "≉",
+    "description": "Haskell: napprox -> ≉"
+  },
+  "hs-numero": {
+    "prefix": "\\numero",
+    "body": "№",
+    "description": "Haskell: numero -> №"
+  },
+  "hs-nLeftarrow": {
+    "prefix": "\\nLeftarrow",
+    "body": "⇍",
+    "description": "Haskell: nLeftarrow -> ⇍"
+  },
+  "hs-nLeftrightarrow": {
+    "prefix": "\\nLeftrightarrow",
+    "body": "⇎",
+    "description": "Haskell: nLeftrightarrow -> ⇎"
+  },
+  "hs-nRightarrow": {
+    "prefix": "\\nRightarrow",
+    "body": "⇏",
+    "description": "Haskell: nRightarrow -> ⇏"
+  },
+  "hs-nVDash": {
+    "prefix": "\\nVDash",
+    "body": "⊯",
+    "description": "Haskell: nVDash -> ⊯"
+  },
+  "hs-nVdash": {
+    "prefix": "\\nVdash",
+    "body": "⊮",
+    "description": "Haskell: nVdash -> ⊮"
+  },
+  "hs-ncong": {
+    "prefix": "\\ncong",
+    "body": "≇",
+    "description": "Haskell: ncong -> ≇"
+  },
+  "hs-nearrow": {
+    "prefix": "\\nearrow",
+    "body": "↗",
+    "description": "Haskell: nearrow -> ↗"
+  },
+  "hs-neg": {
+    "prefix": "\\neg",
+    "body": "¬",
+    "description": "Haskell: neg -> ¬"
+  },
+  "hs-nequiv": {
+    "prefix": "\\nequiv",
+    "body": "≢",
+    "description": "Haskell: nequiv -> ≢"
+  },
+  "hs-neq": {
+    "prefix": "\\neq",
+    "body": "≠",
+    "description": "Haskell: neq -> ≠"
+  },
+  "hs-nexists": {
+    "prefix": "\\nexists",
+    "body": "∄",
+    "description": "Haskell: nexists -> ∄"
+  },
+  "hs-ne": {
+    "prefix": "\\ne",
+    "body": "≠",
+    "description": "Haskell: ne -> ≠"
+  },
+  "hs-ngeqq": {
+    "prefix": "\\ngeqq",
+    "body": "≱",
+    "description": "Haskell: ngeqq -> ≱"
+  },
+  "hs-ngeqslant": {
+    "prefix": "\\ngeqslant",
+    "body": "≱",
+    "description": "Haskell: ngeqslant -> ≱"
+  },
+  "hs-ngeq": {
+    "prefix": "\\ngeq",
+    "body": "≱",
+    "description": "Haskell: ngeq -> ≱"
+  },
+  "hs-ngtr": {
+    "prefix": "\\ngtr",
+    "body": "≯",
+    "description": "Haskell: ngtr -> ≯"
+  },
+  "hs-nleftarrow": {
+    "prefix": "\\nleftarrow",
+    "body": "↚",
+    "description": "Haskell: nleftarrow -> ↚"
+  },
+  "hs-nleftrightarrow": {
+    "prefix": "\\nleftrightarrow",
+    "body": "↮",
+    "description": "Haskell: nleftrightarrow -> ↮"
+  },
+  "hs-nleqq": {
+    "prefix": "\\nleqq",
+    "body": "≰",
+    "description": "Haskell: nleqq -> ≰"
+  },
+  "hs-nleqslant": {
+    "prefix": "\\nleqslant",
+    "body": "≰",
+    "description": "Haskell: nleqslant -> ≰"
+  },
+  "hs-nleq": {
+    "prefix": "\\nleq",
+    "body": "≰",
+    "description": "Haskell: nleq -> ≰"
+  },
+  "hs-nless": {
+    "prefix": "\\nless",
+    "body": "≮",
+    "description": "Haskell: nless -> ≮"
+  },
+  "hs-nmid": {
+    "prefix": "\\nmid",
+    "body": "∤",
+    "description": "Haskell: nmid -> ∤"
+  },
+  "hs-nparallel": {
+    "prefix": "\\nparallel",
+    "body": "∦",
+    "description": "Haskell: nparallel -> ∦"
+  },
+  "hs-npreceq": {
+    "prefix": "\\npreceq",
+    "body": "⋠",
+    "description": "Haskell: npreceq -> ⋠"
+  },
+  "hs-nprec": {
+    "prefix": "\\nprec",
+    "body": "⊀",
+    "description": "Haskell: nprec -> ⊀"
+  },
+  "hs-nrightarrow": {
+    "prefix": "\\nrightarrow",
+    "body": "↛",
+    "description": "Haskell: nrightarrow -> ↛"
+  },
+  "hs-nshortmid": {
+    "prefix": "\\nshortmid",
+    "body": "∤",
+    "description": "Haskell: nshortmid -> ∤"
+  },
+  "hs-nsimeq": {
+    "prefix": "\\nsimeq",
+    "body": "≄",
+    "description": "Haskell: nsimeq -> ≄"
+  },
+  "hs-nsim": {
+    "prefix": "\\nsim",
+    "body": "≁",
+    "description": "Haskell: nsim -> ≁"
+  },
+  "hs-nsubseteqq": {
+    "prefix": "\\nsubseteqq",
+    "body": "⊈",
+    "description": "Haskell: nsubseteqq -> ⊈"
+  },
+  "hs-nsubseteq": {
+    "prefix": "\\nsubseteq",
+    "body": "⊈",
+    "description": "Haskell: nsubseteq -> ⊈"
+  },
+  "hs-nsubset": {
+    "prefix": "\\nsubset",
+    "body": "⊄",
+    "description": "Haskell: nsubset -> ⊄"
+  },
+  "hs-nsucceq": {
+    "prefix": "\\nsucceq",
+    "body": "⋡",
+    "description": "Haskell: nsucceq -> ⋡"
+  },
+  "hs-nsucc": {
+    "prefix": "\\nsucc",
+    "body": "⊁",
+    "description": "Haskell: nsucc -> ⊁"
+  },
+  "hs-nsupseteqq": {
+    "prefix": "\\nsupseteqq",
+    "body": "⊉",
+    "description": "Haskell: nsupseteqq -> ⊉"
+  },
+  "hs-nsupseteq": {
+    "prefix": "\\nsupseteq",
+    "body": "⊉",
+    "description": "Haskell: nsupseteq -> ⊉"
+  },
+  "hs-nsupset": {
+    "prefix": "\\nsupset",
+    "body": "⊅",
+    "description": "Haskell: nsupset -> ⊅"
+  },
+  "hs-ntrianglelefteq": {
+    "prefix": "\\ntrianglelefteq",
+    "body": "⋬",
+    "description": "Haskell: ntrianglelefteq -> ⋬"
+  },
+  "hs-ntriangleleft": {
+    "prefix": "\\ntriangleleft",
+    "body": "⋪",
+    "description": "Haskell: ntriangleleft -> ⋪"
+  },
+  "hs-ntrianglerighteq": {
+    "prefix": "\\ntrianglerighteq",
+    "body": "⋭",
+    "description": "Haskell: ntrianglerighteq -> ⋭"
+  },
+  "hs-ntriangleright": {
+    "prefix": "\\ntriangleright",
+    "body": "⋫",
+    "description": "Haskell: ntriangleright -> ⋫"
+  },
+  "hs-nvDash": {
+    "prefix": "\\nvDash",
+    "body": "⊭",
+    "description": "Haskell: nvDash -> ⊭"
+  },
+  "hs-nvdash": {
+    "prefix": "\\nvdash",
+    "body": "⊬",
+    "description": "Haskell: nvdash -> ⊬"
+  },
+  "hs-nwarrow": {
+    "prefix": "\\nwarrow",
+    "body": "↖",
+    "description": "Haskell: nwarrow -> ↖"
+  },
+  "hs-eqn": {
+    "prefix": "\\eqn",
+    "body": "≠",
+    "description": "Haskell: eqn -> ≠"
+  },
+  "hs-equiv": {
+    "prefix": "\\equiv",
+    "body": "≃",
+    "description": "Haskell: equiv -> ≃"
+  },
+  "hs-eqcirc": {
+    "prefix": "\\eqcirc",
+    "body": "≖",
+    "description": "Haskell: eqcirc -> ≖"
+  },
+  "hs-eqcolon": {
+    "prefix": "\\eqcolon",
+    "body": "≕",
+    "description": "Haskell: eqcolon -> ≕"
+  },
+  "hs-eqslantgtr": {
+    "prefix": "\\eqslantgtr",
+    "body": "⋝",
+    "description": "Haskell: eqslantgtr -> ⋝"
+  },
+  "hs-eqslantless": {
+    "prefix": "\\eqslantless",
+    "body": "⋜",
+    "description": "Haskell: eqslantless -> ⋜"
+  },
+  "hs-entails": {
+    "prefix": "\\entails",
+    "body": "⊢",
+    "description": "Haskell: entails -> ⊢"
+  },
+  "hs-en": {
+    "prefix": "\\en",
+    "body": "–",
+    "description": "Haskell: en -> –"
+  },
+  "hs-exn": {
+    "prefix": "\\exn",
+    "body": "∄",
+    "description": "Haskell: exn -> ∄"
+  },
+  "hs-exists": {
+    "prefix": "\\exists",
+    "body": "∃",
+    "description": "Haskell: exists -> ∃"
+  },
+  "hs-ex": {
+    "prefix": "\\ex",
+    "body": "∃",
+    "description": "Haskell: ex -> ∃"
+  },
+  "hs-emptyset": {
+    "prefix": "\\emptyset",
+    "body": "∅",
+    "description": "Haskell: emptyset -> ∅"
+  },
+  "hs-empty": {
+    "prefix": "\\empty",
+    "body": "∅",
+    "description": "Haskell: empty -> ∅"
+  },
+  "hs-em": {
+    "prefix": "\\em",
+    "body": "—",
+    "description": "Haskell: em -> —"
+  },
+  "hs-epsilon": {
+    "prefix": "\\epsilon",
+    "body": "ε",
+    "description": "Haskell: epsilon -> ε"
+  },
+  "hs-eps": {
+    "prefix": "\\eps",
+    "body": "ε",
+    "description": "Haskell: eps -> ε"
+  },
+  "hs-euro": {
+    "prefix": "\\euro",
+    "body": "€",
+    "description": "Haskell: euro -> €"
+  },
+  "hs-eta": {
+    "prefix": "\\eta",
+    "body": "η",
+    "description": "Haskell: eta -> η"
+  },
+  "hs-ell": {
+    "prefix": "\\ell",
+    "body": "ℓ",
+    "description": "Haskell: ell -> ℓ"
+  },
+  "hs-iso": {
+    "prefix": "\\iso",
+    "body": "≅",
+    "description": "Haskell: iso -> ≅"
+  },
+  "hs-in": {
+    "prefix": "\\in",
+    "body": "∈",
+    "description": "Haskell: in -> ∈"
+  },
+  "hs-inn": {
+    "prefix": "\\inn",
+    "body": "∉",
+    "description": "Haskell: inn -> ∉"
+  },
+  "hs-inter": {
+    "prefix": "\\inter",
+    "body": "∩",
+    "description": "Haskell: inter -> ∩"
+  },
+  "hs-intercal": {
+    "prefix": "\\intercal",
+    "body": "⊺",
+    "description": "Haskell: intercal -> ⊺"
+  },
+  "hs-intersection": {
+    "prefix": "\\intersection",
+    "body": "∩",
+    "description": "Haskell: intersection -> ∩"
+  },
+  "hs-integral": {
+    "prefix": "\\integral",
+    "body": "∫",
+    "description": "Haskell: integral -> ∫"
+  },
+  "hs-integral-": {
+    "prefix": "\\integral-",
+    "body": "⨍",
+    "description": "Haskell: integral- -> ⨍"
+  },
+  "hs-int": {
+    "prefix": "\\int",
+    "body": "ℤ",
+    "description": "Haskell: int -> ℤ"
+  },
+  "hs-inv": {
+    "prefix": "\\inv",
+    "body": "⁻¹",
+    "description": "Haskell: inv -> ⁻¹"
+  },
+  "hs-increment": {
+    "prefix": "\\increment",
+    "body": "∆",
+    "description": "Haskell: increment -> ∆"
+  },
+  "hs-inf": {
+    "prefix": "\\inf",
+    "body": "⊓",
+    "description": "Haskell: inf -> ⊓"
+  },
+  "hs-infi": {
+    "prefix": "\\infi",
+    "body": "⨅",
+    "description": "Haskell: infi -> ⨅"
+  },
+  "hs-infty": {
+    "prefix": "\\infty",
+    "body": "∞",
+    "description": "Haskell: infty -> ∞"
+  },
+  "hs-iff": {
+    "prefix": "\\iff",
+    "body": "↔",
+    "description": "Haskell: iff -> ↔"
+  },
+  "hs-imp": {
+    "prefix": "\\imp",
+    "body": "→",
+    "description": "Haskell: imp -> →"
+  },
+  "hs-imath": {
+    "prefix": "\\imath",
+    "body": "ı",
+    "description": "Haskell: imath -> ı"
+  },
+  "hs-iota": {
+    "prefix": "\\iota",
+    "body": "ι",
+    "description": "Haskell: iota -> ι"
+  },
+  "hs-=n": {
+    "prefix": "\\=n",
+    "body": "≠",
+    "description": "Haskell: =n -> ≠"
+  },
+  "hs-==n": {
+    "prefix": "\\==n",
+    "body": "≢",
+    "description": "Haskell: ==n -> ≢"
+  },
+  "hs-===": {
+    "prefix": "\\===",
+    "body": "≣",
+    "description": "Haskell: === -> ≣"
+  },
+  "hs-==>": {
+    "prefix": "\\==>",
+    "body": "⟹",
+    "description": "Haskell: ==> -> ⟹"
+  },
+  "hs-==": {
+    "prefix": "\\==",
+    "body": "≡",
+    "description": "Haskell: == -> ≡"
+  },
+  "hs-=:": {
+    "prefix": "\\=:",
+    "body": "≕",
+    "description": "Haskell: =: -> ≕"
+  },
+  "hs-=o": {
+    "prefix": "\\=o",
+    "body": "≗",
+    "description": "Haskell: =o -> ≗"
+  },
+  "hs-=>n": {
+    "prefix": "\\=>n",
+    "body": "⇏",
+    "description": "Haskell: =>n -> ⇏"
+  },
+  "hs-=>": {
+    "prefix": "\\=>",
+    "body": "⇒",
+    "description": "Haskell: => -> ⇒"
+  },
+  "hs-~n": {
+    "prefix": "\\~n",
+    "body": "≁",
+    "description": "Haskell: ~n -> ≁"
+  },
+  "hs-~~n": {
+    "prefix": "\\~~n",
+    "body": "≉",
+    "description": "Haskell: ~~n -> ≉"
+  },
+  "hs-~~~": {
+    "prefix": "\\~~~",
+    "body": "≋",
+    "description": "Haskell: ~~~ -> ≋"
+  },
+  "hs-~~-": {
+    "prefix": "\\~~-",
+    "body": "≊",
+    "description": "Haskell: ~~- -> ≊"
+  },
+  "hs-~~": {
+    "prefix": "\\~~",
+    "body": "≈",
+    "description": "Haskell: ~~ -> ≈"
+  },
+  "hs-~-n": {
+    "prefix": "\\~-n",
+    "body": "≄",
+    "description": "Haskell: ~-n -> ≄"
+  },
+  "hs-~-": {
+    "prefix": "\\~-",
+    "body": "≃",
+    "description": "Haskell: ~- -> ≃"
+  },
+  "hs-~=n": {
+    "prefix": "\\~=n",
+    "body": "≇",
+    "description": "Haskell: ~=n -> ≇"
+  },
+  "hs-~=": {
+    "prefix": "\\~=",
+    "body": "≅",
+    "description": "Haskell: ~= -> ≅"
+  },
+  "hs-homotopy": {
+    "prefix": "\\homotopy",
+    "body": "∼",
+    "description": "Haskell: homotopy -> ∼"
+  },
+  "hs-hom": {
+    "prefix": "\\hom",
+    "body": "⟶",
+    "description": "Haskell: hom -> ⟶"
+  },
+  "hs-hori": {
+    "prefix": "\\hori",
+    "body": "ϩ",
+    "description": "Haskell: hori -> ϩ"
+  },
+  "hs-hookleftarrow": {
+    "prefix": "\\hookleftarrow",
+    "body": "↩",
+    "description": "Haskell: hookleftarrow -> ↩"
+  },
+  "hs-hookrightarrow": {
+    "prefix": "\\hookrightarrow",
+    "body": "↪",
+    "description": "Haskell: hookrightarrow -> ↪"
+  },
+  "hs-hryvnia": {
+    "prefix": "\\hryvnia",
+    "body": "₴",
+    "description": "Haskell: hryvnia -> ₴"
+  },
+  "hs-heta": {
+    "prefix": "\\heta",
+    "body": "ͱ",
+    "description": "Haskell: heta -> ͱ"
+  },
+  "hs-heartsuit": {
+    "prefix": "\\heartsuit",
+    "body": "♥",
+    "description": "Haskell: heartsuit -> ♥"
+  },
+  "hs-hbar": {
+    "prefix": "\\hbar",
+    "body": "ℏ",
+    "description": "Haskell: hbar -> ℏ"
+  },
+  "hs-:~": {
+    "prefix": "\\:~",
+    "body": "∻",
+    "description": "Haskell: :~ -> ∻"
+  },
+  "hs-:=": {
+    "prefix": "\\:=",
+    "body": "≔",
+    "description": "Haskell: := -> ≔"
+  },
+  "hs-::-": {
+    "prefix": "\\::-",
+    "body": "∺",
+    "description": "Haskell: ::- -> ∺"
+  },
+  "hs-::": {
+    "prefix": "\\::",
+    "body": "∷",
+    "description": "Haskell: :: -> ∷"
+  },
+  "hs--~": {
+    "prefix": "\\-~",
+    "body": "≂",
+    "description": "Haskell: -~ -> ≂"
+  },
+  "hs--|": {
+    "prefix": "\\-|",
+    "body": "⊣",
+    "description": "Haskell: -| -> ⊣"
+  },
+  "hs--1": {
+    "prefix": "\\-1",
+    "body": "⁻¹",
+    "description": "Haskell: -1 -> ⁻¹"
+  },
+  "hs-^-1": {
+    "prefix": "\\^-1",
+    "body": "⁻¹",
+    "description": "Haskell: ^-1 -> ⁻¹"
+  },
+  "hs--2": {
+    "prefix": "\\-2",
+    "body": "⁻²",
+    "description": "Haskell: -2 -> ⁻²"
+  },
+  "hs--3": {
+    "prefix": "\\-3",
+    "body": "⁻³",
+    "description": "Haskell: -3 -> ⁻³"
+  },
+  "hs--:": {
+    "prefix": "\\-:",
+    "body": "∹",
+    "description": "Haskell: -: -> ∹"
+  },
+  "hs-->n": {
+    "prefix": "\\->n",
+    "body": "↛",
+    "description": "Haskell: ->n -> ↛"
+  },
+  "hs-->": {
+    "prefix": "\\->",
+    "body": "→",
+    "description": "Haskell: -> -> →"
+  },
+  "hs--->": {
+    "prefix": "\\-->",
+    "body": "⟶",
+    "description": "Haskell: --> -> ⟶"
+  },
+  "hs----": {
+    "prefix": "\\---",
+    "body": "─",
+    "description": "Haskell: --- -> ─"
+  },
+  "hs---=": {
+    "prefix": "\\--=",
+    "body": "═",
+    "description": "Haskell: --= -> ═"
+  },
+  "hs---_": {
+    "prefix": "\\--_",
+    "body": "━",
+    "description": "Haskell: --_ -> ━"
+  },
+  "hs---.": {
+    "prefix": "\\--.",
+    "body": "╌",
+    "description": "Haskell: --. -> ╌"
+  },
+  "hs--o": {
+    "prefix": "\\-o",
+    "body": "⊸",
+    "description": "Haskell: -o -> ⊸"
+  },
+  "hs-.=.": {
+    "prefix": "\\.=.",
+    "body": "≑",
+    "description": "Haskell: .=. -> ≑"
+  },
+  "hs-.=": {
+    "prefix": "\\.=",
+    "body": "≐",
+    "description": "Haskell: .= -> ≐"
+  },
+  "hs-.+": {
+    "prefix": "\\.+",
+    "body": "∔",
+    "description": "Haskell: .+ -> ∔"
+  },
+  "hs-.-": {
+    "prefix": "\\.-",
+    "body": "∸",
+    "description": "Haskell: .- -> ∸"
+  },
+  "hs-...": {
+    "prefix": "\\...",
+    "body": "⋯",
+    "description": "Haskell: ... -> ⋯"
+  },
+  "hs-(=": {
+    "prefix": "\\(=",
+    "body": "≘",
+    "description": "Haskell: (= -> ≘"
+  },
+  "hs-(b": {
+    "prefix": "\\(b",
+    "body": "⟅",
+    "description": "Haskell: (b -> ⟅"
+  },
+  "hs-and=": {
+    "prefix": "\\and=",
+    "body": "≙",
+    "description": "Haskell: and= -> ≙"
+  },
+  "hs-and": {
+    "prefix": "\\and",
+    "body": "∧",
+    "description": "Haskell: and -> ∧"
+  },
+  "hs-an": {
+    "prefix": "\\an",
+    "body": "∧",
+    "description": "Haskell: an -> ∧"
+  },
+  "hs-angle": {
+    "prefix": "\\angle",
+    "body": "∠",
+    "description": "Haskell: angle -> ∠"
+  },
+  "hs-rightangle": {
+    "prefix": "\\rightangle",
+    "body": "∟",
+    "description": "Haskell: rightangle -> ∟"
+  },
+  "hs-angstrom": {
+    "prefix": "\\angstrom",
+    "body": "Å",
+    "description": "Haskell: angstrom -> Å"
+  },
+  "hs-all": {
+    "prefix": "\\all",
+    "body": "∀",
+    "description": "Haskell: all -> ∀"
+  },
+  "hs-allf": {
+    "prefix": "\\allf",
+    "body": "∀ᶠ",
+    "description": "Haskell: allf -> ∀ᶠ"
+  },
+  "hs-all^f": {
+    "prefix": "\\all^f",
+    "body": "∀ᶠ",
+    "description": "Haskell: all^f -> ∀ᶠ"
+  },
+  "hs-allm": {
+    "prefix": "\\allm",
+    "body": "∀ᵐ",
+    "description": "Haskell: allm -> ∀ᵐ"
+  },
+  "hs-all^m": {
+    "prefix": "\\all^m",
+    "body": "∀ᵐ",
+    "description": "Haskell: all^m -> ∀ᵐ"
+  },
+  "hs-alpha": {
+    "prefix": "\\alpha",
+    "body": "α",
+    "description": "Haskell: alpha -> α"
+  },
+  "hs-aleph": {
+    "prefix": "\\aleph",
+    "body": "ℵ",
+    "description": "Haskell: aleph -> ℵ"
+  },
+  "hs-aleph0": {
+    "prefix": "\\aleph0",
+    "body": "ℵ₀",
+    "description": "Haskell: aleph0 -> ℵ₀"
+  },
+  "hs-asterisk": {
+    "prefix": "\\asterisk",
+    "body": "⁎",
+    "description": "Haskell: asterisk -> ⁎"
+  },
+  "hs-ast": {
+    "prefix": "\\ast",
+    "body": "∗",
+    "description": "Haskell: ast -> ∗"
+  },
+  "hs-asymp": {
+    "prefix": "\\asymp",
+    "body": "≍",
+    "description": "Haskell: asymp -> ≍"
+  },
+  "hs-apl": {
+    "prefix": "\\apl",
+    "body": "⌶",
+    "description": "Haskell: apl -> ⌶"
+  },
+  "hs-approxeq": {
+    "prefix": "\\approxeq",
+    "body": "≊",
+    "description": "Haskell: approxeq -> ≊"
+  },
+  "hs-approx": {
+    "prefix": "\\approx",
+    "body": "≈",
+    "description": "Haskell: approx -> ≈"
+  },
+  "hs-aa": {
+    "prefix": "\\aa",
+    "body": "å",
+    "description": "Haskell: aa -> å"
+  },
+  "hs-ae": {
+    "prefix": "\\ae",
+    "body": "æ",
+    "description": "Haskell: ae -> æ"
+  },
+  "hs-austral": {
+    "prefix": "\\austral",
+    "body": "₳",
+    "description": "Haskell: austral -> ₳"
+  },
+  "hs-afghani": {
+    "prefix": "\\afghani",
+    "body": "؋",
+    "description": "Haskell: afghani -> ؋"
+  },
+  "hs-amalg": {
+    "prefix": "\\amalg",
+    "body": "∐",
+    "description": "Haskell: amalg -> ∐"
+  },
+  "hs-average": {
+    "prefix": "\\average",
+    "body": "⨍",
+    "description": "Haskell: average -> ⨍"
+  },
+  "hs--int": {
+    "prefix": "\\-int",
+    "body": "⨍",
+    "description": "Haskell: -int -> ⨍"
+  },
+  "hs-or=": {
+    "prefix": "\\or=",
+    "body": "≚",
+    "description": "Haskell: or= -> ≚"
+  },
+  "hs-ordfeminine": {
+    "prefix": "\\ordfeminine",
+    "body": "ª",
+    "description": "Haskell: ordfeminine -> ª"
+  },
+  "hs-ordmasculine": {
+    "prefix": "\\ordmasculine",
+    "body": "º",
+    "description": "Haskell: ordmasculine -> º"
+  },
+  "hs-or": {
+    "prefix": "\\or",
+    "body": "∨",
+    "description": "Haskell: or -> ∨"
+  },
+  "hs-oplus": {
+    "prefix": "\\oplus",
+    "body": "⊕",
+    "description": "Haskell: oplus -> ⊕"
+  },
+  "hs-od": {
+    "prefix": "\\od",
+    "body": "ᵒᵈ",
+    "description": "Haskell: od -> ᵒᵈ"
+  },
+  "hs-orderdual": {
+    "prefix": "\\orderdual",
+    "body": "ᵒᵈ",
+    "description": "Haskell: orderdual -> ᵒᵈ"
+  },
+  "hs-addopposite": {
+    "prefix": "\\addopposite",
+    "body": "ᵃᵒᵖ",
+    "description": "Haskell: addopposite -> ᵃᵒᵖ"
+  },
+  "hs-aop": {
+    "prefix": "\\aop",
+    "body": "ᵃᵒᵖ",
+    "description": "Haskell: aop -> ᵃᵒᵖ"
+  },
+  "hs-mulopposite": {
+    "prefix": "\\mulopposite",
+    "body": "ᵐᵒᵖ",
+    "description": "Haskell: mulopposite -> ᵐᵒᵖ"
+  },
+  "hs-mop": {
+    "prefix": "\\mop",
+    "body": "ᵐᵒᵖ",
+    "description": "Haskell: mop -> ᵐᵒᵖ"
+  },
+  "hs-opposite": {
+    "prefix": "\\opposite",
+    "body": "ᵒᵖ",
+    "description": "Haskell: opposite -> ᵒᵖ"
+  },
+  "hs-op": {
+    "prefix": "\\op",
+    "body": "ᵒᵖ",
+    "description": "Haskell: op -> ᵒᵖ"
+  },
+  "hs-o+": {
+    "prefix": "\\o+",
+    "body": "⊕",
+    "description": "Haskell: o+ -> ⊕"
+  },
+  "hs-o--": {
+    "prefix": "\\o--",
+    "body": "⊖",
+    "description": "Haskell: o-- -> ⊖"
+  },
+  "hs-o-": {
+    "prefix": "\\o-",
+    "body": "⊝",
+    "description": "Haskell: o- -> ⊝"
+  },
+  "hs-ox": {
+    "prefix": "\\ox",
+    "body": "⊗",
+    "description": "Haskell: ox -> ⊗"
+  },
+  "hs-o/": {
+    "prefix": "\\o/",
+    "body": "⊘",
+    "description": "Haskell: o/ -> ⊘"
+  },
+  "hs-o.": {
+    "prefix": "\\o.",
+    "body": "⊙",
+    "description": "Haskell: o. -> ⊙"
+  },
+  "hs-oo": {
+    "prefix": "\\oo",
+    "body": "⊚",
+    "description": "Haskell: oo -> ⊚"
+  },
+  "hs-o*": {
+    "prefix": "\\o*",
+    "body": "∘*",
+    "description": "Haskell: o* -> ∘*"
+  },
+  "hs-o=": {
+    "prefix": "\\o=",
+    "body": "⊜",
+    "description": "Haskell: o= -> ⊜"
+  },
+  "hs-oe": {
+    "prefix": "\\oe",
+    "body": "œ",
+    "description": "Haskell: oe -> œ"
+  },
+  "hs-octagonal": {
+    "prefix": "\\octagonal",
+    "body": "🛑",
+    "description": "Haskell: octagonal -> 🛑"
+  },
+  "hs-ohm": {
+    "prefix": "\\ohm",
+    "body": "Ω",
+    "description": "Haskell: ohm -> Ω"
+  },
+  "hs-ounce": {
+    "prefix": "\\ounce",
+    "body": "℥",
+    "description": "Haskell: ounce -> ℥"
+  },
+  "hs-omega": {
+    "prefix": "\\omega",
+    "body": "ω",
+    "description": "Haskell: omega -> ω"
+  },
+  "hs-omicron": {
+    "prefix": "\\omicron",
+    "body": "ο",
+    "description": "Haskell: omicron -> ο"
+  },
+  "hs-ominus": {
+    "prefix": "\\ominus",
+    "body": "⊖",
+    "description": "Haskell: ominus -> ⊖"
+  },
+  "hs-odot": {
+    "prefix": "\\odot",
+    "body": "⊙",
+    "description": "Haskell: odot -> ⊙"
+  },
+  "hs-oint": {
+    "prefix": "\\oint",
+    "body": "∮",
+    "description": "Haskell: oint -> ∮"
+  },
+  "hs-oiint": {
+    "prefix": "\\oiint",
+    "body": "∯",
+    "description": "Haskell: oiint -> ∯"
+  },
+  "hs-oslash": {
+    "prefix": "\\oslash",
+    "body": "⊘",
+    "description": "Haskell: oslash -> ⊘"
+  },
+  "hs-otimes": {
+    "prefix": "\\otimes",
+    "body": "⊗",
+    "description": "Haskell: otimes -> ⊗"
+  },
+  "hs-tensorproduct": {
+    "prefix": "\\tensorproduct",
+    "body": "⊗",
+    "description": "Haskell: tensorproduct -> ⊗"
+  },
+  "hs-pitensorproduct": {
+    "prefix": "\\pitensorproduct",
+    "body": "⨂",
+    "description": "Haskell: pitensorproduct -> ⨂"
+  },
+  "hs-tensorpower": {
+    "prefix": "\\tensorpower",
+    "body": "⨂",
+    "description": "Haskell: tensorpower -> ⨂"
+  },
+  "hs-pd": {
+    "prefix": "\\pd",
+    "body": "∂",
+    "description": "Haskell: pd -> ∂"
+  },
+  "hs-*=": {
+    "prefix": "\\*=",
+    "body": "≛",
+    "description": "Haskell: *= -> ≛"
+  },
+  "hs-t=": {
+    "prefix": "\\t=",
+    "body": "≜",
+    "description": "Haskell: t= -> ≜"
+  },
+  "hs-tint": {
+    "prefix": "\\tint",
+    "body": "∯",
+    "description": "Haskell: tint -> ∯"
+  },
+  "hs-transport": {
+    "prefix": "\\transport",
+    "body": "▹",
+    "description": "Haskell: transport -> ▹"
+  },
+  "hs-trans": {
+    "prefix": "\\trans",
+    "body": "▹",
+    "description": "Haskell: trans -> ▹"
+  },
+  "hs-triangledown": {
+    "prefix": "\\triangledown",
+    "body": "▿",
+    "description": "Haskell: triangledown -> ▿"
+  },
+  "hs-trianglelefteq": {
+    "prefix": "\\trianglelefteq",
+    "body": "⊴",
+    "description": "Haskell: trianglelefteq -> ⊴"
+  },
+  "hs-triangleleft": {
+    "prefix": "\\triangleleft",
+    "body": "◃",
+    "description": "Haskell: triangleleft -> ◃"
+  },
+  "hs-triangleq": {
+    "prefix": "\\triangleq",
+    "body": "≜",
+    "description": "Haskell: triangleq -> ≜"
+  },
+  "hs-trianglerighteq": {
+    "prefix": "\\trianglerighteq",
+    "body": "⊵",
+    "description": "Haskell: trianglerighteq -> ⊵"
+  },
+  "hs-triangleright": {
+    "prefix": "\\triangleright",
+    "body": "▹",
+    "description": "Haskell: triangleright -> ▹"
+  },
+  "hs-triangle": {
+    "prefix": "\\triangle",
+    "body": "▵",
+    "description": "Haskell: triangle -> ▵"
+  },
+  "hs-tr": {
+    "prefix": "\\tr",
+    "body": "⬝",
+    "description": "Haskell: tr -> ⬝"
+  },
+  "hs-tb": {
+    "prefix": "\\tb",
+    "body": "◂",
+    "description": "Haskell: tb -> ◂"
+  },
+  "hs-twoheadleftarrow": {
+    "prefix": "\\twoheadleftarrow",
+    "body": "↞",
+    "description": "Haskell: twoheadleftarrow -> ↞"
+  },
+  "hs-twoheadrightarrow": {
+    "prefix": "\\twoheadrightarrow",
+    "body": "↠",
+    "description": "Haskell: twoheadrightarrow -> ↠"
+  },
+  "hs-tw": {
+    "prefix": "\\tw",
+    "body": "◃",
+    "description": "Haskell: tw -> ◃"
+  },
+  "hs-tie": {
+    "prefix": "\\tie",
+    "body": "⁀",
+    "description": "Haskell: tie -> ⁀"
+  },
+  "hs-times": {
+    "prefix": "\\times",
+    "body": "×",
+    "description": "Haskell: times -> ×"
+  },
+  "hs-theta": {
+    "prefix": "\\theta",
+    "body": "θ",
+    "description": "Haskell: theta -> θ"
+  },
+  "hs-therefore": {
+    "prefix": "\\therefore",
+    "body": "∴",
+    "description": "Haskell: therefore -> ∴"
+  },
+  "hs-thickapprox": {
+    "prefix": "\\thickapprox",
+    "body": "≈",
+    "description": "Haskell: thickapprox -> ≈"
+  },
+  "hs-thicksim": {
+    "prefix": "\\thicksim",
+    "body": "∼",
+    "description": "Haskell: thicksim -> ∼"
+  },
+  "hs-telephone": {
+    "prefix": "\\telephone",
+    "body": "℡",
+    "description": "Haskell: telephone -> ℡"
+  },
+  "hs-tenge": {
+    "prefix": "\\tenge",
+    "body": "₸",
+    "description": "Haskell: tenge -> ₸"
+  },
+  "hs-textmusicalnote": {
+    "prefix": "\\textmusicalnote",
+    "body": "♪",
+    "description": "Haskell: textmusicalnote -> ♪"
+  },
+  "hs-textmu": {
+    "prefix": "\\textmu",
+    "body": "µ",
+    "description": "Haskell: textmu -> µ"
+  },
+  "hs-textfractionsolidus": {
+    "prefix": "\\textfractionsolidus",
+    "body": "⁄",
+    "description": "Haskell: textfractionsolidus -> ⁄"
+  },
+  "hs-textbaht": {
+    "prefix": "\\textbaht",
+    "body": "฿",
+    "description": "Haskell: textbaht -> ฿"
+  },
+  "hs-textdied": {
+    "prefix": "\\textdied",
+    "body": "✝",
+    "description": "Haskell: textdied -> ✝"
+  },
+  "hs-textdiscount": {
+    "prefix": "\\textdiscount",
+    "body": "⁒",
+    "description": "Haskell: textdiscount -> ⁒"
+  },
+  "hs-textcolonmonetary": {
+    "prefix": "\\textcolonmonetary",
+    "body": "₡",
+    "description": "Haskell: textcolonmonetary -> ₡"
+  },
+  "hs-textcircledP": {
+    "prefix": "\\textcircledP",
+    "body": "℗",
+    "description": "Haskell: textcircledP -> ℗"
+  },
+  "hs-textwon": {
+    "prefix": "\\textwon",
+    "body": "₩",
+    "description": "Haskell: textwon -> ₩"
+  },
+  "hs-textnaira": {
+    "prefix": "\\textnaira",
+    "body": "₦",
+    "description": "Haskell: textnaira -> ₦"
+  },
+  "hs-textnumero": {
+    "prefix": "\\textnumero",
+    "body": "№",
+    "description": "Haskell: textnumero -> №"
+  },
+  "hs-textpeso": {
+    "prefix": "\\textpeso",
+    "body": "₱",
+    "description": "Haskell: textpeso -> ₱"
+  },
+  "hs-textpertenthousand": {
+    "prefix": "\\textpertenthousand",
+    "body": "‱",
+    "description": "Haskell: textpertenthousand -> ‱"
+  },
+  "hs-textlira": {
+    "prefix": "\\textlira",
+    "body": "₤",
+    "description": "Haskell: textlira -> ₤"
+  },
+  "hs-textlquill": {
+    "prefix": "\\textlquill",
+    "body": "⁅",
+    "description": "Haskell: textlquill -> ⁅"
+  },
+  "hs-textrecipe": {
+    "prefix": "\\textrecipe",
+    "body": "℞",
+    "description": "Haskell: textrecipe -> ℞"
+  },
+  "hs-textreferencemark": {
+    "prefix": "\\textreferencemark",
+    "body": "※",
+    "description": "Haskell: textreferencemark -> ※"
+  },
+  "hs-textrquill": {
+    "prefix": "\\textrquill",
+    "body": "⁆",
+    "description": "Haskell: textrquill -> ⁆"
+  },
+  "hs-textinterrobang": {
+    "prefix": "\\textinterrobang",
+    "body": "‽",
+    "description": "Haskell: textinterrobang -> ‽"
+  },
+  "hs-textestimated": {
+    "prefix": "\\textestimated",
+    "body": "℮",
+    "description": "Haskell: textestimated -> ℮"
+  },
+  "hs-textopenbullet": {
+    "prefix": "\\textopenbullet",
+    "body": "◦",
+    "description": "Haskell: textopenbullet -> ◦"
+  },
+  "hs-tugrik": {
+    "prefix": "\\tugrik",
+    "body": "₮",
+    "description": "Haskell: tugrik -> ₮"
+  },
+  "hs-tau": {
+    "prefix": "\\tau",
+    "body": "τ",
+    "description": "Haskell: tau -> τ"
+  },
+  "hs-top": {
+    "prefix": "\\top",
+    "body": "⊤",
+    "description": "Haskell: top -> ⊤"
+  },
+  "hs-to": {
+    "prefix": "\\to",
+    "body": "→",
+    "description": "Haskell: to -> →"
+  },
+  "hs-to0": {
+    "prefix": "\\to0",
+    "body": "→₀",
+    "description": "Haskell: to0 -> →₀"
+  },
+  "hs-r0": {
+    "prefix": "\\r0",
+    "body": "→₀",
+    "description": "Haskell: r0 -> →₀"
+  },
+  "hs-to_0": {
+    "prefix": "\\to_0",
+    "body": "→₀",
+    "description": "Haskell: to_0 -> →₀"
+  },
+  "hs-r_0": {
+    "prefix": "\\r_0",
+    "body": "→₀",
+    "description": "Haskell: r_0 -> →₀"
+  },
+  "hs-finsupp": {
+    "prefix": "\\finsupp",
+    "body": "→₀",
+    "description": "Haskell: finsupp -> →₀"
+  },
+  "hs-to1": {
+    "prefix": "\\to1",
+    "body": "→₁",
+    "description": "Haskell: to1 -> →₁"
+  },
+  "hs-r1": {
+    "prefix": "\\r1",
+    "body": "→₁",
+    "description": "Haskell: r1 -> →₁"
+  },
+  "hs-to_1": {
+    "prefix": "\\to_1",
+    "body": "→₁",
+    "description": "Haskell: to_1 -> →₁"
+  },
+  "hs-r_1": {
+    "prefix": "\\r_1",
+    "body": "→₁",
+    "description": "Haskell: r_1 -> →₁"
+  },
+  "hs-l1": {
+    "prefix": "\\l1",
+    "body": "→₁",
+    "description": "Haskell: l1 -> →₁"
+  },
+  "hs-to1s": {
+    "prefix": "\\to1s",
+    "body": "→₁ₛ",
+    "description": "Haskell: to1s -> →₁ₛ"
+  },
+  "hs-r1s": {
+    "prefix": "\\r1s",
+    "body": "→₁ₛ",
+    "description": "Haskell: r1s -> →₁ₛ"
+  },
+  "hs-to_1s": {
+    "prefix": "\\to_1s",
+    "body": "→₁ₛ",
+    "description": "Haskell: to_1s -> →₁ₛ"
+  },
+  "hs-r_1s": {
+    "prefix": "\\r_1s",
+    "body": "→₁ₛ",
+    "description": "Haskell: r_1s -> →₁ₛ"
+  },
+  "hs-l1simplefunc": {
+    "prefix": "\\l1simplefunc",
+    "body": "→₁ₛ",
+    "description": "Haskell: l1simplefunc -> →₁ₛ"
+  },
+  "hs-toa": {
+    "prefix": "\\toa",
+    "body": "→ₐ",
+    "description": "Haskell: toa -> →ₐ"
+  },
+  "hs-ra": {
+    "prefix": "\\ra",
+    "body": "→ₐ",
+    "description": "Haskell: ra -> →ₐ"
+  },
+  "hs-to_a": {
+    "prefix": "\\to_a",
+    "body": "→ₐ",
+    "description": "Haskell: to_a -> →ₐ"
+  },
+  "hs-r_a": {
+    "prefix": "\\r_a",
+    "body": "→ₐ",
+    "description": "Haskell: r_a -> →ₐ"
+  },
+  "hs-alghom": {
+    "prefix": "\\alghom",
+    "body": "→ₐ",
+    "description": "Haskell: alghom -> →ₐ"
+  },
+  "hs-tob": {
+    "prefix": "\\tob",
+    "body": "→ᵇ",
+    "description": "Haskell: tob -> →ᵇ"
+  },
+  "hs-rb": {
+    "prefix": "\\rb",
+    "body": "→ᵇ",
+    "description": "Haskell: rb -> →ᵇ"
+  },
+  "hs-to^b": {
+    "prefix": "\\to^b",
+    "body": "→ᵇ",
+    "description": "Haskell: to^b -> →ᵇ"
+  },
+  "hs-r^b": {
+    "prefix": "\\r^b",
+    "body": "→ᵇ",
+    "description": "Haskell: r^b -> →ᵇ"
+  },
+  "hs-boundedcontinuousfunction": {
+    "prefix": "\\boundedcontinuousfunction",
+    "body": "→ᵇ",
+    "description": "Haskell: boundedcontinuousfunction -> →ᵇ"
+  },
+  "hs-tol": {
+    "prefix": "\\tol",
+    "body": "→ₗ",
+    "description": "Haskell: tol -> →ₗ"
+  },
+  "hs-rl": {
+    "prefix": "\\rl",
+    "body": "→ₗ",
+    "description": "Haskell: rl -> →ₗ"
+  },
+  "hs-to_l": {
+    "prefix": "\\to_l",
+    "body": "→ₗ",
+    "description": "Haskell: to_l -> →ₗ"
+  },
+  "hs-r_l": {
+    "prefix": "\\r_l",
+    "body": "→ₗ",
+    "description": "Haskell: r_l -> →ₗ"
+  },
+  "hs-linearmap": {
+    "prefix": "\\linearmap",
+    "body": "→ₗ",
+    "description": "Haskell: linearmap -> →ₗ"
+  },
+  "hs-tosl": {
+    "prefix": "\\tosl",
+    "body": "→ₛₗ",
+    "description": "Haskell: tosl -> →ₛₗ"
+  },
+  "hs-rsl": {
+    "prefix": "\\rsl",
+    "body": "→ₛₗ",
+    "description": "Haskell: rsl -> →ₛₗ"
+  },
+  "hs-to_sl": {
+    "prefix": "\\to_sl",
+    "body": "→ₛₗ",
+    "description": "Haskell: to_sl -> →ₛₗ"
+  },
+  "hs-r_sl": {
+    "prefix": "\\r_sl",
+    "body": "→ₛₗ",
+    "description": "Haskell: r_sl -> →ₛₗ"
+  },
+  "hs-semilinearmap": {
+    "prefix": "\\semilinearmap",
+    "body": "→ₛₗ",
+    "description": "Haskell: semilinearmap -> →ₛₗ"
+  },
+  "hs-tom": {
+    "prefix": "\\tom",
+    "body": "→ₘ",
+    "description": "Haskell: tom -> →ₘ"
+  },
+  "hs-rm": {
+    "prefix": "\\rm",
+    "body": "→ₘ",
+    "description": "Haskell: rm -> →ₘ"
+  },
+  "hs-to_m": {
+    "prefix": "\\to_m",
+    "body": "→ₘ",
+    "description": "Haskell: to_m -> →ₘ"
+  },
+  "hs-r_m": {
+    "prefix": "\\r_m",
+    "body": "→ₘ",
+    "description": "Haskell: r_m -> →ₘ"
+  },
+  "hs-aeeqfun": {
+    "prefix": "\\aeeqfun",
+    "body": "→ₘ",
+    "description": "Haskell: aeeqfun -> →ₘ"
+  },
+  "hs-rp": {
+    "prefix": "\\rp",
+    "body": "→ₚ",
+    "description": "Haskell: rp -> →ₚ"
+  },
+  "hs-to_p": {
+    "prefix": "\\to_p",
+    "body": "→ₚ",
+    "description": "Haskell: to_p -> →ₚ"
+  },
+  "hs-r_p": {
+    "prefix": "\\r_p",
+    "body": "→ₚ",
+    "description": "Haskell: r_p -> →ₚ"
+  },
+  "hs-dfinsupp": {
+    "prefix": "\\dfinsupp",
+    "body": "→ₚ",
+    "description": "Haskell: dfinsupp -> →ₚ"
+  },
+  "hs-tos": {
+    "prefix": "\\tos",
+    "body": "→ₛ",
+    "description": "Haskell: tos -> →ₛ"
+  },
+  "hs-rs": {
+    "prefix": "\\rs",
+    "body": "→ₛ",
+    "description": "Haskell: rs -> →ₛ"
+  },
+  "hs-to_s": {
+    "prefix": "\\to_s",
+    "body": "→ₛ",
+    "description": "Haskell: to_s -> →ₛ"
+  },
+  "hs-r_s": {
+    "prefix": "\\r_s",
+    "body": "→ₛ",
+    "description": "Haskell: r_s -> →ₛ"
+  },
+  "hs-simplefunc": {
+    "prefix": "\\simplefunc",
+    "body": "→ₛ",
+    "description": "Haskell: simplefunc -> →ₛ"
+  },
+  "hs-heyting": {
+    "prefix": "\\heyting",
+    "body": "⇨",
+    "description": "Haskell: heyting -> ⇨"
+  },
+  "hs-himp": {
+    "prefix": "\\himp",
+    "body": "⇨",
+    "description": "Haskell: himp -> ⇨"
+  },
+  "hs-hnot": {
+    "prefix": "\\hnot",
+    "body": "￢",
+    "description": "Haskell: hnot -> ￢"
+  },
+  "hs-covers": {
+    "prefix": "\\covers",
+    "body": "⋖",
+    "description": "Haskell: covers -> ⋖"
+  },
+  "hs-covby": {
+    "prefix": "\\covby",
+    "body": "⋖",
+    "description": "Haskell: covby -> ⋖"
+  },
+  "hs-wcovby": {
+    "prefix": "\\wcovby",
+    "body": "⩿",
+    "description": "Haskell: wcovby -> ⩿"
+  },
+  "hs-wcovers": {
+    "prefix": "\\wcovers",
+    "body": "⩿",
+    "description": "Haskell: wcovers -> ⩿"
+  },
+  "hs-def=": {
+    "prefix": "\\def=",
+    "body": "≝",
+    "description": "Haskell: def= -> ≝"
+  },
+  "hs-defs": {
+    "prefix": "\\defs",
+    "body": "≙",
+    "description": "Haskell: defs -> ≙"
+  },
+  "hs-degree": {
+    "prefix": "\\degree",
+    "body": "°",
+    "description": "Haskell: degree -> °"
+  },
+  "hs-dei": {
+    "prefix": "\\dei",
+    "body": "ϯ",
+    "description": "Haskell: dei -> ϯ"
+  },
+  "hs-delta": {
+    "prefix": "\\delta",
+    "body": "δ",
+    "description": "Haskell: delta -> δ"
+  },
+  "hs-doteqdot": {
+    "prefix": "\\doteqdot",
+    "body": "≑",
+    "description": "Haskell: doteqdot -> ≑"
+  },
+  "hs-doteq": {
+    "prefix": "\\doteq",
+    "body": "≐",
+    "description": "Haskell: doteq -> ≐"
+  },
+  "hs-dotplus": {
+    "prefix": "\\dotplus",
+    "body": "∔",
+    "description": "Haskell: dotplus -> ∔"
+  },
+  "hs-dotsquare": {
+    "prefix": "\\dotsquare",
+    "body": "⊡",
+    "description": "Haskell: dotsquare -> ⊡"
+  },
+  "hs-dot": {
+    "prefix": "\\dot",
+    "body": "·",
+    "description": "Haskell: dot -> ·"
+  },
+  "hs-dong": {
+    "prefix": "\\dong",
+    "body": "₫",
+    "description": "Haskell: dong -> ₫"
+  },
+  "hs-downarrow": {
+    "prefix": "\\downarrow",
+    "body": "↓",
+    "description": "Haskell: downarrow -> ↓"
+  },
+  "hs-downdownarrows": {
+    "prefix": "\\downdownarrows",
+    "body": "⇊",
+    "description": "Haskell: downdownarrows -> ⇊"
+  },
+  "hs-downleftharpoon": {
+    "prefix": "\\downleftharpoon",
+    "body": "⇃",
+    "description": "Haskell: downleftharpoon -> ⇃"
+  },
+  "hs-downrightharpoon": {
+    "prefix": "\\downrightharpoon",
+    "body": "⇂",
+    "description": "Haskell: downrightharpoon -> ⇂"
+  },
+  "hs-dr-": {
+    "prefix": "\\dr-",
+    "body": "↘",
+    "description": "Haskell: dr- -> ↘"
+  },
+  "hs-dr=": {
+    "prefix": "\\dr=",
+    "body": "⇘",
+    "description": "Haskell: dr= -> ⇘"
+  },
+  "hs-drachma": {
+    "prefix": "\\drachma",
+    "body": "₯",
+    "description": "Haskell: drachma -> ₯"
+  },
+  "hs-dr": {
+    "prefix": "\\dr",
+    "body": "↘",
+    "description": "Haskell: dr -> ↘"
+  },
+  "hs-dl-": {
+    "prefix": "\\dl-",
+    "body": "↙",
+    "description": "Haskell: dl- -> ↙"
+  },
+  "hs-dl=": {
+    "prefix": "\\dl=",
+    "body": "⇙",
+    "description": "Haskell: dl= -> ⇙"
+  },
+  "hs-dl": {
+    "prefix": "\\dl",
+    "body": "↙",
+    "description": "Haskell: dl -> ↙"
+  },
+  "hs-d-2": {
+    "prefix": "\\d-2",
+    "body": "⇊",
+    "description": "Haskell: d-2 -> ⇊"
+  },
+  "hs-d-u-": {
+    "prefix": "\\d-u-",
+    "body": "⇵",
+    "description": "Haskell: d-u- -> ⇵"
+  },
+  "hs-d-|": {
+    "prefix": "\\d-|",
+    "body": "↧",
+    "description": "Haskell: d-| -> ↧"
+  },
+  "hs-d-": {
+    "prefix": "\\d-",
+    "body": "↓",
+    "description": "Haskell: d- -> ↓"
+  },
+  "hs-d==": {
+    "prefix": "\\d==",
+    "body": "⟱",
+    "description": "Haskell: d== -> ⟱"
+  },
+  "hs-d=": {
+    "prefix": "\\d=",
+    "body": "⇓",
+    "description": "Haskell: d= -> ⇓"
+  },
+  "hs-dd-": {
+    "prefix": "\\dd-",
+    "body": "↡",
+    "description": "Haskell: dd- -> ↡"
+  },
+  "hs-ddagger": {
+    "prefix": "\\ddagger",
+    "body": "‡",
+    "description": "Haskell: ddagger -> ‡"
+  },
+  "hs-ddag": {
+    "prefix": "\\ddag",
+    "body": "‡",
+    "description": "Haskell: ddag -> ‡"
+  },
+  "hs-ddots": {
+    "prefix": "\\ddots",
+    "body": "⋱",
+    "description": "Haskell: ddots -> ⋱"
+  },
+  "hs-dz": {
+    "prefix": "\\dz",
+    "body": "↯",
+    "description": "Haskell: dz -> ↯"
+  },
+  "hs-dib": {
+    "prefix": "\\dib",
+    "body": "◆",
+    "description": "Haskell: dib -> ◆"
+  },
+  "hs-diw": {
+    "prefix": "\\diw",
+    "body": "◇",
+    "description": "Haskell: diw -> ◇"
+  },
+  "hs-di.": {
+    "prefix": "\\di.",
+    "body": "◈",
+    "description": "Haskell: di. -> ◈"
+  },
+  "hs-die": {
+    "prefix": "\\die",
+    "body": "⚀",
+    "description": "Haskell: die -> ⚀"
+  },
+  "hs-division": {
+    "prefix": "\\division",
+    "body": "÷",
+    "description": "Haskell: division -> ÷"
+  },
+  "hs-divideontimes": {
+    "prefix": "\\divideontimes",
+    "body": "⋇",
+    "description": "Haskell: divideontimes -> ⋇"
+  },
+  "hs-div": {
+    "prefix": "\\div",
+    "body": "÷",
+    "description": "Haskell: div -> ÷"
+  },
+  "hs-diameter": {
+    "prefix": "\\diameter",
+    "body": "⌀",
+    "description": "Haskell: diameter -> ⌀"
+  },
+  "hs-diamondsuit": {
+    "prefix": "\\diamondsuit",
+    "body": "♢",
+    "description": "Haskell: diamondsuit -> ♢"
+  },
+  "hs-diamond": {
+    "prefix": "\\diamond",
+    "body": "⋄",
+    "description": "Haskell: diamond -> ⋄"
+  },
+  "hs-digamma": {
+    "prefix": "\\digamma",
+    "body": "ϝ",
+    "description": "Haskell: digamma -> ϝ"
+  },
+  "hs-di": {
+    "prefix": "\\di",
+    "body": "◆",
+    "description": "Haskell: di -> ◆"
+  },
+  "hs-dagger": {
+    "prefix": "\\dagger",
+    "body": "†",
+    "description": "Haskell: dagger -> †"
+  },
+  "hs-dag": {
+    "prefix": "\\dag",
+    "body": "†",
+    "description": "Haskell: dag -> †"
+  },
+  "hs-daleth": {
+    "prefix": "\\daleth",
+    "body": "ℸ",
+    "description": "Haskell: daleth -> ℸ"
+  },
+  "hs-dashv": {
+    "prefix": "\\dashv",
+    "body": "⊣",
+    "description": "Haskell: dashv -> ⊣"
+  },
+  "hs-dh": {
+    "prefix": "\\dh",
+    "body": "ð",
+    "description": "Haskell: dh -> ð"
+  },
+  "hs-dvd": {
+    "prefix": "\\dvd",
+    "body": "∣",
+    "description": "Haskell: dvd -> ∣"
+  },
+  "hs-m=": {
+    "prefix": "\\m=",
+    "body": "≞",
+    "description": "Haskell: m= -> ≞"
+  },
+  "hs-meet": {
+    "prefix": "\\meet",
+    "body": "⊓",
+    "description": "Haskell: meet -> ⊓"
+  },
+  "hs-member": {
+    "prefix": "\\member",
+    "body": "∈",
+    "description": "Haskell: member -> ∈"
+  },
+  "hs-mem": {
+    "prefix": "\\mem",
+    "body": "∈",
+    "description": "Haskell: mem -> ∈"
+  },
+  "hs-measuredangle": {
+    "prefix": "\\measuredangle",
+    "body": "∡",
+    "description": "Haskell: measuredangle -> ∡"
+  },
+  "hs-ma": {
+    "prefix": "\\ma",
+    "body": "↦",
+    "description": "Haskell: ma -> ↦"
+  },
+  "hs-mapsto": {
+    "prefix": "\\mapsto",
+    "body": "↦",
+    "description": "Haskell: mapsto -> ↦"
+  },
+  "hs-male": {
+    "prefix": "\\male",
+    "body": "♂",
+    "description": "Haskell: male -> ♂"
+  },
+  "hs-maltese": {
+    "prefix": "\\maltese",
+    "body": "✠",
+    "description": "Haskell: maltese -> ✠"
+  },
+  "hs-manat": {
+    "prefix": "\\manat",
+    "body": "₼",
+    "description": "Haskell: manat -> ₼"
+  },
+  "hs-mathscr{I}": {
+    "prefix": "\\mathscr{I}",
+    "body": "ℐ",
+    "description": "Haskell: mathscr{I} -> ℐ"
+  },
+  "hs-minus": {
+    "prefix": "\\minus",
+    "body": "−",
+    "description": "Haskell: minus -> −"
+  },
+  "hs-mill": {
+    "prefix": "\\mill",
+    "body": "₥",
+    "description": "Haskell: mill -> ₥"
+  },
+  "hs-micro": {
+    "prefix": "\\micro",
+    "body": "µ",
+    "description": "Haskell: micro -> µ"
+  },
+  "hs-mid": {
+    "prefix": "\\mid",
+    "body": "∣",
+    "description": "Haskell: mid -> ∣"
+  },
+  "hs-multiplication": {
+    "prefix": "\\multiplication",
+    "body": "×",
+    "description": "Haskell: multiplication -> ×"
+  },
+  "hs-multimap": {
+    "prefix": "\\multimap",
+    "body": "⊸",
+    "description": "Haskell: multimap -> ⊸"
+  },
+  "hs-mho": {
+    "prefix": "\\mho",
+    "body": "℧",
+    "description": "Haskell: mho -> ℧"
+  },
+  "hs-models": {
+    "prefix": "\\models",
+    "body": "⊧",
+    "description": "Haskell: models -> ⊧"
+  },
+  "hs-mp": {
+    "prefix": "\\mp",
+    "body": "∓",
+    "description": "Haskell: mp -> ∓"
+  },
+  "hs-?=": {
+    "prefix": "\\?=",
+    "body": "≟",
+    "description": "Haskell: ?= -> ≟"
+  },
+  "hs-??": {
+    "prefix": "\\??",
+    "body": "⁇",
+    "description": "Haskell: ?? -> ⁇"
+  },
+  "hs-?!": {
+    "prefix": "\\?!",
+    "body": "‽",
+    "description": "Haskell: ?! -> ‽"
+  },
+  "hs-prohibited": {
+    "prefix": "\\prohibited",
+    "body": "🛇",
+    "description": "Haskell: prohibited -> 🛇"
+  },
+  "hs-prod": {
+    "prefix": "\\prod",
+    "body": "∏",
+    "description": "Haskell: prod -> ∏"
+  },
+  "hs-propto": {
+    "prefix": "\\propto",
+    "body": "∝",
+    "description": "Haskell: propto -> ∝"
+  },
+  "hs-precapprox": {
+    "prefix": "\\precapprox",
+    "body": "≾",
+    "description": "Haskell: precapprox -> ≾"
+  },
+  "hs-preceq": {
+    "prefix": "\\preceq",
+    "body": "≼",
+    "description": "Haskell: preceq -> ≼"
+  },
+  "hs-precnapprox": {
+    "prefix": "\\precnapprox",
+    "body": "⋨",
+    "description": "Haskell: precnapprox -> ⋨"
+  },
+  "hs-precnsim": {
+    "prefix": "\\precnsim",
+    "body": "⋨",
+    "description": "Haskell: precnsim -> ⋨"
+  },
+  "hs-precsim": {
+    "prefix": "\\precsim",
+    "body": "≾",
+    "description": "Haskell: precsim -> ≾"
+  },
+  "hs-prec": {
+    "prefix": "\\prec",
+    "body": "≺",
+    "description": "Haskell: prec -> ≺"
+  },
+  "hs-preim": {
+    "prefix": "\\preim",
+    "body": "⁻¹'",
+    "description": "Haskell: preim -> ⁻¹'"
+  },
+  "hs-preimage": {
+    "prefix": "\\preimage",
+    "body": "⁻¹'",
+    "description": "Haskell: preimage -> ⁻¹'"
+  },
+  "hs-prime": {
+    "prefix": "\\prime",
+    "body": "′",
+    "description": "Haskell: prime -> ′"
+  },
+  "hs-pr": {
+    "prefix": "\\pr",
+    "body": "↣",
+    "description": "Haskell: pr -> ↣"
+  },
+  "hs-powerset": {
+    "prefix": "\\powerset",
+    "body": "𝒫",
+    "description": "Haskell: powerset -> 𝒫"
+  },
+  "hs-pounds": {
+    "prefix": "\\pounds",
+    "body": "£",
+    "description": "Haskell: pounds -> £"
+  },
+  "hs-pound": {
+    "prefix": "\\pound",
+    "body": "£",
+    "description": "Haskell: pound -> £"
+  },
+  "hs-pab": {
+    "prefix": "\\pab",
+    "body": "▰",
+    "description": "Haskell: pab -> ▰"
+  },
+  "hs-paw": {
+    "prefix": "\\paw",
+    "body": "▱",
+    "description": "Haskell: paw -> ▱"
+  },
+  "hs-partnership": {
+    "prefix": "\\partnership",
+    "body": "㉐",
+    "description": "Haskell: partnership -> ㉐"
+  },
+  "hs-partial": {
+    "prefix": "\\partial",
+    "body": "∂",
+    "description": "Haskell: partial -> ∂"
+  },
+  "hs-paragraph": {
+    "prefix": "\\paragraph",
+    "body": "¶",
+    "description": "Haskell: paragraph -> ¶"
+  },
+  "hs-parallel": {
+    "prefix": "\\parallel",
+    "body": "∥",
+    "description": "Haskell: parallel -> ∥"
+  },
+  "hs-pa": {
+    "prefix": "\\pa",
+    "body": "▰",
+    "description": "Haskell: pa -> ▰"
+  },
+  "hs-pm": {
+    "prefix": "\\pm",
+    "body": "±",
+    "description": "Haskell: pm -> ±"
+  },
+  "hs-perp": {
+    "prefix": "\\perp",
+    "body": "⟂",
+    "description": "Haskell: perp -> ⟂"
+  },
+  "hs-^perp": {
+    "prefix": "\\^perp",
+    "body": "ᗮ",
+    "description": "Haskell: ^perp -> ᗮ"
+  },
+  "hs-permil": {
+    "prefix": "\\permil",
+    "body": "‰",
+    "description": "Haskell: permil -> ‰"
+  },
+  "hs-per": {
+    "prefix": "\\per",
+    "body": "⅌",
+    "description": "Haskell: per -> ⅌"
+  },
+  "hs-peso": {
+    "prefix": "\\peso",
+    "body": "₱",
+    "description": "Haskell: peso -> ₱"
+  },
+  "hs-peseta": {
+    "prefix": "\\peseta",
+    "body": "₧",
+    "description": "Haskell: peseta -> ₧"
+  },
+  "hs-pilcrow": {
+    "prefix": "\\pilcrow",
+    "body": "¶",
+    "description": "Haskell: pilcrow -> ¶"
+  },
+  "hs-pitchfork": {
+    "prefix": "\\pitchfork",
+    "body": "⋔",
+    "description": "Haskell: pitchfork -> ⋔"
+  },
+  "hs-psi": {
+    "prefix": "\\psi",
+    "body": "ψ",
+    "description": "Haskell: psi -> ψ"
+  },
+  "hs-phi": {
+    "prefix": "\\phi",
+    "body": "φ",
+    "description": "Haskell: phi -> φ"
+  },
+  "hs-leqn": {
+    "prefix": "\\leqn",
+    "body": "≰",
+    "description": "Haskell: leqn -> ≰"
+  },
+  "hs-leqq": {
+    "prefix": "\\leqq",
+    "body": "≦",
+    "description": "Haskell: leqq -> ≦"
+  },
+  "hs-leqslant": {
+    "prefix": "\\leqslant",
+    "body": "≤",
+    "description": "Haskell: leqslant -> ≤"
+  },
+  "hs-leq": {
+    "prefix": "\\leq",
+    "body": "≤",
+    "description": "Haskell: leq -> ≤"
+  },
+  "hs-len": {
+    "prefix": "\\len",
+    "body": "≰",
+    "description": "Haskell: len -> ≰"
+  },
+  "hs-leadsto": {
+    "prefix": "\\leadsto",
+    "body": "↝",
+    "description": "Haskell: leadsto -> ↝"
+  },
+  "hs-leftarrowtail": {
+    "prefix": "\\leftarrowtail",
+    "body": "↢",
+    "description": "Haskell: leftarrowtail -> ↢"
+  },
+  "hs-leftarrow": {
+    "prefix": "\\leftarrow",
+    "body": "←",
+    "description": "Haskell: leftarrow -> ←"
+  },
+  "hs-leftharpoondown": {
+    "prefix": "\\leftharpoondown",
+    "body": "↽",
+    "description": "Haskell: leftharpoondown -> ↽"
+  },
+  "hs-leftharpoonup": {
+    "prefix": "\\leftharpoonup",
+    "body": "↼",
+    "description": "Haskell: leftharpoonup -> ↼"
+  },
+  "hs-leftleftarrows": {
+    "prefix": "\\leftleftarrows",
+    "body": "⇇",
+    "description": "Haskell: leftleftarrows -> ⇇"
+  },
+  "hs-leftrightarrows": {
+    "prefix": "\\leftrightarrows",
+    "body": "⇆",
+    "description": "Haskell: leftrightarrows -> ⇆"
+  },
+  "hs-leftrightarrow": {
+    "prefix": "\\leftrightarrow",
+    "body": "↔",
+    "description": "Haskell: leftrightarrow -> ↔"
+  },
+  "hs-leftrightharpoons": {
+    "prefix": "\\leftrightharpoons",
+    "body": "⇋",
+    "description": "Haskell: leftrightharpoons -> ⇋"
+  },
+  "hs-leftrightsquigarrow": {
+    "prefix": "\\leftrightsquigarrow",
+    "body": "↭",
+    "description": "Haskell: leftrightsquigarrow -> ↭"
+  },
+  "hs-leftthreetimes": {
+    "prefix": "\\leftthreetimes",
+    "body": "⋋",
+    "description": "Haskell: leftthreetimes -> ⋋"
+  },
+  "hs-lessapprox": {
+    "prefix": "\\lessapprox",
+    "body": "≲",
+    "description": "Haskell: lessapprox -> ≲"
+  },
+  "hs-lessdot": {
+    "prefix": "\\lessdot",
+    "body": "⋖",
+    "description": "Haskell: lessdot -> ⋖"
+  },
+  "hs-lesseqgtr": {
+    "prefix": "\\lesseqgtr",
+    "body": "⋚",
+    "description": "Haskell: lesseqgtr -> ⋚"
+  },
+  "hs-lesseqqgtr": {
+    "prefix": "\\lesseqqgtr",
+    "body": "⋚",
+    "description": "Haskell: lesseqqgtr -> ⋚"
+  },
+  "hs-lessgtr": {
+    "prefix": "\\lessgtr",
+    "body": "≶",
+    "description": "Haskell: lessgtr -> ≶"
+  },
+  "hs-lesssim": {
+    "prefix": "\\lesssim",
+    "body": "≲",
+    "description": "Haskell: lesssim -> ≲"
+  },
+  "hs-le": {
+    "prefix": "\\le",
+    "body": "≤",
+    "description": "Haskell: le -> ≤"
+  },
+  "hs-lub": {
+    "prefix": "\\lub",
+    "body": "⊔",
+    "description": "Haskell: lub -> ⊔"
+  },
+  "hs-lr--": {
+    "prefix": "\\lr--",
+    "body": "⟷",
+    "description": "Haskell: lr-- -> ⟷"
+  },
+  "hs-lr-n": {
+    "prefix": "\\lr-n",
+    "body": "↮",
+    "description": "Haskell: lr-n -> ↮"
+  },
+  "hs-lr-": {
+    "prefix": "\\lr-",
+    "body": "↔",
+    "description": "Haskell: lr- -> ↔"
+  },
+  "hs-lr=n": {
+    "prefix": "\\lr=n",
+    "body": "⇎",
+    "description": "Haskell: lr=n -> ⇎"
+  },
+  "hs-lr=": {
+    "prefix": "\\lr=",
+    "body": "⇔",
+    "description": "Haskell: lr= -> ⇔"
+  },
+  "hs-lr~": {
+    "prefix": "\\lr~",
+    "body": "↭",
+    "description": "Haskell: lr~ -> ↭"
+  },
+  "hs-lrcorner": {
+    "prefix": "\\lrcorner",
+    "body": "⌟",
+    "description": "Haskell: lrcorner -> ⌟"
+  },
+  "hs-lr": {
+    "prefix": "\\lr",
+    "body": "↔",
+    "description": "Haskell: lr -> ↔"
+  },
+  "hs-l-2": {
+    "prefix": "\\l-2",
+    "body": "⇇",
+    "description": "Haskell: l-2 -> ⇇"
+  },
+  "hs-l-r-": {
+    "prefix": "\\l-r-",
+    "body": "⇆",
+    "description": "Haskell: l-r- -> ⇆"
+  },
+  "hs-l--": {
+    "prefix": "\\l--",
+    "body": "⟵",
+    "description": "Haskell: l-- -> ⟵"
+  },
+  "hs-l-n": {
+    "prefix": "\\l-n",
+    "body": "↚",
+    "description": "Haskell: l-n -> ↚"
+  },
+  "hs-l-|": {
+    "prefix": "\\l-|",
+    "body": "↤",
+    "description": "Haskell: l-| -> ↤"
+  },
+  "hs-l->": {
+    "prefix": "\\l->",
+    "body": "↢",
+    "description": "Haskell: l-> -> ↢"
+  },
+  "hs-l-": {
+    "prefix": "\\l-",
+    "body": "←",
+    "description": "Haskell: l- -> ←"
+  },
+  "hs-l==": {
+    "prefix": "\\l==",
+    "body": "⇚",
+    "description": "Haskell: l== -> ⇚"
+  },
+  "hs-l=n": {
+    "prefix": "\\l=n",
+    "body": "⇍",
+    "description": "Haskell: l=n -> ⇍"
+  },
+  "hs-l=": {
+    "prefix": "\\l=",
+    "body": "⇐",
+    "description": "Haskell: l= -> ⇐"
+  },
+  "hs-l~": {
+    "prefix": "\\l~",
+    "body": "↜",
+    "description": "Haskell: l~ -> ↜"
+  },
+  "hs-ll-": {
+    "prefix": "\\ll-",
+    "body": "↞",
+    "description": "Haskell: ll- -> ↞"
+  },
+  "hs-llcorner": {
+    "prefix": "\\llcorner",
+    "body": "⌞",
+    "description": "Haskell: llcorner -> ⌞"
+  },
+  "hs-llbracket": {
+    "prefix": "\\llbracket",
+    "body": "〚",
+    "description": "Haskell: llbracket -> 〚"
+  },
+  "hs-ll": {
+    "prefix": "\\ll",
+    "body": "≪",
+    "description": "Haskell: ll -> ≪"
+  },
+  "hs-lbag": {
+    "prefix": "\\lbag",
+    "body": "⟅",
+    "description": "Haskell: lbag -> ⟅"
+  },
+  "hs-lambda": {
+    "prefix": "\\lambda",
+    "body": "λ",
+    "description": "Haskell: lambda -> λ"
+  },
+  "hs-lamda": {
+    "prefix": "\\lamda",
+    "body": "λ",
+    "description": "Haskell: lamda -> λ"
+  },
+  "hs-lam": {
+    "prefix": "\\lam",
+    "body": "λ",
+    "description": "Haskell: lam -> λ"
+  },
+  "hs-lari": {
+    "prefix": "\\lari",
+    "body": "₾",
+    "description": "Haskell: lari -> ₾"
+  },
+  "hs-langle": {
+    "prefix": "\\langle",
+    "body": "⟨",
+    "description": "Haskell: langle -> ⟨"
+  },
+  "hs-lira": {
+    "prefix": "\\lira",
+    "body": "₤",
+    "description": "Haskell: lira -> ₤"
+  },
+  "hs-lceil": {
+    "prefix": "\\lceil",
+    "body": "⌈",
+    "description": "Haskell: lceil -> ⌈"
+  },
+  "hs-ldots": {
+    "prefix": "\\ldots",
+    "body": "…",
+    "description": "Haskell: ldots -> …"
+  },
+  "hs-ldq": {
+    "prefix": "\\ldq",
+    "body": "“",
+    "description": "Haskell: ldq -> “"
+  },
+  "hs-ldata": {
+    "prefix": "\\ldata",
+    "body": "《",
+    "description": "Haskell: ldata -> 《"
+  },
+  "hs-lfloor": {
+    "prefix": "\\lfloor",
+    "body": "⌊",
+    "description": "Haskell: lfloor -> ⌊"
+  },
+  "hs-lf": {
+    "prefix": "\\lf",
+    "body": "⧏",
+    "description": "Haskell: lf -> ⧏"
+  },
+  "hs-<|": {
+    "prefix": "\\<|",
+    "body": "⧏",
+    "description": "Haskell: <| -> ⧏"
+  },
+  "hs-lhd": {
+    "prefix": "\\lhd",
+    "body": "◁",
+    "description": "Haskell: lhd -> ◁"
+  },
+  "hs-lnapprox": {
+    "prefix": "\\lnapprox",
+    "body": "⋦",
+    "description": "Haskell: lnapprox -> ⋦"
+  },
+  "hs-lneqq": {
+    "prefix": "\\lneqq",
+    "body": "≨",
+    "description": "Haskell: lneqq -> ≨"
+  },
+  "hs-lneq": {
+    "prefix": "\\lneq",
+    "body": "≨",
+    "description": "Haskell: lneq -> ≨"
+  },
+  "hs-lnsim": {
+    "prefix": "\\lnsim",
+    "body": "⋦",
+    "description": "Haskell: lnsim -> ⋦"
+  },
+  "hs-lnot": {
+    "prefix": "\\lnot",
+    "body": "¬",
+    "description": "Haskell: lnot -> ¬"
+  },
+  "hs-longleftarrow": {
+    "prefix": "\\longleftarrow",
+    "body": "⟵",
+    "description": "Haskell: longleftarrow -> ⟵"
+  },
+  "hs-longleftrightarrow": {
+    "prefix": "\\longleftrightarrow",
+    "body": "⟷",
+    "description": "Haskell: longleftrightarrow -> ⟷"
+  },
+  "hs-longrightarrow": {
+    "prefix": "\\longrightarrow",
+    "body": "⟶",
+    "description": "Haskell: longrightarrow -> ⟶"
+  },
+  "hs-looparrowleft": {
+    "prefix": "\\looparrowleft",
+    "body": "↫",
+    "description": "Haskell: looparrowleft -> ↫"
+  },
+  "hs-looparrowright": {
+    "prefix": "\\looparrowright",
+    "body": "↬",
+    "description": "Haskell: looparrowright -> ↬"
+  },
+  "hs-lozenge": {
+    "prefix": "\\lozenge",
+    "body": "✧",
+    "description": "Haskell: lozenge -> ✧"
+  },
+  "hs-lq": {
+    "prefix": "\\lq",
+    "body": "‘",
+    "description": "Haskell: lq -> ‘"
+  },
+  "hs-ltimes": {
+    "prefix": "\\ltimes",
+    "body": "⋉",
+    "description": "Haskell: ltimes -> ⋉"
+  },
+  "hs-lvertneqq": {
+    "prefix": "\\lvertneqq",
+    "body": "≨",
+    "description": "Haskell: lvertneqq -> ≨"
+  },
+  "hs-geqn": {
+    "prefix": "\\geqn",
+    "body": "≱",
+    "description": "Haskell: geqn -> ≱"
+  },
+  "hs-geqq": {
+    "prefix": "\\geqq",
+    "body": "≧",
+    "description": "Haskell: geqq -> ≧"
+  },
+  "hs-geqslant": {
+    "prefix": "\\geqslant",
+    "body": "≥",
+    "description": "Haskell: geqslant -> ≥"
+  },
+  "hs-geq": {
+    "prefix": "\\geq",
+    "body": "≥",
+    "description": "Haskell: geq -> ≥"
+  },
+  "hs-gen": {
+    "prefix": "\\gen",
+    "body": "≱",
+    "description": "Haskell: gen -> ≱"
+  },
+  "hs-gets": {
+    "prefix": "\\gets",
+    "body": "←",
+    "description": "Haskell: gets -> ←"
+  },
+  "hs-ge": {
+    "prefix": "\\ge",
+    "body": "≥",
+    "description": "Haskell: ge -> ≥"
+  },
+  "hs-glb": {
+    "prefix": "\\glb",
+    "body": "⊓",
+    "description": "Haskell: glb -> ⊓"
+  },
+  "hs-glqq": {
+    "prefix": "\\glqq",
+    "body": "„",
+    "description": "Haskell: glqq -> „"
+  },
+  "hs-glq": {
+    "prefix": "\\glq",
+    "body": "‚",
+    "description": "Haskell: glq -> ‚"
+  },
+  "hs-guarani": {
+    "prefix": "\\guarani",
+    "body": "₲",
+    "description": "Haskell: guarani -> ₲"
+  },
+  "hs-gangia": {
+    "prefix": "\\gangia",
+    "body": "ϫ",
+    "description": "Haskell: gangia -> ϫ"
+  },
+  "hs-gamma": {
+    "prefix": "\\gamma",
+    "body": "γ",
+    "description": "Haskell: gamma -> γ"
+  },
+  "hs-ggg": {
+    "prefix": "\\ggg",
+    "body": "⋙",
+    "description": "Haskell: ggg -> ⋙"
+  },
+  "hs-gg": {
+    "prefix": "\\gg",
+    "body": "≫",
+    "description": "Haskell: gg -> ≫"
+  },
+  "hs-gimel": {
+    "prefix": "\\gimel",
+    "body": "ℷ",
+    "description": "Haskell: gimel -> ℷ"
+  },
+  "hs-gnapprox": {
+    "prefix": "\\gnapprox",
+    "body": "⋧",
+    "description": "Haskell: gnapprox -> ⋧"
+  },
+  "hs-gneqq": {
+    "prefix": "\\gneqq",
+    "body": "≩",
+    "description": "Haskell: gneqq -> ≩"
+  },
+  "hs-gneq": {
+    "prefix": "\\gneq",
+    "body": "≩",
+    "description": "Haskell: gneq -> ≩"
+  },
+  "hs-gnsim": {
+    "prefix": "\\gnsim",
+    "body": "⋧",
+    "description": "Haskell: gnsim -> ⋧"
+  },
+  "hs-gtrapprox": {
+    "prefix": "\\gtrapprox",
+    "body": "≳",
+    "description": "Haskell: gtrapprox -> ≳"
+  },
+  "hs-gtrdot": {
+    "prefix": "\\gtrdot",
+    "body": "⋗",
+    "description": "Haskell: gtrdot -> ⋗"
+  },
+  "hs-gtreqless": {
+    "prefix": "\\gtreqless",
+    "body": "⋛",
+    "description": "Haskell: gtreqless -> ⋛"
+  },
+  "hs-gtreqqless": {
+    "prefix": "\\gtreqqless",
+    "body": "⋛",
+    "description": "Haskell: gtreqqless -> ⋛"
+  },
+  "hs-gtrless": {
+    "prefix": "\\gtrless",
+    "body": "≷",
+    "description": "Haskell: gtrless -> ≷"
+  },
+  "hs-gtrsim": {
+    "prefix": "\\gtrsim",
+    "body": "≳",
+    "description": "Haskell: gtrsim -> ≳"
+  },
+  "hs-gvertneqq": {
+    "prefix": "\\gvertneqq",
+    "body": "≩",
+    "description": "Haskell: gvertneqq -> ≩"
+  },
+  "hs-grqq": {
+    "prefix": "\\grqq",
+    "body": "“",
+    "description": "Haskell: grqq -> “"
+  },
+  "hs-grq": {
+    "prefix": "\\grq",
+    "body": "‘",
+    "description": "Haskell: grq -> ‘"
+  },
+  "hs-<=n": {
+    "prefix": "\\<=n",
+    "body": "≰",
+    "description": "Haskell: <=n -> ≰"
+  },
+  "hs-<=>n": {
+    "prefix": "\\<=>n",
+    "body": "⇎",
+    "description": "Haskell: <=>n -> ⇎"
+  },
+  "hs-<=>": {
+    "prefix": "\\<=>",
+    "body": "⇔",
+    "description": "Haskell: <=> -> ⇔"
+  },
+  "hs-<=": {
+    "prefix": "\\<=",
+    "body": "≤",
+    "description": "Haskell: <= -> ≤"
+  },
+  "hs-<~nn": {
+    "prefix": "\\<~nn",
+    "body": "≴",
+    "description": "Haskell: <~nn -> ≴"
+  },
+  "hs-<~n": {
+    "prefix": "\\<~n",
+    "body": "⋦",
+    "description": "Haskell: <~n -> ⋦"
+  },
+  "hs-<~": {
+    "prefix": "\\<~",
+    "body": "≲",
+    "description": "Haskell: <~ -> ≲"
+  },
+  "hs-<:": {
+    "prefix": "\\<:",
+    "body": "⋖",
+    "description": "Haskell: <: -> ⋖"
+  },
+  "hs-:>": {
+    "prefix": "\\:>",
+    "body": "⋗",
+    "description": "Haskell: :> -> ⋗"
+  },
+  "hs-<->n": {
+    "prefix": "\\<->n",
+    "body": "↮",
+    "description": "Haskell: <->n -> ↮"
+  },
+  "hs-<->": {
+    "prefix": "\\<->",
+    "body": "↔",
+    "description": "Haskell: <-> -> ↔"
+  },
+  "hs-<-->": {
+    "prefix": "\\<-->",
+    "body": "⟷",
+    "description": "Haskell: <--> -> ⟷"
+  },
+  "hs-<--": {
+    "prefix": "\\<--",
+    "body": "⟵",
+    "description": "Haskell: <-- -> ⟵"
+  },
+  "hs-<-n": {
+    "prefix": "\\<-n",
+    "body": "↚",
+    "description": "Haskell: <-n -> ↚"
+  },
+  "hs-<-": {
+    "prefix": "\\<-",
+    "body": "←",
+    "description": "Haskell: <- -> ←"
+  },
+  "hs-<<": {
+    "prefix": "\\<<",
+    "body": "⟪",
+    "description": "Haskell: << -> ⟪"
+  },
+  "hs->=n": {
+    "prefix": "\\>=n",
+    "body": "≱",
+    "description": "Haskell: >=n -> ≱"
+  },
+  "hs->=": {
+    "prefix": "\\>=",
+    "body": "≥",
+    "description": "Haskell: >= -> ≥"
+  },
+  "hs->n": {
+    "prefix": "\\>n",
+    "body": "≯",
+    "description": "Haskell: >n -> ≯"
+  },
+  "hs->~nn": {
+    "prefix": "\\>~nn",
+    "body": "≵",
+    "description": "Haskell: >~nn -> ≵"
+  },
+  "hs->~n": {
+    "prefix": "\\>~n",
+    "body": "⋧",
+    "description": "Haskell: >~n -> ⋧"
+  },
+  "hs->~": {
+    "prefix": "\\>~",
+    "body": "≳",
+    "description": "Haskell: >~ -> ≳"
+  },
+  "hs->>": {
+    "prefix": "\\>>",
+    "body": "⟫",
+    "description": "Haskell: >> -> ⟫"
+  },
+  "hs-root": {
+    "prefix": "\\root",
+    "body": "√",
+    "description": "Haskell: root -> √"
+  },
+  "hs-scissor": {
+    "prefix": "\\scissor",
+    "body": "✂",
+    "description": "Haskell: scissor -> ✂"
+  },
+  "hs-ssubn": {
+    "prefix": "\\ssubn",
+    "body": "⊄",
+    "description": "Haskell: ssubn -> ⊄"
+  },
+  "hs-ssub": {
+    "prefix": "\\ssub",
+    "body": "⊂",
+    "description": "Haskell: ssub -> ⊂"
+  },
+  "hs-ssupn": {
+    "prefix": "\\ssupn",
+    "body": "⊅",
+    "description": "Haskell: ssupn -> ⊅"
+  },
+  "hs-ssup": {
+    "prefix": "\\ssup",
+    "body": "⊃",
+    "description": "Haskell: ssup -> ⊃"
+  },
+  "hs-ssqub": {
+    "prefix": "\\ssqub",
+    "body": "⊏",
+    "description": "Haskell: ssqub -> ⊏"
+  },
+  "hs-ssqup": {
+    "prefix": "\\ssqup",
+    "body": "⊐",
+    "description": "Haskell: ssqup -> ⊐"
+  },
+  "hs-ss": {
+    "prefix": "\\ss",
+    "body": "⊆",
+    "description": "Haskell: ss -> ⊆"
+  },
+  "hs-subn": {
+    "prefix": "\\subn",
+    "body": "⊈",
+    "description": "Haskell: subn -> ⊈"
+  },
+  "hs-subseteqq": {
+    "prefix": "\\subseteqq",
+    "body": "⊆",
+    "description": "Haskell: subseteqq -> ⊆"
+  },
+  "hs-subseteq": {
+    "prefix": "\\subseteq",
+    "body": "⊆",
+    "description": "Haskell: subseteq -> ⊆"
+  },
+  "hs-subsetneqq": {
+    "prefix": "\\subsetneqq",
+    "body": "⊊",
+    "description": "Haskell: subsetneqq -> ⊊"
+  },
+  "hs-subsetneq": {
+    "prefix": "\\subsetneq",
+    "body": "⊊",
+    "description": "Haskell: subsetneq -> ⊊"
+  },
+  "hs-subset": {
+    "prefix": "\\subset",
+    "body": "⊆",
+    "description": "Haskell: subset -> ⊆"
+  },
+  "hs-ssubset": {
+    "prefix": "\\ssubset",
+    "body": "⊂",
+    "description": "Haskell: ssubset -> ⊂"
+  },
+  "hs-sub": {
+    "prefix": "\\sub",
+    "body": "⊆",
+    "description": "Haskell: sub -> ⊆"
+  },
+  "hs-supn": {
+    "prefix": "\\supn",
+    "body": "⊉",
+    "description": "Haskell: supn -> ⊉"
+  },
+  "hs-supseteqq": {
+    "prefix": "\\supseteqq",
+    "body": "⊇",
+    "description": "Haskell: supseteqq -> ⊇"
+  },
+  "hs-supseteq": {
+    "prefix": "\\supseteq",
+    "body": "⊇",
+    "description": "Haskell: supseteq -> ⊇"
+  },
+  "hs-supsetneqq": {
+    "prefix": "\\supsetneqq",
+    "body": "⊋",
+    "description": "Haskell: supsetneqq -> ⊋"
+  },
+  "hs-supsetneq": {
+    "prefix": "\\supsetneq",
+    "body": "⊋",
+    "description": "Haskell: supsetneq -> ⊋"
+  },
+  "hs-supset": {
+    "prefix": "\\supset",
+    "body": "⊇",
+    "description": "Haskell: supset -> ⊇"
+  },
+  "hs-ssupset": {
+    "prefix": "\\ssupset",
+    "body": "⊃",
+    "description": "Haskell: ssupset -> ⊃"
+  },
+  "hs-sUnion": {
+    "prefix": "\\sUnion",
+    "body": "⋃₀",
+    "description": "Haskell: sUnion -> ⋃₀"
+  },
+  "hs-sInter": {
+    "prefix": "\\sInter",
+    "body": "⋂₀",
+    "description": "Haskell: sInter -> ⋂₀"
+  },
+  "hs-sup": {
+    "prefix": "\\sup",
+    "body": "⊔",
+    "description": "Haskell: sup -> ⊔"
+  },
+  "hs-supr": {
+    "prefix": "\\supr",
+    "body": "⨆",
+    "description": "Haskell: supr -> ⨆"
+  },
+  "hs-surd3": {
+    "prefix": "\\surd3",
+    "body": "∛",
+    "description": "Haskell: surd3 -> ∛"
+  },
+  "hs-surd4": {
+    "prefix": "\\surd4",
+    "body": "∜",
+    "description": "Haskell: surd4 -> ∜"
+  },
+  "hs-surd": {
+    "prefix": "\\surd",
+    "body": "√",
+    "description": "Haskell: surd -> √"
+  },
+  "hs-succapprox": {
+    "prefix": "\\succapprox",
+    "body": "≿",
+    "description": "Haskell: succapprox -> ≿"
+  },
+  "hs-succcurlyeq": {
+    "prefix": "\\succcurlyeq",
+    "body": "≽",
+    "description": "Haskell: succcurlyeq -> ≽"
+  },
+  "hs-succeq": {
+    "prefix": "\\succeq",
+    "body": "≽",
+    "description": "Haskell: succeq -> ≽"
+  },
+  "hs-succnapprox": {
+    "prefix": "\\succnapprox",
+    "body": "⋩",
+    "description": "Haskell: succnapprox -> ⋩"
+  },
+  "hs-succnsim": {
+    "prefix": "\\succnsim",
+    "body": "⋩",
+    "description": "Haskell: succnsim -> ⋩"
+  },
+  "hs-succsim": {
+    "prefix": "\\succsim",
+    "body": "≿",
+    "description": "Haskell: succsim -> ≿"
+  },
+  "hs-succ": {
+    "prefix": "\\succ",
+    "body": "≻",
+    "description": "Haskell: succ -> ≻"
+  },
+  "hs-sum": {
+    "prefix": "\\sum",
+    "body": "∑",
+    "description": "Haskell: sum -> ∑"
+  },
+  "hs-specializes": {
+    "prefix": "\\specializes",
+    "body": "⤳",
+    "description": "Haskell: specializes -> ⤳"
+  },
+  "hs-~>": {
+    "prefix": "\\~>",
+    "body": "⤳",
+    "description": "Haskell: ~> -> ⤳"
+  },
+  "hs-squbn": {
+    "prefix": "\\squbn",
+    "body": "⋢",
+    "description": "Haskell: squbn -> ⋢"
+  },
+  "hs-squb": {
+    "prefix": "\\squb",
+    "body": "⊑",
+    "description": "Haskell: squb -> ⊑"
+  },
+  "hs-squpn": {
+    "prefix": "\\squpn",
+    "body": "⋣",
+    "description": "Haskell: squpn -> ⋣"
+  },
+  "hs-squp": {
+    "prefix": "\\squp",
+    "body": "⊒",
+    "description": "Haskell: squp -> ⊒"
+  },
+  "hs-square": {
+    "prefix": "\\square",
+    "body": "□",
+    "description": "Haskell: square -> □"
+  },
+  "hs-squigarrowright": {
+    "prefix": "\\squigarrowright",
+    "body": "⇝",
+    "description": "Haskell: squigarrowright -> ⇝"
+  },
+  "hs-sqb": {
+    "prefix": "\\sqb",
+    "body": "■",
+    "description": "Haskell: sqb -> ■"
+  },
+  "hs-sqw": {
+    "prefix": "\\sqw",
+    "body": "□",
+    "description": "Haskell: sqw -> □"
+  },
+  "hs-sq.": {
+    "prefix": "\\sq.",
+    "body": "▣",
+    "description": "Haskell: sq. -> ▣"
+  },
+  "hs-sqo": {
+    "prefix": "\\sqo",
+    "body": "▢",
+    "description": "Haskell: sqo -> ▢"
+  },
+  "hs-sqcap": {
+    "prefix": "\\sqcap",
+    "body": "⊓",
+    "description": "Haskell: sqcap -> ⊓"
+  },
+  "hs-sqcup": {
+    "prefix": "\\sqcup",
+    "body": "⊔",
+    "description": "Haskell: sqcup -> ⊔"
+  },
+  "hs-sqrt": {
+    "prefix": "\\sqrt",
+    "body": "√",
+    "description": "Haskell: sqrt -> √"
+  },
+  "hs-sqsubseteq": {
+    "prefix": "\\sqsubseteq",
+    "body": "⊑",
+    "description": "Haskell: sqsubseteq -> ⊑"
+  },
+  "hs-sqsubset": {
+    "prefix": "\\sqsubset",
+    "body": "⊏",
+    "description": "Haskell: sqsubset -> ⊏"
+  },
+  "hs-sqsupseteq": {
+    "prefix": "\\sqsupseteq",
+    "body": "⊒",
+    "description": "Haskell: sqsupseteq -> ⊒"
+  },
+  "hs-sqsupset": {
+    "prefix": "\\sqsupset",
+    "body": "⊐",
+    "description": "Haskell: sqsupset -> ⊐"
+  },
+  "hs-sq": {
+    "prefix": "\\sq",
+    "body": "◾",
+    "description": "Haskell: sq -> ◾"
+  },
+  "hs-sy": {
+    "prefix": "\\sy",
+    "body": "⁻¹",
+    "description": "Haskell: sy -> ⁻¹"
+  },
+  "hs-symmdiff": {
+    "prefix": "\\symmdiff",
+    "body": "∆",
+    "description": "Haskell: symmdiff -> ∆"
+  },
+  "hs-st4": {
+    "prefix": "\\st4",
+    "body": "✦",
+    "description": "Haskell: st4 -> ✦"
+  },
+  "hs-st6": {
+    "prefix": "\\st6",
+    "body": "✶",
+    "description": "Haskell: st6 -> ✶"
+  },
+  "hs-st8": {
+    "prefix": "\\st8",
+    "body": "✴",
+    "description": "Haskell: st8 -> ✴"
+  },
+  "hs-st12": {
+    "prefix": "\\st12",
+    "body": "✹",
+    "description": "Haskell: st12 -> ✹"
+  },
+  "hs-stigma": {
+    "prefix": "\\stigma",
+    "body": "ϛ",
+    "description": "Haskell: stigma -> ϛ"
+  },
+  "hs-star": {
+    "prefix": "\\star",
+    "body": "⋆",
+    "description": "Haskell: star -> ⋆"
+  },
+  "hs-straightphi": {
+    "prefix": "\\straightphi",
+    "body": "φ",
+    "description": "Haskell: straightphi -> φ"
+  },
+  "hs-st": {
+    "prefix": "\\st",
+    "body": "⋆",
+    "description": "Haskell: st -> ⋆"
+  },
+  "hs-spesmilo": {
+    "prefix": "\\spesmilo",
+    "body": "₷",
+    "description": "Haskell: spesmilo -> ₷"
+  },
+  "hs-span": {
+    "prefix": "\\span",
+    "body": "∙",
+    "description": "Haskell: span -> ∙"
+  },
+  "hs-spadesuit": {
+    "prefix": "\\spadesuit",
+    "body": "♠",
+    "description": "Haskell: spadesuit -> ♠"
+  },
+  "hs-sphericalangle": {
+    "prefix": "\\sphericalangle",
+    "body": "∢",
+    "description": "Haskell: sphericalangle -> ∢"
+  },
+  "hs-section": {
+    "prefix": "\\section",
+    "body": "§",
+    "description": "Haskell: section -> §"
+  },
+  "hs-searrow": {
+    "prefix": "\\searrow",
+    "body": "↘",
+    "description": "Haskell: searrow -> ↘"
+  },
+  "hs-setminus": {
+    "prefix": "\\setminus",
+    "body": "\\",
+    "description": "Haskell: setminus -> \\"
+  },
+  "hs-san": {
+    "prefix": "\\san",
+    "body": "ϻ",
+    "description": "Haskell: san -> ϻ"
+  },
+  "hs-sampi": {
+    "prefix": "\\sampi",
+    "body": "ϡ",
+    "description": "Haskell: sampi -> ϡ"
+  },
+  "hs-shortmid": {
+    "prefix": "\\shortmid",
+    "body": "∣",
+    "description": "Haskell: shortmid -> ∣"
+  },
+  "hs-sho": {
+    "prefix": "\\sho",
+    "body": "ϸ",
+    "description": "Haskell: sho -> ϸ"
+  },
+  "hs-shima": {
+    "prefix": "\\shima",
+    "body": "ϭ",
+    "description": "Haskell: shima -> ϭ"
+  },
+  "hs-shei": {
+    "prefix": "\\shei",
+    "body": "ϣ",
+    "description": "Haskell: shei -> ϣ"
+  },
+  "hs-sharp": {
+    "prefix": "\\sharp",
+    "body": "♯",
+    "description": "Haskell: sharp -> ♯"
+  },
+  "hs-sigma": {
+    "prefix": "\\sigma",
+    "body": "σ",
+    "description": "Haskell: sigma -> σ"
+  },
+  "hs-simeq": {
+    "prefix": "\\simeq",
+    "body": "≃",
+    "description": "Haskell: simeq -> ≃"
+  },
+  "hs-sim": {
+    "prefix": "\\sim",
+    "body": "∼",
+    "description": "Haskell: sim -> ∼"
+  },
+  "hs-sbs": {
+    "prefix": "\\sbs",
+    "body": "﹨",
+    "description": "Haskell: sbs -> ﹨"
+  },
+  "hs-smallamalg": {
+    "prefix": "\\smallamalg",
+    "body": "∐",
+    "description": "Haskell: smallamalg -> ∐"
+  },
+  "hs-smallsetminus": {
+    "prefix": "\\smallsetminus",
+    "body": "∖",
+    "description": "Haskell: smallsetminus -> ∖"
+  },
+  "hs-smallsmile": {
+    "prefix": "\\smallsmile",
+    "body": "⌣",
+    "description": "Haskell: smallsmile -> ⌣"
+  },
+  "hs-smile": {
+    "prefix": "\\smile",
+    "body": "⌣",
+    "description": "Haskell: smile -> ⌣"
+  },
+  "hs-smul": {
+    "prefix": "\\smul",
+    "body": "•",
+    "description": "Haskell: smul -> •"
+  },
+  "hs-swarrow": {
+    "prefix": "\\swarrow",
+    "body": "↙",
+    "description": "Haskell: swarrow -> ↙"
+  },
+  "hs-Tr": {
+    "prefix": "\\Tr",
+    "body": "◀",
+    "description": "Haskell: Tr -> ◀"
+  },
+  "hs-Tb": {
+    "prefix": "\\Tb",
+    "body": "◀",
+    "description": "Haskell: Tb -> ◀"
+  },
+  "hs-Tw": {
+    "prefix": "\\Tw",
+    "body": "◁",
+    "description": "Haskell: Tw -> ◁"
+  },
+  "hs-Tau": {
+    "prefix": "\\Tau",
+    "body": "Τ",
+    "description": "Haskell: Tau -> Τ"
+  },
+  "hs-Theta": {
+    "prefix": "\\Theta",
+    "body": "Θ",
+    "description": "Haskell: Theta -> Θ"
+  },
+  "hs-TH": {
+    "prefix": "\\TH",
+    "body": "Þ",
+    "description": "Haskell: TH -> Þ"
+  },
+  "hs-union": {
+    "prefix": "\\union",
+    "body": "∪",
+    "description": "Haskell: union -> ∪"
+  },
+  "hs-undertie": {
+    "prefix": "\\undertie",
+    "body": "‿",
+    "description": "Haskell: undertie -> ‿"
+  },
+  "hs-uncertainty": {
+    "prefix": "\\uncertainty",
+    "body": "⯑",
+    "description": "Haskell: uncertainty -> ⯑"
+  },
+  "hs-un": {
+    "prefix": "\\un",
+    "body": "∪",
+    "description": "Haskell: un -> ∪"
+  },
+  "hs-u+": {
+    "prefix": "\\u+",
+    "body": "⊎",
+    "description": "Haskell: u+ -> ⊎"
+  },
+  "hs-u.": {
+    "prefix": "\\u.",
+    "body": "⊍",
+    "description": "Haskell: u. -> ⊍"
+  },
+  "hs-ud-|": {
+    "prefix": "\\ud-|",
+    "body": "↨",
+    "description": "Haskell: ud-| -> ↨"
+  },
+  "hs-ud-": {
+    "prefix": "\\ud-",
+    "body": "↕",
+    "description": "Haskell: ud- -> ↕"
+  },
+  "hs-ud=": {
+    "prefix": "\\ud=",
+    "body": "⇕",
+    "description": "Haskell: ud= -> ⇕"
+  },
+  "hs-ud": {
+    "prefix": "\\ud",
+    "body": "↕",
+    "description": "Haskell: ud -> ↕"
+  },
+  "hs-ul-": {
+    "prefix": "\\ul-",
+    "body": "↖",
+    "description": "Haskell: ul- -> ↖"
+  },
+  "hs-ul=": {
+    "prefix": "\\ul=",
+    "body": "⇖",
+    "description": "Haskell: ul= -> ⇖"
+  },
+  "hs-ulcorner": {
+    "prefix": "\\ulcorner",
+    "body": "⌜",
+    "description": "Haskell: ulcorner -> ⌜"
+  },
+  "hs-ul": {
+    "prefix": "\\ul",
+    "body": "↖",
+    "description": "Haskell: ul -> ↖"
+  },
+  "hs-ur-": {
+    "prefix": "\\ur-",
+    "body": "↗",
+    "description": "Haskell: ur- -> ↗"
+  },
+  "hs-ur=": {
+    "prefix": "\\ur=",
+    "body": "⇗",
+    "description": "Haskell: ur= -> ⇗"
+  },
+  "hs-urcorner": {
+    "prefix": "\\urcorner",
+    "body": "⌝",
+    "description": "Haskell: urcorner -> ⌝"
+  },
+  "hs-ur": {
+    "prefix": "\\ur",
+    "body": "↗",
+    "description": "Haskell: ur -> ↗"
+  },
+  "hs-u-2": {
+    "prefix": "\\u-2",
+    "body": "⇈",
+    "description": "Haskell: u-2 -> ⇈"
+  },
+  "hs-u-d-": {
+    "prefix": "\\u-d-",
+    "body": "⇅",
+    "description": "Haskell: u-d- -> ⇅"
+  },
+  "hs-u-|": {
+    "prefix": "\\u-|",
+    "body": "↥",
+    "description": "Haskell: u-| -> ↥"
+  },
+  "hs-u-": {
+    "prefix": "\\u-",
+    "body": "↑",
+    "description": "Haskell: u- -> ↑"
+  },
+  "hs-u==": {
+    "prefix": "\\u==",
+    "body": "⟰",
+    "description": "Haskell: u== -> ⟰"
+  },
+  "hs-u=": {
+    "prefix": "\\u=",
+    "body": "⇑",
+    "description": "Haskell: u= -> ⇑"
+  },
+  "hs-uu-": {
+    "prefix": "\\uu-",
+    "body": "↟",
+    "description": "Haskell: uu- -> ↟"
+  },
+  "hs-upsilon": {
+    "prefix": "\\upsilon",
+    "body": "υ",
+    "description": "Haskell: upsilon -> υ"
+  },
+  "hs-uparrow": {
+    "prefix": "\\uparrow",
+    "body": "↑",
+    "description": "Haskell: uparrow -> ↑"
+  },
+  "hs-updownarrow": {
+    "prefix": "\\updownarrow",
+    "body": "↕",
+    "description": "Haskell: updownarrow -> ↕"
+  },
+  "hs-upleftharpoon": {
+    "prefix": "\\upleftharpoon",
+    "body": "↿",
+    "description": "Haskell: upleftharpoon -> ↿"
+  },
+  "hs-uplus": {
+    "prefix": "\\uplus",
+    "body": "⊎",
+    "description": "Haskell: uplus -> ⊎"
+  },
+  "hs-uprightharpoon": {
+    "prefix": "\\uprightharpoon",
+    "body": "↾",
+    "description": "Haskell: uprightharpoon -> ↾"
+  },
+  "hs-upuparrows": {
+    "prefix": "\\upuparrows",
+    "body": "⇈",
+    "description": "Haskell: upuparrows -> ⇈"
+  },
+  "hs-And": {
+    "prefix": "\\And",
+    "body": "⋀",
+    "description": "Haskell: And -> ⋀"
+  },
+  "hs-AA": {
+    "prefix": "\\AA",
+    "body": "Å",
+    "description": "Haskell: AA -> Å"
+  },
+  "hs-AE": {
+    "prefix": "\\AE",
+    "body": "Æ",
+    "description": "Haskell: AE -> Æ"
+  },
+  "hs-Alpha": {
+    "prefix": "\\Alpha",
+    "body": "Α",
+    "description": "Haskell: Alpha -> Α"
+  },
+  "hs-Or": {
+    "prefix": "\\Or",
+    "body": "⋁",
+    "description": "Haskell: Or -> ⋁"
+  },
+  "hs-O+": {
+    "prefix": "\\O+",
+    "body": "⨁",
+    "description": "Haskell: O+ -> ⨁"
+  },
+  "hs-directsum": {
+    "prefix": "\\directsum",
+    "body": "⨁",
+    "description": "Haskell: directsum -> ⨁"
+  },
+  "hs-Ox": {
+    "prefix": "\\Ox",
+    "body": "⨂",
+    "description": "Haskell: Ox -> ⨂"
+  },
+  "hs-O.": {
+    "prefix": "\\O.",
+    "body": "⨀",
+    "description": "Haskell: O. -> ⨀"
+  },
+  "hs-O*": {
+    "prefix": "\\O*",
+    "body": "⍟",
+    "description": "Haskell: O* -> ⍟"
+  },
+  "hs-OE": {
+    "prefix": "\\OE",
+    "body": "Œ",
+    "description": "Haskell: OE -> Œ"
+  },
+  "hs-Omega": {
+    "prefix": "\\Omega",
+    "body": "Ω",
+    "description": "Haskell: Omega -> Ω"
+  },
+  "hs-Omicron": {
+    "prefix": "\\Omicron",
+    "body": "Ο",
+    "description": "Haskell: Omicron -> Ο"
+  },
+  "hs-Int": {
+    "prefix": "\\Int",
+    "body": "ℤ",
+    "description": "Haskell: Int -> ℤ"
+  },
+  "hs-Inter": {
+    "prefix": "\\Inter",
+    "body": "⋂",
+    "description": "Haskell: Inter -> ⋂"
+  },
+  "hs-bInter": {
+    "prefix": "\\bInter",
+    "body": "⋂",
+    "description": "Haskell: bInter -> ⋂"
+  },
+  "hs-Iota": {
+    "prefix": "\\Iota",
+    "body": "Ι",
+    "description": "Haskell: Iota -> Ι"
+  },
+  "hs-Im": {
+    "prefix": "\\Im",
+    "body": "ℑ",
+    "description": "Haskell: Im -> ℑ"
+  },
+  "hs-Un": {
+    "prefix": "\\Un",
+    "body": "⋃",
+    "description": "Haskell: Un -> ⋃"
+  },
+  "hs-Union": {
+    "prefix": "\\Union",
+    "body": "⋃",
+    "description": "Haskell: Union -> ⋃"
+  },
+  "hs-bUnion": {
+    "prefix": "\\bUnion",
+    "body": "⋃",
+    "description": "Haskell: bUnion -> ⋃"
+  },
+  "hs-U+": {
+    "prefix": "\\U+",
+    "body": "⨄",
+    "description": "Haskell: U+ -> ⨄"
+  },
+  "hs-U.": {
+    "prefix": "\\U.",
+    "body": "⨃",
+    "description": "Haskell: U. -> ⨃"
+  },
+  "hs-Upsilon": {
+    "prefix": "\\Upsilon",
+    "body": "Υ",
+    "description": "Haskell: Upsilon -> Υ"
+  },
+  "hs-Uparrow": {
+    "prefix": "\\Uparrow",
+    "body": "⇑",
+    "description": "Haskell: Uparrow -> ⇑"
+  },
+  "hs-Updownarrow": {
+    "prefix": "\\Updownarrow",
+    "body": "⇕",
+    "description": "Haskell: Updownarrow -> ⇕"
+  },
+  "hs-Gl-": {
+    "prefix": "\\Gl-",
+    "body": "ƛ",
+    "description": "Haskell: Gl- -> ƛ"
+  },
+  "hs-Gl": {
+    "prefix": "\\Gl",
+    "body": "λ",
+    "description": "Haskell: Gl -> λ"
+  },
+  "hs-Gangia": {
+    "prefix": "\\Gangia",
+    "body": "Ϫ",
+    "description": "Haskell: Gangia -> Ϫ"
+  },
+  "hs-Gamma": {
+    "prefix": "\\Gamma",
+    "body": "Γ",
+    "description": "Haskell: Gamma -> Γ"
+  },
+  "hs-Glb": {
+    "prefix": "\\Glb",
+    "body": "⨅",
+    "description": "Haskell: Glb -> ⨅"
+  },
+  "hs-Ga": {
+    "prefix": "\\Ga",
+    "body": "α",
+    "description": "Haskell: Ga -> α"
+  },
+  "hs-GA": {
+    "prefix": "\\GA",
+    "body": "Α",
+    "description": "Haskell: GA -> Α"
+  },
+  "hs-Gb": {
+    "prefix": "\\Gb",
+    "body": "β",
+    "description": "Haskell: Gb -> β"
+  },
+  "hs-GB": {
+    "prefix": "\\GB",
+    "body": "Β",
+    "description": "Haskell: GB -> Β"
+  },
+  "hs-Gg": {
+    "prefix": "\\Gg",
+    "body": "γ",
+    "description": "Haskell: Gg -> γ"
+  },
+  "hs-GG": {
+    "prefix": "\\GG",
+    "body": "Γ",
+    "description": "Haskell: GG -> Γ"
+  },
+  "hs-Gd": {
+    "prefix": "\\Gd",
+    "body": "δ",
+    "description": "Haskell: Gd -> δ"
+  },
+  "hs-GD": {
+    "prefix": "\\GD",
+    "body": "Δ",
+    "description": "Haskell: GD -> Δ"
+  },
+  "hs-Ge": {
+    "prefix": "\\Ge",
+    "body": "ε",
+    "description": "Haskell: Ge -> ε"
+  },
+  "hs-GE": {
+    "prefix": "\\GE",
+    "body": "Ε",
+    "description": "Haskell: GE -> Ε"
+  },
+  "hs-Gz": {
+    "prefix": "\\Gz",
+    "body": "ζ",
+    "description": "Haskell: Gz -> ζ"
+  },
+  "hs-GZ": {
+    "prefix": "\\GZ",
+    "body": "Ζ",
+    "description": "Haskell: GZ -> Ζ"
+  },
+  "hs-Gth": {
+    "prefix": "\\Gth",
+    "body": "θ",
+    "description": "Haskell: Gth -> θ"
+  },
+  "hs-Gt": {
+    "prefix": "\\Gt",
+    "body": "τ",
+    "description": "Haskell: Gt -> τ"
+  },
+  "hs-GTH": {
+    "prefix": "\\GTH",
+    "body": "Θ",
+    "description": "Haskell: GTH -> Θ"
+  },
+  "hs-GT": {
+    "prefix": "\\GT",
+    "body": "Τ",
+    "description": "Haskell: GT -> Τ"
+  },
+  "hs-Gi": {
+    "prefix": "\\Gi",
+    "body": "ι",
+    "description": "Haskell: Gi -> ι"
+  },
+  "hs-GI": {
+    "prefix": "\\GI",
+    "body": "Ι",
+    "description": "Haskell: GI -> Ι"
+  },
+  "hs-Gk": {
+    "prefix": "\\Gk",
+    "body": "κ",
+    "description": "Haskell: Gk -> κ"
+  },
+  "hs-GK": {
+    "prefix": "\\GK",
+    "body": "Κ",
+    "description": "Haskell: GK -> Κ"
+  },
+  "hs-GL": {
+    "prefix": "\\GL",
+    "body": "Λ",
+    "description": "Haskell: GL -> Λ"
+  },
+  "hs-Gm": {
+    "prefix": "\\Gm",
+    "body": "μ",
+    "description": "Haskell: Gm -> μ"
+  },
+  "hs-GM": {
+    "prefix": "\\GM",
+    "body": "Μ",
+    "description": "Haskell: GM -> Μ"
+  },
+  "hs-Gn": {
+    "prefix": "\\Gn",
+    "body": "ν",
+    "description": "Haskell: Gn -> ν"
+  },
+  "hs-GN": {
+    "prefix": "\\GN",
+    "body": "Ν",
+    "description": "Haskell: GN -> Ν"
+  },
+  "hs-Gx": {
+    "prefix": "\\Gx",
+    "body": "ξ",
+    "description": "Haskell: Gx -> ξ"
+  },
+  "hs-GX": {
+    "prefix": "\\GX",
+    "body": "Ξ",
+    "description": "Haskell: GX -> Ξ"
+  },
+  "hs-Gr": {
+    "prefix": "\\Gr",
+    "body": "ρ",
+    "description": "Haskell: Gr -> ρ"
+  },
+  "hs-GR": {
+    "prefix": "\\GR",
+    "body": "Ρ",
+    "description": "Haskell: GR -> Ρ"
+  },
+  "hs-Gs": {
+    "prefix": "\\Gs",
+    "body": "σ",
+    "description": "Haskell: Gs -> σ"
+  },
+  "hs-GS": {
+    "prefix": "\\GS",
+    "body": "Σ",
+    "description": "Haskell: GS -> Σ"
+  },
+  "hs-Gu": {
+    "prefix": "\\Gu",
+    "body": "υ",
+    "description": "Haskell: Gu -> υ"
+  },
+  "hs-GU": {
+    "prefix": "\\GU",
+    "body": "Υ",
+    "description": "Haskell: GU -> Υ"
+  },
+  "hs-Gf": {
+    "prefix": "\\Gf",
+    "body": "φ",
+    "description": "Haskell: Gf -> φ"
+  },
+  "hs-GF": {
+    "prefix": "\\GF",
+    "body": "Φ",
+    "description": "Haskell: GF -> Φ"
+  },
+  "hs-Gc": {
+    "prefix": "\\Gc",
+    "body": "χ",
+    "description": "Haskell: Gc -> χ"
+  },
+  "hs-GC": {
+    "prefix": "\\GC",
+    "body": "Χ",
+    "description": "Haskell: GC -> Χ"
+  },
+  "hs-Gp": {
+    "prefix": "\\Gp",
+    "body": "ψ",
+    "description": "Haskell: Gp -> ψ"
+  },
+  "hs-GP": {
+    "prefix": "\\GP",
+    "body": "Ψ",
+    "description": "Haskell: GP -> Ψ"
+  },
+  "hs-Go": {
+    "prefix": "\\Go",
+    "body": "ω",
+    "description": "Haskell: Go -> ω"
+  },
+  "hs-GO": {
+    "prefix": "\\GO",
+    "body": "Ω",
+    "description": "Haskell: GO -> Ω"
+  },
+  "hs-Inf": {
+    "prefix": "\\Inf",
+    "body": "⨅",
+    "description": "Haskell: Inf -> ⨅"
+  },
+  "hs-Join": {
+    "prefix": "\\Join",
+    "body": "⨆",
+    "description": "Haskell: Join -> ⨆"
+  },
+  "hs-Lub": {
+    "prefix": "\\Lub",
+    "body": "⨆",
+    "description": "Haskell: Lub -> ⨆"
+  },
+  "hs-Lambda": {
+    "prefix": "\\Lambda",
+    "body": "Λ",
+    "description": "Haskell: Lambda -> Λ"
+  },
+  "hs-Lamda": {
+    "prefix": "\\Lamda",
+    "body": "Λ",
+    "description": "Haskell: Lamda -> Λ"
+  },
+  "hs-Leftarrow": {
+    "prefix": "\\Leftarrow",
+    "body": "⇐",
+    "description": "Haskell: Leftarrow -> ⇐"
+  },
+  "hs-Leftrightarrow": {
+    "prefix": "\\Leftrightarrow",
+    "body": "⇔",
+    "description": "Haskell: Leftrightarrow -> ⇔"
+  },
+  "hs-Letter": {
+    "prefix": "\\Letter",
+    "body": "✉",
+    "description": "Haskell: Letter -> ✉"
+  },
+  "hs-Lleftarrow": {
+    "prefix": "\\Lleftarrow",
+    "body": "⇚",
+    "description": "Haskell: Lleftarrow -> ⇚"
+  },
+  "hs-Ll": {
+    "prefix": "\\Ll",
+    "body": "⋘",
+    "description": "Haskell: Ll -> ⋘"
+  },
+  "hs-Longleftarrow": {
+    "prefix": "\\Longleftarrow",
+    "body": "⇐",
+    "description": "Haskell: Longleftarrow -> ⇐"
+  },
+  "hs-Longleftrightarrow": {
+    "prefix": "\\Longleftrightarrow",
+    "body": "⇔",
+    "description": "Haskell: Longleftrightarrow -> ⇔"
+  },
+  "hs-Longrightarrow": {
+    "prefix": "\\Longrightarrow",
+    "body": "⇒",
+    "description": "Haskell: Longrightarrow -> ⇒"
+  },
+  "hs-Meet": {
+    "prefix": "\\Meet",
+    "body": "⨅",
+    "description": "Haskell: Meet -> ⨅"
+  },
+  "hs-Sup": {
+    "prefix": "\\Sup",
+    "body": "⨆",
+    "description": "Haskell: Sup -> ⨆"
+  },
+  "hs-Sqcap": {
+    "prefix": "\\Sqcap",
+    "body": "⨅",
+    "description": "Haskell: Sqcap -> ⨅"
+  },
+  "hs-Sqcup": {
+    "prefix": "\\Sqcup",
+    "body": "⨆",
+    "description": "Haskell: Sqcup -> ⨆"
+  },
+  "hs-Lsh": {
+    "prefix": "\\Lsh",
+    "body": "↰",
+    "description": "Haskell: Lsh -> ↰"
+  },
+  "hs-|-n": {
+    "prefix": "\\|-n",
+    "body": "⊬",
+    "description": "Haskell: |-n -> ⊬"
+  },
+  "hs-|-": {
+    "prefix": "\\|-",
+    "body": "⊢",
+    "description": "Haskell: |- -> ⊢"
+  },
+  "hs-|=n": {
+    "prefix": "\\|=n",
+    "body": "⊭",
+    "description": "Haskell: |=n -> ⊭"
+  },
+  "hs-|=": {
+    "prefix": "\\|=",
+    "body": "⊨",
+    "description": "Haskell: |= -> ⊨"
+  },
+  "hs-|->": {
+    "prefix": "\\|->",
+    "body": "↦",
+    "description": "Haskell: |-> -> ↦"
+  },
+  "hs-|=>": {
+    "prefix": "\\|=>",
+    "body": "⇰",
+    "description": "Haskell: |=> -> ⇰"
+  },
+  "hs-||-n": {
+    "prefix": "\\||-n",
+    "body": "⊮",
+    "description": "Haskell: ||-n -> ⊮"
+  },
+  "hs-||-": {
+    "prefix": "\\||-",
+    "body": "⊩",
+    "description": "Haskell: ||- -> ⊩"
+  },
+  "hs-||=n": {
+    "prefix": "\\||=n",
+    "body": "⊯",
+    "description": "Haskell: ||=n -> ⊯"
+  },
+  "hs-||=": {
+    "prefix": "\\||=",
+    "body": "⊫",
+    "description": "Haskell: ||= -> ⊫"
+  },
+  "hs-|||-": {
+    "prefix": "\\|||-",
+    "body": "⊪",
+    "description": "Haskell: |||- -> ⊪"
+  },
+  "hs-||": {
+    "prefix": "\\||",
+    "body": "‖",
+    "description": "Haskell: || -> ‖"
+  },
+  "hs-fuzzy": {
+    "prefix": "\\fuzzy",
+    "body": "‖",
+    "description": "Haskell: fuzzy -> ‖"
+  },
+  "hs-|n": {
+    "prefix": "\\|n",
+    "body": "∤",
+    "description": "Haskell: |n -> ∤"
+  },
+  "hs-Com": {
+    "prefix": "\\Com",
+    "body": "ℂ",
+    "description": "Haskell: Com -> ℂ"
+  },
+  "hs-Chi": {
+    "prefix": "\\Chi",
+    "body": "Χ",
+    "description": "Haskell: Chi -> Χ"
+  },
+  "hs-Cap": {
+    "prefix": "\\Cap",
+    "body": "⋒",
+    "description": "Haskell: Cap -> ⋒"
+  },
+  "hs-Cup": {
+    "prefix": "\\Cup",
+    "body": "⋓",
+    "description": "Haskell: Cup -> ⋓"
+  },
+  "hs-cul": {
+    "prefix": "\\cul",
+    "body": "⌜",
+    "description": "Haskell: cul -> ⌜"
+  },
+  "hs-cuL": {
+    "prefix": "\\cuL",
+    "body": "⌈",
+    "description": "Haskell: cuL -> ⌈"
+  },
+  "hs-currency": {
+    "prefix": "\\currency",
+    "body": "¤",
+    "description": "Haskell: currency -> ¤"
+  },
+  "hs-curlyeqprec": {
+    "prefix": "\\curlyeqprec",
+    "body": "⋞",
+    "description": "Haskell: curlyeqprec -> ⋞"
+  },
+  "hs-curlyeqsucc": {
+    "prefix": "\\curlyeqsucc",
+    "body": "⋟",
+    "description": "Haskell: curlyeqsucc -> ⋟"
+  },
+  "hs-curlypreceq": {
+    "prefix": "\\curlypreceq",
+    "body": "≼",
+    "description": "Haskell: curlypreceq -> ≼"
+  },
+  "hs-curlyvee": {
+    "prefix": "\\curlyvee",
+    "body": "⋎",
+    "description": "Haskell: curlyvee -> ⋎"
+  },
+  "hs-curlywedge": {
+    "prefix": "\\curlywedge",
+    "body": "⋏",
+    "description": "Haskell: curlywedge -> ⋏"
+  },
+  "hs-curvearrowleft": {
+    "prefix": "\\curvearrowleft",
+    "body": "↶",
+    "description": "Haskell: curvearrowleft -> ↶"
+  },
+  "hs-curvearrowright": {
+    "prefix": "\\curvearrowright",
+    "body": "↷",
+    "description": "Haskell: curvearrowright -> ↷"
+  },
+  "hs-cur": {
+    "prefix": "\\cur",
+    "body": "⌝",
+    "description": "Haskell: cur -> ⌝"
+  },
+  "hs-cuR": {
+    "prefix": "\\cuR",
+    "body": "⌉",
+    "description": "Haskell: cuR -> ⌉"
+  },
+  "hs-cup": {
+    "prefix": "\\cup",
+    "body": "∪",
+    "description": "Haskell: cup -> ∪"
+  },
+  "hs-cu": {
+    "prefix": "\\cu",
+    "body": "⌜",
+    "description": "Haskell: cu -> ⌜"
+  },
+  "hs-cll": {
+    "prefix": "\\cll",
+    "body": "⌞",
+    "description": "Haskell: cll -> ⌞"
+  },
+  "hs-clL": {
+    "prefix": "\\clL",
+    "body": "⌊",
+    "description": "Haskell: clL -> ⌊"
+  },
+  "hs-clr": {
+    "prefix": "\\clr",
+    "body": "⌟",
+    "description": "Haskell: clr -> ⌟"
+  },
+  "hs-clR": {
+    "prefix": "\\clR",
+    "body": "⌋",
+    "description": "Haskell: clR -> ⌋"
+  },
+  "hs-clubsuit": {
+    "prefix": "\\clubsuit",
+    "body": "♣",
+    "description": "Haskell: clubsuit -> ♣"
+  },
+  "hs-cl": {
+    "prefix": "\\cl",
+    "body": "⌞",
+    "description": "Haskell: cl -> ⌞"
+  },
+  "hs-construction": {
+    "prefix": "\\construction",
+    "body": "🚧",
+    "description": "Haskell: construction -> 🚧"
+  },
+  "hs-cong": {
+    "prefix": "\\cong",
+    "body": "≅",
+    "description": "Haskell: cong -> ≅"
+  },
+  "hs-con": {
+    "prefix": "\\con",
+    "body": "⬝",
+    "description": "Haskell: con -> ⬝"
+  },
+  "hs-compl": {
+    "prefix": "\\compl",
+    "body": "ᶜ",
+    "description": "Haskell: compl -> ᶜ"
+  },
+  "hs-complement": {
+    "prefix": "\\complement",
+    "body": "ᶜ",
+    "description": "Haskell: complement -> ᶜ"
+  },
+  "hs-complementprefix": {
+    "prefix": "\\complementprefix",
+    "body": "∁",
+    "description": "Haskell: complementprefix -> ∁"
+  },
+  "hs-Complement": {
+    "prefix": "\\Complement",
+    "body": "∁",
+    "description": "Haskell: Complement -> ∁"
+  },
+  "hs-comp": {
+    "prefix": "\\comp",
+    "body": "∘",
+    "description": "Haskell: comp -> ∘"
+  },
+  "hs-com": {
+    "prefix": "\\com",
+    "body": "ℂ",
+    "description": "Haskell: com -> ℂ"
+  },
+  "hs-coloneq": {
+    "prefix": "\\coloneq",
+    "body": "≔",
+    "description": "Haskell: coloneq -> ≔"
+  },
+  "hs-colon": {
+    "prefix": "\\colon",
+    "body": "₡",
+    "description": "Haskell: colon -> ₡"
+  },
+  "hs-copyright": {
+    "prefix": "\\copyright",
+    "body": "©",
+    "description": "Haskell: copyright -> ©"
+  },
+  "hs-cdots": {
+    "prefix": "\\cdots",
+    "body": "⋯",
+    "description": "Haskell: cdots -> ⋯"
+  },
+  "hs-cdot": {
+    "prefix": "\\cdot",
+    "body": "·",
+    "description": "Haskell: cdot -> ·"
+  },
+  "hs-cib": {
+    "prefix": "\\cib",
+    "body": "●",
+    "description": "Haskell: cib -> ●"
+  },
+  "hs-ciw": {
+    "prefix": "\\ciw",
+    "body": "○",
+    "description": "Haskell: ciw -> ○"
+  },
+  "hs-ci..": {
+    "prefix": "\\ci..",
+    "body": "◌",
+    "description": "Haskell: ci.. -> ◌"
+  },
+  "hs-ci.": {
+    "prefix": "\\ci.",
+    "body": "◎",
+    "description": "Haskell: ci. -> ◎"
+  },
+  "hs-ciO": {
+    "prefix": "\\ciO",
+    "body": "◯",
+    "description": "Haskell: ciO -> ◯"
+  },
+  "hs-circeq": {
+    "prefix": "\\circeq",
+    "body": "≗",
+    "description": "Haskell: circeq -> ≗"
+  },
+  "hs-circlearrowleft": {
+    "prefix": "\\circlearrowleft",
+    "body": "↺",
+    "description": "Haskell: circlearrowleft -> ↺"
+  },
+  "hs-circlearrowright": {
+    "prefix": "\\circlearrowright",
+    "body": "↻",
+    "description": "Haskell: circlearrowright -> ↻"
+  },
+  "hs-circledR": {
+    "prefix": "\\circledR",
+    "body": "®",
+    "description": "Haskell: circledR -> ®"
+  },
+  "hs-circledS": {
+    "prefix": "\\circledS",
+    "body": "Ⓢ",
+    "description": "Haskell: circledS -> Ⓢ"
+  },
+  "hs-circledast": {
+    "prefix": "\\circledast",
+    "body": "⊛",
+    "description": "Haskell: circledast -> ⊛"
+  },
+  "hs-circledcirc": {
+    "prefix": "\\circledcirc",
+    "body": "⊚",
+    "description": "Haskell: circledcirc -> ⊚"
+  },
+  "hs-circleddash": {
+    "prefix": "\\circleddash",
+    "body": "⊝",
+    "description": "Haskell: circleddash -> ⊝"
+  },
+  "hs-circ": {
+    "prefix": "\\circ",
+    "body": "∘",
+    "description": "Haskell: circ -> ∘"
+  },
+  "hs-ci": {
+    "prefix": "\\ci",
+    "body": "●",
+    "description": "Haskell: ci -> ●"
+  },
+  "hs-centerdot": {
+    "prefix": "\\centerdot",
+    "body": "·",
+    "description": "Haskell: centerdot -> ·"
+  },
+  "hs-cent": {
+    "prefix": "\\cent",
+    "body": "¢",
+    "description": "Haskell: cent -> ¢"
+  },
+  "hs-cedi": {
+    "prefix": "\\cedi",
+    "body": "₵",
+    "description": "Haskell: cedi -> ₵"
+  },
+  "hs-celsius": {
+    "prefix": "\\celsius",
+    "body": "℃",
+    "description": "Haskell: celsius -> ℃"
+  },
+  "hs-ce": {
+    "prefix": "\\ce",
+    "body": "ȩ",
+    "description": "Haskell: ce -> ȩ"
+  },
+  "hs-checkmark": {
+    "prefix": "\\checkmark",
+    "body": "✓",
+    "description": "Haskell: checkmark -> ✓"
+  },
+  "hs-chi": {
+    "prefix": "\\chi",
+    "body": "χ",
+    "description": "Haskell: chi -> χ"
+  },
+  "hs-cruzeiro": {
+    "prefix": "\\cruzeiro",
+    "body": "₢",
+    "description": "Haskell: cruzeiro -> ₢"
+  },
+  "hs-caution": {
+    "prefix": "\\caution",
+    "body": "☡",
+    "description": "Haskell: caution -> ☡"
+  },
+  "hs-cap": {
+    "prefix": "\\cap",
+    "body": "∩",
+    "description": "Haskell: cap -> ∩"
+  },
+  "hs-qed": {
+    "prefix": "\\qed",
+    "body": "∎",
+    "description": "Haskell: qed -> ∎"
+  },
+  "hs-quad": {
+    "prefix": "\\quad",
+    "body": " ",
+    "description": "Haskell: quad ->  "
+  },
+  "hs-quot": {
+    "prefix": "\\quot",
+    "body": "⧸",
+    "description": "Haskell: quot -> ⧸"
+  },
+  "hs-bigsolidus": {
+    "prefix": "\\bigsolidus",
+    "body": "⧸",
+    "description": "Haskell: bigsolidus -> ⧸"
+  },
+  "hs-/": {
+    "prefix": "\\/",
+    "body": "⧸",
+    "description": "Haskell: / -> ⧸"
+  },
+  "hs-+ ": {
+    "prefix": "\\+ ",
+    "body": "⊹",
+    "description": "Haskell: +  -> ⊹"
+  },
+  "hs-b+": {
+    "prefix": "\\b+",
+    "body": "⊞",
+    "description": "Haskell: b+ -> ⊞"
+  },
+  "hs-b-": {
+    "prefix": "\\b-",
+    "body": "⊟",
+    "description": "Haskell: b- -> ⊟"
+  },
+  "hs-bx": {
+    "prefix": "\\bx",
+    "body": "⊠",
+    "description": "Haskell: bx -> ⊠"
+  },
+  "hs-b.": {
+    "prefix": "\\b.",
+    "body": "⊡",
+    "description": "Haskell: b. -> ⊡"
+  },
+  "hs-bn": {
+    "prefix": "\\bn",
+    "body": "ℕ",
+    "description": "Haskell: bn -> ℕ"
+  },
+  "hs-bz": {
+    "prefix": "\\bz",
+    "body": "ℤ",
+    "description": "Haskell: bz -> ℤ"
+  },
+  "hs-bq": {
+    "prefix": "\\bq",
+    "body": "ℚ",
+    "description": "Haskell: bq -> ℚ"
+  },
+  "hs-brokenbar": {
+    "prefix": "\\brokenbar",
+    "body": "¦",
+    "description": "Haskell: brokenbar -> ¦"
+  },
+  "hs-br": {
+    "prefix": "\\br",
+    "body": "ℝ",
+    "description": "Haskell: br -> ℝ"
+  },
+  "hs-bc": {
+    "prefix": "\\bc",
+    "body": "ℂ",
+    "description": "Haskell: bc -> ℂ"
+  },
+  "hs-bp": {
+    "prefix": "\\bp",
+    "body": "ℙ",
+    "description": "Haskell: bp -> ℙ"
+  },
+  "hs-bb": {
+    "prefix": "\\bb",
+    "body": "𝔹",
+    "description": "Haskell: bb -> 𝔹"
+  },
+  "hs-bsum": {
+    "prefix": "\\bsum",
+    "body": "⅀",
+    "description": "Haskell: bsum -> ⅀"
+  },
+  "hs-b0": {
+    "prefix": "\\b0",
+    "body": "𝟘",
+    "description": "Haskell: b0 -> 𝟘"
+  },
+  "hs-b1": {
+    "prefix": "\\b1",
+    "body": "𝟙",
+    "description": "Haskell: b1 -> 𝟙"
+  },
+  "hs-b2": {
+    "prefix": "\\b2",
+    "body": "𝟚",
+    "description": "Haskell: b2 -> 𝟚"
+  },
+  "hs-b3": {
+    "prefix": "\\b3",
+    "body": "𝟛",
+    "description": "Haskell: b3 -> 𝟛"
+  },
+  "hs-b4": {
+    "prefix": "\\b4",
+    "body": "𝟜",
+    "description": "Haskell: b4 -> 𝟜"
+  },
+  "hs-b5": {
+    "prefix": "\\b5",
+    "body": "𝟝",
+    "description": "Haskell: b5 -> 𝟝"
+  },
+  "hs-b6": {
+    "prefix": "\\b6",
+    "body": "𝟞",
+    "description": "Haskell: b6 -> 𝟞"
+  },
+  "hs-b7": {
+    "prefix": "\\b7",
+    "body": "𝟟",
+    "description": "Haskell: b7 -> 𝟟"
+  },
+  "hs-b8": {
+    "prefix": "\\b8",
+    "body": "𝟠",
+    "description": "Haskell: b8 -> 𝟠"
+  },
+  "hs-b9": {
+    "prefix": "\\b9",
+    "body": "𝟡",
+    "description": "Haskell: b9 -> 𝟡"
+  },
+  "hs-sb0": {
+    "prefix": "\\sb0",
+    "body": "𝟬",
+    "description": "Haskell: sb0 -> 𝟬"
+  },
+  "hs-sb1": {
+    "prefix": "\\sb1",
+    "body": "𝟭",
+    "description": "Haskell: sb1 -> 𝟭"
+  },
+  "hs-sb2": {
+    "prefix": "\\sb2",
+    "body": "𝟮",
+    "description": "Haskell: sb2 -> 𝟮"
+  },
+  "hs-sb3": {
+    "prefix": "\\sb3",
+    "body": "𝟯",
+    "description": "Haskell: sb3 -> 𝟯"
+  },
+  "hs-sb4": {
+    "prefix": "\\sb4",
+    "body": "𝟰",
+    "description": "Haskell: sb4 -> 𝟰"
+  },
+  "hs-sb5": {
+    "prefix": "\\sb5",
+    "body": "𝟱",
+    "description": "Haskell: sb5 -> 𝟱"
+  },
+  "hs-sb6": {
+    "prefix": "\\sb6",
+    "body": "𝟲",
+    "description": "Haskell: sb6 -> 𝟲"
+  },
+  "hs-sb7": {
+    "prefix": "\\sb7",
+    "body": "𝟳",
+    "description": "Haskell: sb7 -> 𝟳"
+  },
+  "hs-sb8": {
+    "prefix": "\\sb8",
+    "body": "𝟴",
+    "description": "Haskell: sb8 -> 𝟴"
+  },
+  "hs-sb9": {
+    "prefix": "\\sb9",
+    "body": "𝟵",
+    "description": "Haskell: sb9 -> 𝟵"
+  },
+  "hs-bub": {
+    "prefix": "\\bub",
+    "body": "•",
+    "description": "Haskell: bub -> •"
+  },
+  "hs-buw": {
+    "prefix": "\\buw",
+    "body": "◦",
+    "description": "Haskell: buw -> ◦"
+  },
+  "hs-but": {
+    "prefix": "\\but",
+    "body": "‣",
+    "description": "Haskell: but -> ‣"
+  },
+  "hs-bumpeq": {
+    "prefix": "\\bumpeq",
+    "body": "≏",
+    "description": "Haskell: bumpeq -> ≏"
+  },
+  "hs-bu": {
+    "prefix": "\\bu",
+    "body": "•",
+    "description": "Haskell: bu -> •"
+  },
+  "hs-biohazard": {
+    "prefix": "\\biohazard",
+    "body": "☣",
+    "description": "Haskell: biohazard -> ☣"
+  },
+  "hs-bihimp": {
+    "prefix": "\\bihimp",
+    "body": "⇔",
+    "description": "Haskell: bihimp -> ⇔"
+  },
+  "hs-bigcap": {
+    "prefix": "\\bigcap",
+    "body": "⋂",
+    "description": "Haskell: bigcap -> ⋂"
+  },
+  "hs-bigcirc": {
+    "prefix": "\\bigcirc",
+    "body": "◯",
+    "description": "Haskell: bigcirc -> ◯"
+  },
+  "hs-bigcoprod": {
+    "prefix": "\\bigcoprod",
+    "body": "∐",
+    "description": "Haskell: bigcoprod -> ∐"
+  },
+  "hs-bigcup": {
+    "prefix": "\\bigcup",
+    "body": "⋃",
+    "description": "Haskell: bigcup -> ⋃"
+  },
+  "hs-bigglb": {
+    "prefix": "\\bigglb",
+    "body": "⨅",
+    "description": "Haskell: bigglb -> ⨅"
+  },
+  "hs-biginf": {
+    "prefix": "\\biginf",
+    "body": "⨅",
+    "description": "Haskell: biginf -> ⨅"
+  },
+  "hs-bigjoin": {
+    "prefix": "\\bigjoin",
+    "body": "⨆",
+    "description": "Haskell: bigjoin -> ⨆"
+  },
+  "hs-biglub": {
+    "prefix": "\\biglub",
+    "body": "⨆",
+    "description": "Haskell: biglub -> ⨆"
+  },
+  "hs-bigmeet": {
+    "prefix": "\\bigmeet",
+    "body": "⨅",
+    "description": "Haskell: bigmeet -> ⨅"
+  },
+  "hs-bigsqcap": {
+    "prefix": "\\bigsqcap",
+    "body": "⨅",
+    "description": "Haskell: bigsqcap -> ⨅"
+  },
+  "hs-bigsqcup": {
+    "prefix": "\\bigsqcup",
+    "body": "⨆",
+    "description": "Haskell: bigsqcup -> ⨆"
+  },
+  "hs-bigstar": {
+    "prefix": "\\bigstar",
+    "body": "★",
+    "description": "Haskell: bigstar -> ★"
+  },
+  "hs-bigsup": {
+    "prefix": "\\bigsup",
+    "body": "⨆",
+    "description": "Haskell: bigsup -> ⨆"
+  },
+  "hs-bigtriangledown": {
+    "prefix": "\\bigtriangledown",
+    "body": "▽",
+    "description": "Haskell: bigtriangledown -> ▽"
+  },
+  "hs-bigtriangleup": {
+    "prefix": "\\bigtriangleup",
+    "body": "△",
+    "description": "Haskell: bigtriangleup -> △"
+  },
+  "hs-bigvee": {
+    "prefix": "\\bigvee",
+    "body": "⋁",
+    "description": "Haskell: bigvee -> ⋁"
+  },
+  "hs-bigwedge": {
+    "prefix": "\\bigwedge",
+    "body": "⋀",
+    "description": "Haskell: bigwedge -> ⋀"
+  },
+  "hs-beta": {
+    "prefix": "\\beta",
+    "body": "β",
+    "description": "Haskell: beta -> β"
+  },
+  "hs-beth": {
+    "prefix": "\\beth",
+    "body": "ℶ",
+    "description": "Haskell: beth -> ℶ"
+  },
+  "hs-between": {
+    "prefix": "\\between",
+    "body": "≬",
+    "description": "Haskell: between -> ≬"
+  },
+  "hs-because": {
+    "prefix": "\\because",
+    "body": "∵",
+    "description": "Haskell: because -> ∵"
+  },
+  "hs-backcong": {
+    "prefix": "\\backcong",
+    "body": "≌",
+    "description": "Haskell: backcong -> ≌"
+  },
+  "hs-backepsilon": {
+    "prefix": "\\backepsilon",
+    "body": "∍",
+    "description": "Haskell: backepsilon -> ∍"
+  },
+  "hs-backprime": {
+    "prefix": "\\backprime",
+    "body": "‵",
+    "description": "Haskell: backprime -> ‵"
+  },
+  "hs-backsimeq": {
+    "prefix": "\\backsimeq",
+    "body": "⋍",
+    "description": "Haskell: backsimeq -> ⋍"
+  },
+  "hs-backsim": {
+    "prefix": "\\backsim",
+    "body": "∽",
+    "description": "Haskell: backsim -> ∽"
+  },
+  "hs-barwedge": {
+    "prefix": "\\barwedge",
+    "body": "⊼",
+    "description": "Haskell: barwedge -> ⊼"
+  },
+  "hs-blacklozenge": {
+    "prefix": "\\blacklozenge",
+    "body": "✦",
+    "description": "Haskell: blacklozenge -> ✦"
+  },
+  "hs-blacksquare": {
+    "prefix": "\\blacksquare",
+    "body": "▪",
+    "description": "Haskell: blacksquare -> ▪"
+  },
+  "hs-blacksmiley": {
+    "prefix": "\\blacksmiley",
+    "body": "☻",
+    "description": "Haskell: blacksmiley -> ☻"
+  },
+  "hs-blacktriangledown": {
+    "prefix": "\\blacktriangledown",
+    "body": "▾",
+    "description": "Haskell: blacktriangledown -> ▾"
+  },
+  "hs-blacktriangleleft": {
+    "prefix": "\\blacktriangleleft",
+    "body": "◂",
+    "description": "Haskell: blacktriangleleft -> ◂"
+  },
+  "hs-blacktriangleright": {
+    "prefix": "\\blacktriangleright",
+    "body": "▸",
+    "description": "Haskell: blacktriangleright -> ▸"
+  },
+  "hs-blacktriangle": {
+    "prefix": "\\blacktriangle",
+    "body": "▴",
+    "description": "Haskell: blacktriangle -> ▴"
+  },
+  "hs-bot": {
+    "prefix": "\\bot",
+    "body": "⊥",
+    "description": "Haskell: bot -> ⊥"
+  },
+  "hs-^bot": {
+    "prefix": "\\^bot",
+    "body": "ᗮ",
+    "description": "Haskell: ^bot -> ᗮ"
+  },
+  "hs-bowtie": {
+    "prefix": "\\bowtie",
+    "body": "⋈",
+    "description": "Haskell: bowtie -> ⋈"
+  },
+  "hs-boxminus": {
+    "prefix": "\\boxminus",
+    "body": "⊟",
+    "description": "Haskell: boxminus -> ⊟"
+  },
+  "hs-boxmid": {
+    "prefix": "\\boxmid",
+    "body": "◫",
+    "description": "Haskell: boxmid -> ◫"
+  },
+  "hs-hcomp": {
+    "prefix": "\\hcomp",
+    "body": "◫",
+    "description": "Haskell: hcomp -> ◫"
+  },
+  "hs-boxplus": {
+    "prefix": "\\boxplus",
+    "body": "⊞",
+    "description": "Haskell: boxplus -> ⊞"
+  },
+  "hs-boxtimes": {
+    "prefix": "\\boxtimes",
+    "body": "⊠",
+    "description": "Haskell: boxtimes -> ⊠"
+  },
+  "hs-join": {
+    "prefix": "\\join",
+    "body": "⊔",
+    "description": "Haskell: join -> ⊔"
+  },
+  "hs-r-2": {
+    "prefix": "\\r-2",
+    "body": "⇉",
+    "description": "Haskell: r-2 -> ⇉"
+  },
+  "hs-r-3": {
+    "prefix": "\\r-3",
+    "body": "⇶",
+    "description": "Haskell: r-3 -> ⇶"
+  },
+  "hs-r-l-": {
+    "prefix": "\\r-l-",
+    "body": "⇄",
+    "description": "Haskell: r-l- -> ⇄"
+  },
+  "hs-r--": {
+    "prefix": "\\r--",
+    "body": "⟶",
+    "description": "Haskell: r-- -> ⟶"
+  },
+  "hs-r-n": {
+    "prefix": "\\r-n",
+    "body": "↛",
+    "description": "Haskell: r-n -> ↛"
+  },
+  "hs-r-|": {
+    "prefix": "\\r-|",
+    "body": "↦",
+    "description": "Haskell: r-| -> ↦"
+  },
+  "hs-r->": {
+    "prefix": "\\r->",
+    "body": "↣",
+    "description": "Haskell: r-> -> ↣"
+  },
+  "hs-r-o": {
+    "prefix": "\\r-o",
+    "body": "⊸",
+    "description": "Haskell: r-o -> ⊸"
+  },
+  "hs-r-": {
+    "prefix": "\\r-",
+    "body": "→",
+    "description": "Haskell: r- -> →"
+  },
+  "hs-r==": {
+    "prefix": "\\r==",
+    "body": "⇛",
+    "description": "Haskell: r== -> ⇛"
+  },
+  "hs-r=n": {
+    "prefix": "\\r=n",
+    "body": "⇏",
+    "description": "Haskell: r=n -> ⇏"
+  },
+  "hs-r=": {
+    "prefix": "\\r=",
+    "body": "⇒",
+    "description": "Haskell: r= -> ⇒"
+  },
+  "hs-r~": {
+    "prefix": "\\r~",
+    "body": "↝",
+    "description": "Haskell: r~ -> ↝"
+  },
+  "hs-rr-": {
+    "prefix": "\\rr-",
+    "body": "↠",
+    "description": "Haskell: rr- -> ↠"
+  },
+  "hs-reb": {
+    "prefix": "\\reb",
+    "body": "▬",
+    "description": "Haskell: reb -> ▬"
+  },
+  "hs-rew": {
+    "prefix": "\\rew",
+    "body": "▭",
+    "description": "Haskell: rew -> ▭"
+  },
+  "hs-real": {
+    "prefix": "\\real",
+    "body": "ℝ",
+    "description": "Haskell: real -> ℝ"
+  },
+  "hs-registered": {
+    "prefix": "\\registered",
+    "body": "®",
+    "description": "Haskell: registered -> ®"
+  },
+  "hs-re": {
+    "prefix": "\\re",
+    "body": "▬",
+    "description": "Haskell: re -> ▬"
+  },
+  "hs-rbag": {
+    "prefix": "\\rbag",
+    "body": "⟆",
+    "description": "Haskell: rbag -> ⟆"
+  },
+  "hs-rat": {
+    "prefix": "\\rat",
+    "body": "ℚ",
+    "description": "Haskell: rat -> ℚ"
+  },
+  "hs-radioactive": {
+    "prefix": "\\radioactive",
+    "body": "☢",
+    "description": "Haskell: radioactive -> ☢"
+  },
+  "hs-rrbracket": {
+    "prefix": "\\rrbracket",
+    "body": "〛",
+    "description": "Haskell: rrbracket -> 〛"
+  },
+  "hs-rangle": {
+    "prefix": "\\rangle",
+    "body": "⟩",
+    "description": "Haskell: rangle -> ⟩"
+  },
+  "hs-rq": {
+    "prefix": "\\rq",
+    "body": "’",
+    "description": "Haskell: rq -> ’"
+  },
+  "hs-rightarrowtail": {
+    "prefix": "\\rightarrowtail",
+    "body": "↣",
+    "description": "Haskell: rightarrowtail -> ↣"
+  },
+  "hs-rightarrow": {
+    "prefix": "\\rightarrow",
+    "body": "→",
+    "description": "Haskell: rightarrow -> →"
+  },
+  "hs-rightharpoondown": {
+    "prefix": "\\rightharpoondown",
+    "body": "⇁",
+    "description": "Haskell: rightharpoondown -> ⇁"
+  },
+  "hs-rightharpoonup": {
+    "prefix": "\\rightharpoonup",
+    "body": "⇀",
+    "description": "Haskell: rightharpoonup -> ⇀"
+  },
+  "hs-rightleftarrows": {
+    "prefix": "\\rightleftarrows",
+    "body": "⇄",
+    "description": "Haskell: rightleftarrows -> ⇄"
+  },
+  "hs-rightleftharpoons": {
+    "prefix": "\\rightleftharpoons",
+    "body": "⇌",
+    "description": "Haskell: rightleftharpoons -> ⇌"
+  },
+  "hs-rightrightarrows": {
+    "prefix": "\\rightrightarrows",
+    "body": "⇉",
+    "description": "Haskell: rightrightarrows -> ⇉"
+  },
+  "hs-rightthreetimes": {
+    "prefix": "\\rightthreetimes",
+    "body": "⋌",
+    "description": "Haskell: rightthreetimes -> ⋌"
+  },
+  "hs-risingdotseq": {
+    "prefix": "\\risingdotseq",
+    "body": "≓",
+    "description": "Haskell: risingdotseq -> ≓"
+  },
+  "hs-ruble": {
+    "prefix": "\\ruble",
+    "body": "₽",
+    "description": "Haskell: ruble -> ₽"
+  },
+  "hs-rupee": {
+    "prefix": "\\rupee",
+    "body": "₨",
+    "description": "Haskell: rupee -> ₨"
+  },
+  "hs-rho": {
+    "prefix": "\\rho",
+    "body": "ρ",
+    "description": "Haskell: rho -> ρ"
+  },
+  "hs-rhd": {
+    "prefix": "\\rhd",
+    "body": "▷",
+    "description": "Haskell: rhd -> ▷"
+  },
+  "hs-rceil": {
+    "prefix": "\\rceil",
+    "body": "⌉",
+    "description": "Haskell: rceil -> ⌉"
+  },
+  "hs-rfloor": {
+    "prefix": "\\rfloor",
+    "body": "⌋",
+    "description": "Haskell: rfloor -> ⌋"
+  },
+  "hs-rtimes": {
+    "prefix": "\\rtimes",
+    "body": "⋊",
+    "description": "Haskell: rtimes -> ⋊"
+  },
+  "hs-rdq": {
+    "prefix": "\\rdq",
+    "body": "”",
+    "description": "Haskell: rdq -> ”"
+  },
+  "hs-rdata": {
+    "prefix": "\\rdata",
+    "body": "》",
+    "description": "Haskell: rdata -> 》"
+  },
+  "hs-functor": {
+    "prefix": "\\functor",
+    "body": "⥤",
+    "description": "Haskell: functor -> ⥤"
+  },
+  "hs-fun": {
+    "prefix": "\\fun",
+    "body": "λ",
+    "description": "Haskell: fun -> λ"
+  },
+  "hs-f<<": {
+    "prefix": "\\f<<",
+    "body": "«",
+    "description": "Haskell: f<< -> «"
+  },
+  "hs-f>>": {
+    "prefix": "\\f>>",
+    "body": "»",
+    "description": "Haskell: f>> -> »"
+  },
+  "hs-f<": {
+    "prefix": "\\f<",
+    "body": "‹",
+    "description": "Haskell: f< -> ‹"
+  },
+  "hs-f>": {
+    "prefix": "\\f>",
+    "body": "›",
+    "description": "Haskell: f> -> ›"
+  },
+  "hs-finprod": {
+    "prefix": "\\finprod",
+    "body": "∏ᶠ",
+    "description": "Haskell: finprod -> ∏ᶠ"
+  },
+  "hs-finsum": {
+    "prefix": "\\finsum",
+    "body": "∑ᶠ",
+    "description": "Haskell: finsum -> ∑ᶠ"
+  },
+  "hs-frac12": {
+    "prefix": "\\frac12",
+    "body": "½",
+    "description": "Haskell: frac12 -> ½"
+  },
+  "hs-frac13": {
+    "prefix": "\\frac13",
+    "body": "⅓",
+    "description": "Haskell: frac13 -> ⅓"
+  },
+  "hs-frac14": {
+    "prefix": "\\frac14",
+    "body": "¼",
+    "description": "Haskell: frac14 -> ¼"
+  },
+  "hs-frac15": {
+    "prefix": "\\frac15",
+    "body": "⅕",
+    "description": "Haskell: frac15 -> ⅕"
+  },
+  "hs-frac16": {
+    "prefix": "\\frac16",
+    "body": "⅙",
+    "description": "Haskell: frac16 -> ⅙"
+  },
+  "hs-frac18": {
+    "prefix": "\\frac18",
+    "body": "⅛",
+    "description": "Haskell: frac18 -> ⅛"
+  },
+  "hs-frac1": {
+    "prefix": "\\frac1",
+    "body": "⅟",
+    "description": "Haskell: frac1 -> ⅟"
+  },
+  "hs-frac23": {
+    "prefix": "\\frac23",
+    "body": "⅔",
+    "description": "Haskell: frac23 -> ⅔"
+  },
+  "hs-frac25": {
+    "prefix": "\\frac25",
+    "body": "⅖",
+    "description": "Haskell: frac25 -> ⅖"
+  },
+  "hs-frac34": {
+    "prefix": "\\frac34",
+    "body": "¾",
+    "description": "Haskell: frac34 -> ¾"
+  },
+  "hs-frac35": {
+    "prefix": "\\frac35",
+    "body": "⅗",
+    "description": "Haskell: frac35 -> ⅗"
+  },
+  "hs-frac38": {
+    "prefix": "\\frac38",
+    "body": "⅜",
+    "description": "Haskell: frac38 -> ⅜"
+  },
+  "hs-frac45": {
+    "prefix": "\\frac45",
+    "body": "⅘",
+    "description": "Haskell: frac45 -> ⅘"
+  },
+  "hs-frac56": {
+    "prefix": "\\frac56",
+    "body": "⅚",
+    "description": "Haskell: frac56 -> ⅚"
+  },
+  "hs-frac58": {
+    "prefix": "\\frac58",
+    "body": "⅝",
+    "description": "Haskell: frac58 -> ⅝"
+  },
+  "hs-frac78": {
+    "prefix": "\\frac78",
+    "body": "⅞",
+    "description": "Haskell: frac78 -> ⅞"
+  },
+  "hs-frac": {
+    "prefix": "\\frac",
+    "body": "¼",
+    "description": "Haskell: frac -> ¼"
+  },
+  "hs-frown": {
+    "prefix": "\\frown",
+    "body": "⌢",
+    "description": "Haskell: frown -> ⌢"
+  },
+  "hs-frqq": {
+    "prefix": "\\frqq",
+    "body": "»",
+    "description": "Haskell: frqq -> »"
+  },
+  "hs-frq": {
+    "prefix": "\\frq",
+    "body": "›",
+    "description": "Haskell: frq -> ›"
+  },
+  "hs-female": {
+    "prefix": "\\female",
+    "body": "♀",
+    "description": "Haskell: female -> ♀"
+  },
+  "hs-fei": {
+    "prefix": "\\fei",
+    "body": "ϥ",
+    "description": "Haskell: fei -> ϥ"
+  },
+  "hs-facsimile": {
+    "prefix": "\\facsimile",
+    "body": "℻",
+    "description": "Haskell: facsimile -> ℻"
+  },
+  "hs-fallingdotseq": {
+    "prefix": "\\fallingdotseq",
+    "body": "≒",
+    "description": "Haskell: fallingdotseq -> ≒"
+  },
+  "hs-flat": {
+    "prefix": "\\flat",
+    "body": "♭",
+    "description": "Haskell: flat -> ♭"
+  },
+  "hs-flqq": {
+    "prefix": "\\flqq",
+    "body": "«",
+    "description": "Haskell: flqq -> «"
+  },
+  "hs-flq": {
+    "prefix": "\\flq",
+    "body": "‹",
+    "description": "Haskell: flq -> ‹"
+  },
+  "hs-forall": {
+    "prefix": "\\forall",
+    "body": "∀",
+    "description": "Haskell: forall -> ∀"
+  },
+  "hs-)b": {
+    "prefix": "\\)b",
+    "body": "⟆",
+    "description": "Haskell: )b -> ⟆"
+  },
+  "hs-[[": {
+    "prefix": "\\[[",
+    "body": "⟦",
+    "description": "Haskell: [[ -> ⟦"
+  },
+  "hs-]]": {
+    "prefix": "\\]]",
+    "body": "⟧",
+    "description": "Haskell: ]] -> ⟧"
+  },
+  "hs-{{": {
+    "prefix": "\\{{",
+    "body": "⦃",
+    "description": "Haskell: {{ -> ⦃"
+  },
+  "hs-}}": {
+    "prefix": "\\}}",
+    "body": "⦄",
+    "description": "Haskell: }} -> ⦄"
+  },
+  "hs-((": {
+    "prefix": "\\((",
+    "body": "⸨",
+    "description": "Haskell: (( -> ⸨"
+  },
+  "hs-))": {
+    "prefix": "\\))",
+    "body": "⸩",
+    "description": "Haskell: )) -> ⸩"
+  },
+  "hs-([": {
+    "prefix": "\\([",
+    "body": "⟮",
+    "description": "Haskell: ([ -> ⟮"
+  },
+  "hs-])": {
+    "prefix": "\\])",
+    "body": "⟯",
+    "description": "Haskell: ]) -> ⟯"
+  },
+  "hs-Xi": {
+    "prefix": "\\Xi",
+    "body": "Ξ",
+    "description": "Haskell: Xi -> Ξ"
+  },
+  "hs-Nat": {
+    "prefix": "\\Nat",
+    "body": "ℕ",
+    "description": "Haskell: Nat -> ℕ"
+  },
+  "hs-Nu": {
+    "prefix": "\\Nu",
+    "body": "Ν",
+    "description": "Haskell: Nu -> Ν"
+  },
+  "hs-Zeta": {
+    "prefix": "\\Zeta",
+    "body": "Ζ",
+    "description": "Haskell: Zeta -> Ζ"
+  },
+  "hs-Rat": {
+    "prefix": "\\Rat",
+    "body": "ℚ",
+    "description": "Haskell: Rat -> ℚ"
+  },
+  "hs-Real": {
+    "prefix": "\\Real",
+    "body": "ℝ",
+    "description": "Haskell: Real -> ℝ"
+  },
+  "hs-Re": {
+    "prefix": "\\Re",
+    "body": "ℜ",
+    "description": "Haskell: Re -> ℜ"
+  },
+  "hs-Rho": {
+    "prefix": "\\Rho",
+    "body": "Ρ",
+    "description": "Haskell: Rho -> Ρ"
+  },
+  "hs-Rightarrow": {
+    "prefix": "\\Rightarrow",
+    "body": "⇒",
+    "description": "Haskell: Rightarrow -> ⇒"
+  },
+  "hs-Rrightarrow": {
+    "prefix": "\\Rrightarrow",
+    "body": "⇛",
+    "description": "Haskell: Rrightarrow -> ⇛"
+  },
+  "hs-Rsh": {
+    "prefix": "\\Rsh",
+    "body": "↱",
+    "description": "Haskell: Rsh -> ↱"
+  },
+  "hs-Fei": {
+    "prefix": "\\Fei",
+    "body": "Ϥ",
+    "description": "Haskell: Fei -> Ϥ"
+  },
+  "hs-Frowny": {
+    "prefix": "\\Frowny",
+    "body": "☹",
+    "description": "Haskell: Frowny -> ☹"
+  },
+  "hs-Hori": {
+    "prefix": "\\Hori",
+    "body": "Ϩ",
+    "description": "Haskell: Hori -> Ϩ"
+  },
+  "hs-Heta": {
+    "prefix": "\\Heta",
+    "body": "Ͱ",
+    "description": "Haskell: Heta -> Ͱ"
+  },
+  "hs-Khei": {
+    "prefix": "\\Khei",
+    "body": "Ϧ",
+    "description": "Haskell: Khei -> Ϧ"
+  },
+  "hs-Koppa": {
+    "prefix": "\\Koppa",
+    "body": "Ϟ",
+    "description": "Haskell: Koppa -> Ϟ"
+  },
+  "hs-Kappa": {
+    "prefix": "\\Kappa",
+    "body": "Κ",
+    "description": "Haskell: Kappa -> Κ"
+  },
+  "hs-^a": {
+    "prefix": "\\^a",
+    "body": "ᵃ",
+    "description": "Haskell: ^a -> ᵃ"
+  },
+  "hs-^b": {
+    "prefix": "\\^b",
+    "body": "ᵇ",
+    "description": "Haskell: ^b -> ᵇ"
+  },
+  "hs-^c": {
+    "prefix": "\\^c",
+    "body": "ᶜ",
+    "description": "Haskell: ^c -> ᶜ"
+  },
+  "hs-^d": {
+    "prefix": "\\^d",
+    "body": "ᵈ",
+    "description": "Haskell: ^d -> ᵈ"
+  },
+  "hs-^e": {
+    "prefix": "\\^e",
+    "body": "ᵉ",
+    "description": "Haskell: ^e -> ᵉ"
+  },
+  "hs-^f": {
+    "prefix": "\\^f",
+    "body": "ᶠ",
+    "description": "Haskell: ^f -> ᶠ"
+  },
+  "hs-^g": {
+    "prefix": "\\^g",
+    "body": "ᵍ",
+    "description": "Haskell: ^g -> ᵍ"
+  },
+  "hs-^h": {
+    "prefix": "\\^h",
+    "body": "ʰ",
+    "description": "Haskell: ^h -> ʰ"
+  },
+  "hs-^i": {
+    "prefix": "\\^i",
+    "body": "ⁱ",
+    "description": "Haskell: ^i -> ⁱ"
+  },
+  "hs-^j": {
+    "prefix": "\\^j",
+    "body": "ʲ",
+    "description": "Haskell: ^j -> ʲ"
+  },
+  "hs-^k": {
+    "prefix": "\\^k",
+    "body": "ᵏ",
+    "description": "Haskell: ^k -> ᵏ"
+  },
+  "hs-^l": {
+    "prefix": "\\^l",
+    "body": "ˡ",
+    "description": "Haskell: ^l -> ˡ"
+  },
+  "hs-^m": {
+    "prefix": "\\^m",
+    "body": "ᵐ",
+    "description": "Haskell: ^m -> ᵐ"
+  },
+  "hs-^n": {
+    "prefix": "\\^n",
+    "body": "ⁿ",
+    "description": "Haskell: ^n -> ⁿ"
+  },
+  "hs-^o": {
+    "prefix": "\\^o",
+    "body": "ᵒ",
+    "description": "Haskell: ^o -> ᵒ"
+  },
+  "hs-^p": {
+    "prefix": "\\^p",
+    "body": "ᵖ",
+    "description": "Haskell: ^p -> ᵖ"
+  },
+  "hs-^r": {
+    "prefix": "\\^r",
+    "body": "ʳ",
+    "description": "Haskell: ^r -> ʳ"
+  },
+  "hs-^s": {
+    "prefix": "\\^s",
+    "body": "ˢ",
+    "description": "Haskell: ^s -> ˢ"
+  },
+  "hs-^t": {
+    "prefix": "\\^t",
+    "body": "ᵗ",
+    "description": "Haskell: ^t -> ᵗ"
+  },
+  "hs-^u": {
+    "prefix": "\\^u",
+    "body": "ᵘ",
+    "description": "Haskell: ^u -> ᵘ"
+  },
+  "hs-^v": {
+    "prefix": "\\^v",
+    "body": "ᵛ",
+    "description": "Haskell: ^v -> ᵛ"
+  },
+  "hs-^w": {
+    "prefix": "\\^w",
+    "body": "ʷ",
+    "description": "Haskell: ^w -> ʷ"
+  },
+  "hs-^x": {
+    "prefix": "\\^x",
+    "body": "ˣ",
+    "description": "Haskell: ^x -> ˣ"
+  },
+  "hs-^y": {
+    "prefix": "\\^y",
+    "body": "ʸ",
+    "description": "Haskell: ^y -> ʸ"
+  },
+  "hs-^z": {
+    "prefix": "\\^z",
+    "body": "ᶻ",
+    "description": "Haskell: ^z -> ᶻ"
+  },
+  "hs-^A": {
+    "prefix": "\\^A",
+    "body": "ᴬ",
+    "description": "Haskell: ^A -> ᴬ"
+  },
+  "hs-^B": {
+    "prefix": "\\^B",
+    "body": "ᴮ",
+    "description": "Haskell: ^B -> ᴮ"
+  },
+  "hs-^D": {
+    "prefix": "\\^D",
+    "body": "ᴰ",
+    "description": "Haskell: ^D -> ᴰ"
+  },
+  "hs-^E": {
+    "prefix": "\\^E",
+    "body": "ᴱ",
+    "description": "Haskell: ^E -> ᴱ"
+  },
+  "hs-^G": {
+    "prefix": "\\^G",
+    "body": "ᴳ",
+    "description": "Haskell: ^G -> ᴳ"
+  },
+  "hs-^H": {
+    "prefix": "\\^H",
+    "body": "ᴴ",
+    "description": "Haskell: ^H -> ᴴ"
+  },
+  "hs-^I": {
+    "prefix": "\\^I",
+    "body": "ᴵ",
+    "description": "Haskell: ^I -> ᴵ"
+  },
+  "hs-^J": {
+    "prefix": "\\^J",
+    "body": "ᴶ",
+    "description": "Haskell: ^J -> ᴶ"
+  },
+  "hs-^K": {
+    "prefix": "\\^K",
+    "body": "ᴷ",
+    "description": "Haskell: ^K -> ᴷ"
+  },
+  "hs-^L": {
+    "prefix": "\\^L",
+    "body": "ᴸ",
+    "description": "Haskell: ^L -> ᴸ"
+  },
+  "hs-^M": {
+    "prefix": "\\^M",
+    "body": "ᴹ",
+    "description": "Haskell: ^M -> ᴹ"
+  },
+  "hs-^N": {
+    "prefix": "\\^N",
+    "body": "ᴺ",
+    "description": "Haskell: ^N -> ᴺ"
+  },
+  "hs-^O": {
+    "prefix": "\\^O",
+    "body": "ᴼ",
+    "description": "Haskell: ^O -> ᴼ"
+  },
+  "hs-^P": {
+    "prefix": "\\^P",
+    "body": "ᴾ",
+    "description": "Haskell: ^P -> ᴾ"
+  },
+  "hs-^R": {
+    "prefix": "\\^R",
+    "body": "ᴿ",
+    "description": "Haskell: ^R -> ᴿ"
+  },
+  "hs-^T": {
+    "prefix": "\\^T",
+    "body": "ᵀ",
+    "description": "Haskell: ^T -> ᵀ"
+  },
+  "hs-^U": {
+    "prefix": "\\^U",
+    "body": "ᵁ",
+    "description": "Haskell: ^U -> ᵁ"
+  },
+  "hs-^V": {
+    "prefix": "\\^V",
+    "body": "ⱽ",
+    "description": "Haskell: ^V -> ⱽ"
+  },
+  "hs-^W": {
+    "prefix": "\\^W",
+    "body": "ᵂ",
+    "description": "Haskell: ^W -> ᵂ"
+  },
+  "hs-^0": {
+    "prefix": "\\^0",
+    "body": "⁰",
+    "description": "Haskell: ^0 -> ⁰"
+  },
+  "hs-^1": {
+    "prefix": "\\^1",
+    "body": "¹",
+    "description": "Haskell: ^1 -> ¹"
+  },
+  "hs-^2": {
+    "prefix": "\\^2",
+    "body": "²",
+    "description": "Haskell: ^2 -> ²"
+  },
+  "hs-^3": {
+    "prefix": "\\^3",
+    "body": "³",
+    "description": "Haskell: ^3 -> ³"
+  },
+  "hs-^4": {
+    "prefix": "\\^4",
+    "body": "⁴",
+    "description": "Haskell: ^4 -> ⁴"
+  },
+  "hs-^5": {
+    "prefix": "\\^5",
+    "body": "⁵",
+    "description": "Haskell: ^5 -> ⁵"
+  },
+  "hs-^6": {
+    "prefix": "\\^6",
+    "body": "⁶",
+    "description": "Haskell: ^6 -> ⁶"
+  },
+  "hs-^7": {
+    "prefix": "\\^7",
+    "body": "⁷",
+    "description": "Haskell: ^7 -> ⁷"
+  },
+  "hs-^8": {
+    "prefix": "\\^8",
+    "body": "⁸",
+    "description": "Haskell: ^8 -> ⁸"
+  },
+  "hs-^9": {
+    "prefix": "\\^9",
+    "body": "⁹",
+    "description": "Haskell: ^9 -> ⁹"
+  },
+  "hs-^)": {
+    "prefix": "\\^)",
+    "body": "⁾",
+    "description": "Haskell: ^) -> ⁾"
+  },
+  "hs-^(": {
+    "prefix": "\\^(",
+    "body": "⁽",
+    "description": "Haskell: ^( -> ⁽"
+  },
+  "hs-^=": {
+    "prefix": "\\^=",
+    "body": "⁼",
+    "description": "Haskell: ^= -> ⁼"
+  },
+  "hs-^+": {
+    "prefix": "\\^+",
+    "body": "⁺",
+    "description": "Haskell: ^+ -> ⁺"
+  },
+  "hs-^o_": {
+    "prefix": "\\^o_",
+    "body": "º",
+    "description": "Haskell: ^o_ -> º"
+  },
+  "hs-^-": {
+    "prefix": "\\^-",
+    "body": "⁻",
+    "description": "Haskell: ^- -> ⁻"
+  },
+  "hs-^a_": {
+    "prefix": "\\^a_",
+    "body": "ª",
+    "description": "Haskell: ^a_ -> ª"
+  },
+  "hs-^uhook": {
+    "prefix": "\\^uhook",
+    "body": "ꭟ",
+    "description": "Haskell: ^uhook -> ꭟ"
+  },
+  "hs-^ubar": {
+    "prefix": "\\^ubar",
+    "body": "ᶶ",
+    "description": "Haskell: ^ubar -> ᶶ"
+  },
+  "hs-^upsilon": {
+    "prefix": "\\^upsilon",
+    "body": "ᶷ",
+    "description": "Haskell: ^upsilon -> ᶷ"
+  },
+  "hs-^ltilde": {
+    "prefix": "\\^ltilde",
+    "body": "ꭞ",
+    "description": "Haskell: ^ltilde -> ꭞ"
+  },
+  "hs-^ls": {
+    "prefix": "\\^ls",
+    "body": "ꭝ",
+    "description": "Haskell: ^ls -> ꭝ"
+  },
+  "hs-^lhook": {
+    "prefix": "\\^lhook",
+    "body": "ᶪ",
+    "description": "Haskell: ^lhook -> ᶪ"
+  },
+  "hs-^lretroflexhook": {
+    "prefix": "\\^lretroflexhook",
+    "body": "ᶩ",
+    "description": "Haskell: ^lretroflexhook -> ᶩ"
+  },
+  "hs-^oe": {
+    "prefix": "\\^oe",
+    "body": "ꟹ",
+    "description": "Haskell: ^oe -> ꟹ"
+  },
+  "hs-^heng": {
+    "prefix": "\\^heng",
+    "body": "ꭜ",
+    "description": "Haskell: ^heng -> ꭜ"
+  },
+  "hs-^hhook": {
+    "prefix": "\\^hhook",
+    "body": "ʱ",
+    "description": "Haskell: ^hhook -> ʱ"
+  },
+  "hs-^hwithhook": {
+    "prefix": "\\^hwithhook",
+    "body": "ʱ",
+    "description": "Haskell: ^hwithhook -> ʱ"
+  },
+  "hs-^Hstroke": {
+    "prefix": "\\^Hstroke",
+    "body": "ꟸ",
+    "description": "Haskell: ^Hstroke -> ꟸ"
+  },
+  "hs-^theta": {
+    "prefix": "\\^theta",
+    "body": "ᶿ",
+    "description": "Haskell: ^theta -> ᶿ"
+  },
+  "hs-^turnedv": {
+    "prefix": "\\^turnedv",
+    "body": "ᶺ",
+    "description": "Haskell: ^turnedv -> ᶺ"
+  },
+  "hs-^turnedmleg": {
+    "prefix": "\\^turnedmleg",
+    "body": "ᶭ",
+    "description": "Haskell: ^turnedmleg -> ᶭ"
+  },
+  "hs-^turnedm": {
+    "prefix": "\\^turnedm",
+    "body": "ᵚ",
+    "description": "Haskell: ^turnedm -> ᵚ"
+  },
+  "hs-^turnedh": {
+    "prefix": "\\^turnedh",
+    "body": "ᶣ",
+    "description": "Haskell: ^turnedh -> ᶣ"
+  },
+  "hs-^turnedalpha": {
+    "prefix": "\\^turnedalpha",
+    "body": "ᶛ",
+    "description": "Haskell: ^turnedalpha -> ᶛ"
+  },
+  "hs-^turnedae": {
+    "prefix": "\\^turnedae",
+    "body": "ᵆ",
+    "description": "Haskell: ^turnedae -> ᵆ"
+  },
+  "hs-^turneda": {
+    "prefix": "\\^turneda",
+    "body": "ᵄ",
+    "description": "Haskell: ^turneda -> ᵄ"
+  },
+  "hs-^turnedi": {
+    "prefix": "\\^turnedi",
+    "body": "ᵎ",
+    "description": "Haskell: ^turnedi -> ᵎ"
+  },
+  "hs-^turnede": {
+    "prefix": "\\^turnede",
+    "body": "ᵌ",
+    "description": "Haskell: ^turnede -> ᵌ"
+  },
+  "hs-^turnedrhook": {
+    "prefix": "\\^turnedrhook",
+    "body": "ʵ",
+    "description": "Haskell: ^turnedrhook -> ʵ"
+  },
+  "hs-^turnedrwithhook": {
+    "prefix": "\\^turnedrwithhook",
+    "body": "ʵ",
+    "description": "Haskell: ^turnedrwithhook -> ʵ"
+  },
+  "hs-^turnedr": {
+    "prefix": "\\^turnedr",
+    "body": "ʴ",
+    "description": "Haskell: ^turnedr -> ʴ"
+  },
+  "hs-^twithpalatalhook": {
+    "prefix": "\\^twithpalatalhook",
+    "body": "ᶵ",
+    "description": "Haskell: ^twithpalatalhook -> ᶵ"
+  },
+  "hs-^otop": {
+    "prefix": "\\^otop",
+    "body": "ᵔ",
+    "description": "Haskell: ^otop -> ᵔ"
+  },
+  "hs-^ezh": {
+    "prefix": "\\^ezh",
+    "body": "ᶾ",
+    "description": "Haskell: ^ezh -> ᶾ"
+  },
+  "hs-^esh": {
+    "prefix": "\\^esh",
+    "body": "ᶴ",
+    "description": "Haskell: ^esh -> ᶴ"
+  },
+  "hs-^eth": {
+    "prefix": "\\^eth",
+    "body": "ᶞ",
+    "description": "Haskell: ^eth -> ᶞ"
+  },
+  "hs-^eng": {
+    "prefix": "\\^eng",
+    "body": "ᵑ",
+    "description": "Haskell: ^eng -> ᵑ"
+  },
+  "hs-^zcurl": {
+    "prefix": "\\^zcurl",
+    "body": "ᶽ",
+    "description": "Haskell: ^zcurl -> ᶽ"
+  },
+  "hs-^zretroflexhook": {
+    "prefix": "\\^zretroflexhook",
+    "body": "ᶼ",
+    "description": "Haskell: ^zretroflexhook -> ᶼ"
+  },
+  "hs-^vhook": {
+    "prefix": "\\^vhook",
+    "body": "ᶹ",
+    "description": "Haskell: ^vhook -> ᶹ"
+  },
+  "hs-^Ismall": {
+    "prefix": "\\^Ismall",
+    "body": "ᶦ",
+    "description": "Haskell: ^Ismall -> ᶦ"
+  },
+  "hs-^Lsmall": {
+    "prefix": "\\^Lsmall",
+    "body": "ᶫ",
+    "description": "Haskell: ^Lsmall -> ᶫ"
+  },
+  "hs-^Nsmall": {
+    "prefix": "\\^Nsmall",
+    "body": "ᶰ",
+    "description": "Haskell: ^Nsmall -> ᶰ"
+  },
+  "hs-^Usmall": {
+    "prefix": "\\^Usmall",
+    "body": "ᶸ",
+    "description": "Haskell: ^Usmall -> ᶸ"
+  },
+  "hs-^Istroke": {
+    "prefix": "\\^Istroke",
+    "body": "ᶧ",
+    "description": "Haskell: ^Istroke -> ᶧ"
+  },
+  "hs-^Rinverted": {
+    "prefix": "\\^Rinverted",
+    "body": "ʶ",
+    "description": "Haskell: ^Rinverted -> ʶ"
+  },
+  "hs-^ccurl": {
+    "prefix": "\\^ccurl",
+    "body": "ᶝ",
+    "description": "Haskell: ^ccurl -> ᶝ"
+  },
+  "hs-^chi": {
+    "prefix": "\\^chi",
+    "body": "ᵡ",
+    "description": "Haskell: ^chi -> ᵡ"
+  },
+  "hs-^shook": {
+    "prefix": "\\^shook",
+    "body": "ᶳ",
+    "description": "Haskell: ^shook -> ᶳ"
+  },
+  "hs-^gscript": {
+    "prefix": "\\^gscript",
+    "body": "ᶢ",
+    "description": "Haskell: ^gscript -> ᶢ"
+  },
+  "hs-^schwa": {
+    "prefix": "\\^schwa",
+    "body": "ᵊ",
+    "description": "Haskell: ^schwa -> ᵊ"
+  },
+  "hs-^usideways": {
+    "prefix": "\\^usideways",
+    "body": "ᵙ",
+    "description": "Haskell: ^usideways -> ᵙ"
+  },
+  "hs-^phi": {
+    "prefix": "\\^phi",
+    "body": "ᶲ",
+    "description": "Haskell: ^phi -> ᶲ"
+  },
+  "hs-^obarred": {
+    "prefix": "\\^obarred",
+    "body": "ᶱ",
+    "description": "Haskell: ^obarred -> ᶱ"
+  },
+  "hs-^beta": {
+    "prefix": "\\^beta",
+    "body": "ᵝ",
+    "description": "Haskell: ^beta -> ᵝ"
+  },
+  "hs-^obottom": {
+    "prefix": "\\^obottom",
+    "body": "ᵕ",
+    "description": "Haskell: ^obottom -> ᵕ"
+  },
+  "hs-^nretroflexhook": {
+    "prefix": "\\^nretroflexhook",
+    "body": "ᶯ",
+    "description": "Haskell: ^nretroflexhook -> ᶯ"
+  },
+  "hs-^nlefthook": {
+    "prefix": "\\^nlefthook",
+    "body": "ᶮ",
+    "description": "Haskell: ^nlefthook -> ᶮ"
+  },
+  "hs-^mhook": {
+    "prefix": "\\^mhook",
+    "body": "ᶬ",
+    "description": "Haskell: ^mhook -> ᶬ"
+  },
+  "hs-^jtail": {
+    "prefix": "\\^jtail",
+    "body": "ᶨ",
+    "description": "Haskell: ^jtail -> ᶨ"
+  },
+  "hs-^iota": {
+    "prefix": "\\^iota",
+    "body": "ᶥ",
+    "description": "Haskell: ^iota -> ᶥ"
+  },
+  "hs-^istroke": {
+    "prefix": "\\^istroke",
+    "body": "ᶤ",
+    "description": "Haskell: ^istroke -> ᶤ"
+  },
+  "hs-^ereversedopen": {
+    "prefix": "\\^ereversedopen",
+    "body": "ᶟ",
+    "description": "Haskell: ^ereversedopen -> ᶟ"
+  },
+  "hs-^stop": {
+    "prefix": "\\^stop",
+    "body": "ˤ",
+    "description": "Haskell: ^stop -> ˤ"
+  },
+  "hs-^varphi": {
+    "prefix": "\\^varphi",
+    "body": "ᵠ",
+    "description": "Haskell: ^varphi -> ᵠ"
+  },
+  "hs-^vargamma": {
+    "prefix": "\\^vargamma",
+    "body": "ᵞ",
+    "description": "Haskell: ^vargamma -> ᵞ"
+  },
+  "hs-^gamma": {
+    "prefix": "\\^gamma",
+    "body": "ˠ",
+    "description": "Haskell: ^gamma -> ˠ"
+  },
+  "hs-^ain": {
+    "prefix": "\\^ain",
+    "body": "ᵜ",
+    "description": "Haskell: ^ain -> ᵜ"
+  },
+  "hs-^alpha": {
+    "prefix": "\\^alpha",
+    "body": "ᵅ",
+    "description": "Haskell: ^alpha -> ᵅ"
+  },
+  "hs-^oopen": {
+    "prefix": "\\^oopen",
+    "body": "ᵓ",
+    "description": "Haskell: ^oopen -> ᵓ"
+  },
+  "hs-^eopen": {
+    "prefix": "\\^eopen",
+    "body": "ᵋ",
+    "description": "Haskell: ^eopen -> ᵋ"
+  },
+  "hs-^Ou": {
+    "prefix": "\\^Ou",
+    "body": "ᴽ",
+    "description": "Haskell: ^Ou -> ᴽ"
+  },
+  "hs-^Nreversed": {
+    "prefix": "\\^Nreversed",
+    "body": "ᴻ",
+    "description": "Haskell: ^Nreversed -> ᴻ"
+  },
+  "hs-^Ereversed": {
+    "prefix": "\\^Ereversed",
+    "body": "ᴲ",
+    "description": "Haskell: ^Ereversed -> ᴲ"
+  },
+  "hs-^Bbarred": {
+    "prefix": "\\^Bbarred",
+    "body": "ᴯ",
+    "description": "Haskell: ^Bbarred -> ᴯ"
+  },
+  "hs-^Ae": {
+    "prefix": "\\^Ae",
+    "body": "ᴭ",
+    "description": "Haskell: ^Ae -> ᴭ"
+  },
+  "hs-^SM": {
+    "prefix": "\\^SM",
+    "body": "℠",
+    "description": "Haskell: ^SM -> ℠"
+  },
+  "hs-^TEL": {
+    "prefix": "\\^TEL",
+    "body": "℡",
+    "description": "Haskell: ^TEL -> ℡"
+  },
+  "hs-^TM": {
+    "prefix": "\\^TM",
+    "body": "™",
+    "description": "Haskell: ^TM -> ™"
+  },
+  "hs-_a": {
+    "prefix": "\\_a",
+    "body": "ₐ",
+    "description": "Haskell: _a -> ₐ"
+  },
+  "hs-_e": {
+    "prefix": "\\_e",
+    "body": "ₑ",
+    "description": "Haskell: _e -> ₑ"
+  },
+  "hs-_h": {
+    "prefix": "\\_h",
+    "body": "ₕ",
+    "description": "Haskell: _h -> ₕ"
+  },
+  "hs-_i": {
+    "prefix": "\\_i",
+    "body": "ᵢ",
+    "description": "Haskell: _i -> ᵢ"
+  },
+  "hs-_j": {
+    "prefix": "\\_j",
+    "body": "ⱼ",
+    "description": "Haskell: _j -> ⱼ"
+  },
+  "hs-_k": {
+    "prefix": "\\_k",
+    "body": "ₖ",
+    "description": "Haskell: _k -> ₖ"
+  },
+  "hs-_l": {
+    "prefix": "\\_l",
+    "body": "ₗ",
+    "description": "Haskell: _l -> ₗ"
+  },
+  "hs-_m": {
+    "prefix": "\\_m",
+    "body": "ₘ",
+    "description": "Haskell: _m -> ₘ"
+  },
+  "hs-_n": {
+    "prefix": "\\_n",
+    "body": "ₙ",
+    "description": "Haskell: _n -> ₙ"
+  },
+  "hs-_o": {
+    "prefix": "\\_o",
+    "body": "ₒ",
+    "description": "Haskell: _o -> ₒ"
+  },
+  "hs-_p": {
+    "prefix": "\\_p",
+    "body": "ₚ",
+    "description": "Haskell: _p -> ₚ"
+  },
+  "hs-_r": {
+    "prefix": "\\_r",
+    "body": "ᵣ",
+    "description": "Haskell: _r -> ᵣ"
+  },
+  "hs-_s": {
+    "prefix": "\\_s",
+    "body": "ₛ",
+    "description": "Haskell: _s -> ₛ"
+  },
+  "hs-_t": {
+    "prefix": "\\_t",
+    "body": "ₜ",
+    "description": "Haskell: _t -> ₜ"
+  },
+  "hs-_u": {
+    "prefix": "\\_u",
+    "body": "ᵤ",
+    "description": "Haskell: _u -> ᵤ"
+  },
+  "hs-_v": {
+    "prefix": "\\_v",
+    "body": "ᵥ",
+    "description": "Haskell: _v -> ᵥ"
+  },
+  "hs-_x": {
+    "prefix": "\\_x",
+    "body": "ₓ",
+    "description": "Haskell: _x -> ₓ"
+  },
+  "hs-_0": {
+    "prefix": "\\_0",
+    "body": "₀",
+    "description": "Haskell: _0 -> ₀"
+  },
+  "hs-_1": {
+    "prefix": "\\_1",
+    "body": "₁",
+    "description": "Haskell: _1 -> ₁"
+  },
+  "hs-_2": {
+    "prefix": "\\_2",
+    "body": "₂",
+    "description": "Haskell: _2 -> ₂"
+  },
+  "hs-_3": {
+    "prefix": "\\_3",
+    "body": "₃",
+    "description": "Haskell: _3 -> ₃"
+  },
+  "hs-_4": {
+    "prefix": "\\_4",
+    "body": "₄",
+    "description": "Haskell: _4 -> ₄"
+  },
+  "hs-_5": {
+    "prefix": "\\_5",
+    "body": "₅",
+    "description": "Haskell: _5 -> ₅"
+  },
+  "hs-_6": {
+    "prefix": "\\_6",
+    "body": "₆",
+    "description": "Haskell: _6 -> ₆"
+  },
+  "hs-_7": {
+    "prefix": "\\_7",
+    "body": "₇",
+    "description": "Haskell: _7 -> ₇"
+  },
+  "hs-_8": {
+    "prefix": "\\_8",
+    "body": "₈",
+    "description": "Haskell: _8 -> ₈"
+  },
+  "hs-_9": {
+    "prefix": "\\_9",
+    "body": "₉",
+    "description": "Haskell: _9 -> ₉"
+  },
+  "hs-_)": {
+    "prefix": "\\_)",
+    "body": "₎",
+    "description": "Haskell: _) -> ₎"
+  },
+  "hs-_(": {
+    "prefix": "\\_(",
+    "body": "₍",
+    "description": "Haskell: _( -> ₍"
+  },
+  "hs-_=": {
+    "prefix": "\\_=",
+    "body": "₌",
+    "description": "Haskell: _= -> ₌"
+  },
+  "hs-_+": {
+    "prefix": "\\_+",
+    "body": "₊",
+    "description": "Haskell: _+ -> ₊"
+  },
+  "hs-_--": {
+    "prefix": "\\_--",
+    "body": "̲",
+    "description": "Haskell: _-- -> ̲"
+  },
+  "hs-_-": {
+    "prefix": "\\_-",
+    "body": "₋",
+    "description": "Haskell: _- -> ₋"
+  },
+  "hs-!!": {
+    "prefix": "\\!!",
+    "body": "‼",
+    "description": "Haskell: !! -> ‼"
+  },
+  "hs-!?": {
+    "prefix": "\\!?",
+    "body": "⁉",
+    "description": "Haskell: !? -> ⁉"
+  },
+  "hs-San": {
+    "prefix": "\\San",
+    "body": "Ϻ",
+    "description": "Haskell: San -> Ϻ"
+  },
+  "hs-Sampi": {
+    "prefix": "\\Sampi",
+    "body": "Ϡ",
+    "description": "Haskell: Sampi -> Ϡ"
+  },
+  "hs-Sho": {
+    "prefix": "\\Sho",
+    "body": "Ϸ",
+    "description": "Haskell: Sho -> Ϸ"
+  },
+  "hs-Shima": {
+    "prefix": "\\Shima",
+    "body": "Ϭ",
+    "description": "Haskell: Shima -> Ϭ"
+  },
+  "hs-Shei": {
+    "prefix": "\\Shei",
+    "body": "Ϣ",
+    "description": "Haskell: Shei -> Ϣ"
+  },
+  "hs-Stigma": {
+    "prefix": "\\Stigma",
+    "body": "Ϛ",
+    "description": "Haskell: Stigma -> Ϛ"
+  },
+  "hs-Sigma": {
+    "prefix": "\\Sigma",
+    "body": "Σ",
+    "description": "Haskell: Sigma -> Σ"
+  },
+  "hs-Subset": {
+    "prefix": "\\Subset",
+    "body": "⋐",
+    "description": "Haskell: Subset -> ⋐"
+  },
+  "hs-Supset": {
+    "prefix": "\\Supset",
+    "body": "⋑",
+    "description": "Haskell: Supset -> ⋑"
+  },
+  "hs-Smiley": {
+    "prefix": "\\Smiley",
+    "body": "☺",
+    "description": "Haskell: Smiley -> ☺"
+  },
+  "hs-Psi": {
+    "prefix": "\\Psi",
+    "body": "Ψ",
+    "description": "Haskell: Psi -> Ψ"
+  },
+  "hs-Phi": {
+    "prefix": "\\Phi",
+    "body": "Φ",
+    "description": "Haskell: Phi -> Φ"
+  },
+  "hs-Pi": {
+    "prefix": "\\Pi",
+    "body": "Π",
+    "description": "Haskell: Pi -> Π"
+  },
+  "hs-Pi0": {
+    "prefix": "\\Pi0",
+    "body": "Π₀",
+    "description": "Haskell: Pi0 -> Π₀"
+  },
+  "hs-P0": {
+    "prefix": "\\P0",
+    "body": "Π₀",
+    "description": "Haskell: P0 -> Π₀"
+  },
+  "hs-Pi_0": {
+    "prefix": "\\Pi_0",
+    "body": "Π₀",
+    "description": "Haskell: Pi_0 -> Π₀"
+  },
+  "hs-P_0": {
+    "prefix": "\\P_0",
+    "body": "Π₀",
+    "description": "Haskell: P_0 -> Π₀"
+  },
+  "hs-bfA": {
+    "prefix": "\\bfA",
+    "body": "𝐀",
+    "description": "Haskell: bfA -> 𝐀"
+  },
+  "hs-bfB": {
+    "prefix": "\\bfB",
+    "body": "𝐁",
+    "description": "Haskell: bfB -> 𝐁"
+  },
+  "hs-bfC": {
+    "prefix": "\\bfC",
+    "body": "𝐂",
+    "description": "Haskell: bfC -> 𝐂"
+  },
+  "hs-bfD": {
+    "prefix": "\\bfD",
+    "body": "𝐃",
+    "description": "Haskell: bfD -> 𝐃"
+  },
+  "hs-bfE": {
+    "prefix": "\\bfE",
+    "body": "𝐄",
+    "description": "Haskell: bfE -> 𝐄"
+  },
+  "hs-bfF": {
+    "prefix": "\\bfF",
+    "body": "𝐅",
+    "description": "Haskell: bfF -> 𝐅"
+  },
+  "hs-bfG": {
+    "prefix": "\\bfG",
+    "body": "𝐆",
+    "description": "Haskell: bfG -> 𝐆"
+  },
+  "hs-bfH": {
+    "prefix": "\\bfH",
+    "body": "𝐇",
+    "description": "Haskell: bfH -> 𝐇"
+  },
+  "hs-bfI": {
+    "prefix": "\\bfI",
+    "body": "𝐈",
+    "description": "Haskell: bfI -> 𝐈"
+  },
+  "hs-bfJ": {
+    "prefix": "\\bfJ",
+    "body": "𝐉",
+    "description": "Haskell: bfJ -> 𝐉"
+  },
+  "hs-bfK": {
+    "prefix": "\\bfK",
+    "body": "𝐊",
+    "description": "Haskell: bfK -> 𝐊"
+  },
+  "hs-bfL": {
+    "prefix": "\\bfL",
+    "body": "𝐋",
+    "description": "Haskell: bfL -> 𝐋"
+  },
+  "hs-bfM": {
+    "prefix": "\\bfM",
+    "body": "𝐌",
+    "description": "Haskell: bfM -> 𝐌"
+  },
+  "hs-bfN": {
+    "prefix": "\\bfN",
+    "body": "𝐍",
+    "description": "Haskell: bfN -> 𝐍"
+  },
+  "hs-bfO": {
+    "prefix": "\\bfO",
+    "body": "𝐎",
+    "description": "Haskell: bfO -> 𝐎"
+  },
+  "hs-bfP": {
+    "prefix": "\\bfP",
+    "body": "𝐏",
+    "description": "Haskell: bfP -> 𝐏"
+  },
+  "hs-bfQ": {
+    "prefix": "\\bfQ",
+    "body": "𝐐",
+    "description": "Haskell: bfQ -> 𝐐"
+  },
+  "hs-bfR": {
+    "prefix": "\\bfR",
+    "body": "𝐑",
+    "description": "Haskell: bfR -> 𝐑"
+  },
+  "hs-bfS": {
+    "prefix": "\\bfS",
+    "body": "𝐒",
+    "description": "Haskell: bfS -> 𝐒"
+  },
+  "hs-bfT": {
+    "prefix": "\\bfT",
+    "body": "𝐓",
+    "description": "Haskell: bfT -> 𝐓"
+  },
+  "hs-bfU": {
+    "prefix": "\\bfU",
+    "body": "𝐔",
+    "description": "Haskell: bfU -> 𝐔"
+  },
+  "hs-bfV": {
+    "prefix": "\\bfV",
+    "body": "𝐕",
+    "description": "Haskell: bfV -> 𝐕"
+  },
+  "hs-bfW": {
+    "prefix": "\\bfW",
+    "body": "𝐖",
+    "description": "Haskell: bfW -> 𝐖"
+  },
+  "hs-bfX": {
+    "prefix": "\\bfX",
+    "body": "𝐗",
+    "description": "Haskell: bfX -> 𝐗"
+  },
+  "hs-bfY": {
+    "prefix": "\\bfY",
+    "body": "𝐘",
+    "description": "Haskell: bfY -> 𝐘"
+  },
+  "hs-bfZ": {
+    "prefix": "\\bfZ",
+    "body": "𝐙",
+    "description": "Haskell: bfZ -> 𝐙"
+  },
+  "hs-bfa": {
+    "prefix": "\\bfa",
+    "body": "𝐚",
+    "description": "Haskell: bfa -> 𝐚"
+  },
+  "hs-bfb": {
+    "prefix": "\\bfb",
+    "body": "𝐛",
+    "description": "Haskell: bfb -> 𝐛"
+  },
+  "hs-bfc": {
+    "prefix": "\\bfc",
+    "body": "𝐜",
+    "description": "Haskell: bfc -> 𝐜"
+  },
+  "hs-bfd": {
+    "prefix": "\\bfd",
+    "body": "𝐝",
+    "description": "Haskell: bfd -> 𝐝"
+  },
+  "hs-bfe": {
+    "prefix": "\\bfe",
+    "body": "𝐞",
+    "description": "Haskell: bfe -> 𝐞"
+  },
+  "hs-bff": {
+    "prefix": "\\bff",
+    "body": "𝐟",
+    "description": "Haskell: bff -> 𝐟"
+  },
+  "hs-bfg": {
+    "prefix": "\\bfg",
+    "body": "𝐠",
+    "description": "Haskell: bfg -> 𝐠"
+  },
+  "hs-bfh": {
+    "prefix": "\\bfh",
+    "body": "𝐡",
+    "description": "Haskell: bfh -> 𝐡"
+  },
+  "hs-bfi": {
+    "prefix": "\\bfi",
+    "body": "𝐢",
+    "description": "Haskell: bfi -> 𝐢"
+  },
+  "hs-bfj": {
+    "prefix": "\\bfj",
+    "body": "𝐣",
+    "description": "Haskell: bfj -> 𝐣"
+  },
+  "hs-bfk": {
+    "prefix": "\\bfk",
+    "body": "𝐤",
+    "description": "Haskell: bfk -> 𝐤"
+  },
+  "hs-bfl": {
+    "prefix": "\\bfl",
+    "body": "𝐥",
+    "description": "Haskell: bfl -> 𝐥"
+  },
+  "hs-bfm": {
+    "prefix": "\\bfm",
+    "body": "𝐦",
+    "description": "Haskell: bfm -> 𝐦"
+  },
+  "hs-bfn": {
+    "prefix": "\\bfn",
+    "body": "𝐧",
+    "description": "Haskell: bfn -> 𝐧"
+  },
+  "hs-bfo": {
+    "prefix": "\\bfo",
+    "body": "𝐨",
+    "description": "Haskell: bfo -> 𝐨"
+  },
+  "hs-bfp": {
+    "prefix": "\\bfp",
+    "body": "𝐩",
+    "description": "Haskell: bfp -> 𝐩"
+  },
+  "hs-bfq": {
+    "prefix": "\\bfq",
+    "body": "𝐪",
+    "description": "Haskell: bfq -> 𝐪"
+  },
+  "hs-bfr": {
+    "prefix": "\\bfr",
+    "body": "𝐫",
+    "description": "Haskell: bfr -> 𝐫"
+  },
+  "hs-bfs": {
+    "prefix": "\\bfs",
+    "body": "𝐬",
+    "description": "Haskell: bfs -> 𝐬"
+  },
+  "hs-bft": {
+    "prefix": "\\bft",
+    "body": "𝐭",
+    "description": "Haskell: bft -> 𝐭"
+  },
+  "hs-bfu": {
+    "prefix": "\\bfu",
+    "body": "𝐮",
+    "description": "Haskell: bfu -> 𝐮"
+  },
+  "hs-bfv": {
+    "prefix": "\\bfv",
+    "body": "𝐯",
+    "description": "Haskell: bfv -> 𝐯"
+  },
+  "hs-bfw": {
+    "prefix": "\\bfw",
+    "body": "𝐰",
+    "description": "Haskell: bfw -> 𝐰"
+  },
+  "hs-bfx": {
+    "prefix": "\\bfx",
+    "body": "𝐱",
+    "description": "Haskell: bfx -> 𝐱"
+  },
+  "hs-bfy": {
+    "prefix": "\\bfy",
+    "body": "𝐲",
+    "description": "Haskell: bfy -> 𝐲"
+  },
+  "hs-bfz": {
+    "prefix": "\\bfz",
+    "body": "𝐳",
+    "description": "Haskell: bfz -> 𝐳"
+  },
+  "hs-MiA": {
+    "prefix": "\\MiA",
+    "body": "𝐴",
+    "description": "Haskell: MiA -> 𝐴"
+  },
+  "hs-MiB": {
+    "prefix": "\\MiB",
+    "body": "𝐵",
+    "description": "Haskell: MiB -> 𝐵"
+  },
+  "hs-MiC": {
+    "prefix": "\\MiC",
+    "body": "𝐶",
+    "description": "Haskell: MiC -> 𝐶"
+  },
+  "hs-MiD": {
+    "prefix": "\\MiD",
+    "body": "𝐷",
+    "description": "Haskell: MiD -> 𝐷"
+  },
+  "hs-MiE": {
+    "prefix": "\\MiE",
+    "body": "𝐸",
+    "description": "Haskell: MiE -> 𝐸"
+  },
+  "hs-MiF": {
+    "prefix": "\\MiF",
+    "body": "𝐹",
+    "description": "Haskell: MiF -> 𝐹"
+  },
+  "hs-MiG": {
+    "prefix": "\\MiG",
+    "body": "𝐺",
+    "description": "Haskell: MiG -> 𝐺"
+  },
+  "hs-MiH": {
+    "prefix": "\\MiH",
+    "body": "𝐻",
+    "description": "Haskell: MiH -> 𝐻"
+  },
+  "hs-MiI": {
+    "prefix": "\\MiI",
+    "body": "𝐼",
+    "description": "Haskell: MiI -> 𝐼"
+  },
+  "hs-MiJ": {
+    "prefix": "\\MiJ",
+    "body": "𝐽",
+    "description": "Haskell: MiJ -> 𝐽"
+  },
+  "hs-MiK": {
+    "prefix": "\\MiK",
+    "body": "𝐾",
+    "description": "Haskell: MiK -> 𝐾"
+  },
+  "hs-MiL": {
+    "prefix": "\\MiL",
+    "body": "𝐿",
+    "description": "Haskell: MiL -> 𝐿"
+  },
+  "hs-MiM": {
+    "prefix": "\\MiM",
+    "body": "𝑀",
+    "description": "Haskell: MiM -> 𝑀"
+  },
+  "hs-MiN": {
+    "prefix": "\\MiN",
+    "body": "𝑁",
+    "description": "Haskell: MiN -> 𝑁"
+  },
+  "hs-MiO": {
+    "prefix": "\\MiO",
+    "body": "𝑂",
+    "description": "Haskell: MiO -> 𝑂"
+  },
+  "hs-MiP": {
+    "prefix": "\\MiP",
+    "body": "𝑃",
+    "description": "Haskell: MiP -> 𝑃"
+  },
+  "hs-MiQ": {
+    "prefix": "\\MiQ",
+    "body": "𝑄",
+    "description": "Haskell: MiQ -> 𝑄"
+  },
+  "hs-MiR": {
+    "prefix": "\\MiR",
+    "body": "𝑅",
+    "description": "Haskell: MiR -> 𝑅"
+  },
+  "hs-MiS": {
+    "prefix": "\\MiS",
+    "body": "𝑆",
+    "description": "Haskell: MiS -> 𝑆"
+  },
+  "hs-MiT": {
+    "prefix": "\\MiT",
+    "body": "𝑇",
+    "description": "Haskell: MiT -> 𝑇"
+  },
+  "hs-MiU": {
+    "prefix": "\\MiU",
+    "body": "𝑈",
+    "description": "Haskell: MiU -> 𝑈"
+  },
+  "hs-MiV": {
+    "prefix": "\\MiV",
+    "body": "𝑉",
+    "description": "Haskell: MiV -> 𝑉"
+  },
+  "hs-MiW": {
+    "prefix": "\\MiW",
+    "body": "𝑊",
+    "description": "Haskell: MiW -> 𝑊"
+  },
+  "hs-MiX": {
+    "prefix": "\\MiX",
+    "body": "𝑋",
+    "description": "Haskell: MiX -> 𝑋"
+  },
+  "hs-MiY": {
+    "prefix": "\\MiY",
+    "body": "𝑌",
+    "description": "Haskell: MiY -> 𝑌"
+  },
+  "hs-MiZ": {
+    "prefix": "\\MiZ",
+    "body": "𝑍",
+    "description": "Haskell: MiZ -> 𝑍"
+  },
+  "hs-Mia": {
+    "prefix": "\\Mia",
+    "body": "𝑎",
+    "description": "Haskell: Mia -> 𝑎"
+  },
+  "hs-Mib": {
+    "prefix": "\\Mib",
+    "body": "𝑏",
+    "description": "Haskell: Mib -> 𝑏"
+  },
+  "hs-Mic": {
+    "prefix": "\\Mic",
+    "body": "𝑐",
+    "description": "Haskell: Mic -> 𝑐"
+  },
+  "hs-Mid": {
+    "prefix": "\\Mid",
+    "body": "𝑑",
+    "description": "Haskell: Mid -> 𝑑"
+  },
+  "hs-Mie": {
+    "prefix": "\\Mie",
+    "body": "𝑒",
+    "description": "Haskell: Mie -> 𝑒"
+  },
+  "hs-Mif": {
+    "prefix": "\\Mif",
+    "body": "𝑓",
+    "description": "Haskell: Mif -> 𝑓"
+  },
+  "hs-Mig": {
+    "prefix": "\\Mig",
+    "body": "𝑔",
+    "description": "Haskell: Mig -> 𝑔"
+  },
+  "hs-Mii": {
+    "prefix": "\\Mii",
+    "body": "𝑖",
+    "description": "Haskell: Mii -> 𝑖"
+  },
+  "hs-Mij": {
+    "prefix": "\\Mij",
+    "body": "𝑗",
+    "description": "Haskell: Mij -> 𝑗"
+  },
+  "hs-Mik": {
+    "prefix": "\\Mik",
+    "body": "𝑘",
+    "description": "Haskell: Mik -> 𝑘"
+  },
+  "hs-Mil": {
+    "prefix": "\\Mil",
+    "body": "𝑙",
+    "description": "Haskell: Mil -> 𝑙"
+  },
+  "hs-Mim": {
+    "prefix": "\\Mim",
+    "body": "𝑚",
+    "description": "Haskell: Mim -> 𝑚"
+  },
+  "hs-Min": {
+    "prefix": "\\Min",
+    "body": "𝑛",
+    "description": "Haskell: Min -> 𝑛"
+  },
+  "hs-Mio": {
+    "prefix": "\\Mio",
+    "body": "𝑜",
+    "description": "Haskell: Mio -> 𝑜"
+  },
+  "hs-Mip": {
+    "prefix": "\\Mip",
+    "body": "𝑝",
+    "description": "Haskell: Mip -> 𝑝"
+  },
+  "hs-Miq": {
+    "prefix": "\\Miq",
+    "body": "𝑞",
+    "description": "Haskell: Miq -> 𝑞"
+  },
+  "hs-Mir": {
+    "prefix": "\\Mir",
+    "body": "𝑟",
+    "description": "Haskell: Mir -> 𝑟"
+  },
+  "hs-Mis": {
+    "prefix": "\\Mis",
+    "body": "𝑠",
+    "description": "Haskell: Mis -> 𝑠"
+  },
+  "hs-Mit": {
+    "prefix": "\\Mit",
+    "body": "𝑡",
+    "description": "Haskell: Mit -> 𝑡"
+  },
+  "hs-Miu": {
+    "prefix": "\\Miu",
+    "body": "𝑢",
+    "description": "Haskell: Miu -> 𝑢"
+  },
+  "hs-Miv": {
+    "prefix": "\\Miv",
+    "body": "𝑣",
+    "description": "Haskell: Miv -> 𝑣"
+  },
+  "hs-Miw": {
+    "prefix": "\\Miw",
+    "body": "𝑤",
+    "description": "Haskell: Miw -> 𝑤"
+  },
+  "hs-Mix": {
+    "prefix": "\\Mix",
+    "body": "𝑥",
+    "description": "Haskell: Mix -> 𝑥"
+  },
+  "hs-Miy": {
+    "prefix": "\\Miy",
+    "body": "𝑦",
+    "description": "Haskell: Miy -> 𝑦"
+  },
+  "hs-Miz": {
+    "prefix": "\\Miz",
+    "body": "𝑧",
+    "description": "Haskell: Miz -> 𝑧"
+  },
+  "hs-MIA": {
+    "prefix": "\\MIA",
+    "body": "𝑨",
+    "description": "Haskell: MIA -> 𝑨"
+  },
+  "hs-MIB": {
+    "prefix": "\\MIB",
+    "body": "𝑩",
+    "description": "Haskell: MIB -> 𝑩"
+  },
+  "hs-MIC": {
+    "prefix": "\\MIC",
+    "body": "𝑪",
+    "description": "Haskell: MIC -> 𝑪"
+  },
+  "hs-MID": {
+    "prefix": "\\MID",
+    "body": "𝑫",
+    "description": "Haskell: MID -> 𝑫"
+  },
+  "hs-MIE": {
+    "prefix": "\\MIE",
+    "body": "𝑬",
+    "description": "Haskell: MIE -> 𝑬"
+  },
+  "hs-MIF": {
+    "prefix": "\\MIF",
+    "body": "𝑭",
+    "description": "Haskell: MIF -> 𝑭"
+  },
+  "hs-MIG": {
+    "prefix": "\\MIG",
+    "body": "𝑮",
+    "description": "Haskell: MIG -> 𝑮"
+  },
+  "hs-MIH": {
+    "prefix": "\\MIH",
+    "body": "𝑯",
+    "description": "Haskell: MIH -> 𝑯"
+  },
+  "hs-MII": {
+    "prefix": "\\MII",
+    "body": "𝑰",
+    "description": "Haskell: MII -> 𝑰"
+  },
+  "hs-MIJ": {
+    "prefix": "\\MIJ",
+    "body": "𝑱",
+    "description": "Haskell: MIJ -> 𝑱"
+  },
+  "hs-MIK": {
+    "prefix": "\\MIK",
+    "body": "𝑲",
+    "description": "Haskell: MIK -> 𝑲"
+  },
+  "hs-MIL": {
+    "prefix": "\\MIL",
+    "body": "𝑳",
+    "description": "Haskell: MIL -> 𝑳"
+  },
+  "hs-MIM": {
+    "prefix": "\\MIM",
+    "body": "𝑴",
+    "description": "Haskell: MIM -> 𝑴"
+  },
+  "hs-MIN": {
+    "prefix": "\\MIN",
+    "body": "𝑵",
+    "description": "Haskell: MIN -> 𝑵"
+  },
+  "hs-MIO": {
+    "prefix": "\\MIO",
+    "body": "𝑶",
+    "description": "Haskell: MIO -> 𝑶"
+  },
+  "hs-MIP": {
+    "prefix": "\\MIP",
+    "body": "𝑷",
+    "description": "Haskell: MIP -> 𝑷"
+  },
+  "hs-MIQ": {
+    "prefix": "\\MIQ",
+    "body": "𝑸",
+    "description": "Haskell: MIQ -> 𝑸"
+  },
+  "hs-MIR": {
+    "prefix": "\\MIR",
+    "body": "𝑹",
+    "description": "Haskell: MIR -> 𝑹"
+  },
+  "hs-MIS": {
+    "prefix": "\\MIS",
+    "body": "𝑺",
+    "description": "Haskell: MIS -> 𝑺"
+  },
+  "hs-MIT": {
+    "prefix": "\\MIT",
+    "body": "𝑻",
+    "description": "Haskell: MIT -> 𝑻"
+  },
+  "hs-MIU": {
+    "prefix": "\\MIU",
+    "body": "𝑼",
+    "description": "Haskell: MIU -> 𝑼"
+  },
+  "hs-MIV": {
+    "prefix": "\\MIV",
+    "body": "𝑽",
+    "description": "Haskell: MIV -> 𝑽"
+  },
+  "hs-MIW": {
+    "prefix": "\\MIW",
+    "body": "𝑾",
+    "description": "Haskell: MIW -> 𝑾"
+  },
+  "hs-MIX": {
+    "prefix": "\\MIX",
+    "body": "𝑿",
+    "description": "Haskell: MIX -> 𝑿"
+  },
+  "hs-MIY": {
+    "prefix": "\\MIY",
+    "body": "𝒀",
+    "description": "Haskell: MIY -> 𝒀"
+  },
+  "hs-MIZ": {
+    "prefix": "\\MIZ",
+    "body": "𝒁",
+    "description": "Haskell: MIZ -> 𝒁"
+  },
+  "hs-MIa": {
+    "prefix": "\\MIa",
+    "body": "𝒂",
+    "description": "Haskell: MIa -> 𝒂"
+  },
+  "hs-MIb": {
+    "prefix": "\\MIb",
+    "body": "𝒃",
+    "description": "Haskell: MIb -> 𝒃"
+  },
+  "hs-MIc": {
+    "prefix": "\\MIc",
+    "body": "𝒄",
+    "description": "Haskell: MIc -> 𝒄"
+  },
+  "hs-MId": {
+    "prefix": "\\MId",
+    "body": "𝒅",
+    "description": "Haskell: MId -> 𝒅"
+  },
+  "hs-MIe": {
+    "prefix": "\\MIe",
+    "body": "𝒆",
+    "description": "Haskell: MIe -> 𝒆"
+  },
+  "hs-MIf": {
+    "prefix": "\\MIf",
+    "body": "𝒇",
+    "description": "Haskell: MIf -> 𝒇"
+  },
+  "hs-MIg": {
+    "prefix": "\\MIg",
+    "body": "𝒈",
+    "description": "Haskell: MIg -> 𝒈"
+  },
+  "hs-MIh": {
+    "prefix": "\\MIh",
+    "body": "𝒉",
+    "description": "Haskell: MIh -> 𝒉"
+  },
+  "hs-MIi": {
+    "prefix": "\\MIi",
+    "body": "𝒊",
+    "description": "Haskell: MIi -> 𝒊"
+  },
+  "hs-MIj": {
+    "prefix": "\\MIj",
+    "body": "𝒋",
+    "description": "Haskell: MIj -> 𝒋"
+  },
+  "hs-MIk": {
+    "prefix": "\\MIk",
+    "body": "𝒌",
+    "description": "Haskell: MIk -> 𝒌"
+  },
+  "hs-MIl": {
+    "prefix": "\\MIl",
+    "body": "𝒍",
+    "description": "Haskell: MIl -> 𝒍"
+  },
+  "hs-MIm": {
+    "prefix": "\\MIm",
+    "body": "𝒎",
+    "description": "Haskell: MIm -> 𝒎"
+  },
+  "hs-MIn": {
+    "prefix": "\\MIn",
+    "body": "𝒏",
+    "description": "Haskell: MIn -> 𝒏"
+  },
+  "hs-MIo": {
+    "prefix": "\\MIo",
+    "body": "𝒐",
+    "description": "Haskell: MIo -> 𝒐"
+  },
+  "hs-MIp": {
+    "prefix": "\\MIp",
+    "body": "𝒑",
+    "description": "Haskell: MIp -> 𝒑"
+  },
+  "hs-MIq": {
+    "prefix": "\\MIq",
+    "body": "𝒒",
+    "description": "Haskell: MIq -> 𝒒"
+  },
+  "hs-MIr": {
+    "prefix": "\\MIr",
+    "body": "𝒓",
+    "description": "Haskell: MIr -> 𝒓"
+  },
+  "hs-MIs": {
+    "prefix": "\\MIs",
+    "body": "𝒔",
+    "description": "Haskell: MIs -> 𝒔"
+  },
+  "hs-MIt": {
+    "prefix": "\\MIt",
+    "body": "𝒕",
+    "description": "Haskell: MIt -> 𝒕"
+  },
+  "hs-MIu": {
+    "prefix": "\\MIu",
+    "body": "𝒖",
+    "description": "Haskell: MIu -> 𝒖"
+  },
+  "hs-MIv": {
+    "prefix": "\\MIv",
+    "body": "𝒗",
+    "description": "Haskell: MIv -> 𝒗"
+  },
+  "hs-MIw": {
+    "prefix": "\\MIw",
+    "body": "𝒘",
+    "description": "Haskell: MIw -> 𝒘"
+  },
+  "hs-MIx": {
+    "prefix": "\\MIx",
+    "body": "𝒙",
+    "description": "Haskell: MIx -> 𝒙"
+  },
+  "hs-MIy": {
+    "prefix": "\\MIy",
+    "body": "𝒚",
+    "description": "Haskell: MIy -> 𝒚"
+  },
+  "hs-MIz": {
+    "prefix": "\\MIz",
+    "body": "𝒛",
+    "description": "Haskell: MIz -> 𝒛"
+  },
+  "hs-McA": {
+    "prefix": "\\McA",
+    "body": "𝒜",
+    "description": "Haskell: McA -> 𝒜"
+  },
+  "hs-McB": {
+    "prefix": "\\McB",
+    "body": "ℬ",
+    "description": "Haskell: McB -> ℬ"
+  },
+  "hs-McC": {
+    "prefix": "\\McC",
+    "body": "𝒞",
+    "description": "Haskell: McC -> 𝒞"
+  },
+  "hs-McD": {
+    "prefix": "\\McD",
+    "body": "𝒟",
+    "description": "Haskell: McD -> 𝒟"
+  },
+  "hs-McE": {
+    "prefix": "\\McE",
+    "body": "ℰ",
+    "description": "Haskell: McE -> ℰ"
+  },
+  "hs-McF": {
+    "prefix": "\\McF",
+    "body": "ℱ",
+    "description": "Haskell: McF -> ℱ"
+  },
+  "hs-McG": {
+    "prefix": "\\McG",
+    "body": "𝒢",
+    "description": "Haskell: McG -> 𝒢"
+  },
+  "hs-McH": {
+    "prefix": "\\McH",
+    "body": "ℋ",
+    "description": "Haskell: McH -> ℋ"
+  },
+  "hs-McI": {
+    "prefix": "\\McI",
+    "body": "ℐ",
+    "description": "Haskell: McI -> ℐ"
+  },
+  "hs-McJ": {
+    "prefix": "\\McJ",
+    "body": "𝒥",
+    "description": "Haskell: McJ -> 𝒥"
+  },
+  "hs-McK": {
+    "prefix": "\\McK",
+    "body": "𝒦",
+    "description": "Haskell: McK -> 𝒦"
+  },
+  "hs-McL": {
+    "prefix": "\\McL",
+    "body": "ℒ",
+    "description": "Haskell: McL -> ℒ"
+  },
+  "hs-McM": {
+    "prefix": "\\McM",
+    "body": "ℳ",
+    "description": "Haskell: McM -> ℳ"
+  },
+  "hs-McN": {
+    "prefix": "\\McN",
+    "body": "𝒩",
+    "description": "Haskell: McN -> 𝒩"
+  },
+  "hs-McO": {
+    "prefix": "\\McO",
+    "body": "𝒪",
+    "description": "Haskell: McO -> 𝒪"
+  },
+  "hs-McP": {
+    "prefix": "\\McP",
+    "body": "𝒫",
+    "description": "Haskell: McP -> 𝒫"
+  },
+  "hs-McQ": {
+    "prefix": "\\McQ",
+    "body": "𝒬",
+    "description": "Haskell: McQ -> 𝒬"
+  },
+  "hs-McR": {
+    "prefix": "\\McR",
+    "body": "ℛ",
+    "description": "Haskell: McR -> ℛ"
+  },
+  "hs-McS": {
+    "prefix": "\\McS",
+    "body": "𝒮",
+    "description": "Haskell: McS -> 𝒮"
+  },
+  "hs-McT": {
+    "prefix": "\\McT",
+    "body": "𝒯",
+    "description": "Haskell: McT -> 𝒯"
+  },
+  "hs-McU": {
+    "prefix": "\\McU",
+    "body": "𝒰",
+    "description": "Haskell: McU -> 𝒰"
+  },
+  "hs-McV": {
+    "prefix": "\\McV",
+    "body": "𝒱",
+    "description": "Haskell: McV -> 𝒱"
+  },
+  "hs-McW": {
+    "prefix": "\\McW",
+    "body": "𝒲",
+    "description": "Haskell: McW -> 𝒲"
+  },
+  "hs-McX": {
+    "prefix": "\\McX",
+    "body": "𝒳",
+    "description": "Haskell: McX -> 𝒳"
+  },
+  "hs-McY": {
+    "prefix": "\\McY",
+    "body": "𝒴",
+    "description": "Haskell: McY -> 𝒴"
+  },
+  "hs-McZ": {
+    "prefix": "\\McZ",
+    "body": "𝒵",
+    "description": "Haskell: McZ -> 𝒵"
+  },
+  "hs-Mca": {
+    "prefix": "\\Mca",
+    "body": "𝒶",
+    "description": "Haskell: Mca -> 𝒶"
+  },
+  "hs-Mcb": {
+    "prefix": "\\Mcb",
+    "body": "𝒷",
+    "description": "Haskell: Mcb -> 𝒷"
+  },
+  "hs-Mcc": {
+    "prefix": "\\Mcc",
+    "body": "𝒸",
+    "description": "Haskell: Mcc -> 𝒸"
+  },
+  "hs-Mcd": {
+    "prefix": "\\Mcd",
+    "body": "𝒹",
+    "description": "Haskell: Mcd -> 𝒹"
+  },
+  "hs-Mce": {
+    "prefix": "\\Mce",
+    "body": "ℯ",
+    "description": "Haskell: Mce -> ℯ"
+  },
+  "hs-Mcf": {
+    "prefix": "\\Mcf",
+    "body": "𝒻",
+    "description": "Haskell: Mcf -> 𝒻"
+  },
+  "hs-Mcg": {
+    "prefix": "\\Mcg",
+    "body": "ℊ",
+    "description": "Haskell: Mcg -> ℊ"
+  },
+  "hs-Mch": {
+    "prefix": "\\Mch",
+    "body": "𝒽",
+    "description": "Haskell: Mch -> 𝒽"
+  },
+  "hs-Mci": {
+    "prefix": "\\Mci",
+    "body": "𝒾",
+    "description": "Haskell: Mci -> 𝒾"
+  },
+  "hs-Mcj": {
+    "prefix": "\\Mcj",
+    "body": "𝒿",
+    "description": "Haskell: Mcj -> 𝒿"
+  },
+  "hs-Mck": {
+    "prefix": "\\Mck",
+    "body": "𝓀",
+    "description": "Haskell: Mck -> 𝓀"
+  },
+  "hs-Mcl": {
+    "prefix": "\\Mcl",
+    "body": "𝓁",
+    "description": "Haskell: Mcl -> 𝓁"
+  },
+  "hs-Mcm": {
+    "prefix": "\\Mcm",
+    "body": "𝓂",
+    "description": "Haskell: Mcm -> 𝓂"
+  },
+  "hs-Mcn": {
+    "prefix": "\\Mcn",
+    "body": "𝓃",
+    "description": "Haskell: Mcn -> 𝓃"
+  },
+  "hs-Mco": {
+    "prefix": "\\Mco",
+    "body": "ℴ",
+    "description": "Haskell: Mco -> ℴ"
+  },
+  "hs-Mcp": {
+    "prefix": "\\Mcp",
+    "body": "𝓅",
+    "description": "Haskell: Mcp -> 𝓅"
+  },
+  "hs-Mcq": {
+    "prefix": "\\Mcq",
+    "body": "𝓆",
+    "description": "Haskell: Mcq -> 𝓆"
+  },
+  "hs-Mcr": {
+    "prefix": "\\Mcr",
+    "body": "𝓇",
+    "description": "Haskell: Mcr -> 𝓇"
+  },
+  "hs-Mcs": {
+    "prefix": "\\Mcs",
+    "body": "𝓈",
+    "description": "Haskell: Mcs -> 𝓈"
+  },
+  "hs-Mct": {
+    "prefix": "\\Mct",
+    "body": "𝓉",
+    "description": "Haskell: Mct -> 𝓉"
+  },
+  "hs-Mcu": {
+    "prefix": "\\Mcu",
+    "body": "𝓊",
+    "description": "Haskell: Mcu -> 𝓊"
+  },
+  "hs-Mcv": {
+    "prefix": "\\Mcv",
+    "body": "𝓋",
+    "description": "Haskell: Mcv -> 𝓋"
+  },
+  "hs-Mcw": {
+    "prefix": "\\Mcw",
+    "body": "𝓌",
+    "description": "Haskell: Mcw -> 𝓌"
+  },
+  "hs-Mcx": {
+    "prefix": "\\Mcx",
+    "body": "𝓍",
+    "description": "Haskell: Mcx -> 𝓍"
+  },
+  "hs-Mcy": {
+    "prefix": "\\Mcy",
+    "body": "𝓎",
+    "description": "Haskell: Mcy -> 𝓎"
+  },
+  "hs-Mcz": {
+    "prefix": "\\Mcz",
+    "body": "𝓏",
+    "description": "Haskell: Mcz -> 𝓏"
+  },
+  "hs-MCA": {
+    "prefix": "\\MCA",
+    "body": "𝓐",
+    "description": "Haskell: MCA -> 𝓐"
+  },
+  "hs-MCB": {
+    "prefix": "\\MCB",
+    "body": "𝓑",
+    "description": "Haskell: MCB -> 𝓑"
+  },
+  "hs-MCC": {
+    "prefix": "\\MCC",
+    "body": "𝓒",
+    "description": "Haskell: MCC -> 𝓒"
+  },
+  "hs-MCD": {
+    "prefix": "\\MCD",
+    "body": "𝓓",
+    "description": "Haskell: MCD -> 𝓓"
+  },
+  "hs-MCE": {
+    "prefix": "\\MCE",
+    "body": "𝓔",
+    "description": "Haskell: MCE -> 𝓔"
+  },
+  "hs-MCF": {
+    "prefix": "\\MCF",
+    "body": "𝓕",
+    "description": "Haskell: MCF -> 𝓕"
+  },
+  "hs-MCG": {
+    "prefix": "\\MCG",
+    "body": "𝓖",
+    "description": "Haskell: MCG -> 𝓖"
+  },
+  "hs-MCH": {
+    "prefix": "\\MCH",
+    "body": "𝓗",
+    "description": "Haskell: MCH -> 𝓗"
+  },
+  "hs-MCI": {
+    "prefix": "\\MCI",
+    "body": "𝓘",
+    "description": "Haskell: MCI -> 𝓘"
+  },
+  "hs-MCJ": {
+    "prefix": "\\MCJ",
+    "body": "𝓙",
+    "description": "Haskell: MCJ -> 𝓙"
+  },
+  "hs-MCK": {
+    "prefix": "\\MCK",
+    "body": "𝓚",
+    "description": "Haskell: MCK -> 𝓚"
+  },
+  "hs-MCL": {
+    "prefix": "\\MCL",
+    "body": "𝓛",
+    "description": "Haskell: MCL -> 𝓛"
+  },
+  "hs-MCM": {
+    "prefix": "\\MCM",
+    "body": "𝓜",
+    "description": "Haskell: MCM -> 𝓜"
+  },
+  "hs-MCN": {
+    "prefix": "\\MCN",
+    "body": "𝓝",
+    "description": "Haskell: MCN -> 𝓝"
+  },
+  "hs-MCO": {
+    "prefix": "\\MCO",
+    "body": "𝓞",
+    "description": "Haskell: MCO -> 𝓞"
+  },
+  "hs-MCP": {
+    "prefix": "\\MCP",
+    "body": "𝓟",
+    "description": "Haskell: MCP -> 𝓟"
+  },
+  "hs-MCQ": {
+    "prefix": "\\MCQ",
+    "body": "𝓠",
+    "description": "Haskell: MCQ -> 𝓠"
+  },
+  "hs-MCR": {
+    "prefix": "\\MCR",
+    "body": "𝓡",
+    "description": "Haskell: MCR -> 𝓡"
+  },
+  "hs-MCS": {
+    "prefix": "\\MCS",
+    "body": "𝓢",
+    "description": "Haskell: MCS -> 𝓢"
+  },
+  "hs-MCT": {
+    "prefix": "\\MCT",
+    "body": "𝓣",
+    "description": "Haskell: MCT -> 𝓣"
+  },
+  "hs-MCU": {
+    "prefix": "\\MCU",
+    "body": "𝓤",
+    "description": "Haskell: MCU -> 𝓤"
+  },
+  "hs-MCV": {
+    "prefix": "\\MCV",
+    "body": "𝓥",
+    "description": "Haskell: MCV -> 𝓥"
+  },
+  "hs-MCW": {
+    "prefix": "\\MCW",
+    "body": "𝓦",
+    "description": "Haskell: MCW -> 𝓦"
+  },
+  "hs-MCX": {
+    "prefix": "\\MCX",
+    "body": "𝓧",
+    "description": "Haskell: MCX -> 𝓧"
+  },
+  "hs-MCY": {
+    "prefix": "\\MCY",
+    "body": "𝓨",
+    "description": "Haskell: MCY -> 𝓨"
+  },
+  "hs-MCZ": {
+    "prefix": "\\MCZ",
+    "body": "𝓩",
+    "description": "Haskell: MCZ -> 𝓩"
+  },
+  "hs-MCa": {
+    "prefix": "\\MCa",
+    "body": "𝓪",
+    "description": "Haskell: MCa -> 𝓪"
+  },
+  "hs-MCb": {
+    "prefix": "\\MCb",
+    "body": "𝓫",
+    "description": "Haskell: MCb -> 𝓫"
+  },
+  "hs-MCc": {
+    "prefix": "\\MCc",
+    "body": "𝓬",
+    "description": "Haskell: MCc -> 𝓬"
+  },
+  "hs-MCd": {
+    "prefix": "\\MCd",
+    "body": "𝓭",
+    "description": "Haskell: MCd -> 𝓭"
+  },
+  "hs-MCe": {
+    "prefix": "\\MCe",
+    "body": "𝓮",
+    "description": "Haskell: MCe -> 𝓮"
+  },
+  "hs-MCf": {
+    "prefix": "\\MCf",
+    "body": "𝓯",
+    "description": "Haskell: MCf -> 𝓯"
+  },
+  "hs-MCg": {
+    "prefix": "\\MCg",
+    "body": "𝓰",
+    "description": "Haskell: MCg -> 𝓰"
+  },
+  "hs-MCh": {
+    "prefix": "\\MCh",
+    "body": "𝓱",
+    "description": "Haskell: MCh -> 𝓱"
+  },
+  "hs-MCi": {
+    "prefix": "\\MCi",
+    "body": "𝓲",
+    "description": "Haskell: MCi -> 𝓲"
+  },
+  "hs-MCj": {
+    "prefix": "\\MCj",
+    "body": "𝓳",
+    "description": "Haskell: MCj -> 𝓳"
+  },
+  "hs-MCk": {
+    "prefix": "\\MCk",
+    "body": "𝓴",
+    "description": "Haskell: MCk -> 𝓴"
+  },
+  "hs-MCl": {
+    "prefix": "\\MCl",
+    "body": "𝓵",
+    "description": "Haskell: MCl -> 𝓵"
+  },
+  "hs-MCm": {
+    "prefix": "\\MCm",
+    "body": "𝓶",
+    "description": "Haskell: MCm -> 𝓶"
+  },
+  "hs-MCn": {
+    "prefix": "\\MCn",
+    "body": "𝓷",
+    "description": "Haskell: MCn -> 𝓷"
+  },
+  "hs-MCo": {
+    "prefix": "\\MCo",
+    "body": "𝓸",
+    "description": "Haskell: MCo -> 𝓸"
+  },
+  "hs-MCp": {
+    "prefix": "\\MCp",
+    "body": "𝓹",
+    "description": "Haskell: MCp -> 𝓹"
+  },
+  "hs-MCq": {
+    "prefix": "\\MCq",
+    "body": "𝓺",
+    "description": "Haskell: MCq -> 𝓺"
+  },
+  "hs-MCr": {
+    "prefix": "\\MCr",
+    "body": "𝓻",
+    "description": "Haskell: MCr -> 𝓻"
+  },
+  "hs-MCs": {
+    "prefix": "\\MCs",
+    "body": "𝓼",
+    "description": "Haskell: MCs -> 𝓼"
+  },
+  "hs-MCt": {
+    "prefix": "\\MCt",
+    "body": "𝓽",
+    "description": "Haskell: MCt -> 𝓽"
+  },
+  "hs-MCu": {
+    "prefix": "\\MCu",
+    "body": "𝓾",
+    "description": "Haskell: MCu -> 𝓾"
+  },
+  "hs-MCv": {
+    "prefix": "\\MCv",
+    "body": "𝓿",
+    "description": "Haskell: MCv -> 𝓿"
+  },
+  "hs-MCw": {
+    "prefix": "\\MCw",
+    "body": "𝔀",
+    "description": "Haskell: MCw -> 𝔀"
+  },
+  "hs-MCx": {
+    "prefix": "\\MCx",
+    "body": "𝔁",
+    "description": "Haskell: MCx -> 𝔁"
+  },
+  "hs-MCy": {
+    "prefix": "\\MCy",
+    "body": "𝔂",
+    "description": "Haskell: MCy -> 𝔂"
+  },
+  "hs-MCz": {
+    "prefix": "\\MCz",
+    "body": "𝔃",
+    "description": "Haskell: MCz -> 𝔃"
+  },
+  "hs-MfA": {
+    "prefix": "\\MfA",
+    "body": "𝔄",
+    "description": "Haskell: MfA -> 𝔄"
+  },
+  "hs-MfB": {
+    "prefix": "\\MfB",
+    "body": "𝔅",
+    "description": "Haskell: MfB -> 𝔅"
+  },
+  "hs-MfC": {
+    "prefix": "\\MfC",
+    "body": "ℭ",
+    "description": "Haskell: MfC -> ℭ"
+  },
+  "hs-MfD": {
+    "prefix": "\\MfD",
+    "body": "𝔇",
+    "description": "Haskell: MfD -> 𝔇"
+  },
+  "hs-MfE": {
+    "prefix": "\\MfE",
+    "body": "𝔈",
+    "description": "Haskell: MfE -> 𝔈"
+  },
+  "hs-MfF": {
+    "prefix": "\\MfF",
+    "body": "𝔉",
+    "description": "Haskell: MfF -> 𝔉"
+  },
+  "hs-MfG": {
+    "prefix": "\\MfG",
+    "body": "𝔊",
+    "description": "Haskell: MfG -> 𝔊"
+  },
+  "hs-MfH": {
+    "prefix": "\\MfH",
+    "body": "ℌ",
+    "description": "Haskell: MfH -> ℌ"
+  },
+  "hs-MfI": {
+    "prefix": "\\MfI",
+    "body": "ℑ",
+    "description": "Haskell: MfI -> ℑ"
+  },
+  "hs-MfJ": {
+    "prefix": "\\MfJ",
+    "body": "𝔍",
+    "description": "Haskell: MfJ -> 𝔍"
+  },
+  "hs-MfK": {
+    "prefix": "\\MfK",
+    "body": "𝔎",
+    "description": "Haskell: MfK -> 𝔎"
+  },
+  "hs-MfL": {
+    "prefix": "\\MfL",
+    "body": "𝔏",
+    "description": "Haskell: MfL -> 𝔏"
+  },
+  "hs-MfM": {
+    "prefix": "\\MfM",
+    "body": "𝔐",
+    "description": "Haskell: MfM -> 𝔐"
+  },
+  "hs-MfN": {
+    "prefix": "\\MfN",
+    "body": "𝔑",
+    "description": "Haskell: MfN -> 𝔑"
+  },
+  "hs-MfO": {
+    "prefix": "\\MfO",
+    "body": "𝔒",
+    "description": "Haskell: MfO -> 𝔒"
+  },
+  "hs-MfP": {
+    "prefix": "\\MfP",
+    "body": "𝔓",
+    "description": "Haskell: MfP -> 𝔓"
+  },
+  "hs-MfQ": {
+    "prefix": "\\MfQ",
+    "body": "𝔔",
+    "description": "Haskell: MfQ -> 𝔔"
+  },
+  "hs-MfR": {
+    "prefix": "\\MfR",
+    "body": "ℜ",
+    "description": "Haskell: MfR -> ℜ"
+  },
+  "hs-MfS": {
+    "prefix": "\\MfS",
+    "body": "𝔖",
+    "description": "Haskell: MfS -> 𝔖"
+  },
+  "hs-MfT": {
+    "prefix": "\\MfT",
+    "body": "𝔗",
+    "description": "Haskell: MfT -> 𝔗"
+  },
+  "hs-MfU": {
+    "prefix": "\\MfU",
+    "body": "𝔘",
+    "description": "Haskell: MfU -> 𝔘"
+  },
+  "hs-MfV": {
+    "prefix": "\\MfV",
+    "body": "𝔙",
+    "description": "Haskell: MfV -> 𝔙"
+  },
+  "hs-MfW": {
+    "prefix": "\\MfW",
+    "body": "𝔚",
+    "description": "Haskell: MfW -> 𝔚"
+  },
+  "hs-MfX": {
+    "prefix": "\\MfX",
+    "body": "𝔛",
+    "description": "Haskell: MfX -> 𝔛"
+  },
+  "hs-MfY": {
+    "prefix": "\\MfY",
+    "body": "𝔜",
+    "description": "Haskell: MfY -> 𝔜"
+  },
+  "hs-MfZ": {
+    "prefix": "\\MfZ",
+    "body": "ℨ",
+    "description": "Haskell: MfZ -> ℨ"
+  },
+  "hs-Mfa": {
+    "prefix": "\\Mfa",
+    "body": "𝔞",
+    "description": "Haskell: Mfa -> 𝔞"
+  },
+  "hs-Mfb": {
+    "prefix": "\\Mfb",
+    "body": "𝔟",
+    "description": "Haskell: Mfb -> 𝔟"
+  },
+  "hs-Mfc": {
+    "prefix": "\\Mfc",
+    "body": "𝔠",
+    "description": "Haskell: Mfc -> 𝔠"
+  },
+  "hs-Mfd": {
+    "prefix": "\\Mfd",
+    "body": "𝔡",
+    "description": "Haskell: Mfd -> 𝔡"
+  },
+  "hs-Mfe": {
+    "prefix": "\\Mfe",
+    "body": "𝔢",
+    "description": "Haskell: Mfe -> 𝔢"
+  },
+  "hs-Mff": {
+    "prefix": "\\Mff",
+    "body": "𝔣",
+    "description": "Haskell: Mff -> 𝔣"
+  },
+  "hs-Mfg": {
+    "prefix": "\\Mfg",
+    "body": "𝔤",
+    "description": "Haskell: Mfg -> 𝔤"
+  },
+  "hs-Mfh": {
+    "prefix": "\\Mfh",
+    "body": "𝔥",
+    "description": "Haskell: Mfh -> 𝔥"
+  },
+  "hs-Mfi": {
+    "prefix": "\\Mfi",
+    "body": "𝔦",
+    "description": "Haskell: Mfi -> 𝔦"
+  },
+  "hs-Mfj": {
+    "prefix": "\\Mfj",
+    "body": "𝔧",
+    "description": "Haskell: Mfj -> 𝔧"
+  },
+  "hs-Mfk": {
+    "prefix": "\\Mfk",
+    "body": "𝔨",
+    "description": "Haskell: Mfk -> 𝔨"
+  },
+  "hs-Mfl": {
+    "prefix": "\\Mfl",
+    "body": "𝔩",
+    "description": "Haskell: Mfl -> 𝔩"
+  },
+  "hs-Mfm": {
+    "prefix": "\\Mfm",
+    "body": "𝔪",
+    "description": "Haskell: Mfm -> 𝔪"
+  },
+  "hs-Mfn": {
+    "prefix": "\\Mfn",
+    "body": "𝔫",
+    "description": "Haskell: Mfn -> 𝔫"
+  },
+  "hs-Mfo": {
+    "prefix": "\\Mfo",
+    "body": "𝔬",
+    "description": "Haskell: Mfo -> 𝔬"
+  },
+  "hs-Mfp": {
+    "prefix": "\\Mfp",
+    "body": "𝔭",
+    "description": "Haskell: Mfp -> 𝔭"
+  },
+  "hs-Mfq": {
+    "prefix": "\\Mfq",
+    "body": "𝔮",
+    "description": "Haskell: Mfq -> 𝔮"
+  },
+  "hs-Mfr": {
+    "prefix": "\\Mfr",
+    "body": "𝔯",
+    "description": "Haskell: Mfr -> 𝔯"
+  },
+  "hs-Mfs": {
+    "prefix": "\\Mfs",
+    "body": "𝔰",
+    "description": "Haskell: Mfs -> 𝔰"
+  },
+  "hs-Mft": {
+    "prefix": "\\Mft",
+    "body": "𝔱",
+    "description": "Haskell: Mft -> 𝔱"
+  },
+  "hs-Mfu": {
+    "prefix": "\\Mfu",
+    "body": "𝔲",
+    "description": "Haskell: Mfu -> 𝔲"
+  },
+  "hs-Mfv": {
+    "prefix": "\\Mfv",
+    "body": "𝔳",
+    "description": "Haskell: Mfv -> 𝔳"
+  },
+  "hs-Mfw": {
+    "prefix": "\\Mfw",
+    "body": "𝔴",
+    "description": "Haskell: Mfw -> 𝔴"
+  },
+  "hs-Mfx": {
+    "prefix": "\\Mfx",
+    "body": "𝔵",
+    "description": "Haskell: Mfx -> 𝔵"
+  },
+  "hs-Mfy": {
+    "prefix": "\\Mfy",
+    "body": "𝔶",
+    "description": "Haskell: Mfy -> 𝔶"
+  },
+  "hs-Mfz": {
+    "prefix": "\\Mfz",
+    "body": "𝔷",
+    "description": "Haskell: Mfz -> 𝔷"
+  },
+  "hs-yen": {
+    "prefix": "\\yen",
+    "body": "¥",
+    "description": "Haskell: yen -> ¥"
+  },
+  "hs-varrho": {
+    "prefix": "\\varrho",
+    "body": "ϱ",
+    "description": "Haskell: varrho -> ϱ"
+  },
+  "hs-varkappa": {
+    "prefix": "\\varkappa",
+    "body": "ϰ",
+    "description": "Haskell: varkappa -> ϰ"
+  },
+  "hs-varkai": {
+    "prefix": "\\varkai",
+    "body": "ϗ",
+    "description": "Haskell: varkai -> ϗ"
+  },
+  "hs-varnothing": {
+    "prefix": "\\varnothing",
+    "body": "∅",
+    "description": "Haskell: varnothing -> ∅"
+  },
+  "hs-varpi": {
+    "prefix": "\\varpi",
+    "body": "ϖ",
+    "description": "Haskell: varpi -> ϖ"
+  },
+  "hs-varphi": {
+    "prefix": "\\varphi",
+    "body": "ϕ",
+    "description": "Haskell: varphi -> ϕ"
+  },
+  "hs-varprime": {
+    "prefix": "\\varprime",
+    "body": "′",
+    "description": "Haskell: varprime -> ′"
+  },
+  "hs-varpropto": {
+    "prefix": "\\varpropto",
+    "body": "∝",
+    "description": "Haskell: varpropto -> ∝"
+  },
+  "hs-vartheta": {
+    "prefix": "\\vartheta",
+    "body": "ϑ",
+    "description": "Haskell: vartheta -> ϑ"
+  },
+  "hs-vartriangleleft": {
+    "prefix": "\\vartriangleleft",
+    "body": "⊲",
+    "description": "Haskell: vartriangleleft -> ⊲"
+  },
+  "hs-vartriangleright": {
+    "prefix": "\\vartriangleright",
+    "body": "⊳",
+    "description": "Haskell: vartriangleright -> ⊳"
+  },
+  "hs-varbeta": {
+    "prefix": "\\varbeta",
+    "body": "ϐ",
+    "description": "Haskell: varbeta -> ϐ"
+  },
+  "hs-varsigma": {
+    "prefix": "\\varsigma",
+    "body": "ς",
+    "description": "Haskell: varsigma -> ς"
+  },
+  "hs-veebar": {
+    "prefix": "\\veebar",
+    "body": "⊻",
+    "description": "Haskell: veebar -> ⊻"
+  },
+  "hs-vee": {
+    "prefix": "\\vee",
+    "body": "∨",
+    "description": "Haskell: vee -> ∨"
+  },
+  "hs-ve": {
+    "prefix": "\\ve",
+    "body": "ě",
+    "description": "Haskell: ve -> ě"
+  },
+  "hs-vE": {
+    "prefix": "\\vE",
+    "body": "Ě",
+    "description": "Haskell: vE -> Ě"
+  },
+  "hs-vdash": {
+    "prefix": "\\vdash",
+    "body": "⊢",
+    "description": "Haskell: vdash -> ⊢"
+  },
+  "hs-vdots": {
+    "prefix": "\\vdots",
+    "body": "⋮",
+    "description": "Haskell: vdots -> ⋮"
+  },
+  "hs-vd": {
+    "prefix": "\\vd",
+    "body": "ď",
+    "description": "Haskell: vd -> ď"
+  },
+  "hs-vDash": {
+    "prefix": "\\vDash",
+    "body": "⊨",
+    "description": "Haskell: vDash -> ⊨"
+  },
+  "hs-vD": {
+    "prefix": "\\vD",
+    "body": "Ď",
+    "description": "Haskell: vD -> Ď"
+  },
+  "hs-vc": {
+    "prefix": "\\vc",
+    "body": "č",
+    "description": "Haskell: vc -> č"
+  },
+  "hs-vC": {
+    "prefix": "\\vC",
+    "body": "Č",
+    "description": "Haskell: vC -> Č"
+  },
+  "hs-koppa": {
+    "prefix": "\\koppa",
+    "body": "ϟ",
+    "description": "Haskell: koppa -> ϟ"
+  },
+  "hs-kip": {
+    "prefix": "\\kip",
+    "body": "₭",
+    "description": "Haskell: kip -> ₭"
+  },
+  "hs-ki": {
+    "prefix": "\\ki",
+    "body": "į",
+    "description": "Haskell: ki -> į"
+  },
+  "hs-kI": {
+    "prefix": "\\kI",
+    "body": "Į",
+    "description": "Haskell: kI -> Į"
+  },
+  "hs-kelvin": {
+    "prefix": "\\kelvin",
+    "body": "K",
+    "description": "Haskell: kelvin -> K"
+  },
+  "hs-kappa": {
+    "prefix": "\\kappa",
+    "body": "κ",
+    "description": "Haskell: kappa -> κ"
+  },
+  "hs-khei": {
+    "prefix": "\\khei",
+    "body": "ϧ",
+    "description": "Haskell: khei -> ϧ"
+  },
+  "hs-warning": {
+    "prefix": "\\warning",
+    "body": "⚠",
+    "description": "Haskell: warning -> ⚠"
+  },
+  "hs-won": {
+    "prefix": "\\won",
+    "body": "₩",
+    "description": "Haskell: won -> ₩"
+  },
+  "hs-wedge": {
+    "prefix": "\\wedge",
+    "body": "∧",
+    "description": "Haskell: wedge -> ∧"
+  },
+  "hs-wp": {
+    "prefix": "\\wp",
+    "body": "℘",
+    "description": "Haskell: wp -> ℘"
+  },
+  "hs-wr": {
+    "prefix": "\\wr",
+    "body": "≀",
+    "description": "Haskell: wr -> ≀"
+  },
+  "hs-Dei": {
+    "prefix": "\\Dei",
+    "body": "Ϯ",
+    "description": "Haskell: Dei -> Ϯ"
+  },
+  "hs-Delta": {
+    "prefix": "\\Delta",
+    "body": "Δ",
+    "description": "Haskell: Delta -> Δ"
+  },
+  "hs-Digamma": {
+    "prefix": "\\Digamma",
+    "body": "Ϝ",
+    "description": "Haskell: Digamma -> Ϝ"
+  },
+  "hs-Diamond": {
+    "prefix": "\\Diamond",
+    "body": "◇",
+    "description": "Haskell: Diamond -> ◇"
+  },
+  "hs-Downarrow": {
+    "prefix": "\\Downarrow",
+    "body": "⇓",
+    "description": "Haskell: Downarrow -> ⇓"
+  },
+  "hs-DH": {
+    "prefix": "\\DH",
+    "body": "Ð",
+    "description": "Haskell: DH -> Ð"
+  },
+  "hs-zeta": {
+    "prefix": "\\zeta",
+    "body": "ζ",
+    "description": "Haskell: zeta -> ζ"
+  },
+  "hs-Eta": {
+    "prefix": "\\Eta",
+    "body": "Η",
+    "description": "Haskell: Eta -> Η"
+  },
+  "hs-Epsilon": {
+    "prefix": "\\Epsilon",
+    "body": "Ε",
+    "description": "Haskell: Epsilon -> Ε"
+  },
+  "hs-Beta": {
+    "prefix": "\\Beta",
+    "body": "Β",
+    "description": "Haskell: Beta -> Β"
+  },
+  "hs-Box": {
+    "prefix": "\\Box",
+    "body": "□",
+    "description": "Haskell: Box -> □"
+  },
+  "hs-Bumpeq": {
+    "prefix": "\\Bumpeq",
+    "body": "≎",
+    "description": "Haskell: Bumpeq -> ≎"
+  },
+  "hs-bbA": {
+    "prefix": "\\bbA",
+    "body": "𝔸",
+    "description": "Haskell: bbA -> 𝔸"
+  },
+  "hs-bbB": {
+    "prefix": "\\bbB",
+    "body": "𝔹",
+    "description": "Haskell: bbB -> 𝔹"
+  },
+  "hs-bbC": {
+    "prefix": "\\bbC",
+    "body": "ℂ",
+    "description": "Haskell: bbC -> ℂ"
+  },
+  "hs-bbD": {
+    "prefix": "\\bbD",
+    "body": "𝔻",
+    "description": "Haskell: bbD -> 𝔻"
+  },
+  "hs-bbE": {
+    "prefix": "\\bbE",
+    "body": "𝔼",
+    "description": "Haskell: bbE -> 𝔼"
+  },
+  "hs-bbF": {
+    "prefix": "\\bbF",
+    "body": "𝔽",
+    "description": "Haskell: bbF -> 𝔽"
+  },
+  "hs-bbG": {
+    "prefix": "\\bbG",
+    "body": "𝔾",
+    "description": "Haskell: bbG -> 𝔾"
+  },
+  "hs-bbH": {
+    "prefix": "\\bbH",
+    "body": "ℍ",
+    "description": "Haskell: bbH -> ℍ"
+  },
+  "hs-bbI": {
+    "prefix": "\\bbI",
+    "body": "𝕀",
+    "description": "Haskell: bbI -> 𝕀"
+  },
+  "hs-bbJ": {
+    "prefix": "\\bbJ",
+    "body": "𝕁",
+    "description": "Haskell: bbJ -> 𝕁"
+  },
+  "hs-bbK": {
+    "prefix": "\\bbK",
+    "body": "𝕂",
+    "description": "Haskell: bbK -> 𝕂"
+  },
+  "hs-bbL": {
+    "prefix": "\\bbL",
+    "body": "𝕃",
+    "description": "Haskell: bbL -> 𝕃"
+  },
+  "hs-bbM": {
+    "prefix": "\\bbM",
+    "body": "𝕄",
+    "description": "Haskell: bbM -> 𝕄"
+  },
+  "hs-bbN": {
+    "prefix": "\\bbN",
+    "body": "ℕ",
+    "description": "Haskell: bbN -> ℕ"
+  },
+  "hs-bbO": {
+    "prefix": "\\bbO",
+    "body": "𝕆",
+    "description": "Haskell: bbO -> 𝕆"
+  },
+  "hs-bbP": {
+    "prefix": "\\bbP",
+    "body": "ℙ",
+    "description": "Haskell: bbP -> ℙ"
+  },
+  "hs-bbQ": {
+    "prefix": "\\bbQ",
+    "body": "ℚ",
+    "description": "Haskell: bbQ -> ℚ"
+  },
+  "hs-bbR": {
+    "prefix": "\\bbR",
+    "body": "ℝ",
+    "description": "Haskell: bbR -> ℝ"
+  },
+  "hs-bbS": {
+    "prefix": "\\bbS",
+    "body": "𝕊",
+    "description": "Haskell: bbS -> 𝕊"
+  },
+  "hs-bbT": {
+    "prefix": "\\bbT",
+    "body": "𝕋",
+    "description": "Haskell: bbT -> 𝕋"
+  },
+  "hs-bbU": {
+    "prefix": "\\bbU",
+    "body": "𝕌",
+    "description": "Haskell: bbU -> 𝕌"
+  },
+  "hs-bbV": {
+    "prefix": "\\bbV",
+    "body": "𝕍",
+    "description": "Haskell: bbV -> 𝕍"
+  },
+  "hs-bbW": {
+    "prefix": "\\bbW",
+    "body": "𝕎",
+    "description": "Haskell: bbW -> 𝕎"
+  },
+  "hs-bbX": {
+    "prefix": "\\bbX",
+    "body": "𝕏",
+    "description": "Haskell: bbX -> 𝕏"
+  },
+  "hs-bbY": {
+    "prefix": "\\bbY",
+    "body": "𝕐",
+    "description": "Haskell: bbY -> 𝕐"
+  },
+  "hs-bbZ": {
+    "prefix": "\\bbZ",
+    "body": "ℤ",
+    "description": "Haskell: bbZ -> ℤ"
+  },
+  "hs-bba": {
+    "prefix": "\\bba",
+    "body": "𝕒",
+    "description": "Haskell: bba -> 𝕒"
+  },
+  "hs-bbb": {
+    "prefix": "\\bbb",
+    "body": "𝕓",
+    "description": "Haskell: bbb -> 𝕓"
+  },
+  "hs-bbc": {
+    "prefix": "\\bbc",
+    "body": "𝕔",
+    "description": "Haskell: bbc -> 𝕔"
+  },
+  "hs-bbd": {
+    "prefix": "\\bbd",
+    "body": "𝕕",
+    "description": "Haskell: bbd -> 𝕕"
+  },
+  "hs-bbe": {
+    "prefix": "\\bbe",
+    "body": "𝕖",
+    "description": "Haskell: bbe -> 𝕖"
+  },
+  "hs-bbf": {
+    "prefix": "\\bbf",
+    "body": "𝕗",
+    "description": "Haskell: bbf -> 𝕗"
+  },
+  "hs-bbg": {
+    "prefix": "\\bbg",
+    "body": "𝕘",
+    "description": "Haskell: bbg -> 𝕘"
+  },
+  "hs-bbh": {
+    "prefix": "\\bbh",
+    "body": "𝕙",
+    "description": "Haskell: bbh -> 𝕙"
+  },
+  "hs-bbi": {
+    "prefix": "\\bbi",
+    "body": "𝕚",
+    "description": "Haskell: bbi -> 𝕚"
+  },
+  "hs-bbj": {
+    "prefix": "\\bbj",
+    "body": "𝕛",
+    "description": "Haskell: bbj -> 𝕛"
+  },
+  "hs-bbk": {
+    "prefix": "\\bbk",
+    "body": "𝕜",
+    "description": "Haskell: bbk -> 𝕜"
+  },
+  "hs-bbl": {
+    "prefix": "\\bbl",
+    "body": "𝕝",
+    "description": "Haskell: bbl -> 𝕝"
+  },
+  "hs-bbm": {
+    "prefix": "\\bbm",
+    "body": "𝕞",
+    "description": "Haskell: bbm -> 𝕞"
+  },
+  "hs-bbn": {
+    "prefix": "\\bbn",
+    "body": "𝕟",
+    "description": "Haskell: bbn -> 𝕟"
+  },
+  "hs-bbo": {
+    "prefix": "\\bbo",
+    "body": "𝕠",
+    "description": "Haskell: bbo -> 𝕠"
+  },
+  "hs-bbp": {
+    "prefix": "\\bbp",
+    "body": "𝕡",
+    "description": "Haskell: bbp -> 𝕡"
+  },
+  "hs-bbq": {
+    "prefix": "\\bbq",
+    "body": "𝕢",
+    "description": "Haskell: bbq -> 𝕢"
+  },
+  "hs-bbr": {
+    "prefix": "\\bbr",
+    "body": "𝕣",
+    "description": "Haskell: bbr -> 𝕣"
+  },
+  "hs-bbs": {
+    "prefix": "\\bbs",
+    "body": "𝕤",
+    "description": "Haskell: bbs -> 𝕤"
+  },
+  "hs-bbt": {
+    "prefix": "\\bbt",
+    "body": "𝕥",
+    "description": "Haskell: bbt -> 𝕥"
+  },
+  "hs-bbu": {
+    "prefix": "\\bbu",
+    "body": "𝕦",
+    "description": "Haskell: bbu -> 𝕦"
+  },
+  "hs-bbv": {
+    "prefix": "\\bbv",
+    "body": "𝕧",
+    "description": "Haskell: bbv -> 𝕧"
+  },
+  "hs-bbw": {
+    "prefix": "\\bbw",
+    "body": "𝕨",
+    "description": "Haskell: bbw -> 𝕨"
+  },
+  "hs-bbx": {
+    "prefix": "\\bbx",
+    "body": "𝕩",
+    "description": "Haskell: bbx -> 𝕩"
+  },
+  "hs-bby": {
+    "prefix": "\\bby",
+    "body": "𝕪",
+    "description": "Haskell: bby -> 𝕪"
+  },
+  "hs-bbz": {
+    "prefix": "\\bbz",
+    "body": "𝕫",
+    "description": "Haskell: bbz -> 𝕫"
+  },
+  "hs-Rge0": {
+    "prefix": "\\Rge0",
+    "body": "ℝ≥0",
+    "description": "Haskell: Rge0 -> ℝ≥0"
+  },
+  "hs-R>=0": {
+    "prefix": "\\R>=0",
+    "body": "ℝ≥0",
+    "description": "Haskell: R>=0 -> ℝ≥0"
+  },
+  "hs-nnreal": {
+    "prefix": "\\nnreal",
+    "body": "ℝ≥0",
+    "description": "Haskell: nnreal -> ℝ≥0"
+  },
+  "hs-ennreal": {
+    "prefix": "\\ennreal",
+    "body": "ℝ≥0∞",
+    "description": "Haskell: ennreal -> ℝ≥0∞"
+  },
+  "hs-enat": {
+    "prefix": "\\enat",
+    "body": "ℕ∞",
+    "description": "Haskell: enat -> ℕ∞"
+  },
+  "hs-Zsqrt": {
+    "prefix": "\\Zsqrt",
+    "body": "ℤ√",
+    "description": "Haskell: Zsqrt -> ℤ√"
+  },
+  "hs-zsqrtd": {
+    "prefix": "\\zsqrtd",
+    "body": "ℤ√",
+    "description": "Haskell: zsqrtd -> ℤ√"
+  },
+  "hs-liel": {
+    "prefix": "\\liel",
+    "body": "⁅",
+    "description": "Haskell: liel -> ⁅"
+  },
+  "hs-bracketl": {
+    "prefix": "\\bracketl",
+    "body": "⁅",
+    "description": "Haskell: bracketl -> ⁅"
+  },
+  "hs-lier": {
+    "prefix": "\\lier",
+    "body": "⁆",
+    "description": "Haskell: lier -> ⁆"
+  },
+  "hs-[-": {
+    "prefix": "\\[-",
+    "body": "⁅",
+    "description": "Haskell: [- -> ⁅"
+  },
+  "hs--]": {
+    "prefix": "\\-]",
+    "body": "⁆",
+    "description": "Haskell: -] -> ⁆"
+  },
+  "hs-lsimplex": {
+    "prefix": "\\lsimplex",
+    "body": "⦋",
+    "description": "Haskell: lsimplex -> ⦋"
+  },
+  "hs-rsimplex": {
+    "prefix": "\\rsimplex",
+    "body": "⦌",
+    "description": "Haskell: rsimplex -> ⦌"
+  },
+  "hs-bracketr": {
+    "prefix": "\\bracketr",
+    "body": "⁆",
+    "description": "Haskell: bracketr -> ⁆"
+  },
+  "hs-nhds": {
+    "prefix": "\\nhds",
+    "body": "𝓝",
+    "description": "Haskell: nhds -> 𝓝"
+  },
+  "hs-nbhds": {
+    "prefix": "\\nbhds",
+    "body": "𝓝",
+    "description": "Haskell: nbhds -> 𝓝"
+  },
+  "hs-X": {
+    "prefix": "\\X",
+    "body": "⨯",
+    "description": "Haskell: X -> ⨯"
+  },
+  "hs-vectorproduct": {
+    "prefix": "\\vectorproduct",
+    "body": "⨯",
+    "description": "Haskell: vectorproduct -> ⨯"
+  },
+  "hs-crossproduct": {
+    "prefix": "\\crossproduct",
+    "body": "⨯",
+    "description": "Haskell: crossproduct -> ⨯"
+  },
+  "hs-xs": {
+    "prefix": "\\xs",
+    "body": "×ˢ",
+    "description": "Haskell: xs -> ×ˢ"
+  },
+  "hs-coprod": {
+    "prefix": "\\coprod",
+    "body": "⨿",
+    "description": "Haskell: coprod -> ⨿"
+  },
+  "hs-sigmaobj": {
+    "prefix": "\\sigmaobj",
+    "body": "∐",
+    "description": "Haskell: sigmaobj -> ∐"
+  },
+  "hs-xf": {
+    "prefix": "\\xf",
+    "body": "×ᶠ",
+    "description": "Haskell: xf -> ×ᶠ"
+  },
+  "hs-exf": {
+    "prefix": "\\exf",
+    "body": "∃ᶠ",
+    "description": "Haskell: exf -> ∃ᶠ"
+  },
+  "hs-c[": {
+    "prefix": "\\c[",
+    "body": "⦃",
+    "description": "Haskell: c[ -> ⦃"
+  },
+  "hs-c]": {
+    "prefix": "\\c]",
+    "body": "⦄",
+    "description": "Haskell: c] -> ⦄"
+  },
+  "hs-Yot": {
+    "prefix": "\\Yot",
+    "body": "Ϳ",
+    "description": "Haskell: Yot -> Ϳ"
+  },
+  "hs-goal": {
+    "prefix": "\\goal",
+    "body": "⊢",
+    "description": "Haskell: goal -> ⊢"
+  },
+  "hs-Vdash": {
+    "prefix": "\\Vdash",
+    "body": "⊩",
+    "description": "Haskell: Vdash -> ⊩"
+  },
+  "hs-Vert": {
+    "prefix": "\\Vert",
+    "body": "‖",
+    "description": "Haskell: Vert -> ‖"
+  },
+  "hs-Vvdash": {
+    "prefix": "\\Vvdash",
+    "body": "⊪",
+    "description": "Haskell: Vvdash -> ⊪"
+  },
+  "hs-tiny": {
+    "prefix": "\\tiny",
+    "body": "⧾",
+    "description": "Haskell: tiny -> ⧾"
+  },
+  "hs-miny": {
+    "prefix": "\\miny",
+    "body": "⧿",
+    "description": "Haskell: miny -> ⧿"
+  },
+  "hs-heq": {
+    "prefix": "\\heq",
+    "body": "≍",
+    "description": "Haskell: heq -> ≍"
+  },
+  "hs-r!": {
+    "prefix": "\\r!",
+    "body": "¡",
+    "description": "Haskell: r! -> ¡"
+  }
+}

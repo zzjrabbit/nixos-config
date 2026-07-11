@@ -5,12 +5,15 @@ vim.keymap.set('n', '<leader>fs', ':Telescope live_grep<CR>', opt)
 vim.keymap.set('n', '<leader>wr', ':SessionRestore<CR>', opt)
 vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', opt)
 
+vim.keymap.set('n', '<leader>lr', ":LeanRestartFile<CR>", opt)
+
 vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
 vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
 vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 
 -- vim.keymap.set('n', '<leader>xx', ':Trouble diagnostics toggle<CR>', opts)
+vim.keymap.set('n', '<leader>ai', ':Chat<CR>', opts)
 
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}

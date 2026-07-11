@@ -16,6 +16,7 @@
       "/var/lib/regreet"
       "/var/lib/systemd/coredump"
       "/var/lib/bluetooth"
+      "/var/lib/flatpak"
     ];
 
     # Individual files that need to persist

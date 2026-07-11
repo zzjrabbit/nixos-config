@@ -27,6 +27,8 @@
       ".java"
       ".xmake"
       ".nix"
+		
+	  ".fgfs"
 
       # Application data
       ".mozilla"
@@ -44,6 +46,12 @@
       
       ".cache/nvim"
       ".local/share/nvim"
+
+      ".codex"
+      
+      ".config/cabal"
+      ".cache/cabal"
+      ".stack"
       
       ".local/share/hmcl"
       
@@ -53,13 +61,18 @@
       ".config/microsoft-edge"
       ".cache/microsoft-edge"
       ".cache/Microsoft"
-      
+        
+      ".config/sops"
+
       # System directories that may contain user data
       ".local/share/keyrings"
       ".local/share/mcfly"
       ".local/share/nix"
       ".local/share/zed"
       ".local/share/fcitx5/rime"
+
+      ".var/app"
+      ".local/share/flatpak"
     ];
 
     files = [

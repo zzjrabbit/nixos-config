@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   imports = [
     ./packages.nix
@@ -9,6 +9,7 @@
     # ./apps/vbox.nix
     ./apps/nvim.nix
     ./apps/vsc.nix
+    ./apps/codex.nix
 
     ./desktop/fuzzel.nix
     ./desktop/niri.nix
@@ -23,11 +24,13 @@
     ./system/xdg.nix
     ./system/shell.nix
     ./system/persist.nix
+    ./system/secrets.nix
+    inputs.sops-nix.homeManagerModules.sops
   ];
 
   home.username = "raca";
   home.homeDirectory = "/home/raca";
 
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 }

@@ -24,6 +24,7 @@
     perf-tools
     docker
     android-tools
+	gtk4
   ];
 
   nixpkgs.config.allowUnfree = true;

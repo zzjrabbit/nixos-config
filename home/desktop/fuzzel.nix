@@ -15,7 +15,7 @@
         vertical-pad = 12;
         inner-pad = 12;
         line-height = 16;
-        image-size-ratio = 0;
+        image-size-ratio = 1;
         dpi-aware = true;
         fields = "filename,name,generic,categories,keywords";
       };

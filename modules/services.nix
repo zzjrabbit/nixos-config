@@ -1,5 +1,13 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
+  services.flatpak = {
+    enable = true;
+  };
+
+  services.nohang = {
+    enable = true;
+  };
+  
   # virtualisation.virtualbox.host.enable = true;
   virtualisation = {
     docker = {
@@ -66,43 +74,6 @@
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;
-      };
-    };
-  };
-  
-  programs.regreet = {
-    enable = true;
-    settings = {
-      background = {
-        path = ../wallpaper/sea.jpg;
-        fit = "Fill";
-      };
-    };
-    font = {
-      name = "Fira Code";
-      package = pkgs.fira-code;
-    };
-    theme = {
-      name = "Adwaita-Dark";
-      package = pkgs.adw-gtk3;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
-  
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = let
-      sway-conf = pkgs.writeText "sway-gtkgreet-config" ''
-          exec "${config.programs.regreet.package}/bin/regreet; ${config.programs.sway.package}/bin/swaymsg exit"
-          include /etc/sway/config.d/*
-        '';
-      in {
-        command = "${config.programs.sway.package}/bin/sway --config ${sway-conf}";
-        user = "greeter";
       };
     };
   };

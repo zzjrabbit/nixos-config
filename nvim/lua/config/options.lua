@@ -1,3 +1,10 @@
+vim.opt.title = true
+vim.opt.titlestring = "NVIM: %<%F%h%m%r%=%-%{v:progname}"
+
+vim.opt.clipboard = "unnamedplus"
+
+vim.o.shell = "dash"
+
 -- Enable highlight on search
 vim.o.hlsearch = true
 
@@ -10,11 +17,14 @@ vim.o.undolevels = 1000
 -- Decrease redraw time
 vim.o.redrawtime = 100
 
+
+vim.o.expandtab = true
 -- Configure the number of spaces a tab is counting for
 vim.o.tabstop = 4
-
 -- Number of spaces for a step of indent
 vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.smarttab = true
 
 -- Use ripgrep as grep tool
 vim.o.grepprg = "rg --vimgrep --no-heading"
@@ -27,12 +37,6 @@ vim.o.number = true
 vim.o.winblend = 0
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		vim.cmd("TransparentEnable")
-	end,
-})
 
 local severity = vim.diagnostic.severity
 

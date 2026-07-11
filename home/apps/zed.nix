@@ -49,6 +49,22 @@
       buffer_font_family = "Fira Code";
       minimap = { show = "auto"; thumb = "hover"; };
       
+      project_panel = {
+        dock = "left";
+      };
+      agent = {
+        dock = "right";
+        sidebar_side = "right";
+      };
+      git_panel = {
+        dock = "left";
+      };
+      collaboration = {
+        dock = "right";
+      };
+      
+      cli_default_open_behavior = "new_window";
+
       colorize_brackets = true;
       
       inlay_hints = {
@@ -72,4 +88,6 @@
       };
     };
   };
+  
+  home.file.".config/zed/snippets/haskell.json".source = ./haskell.json;
 }

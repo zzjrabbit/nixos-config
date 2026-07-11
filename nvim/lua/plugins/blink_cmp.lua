@@ -16,7 +16,10 @@ return {
         	},
     	},
     	-- Recommended to avoid unnecessary request
-    	completion = { trigger = { prefetch_on_insert = false } },
+    	completion = { 
+			trigger = { prefetch_on_insert = false },
+			keyword = { range = "full" },
+		},
 	})
 	
 	end

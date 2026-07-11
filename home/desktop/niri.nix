@@ -26,13 +26,10 @@
     }
     
     environment {
-        DISPLAY ":0"
         QT_QPA_PLATFORM "wayland"
         QT_STYLE_OVERRIDE "kvantum"
-        DEEPSEEK_API_KEY "${builtins.readFile /persist/secret/dpsk_api}"
     }
     
-    spawn-at-startup "xwayland-satellite"
     spawn-at-startup "fcitx5"
     
     output "BOE 0x0877 Unknown" {
@@ -49,8 +46,18 @@
     window-rule {
         geometry-corner-radius 8
         clip-to-geometry true
-        opacity 0.95
+        opacity 0.88
         draw-border-with-background false
+        background-effect {
+          blur true
+        }
+    }
+
+    blur {
+      passes 3
+      offset 3.0
+      noise 0.02
+      saturation 1.5
     }
     
     binds {

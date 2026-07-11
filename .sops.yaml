@@ -1,0 +1,11 @@
+keys:
+  - &admin age1mmev55njkw2p4etlze0ukc4vu367fm58n79xrcv6q63p6lneja7q5ufwu4
+  - &laptop age1dgtt83zus0kqgqn7cenmvxwrej7njv5dcck77yudgcp7smcsw9tquaxv3e
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+    - age:
+      - *admin
+      - *laptop
+

@@ -5,7 +5,8 @@
     substituters = [
       "https://cache.nixos.org"
       "https://niri.cachix.org"
-    ];
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+	];
 
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -14,13 +15,16 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri.url = "github:sodiboo/niri-flake";
-    nur.url = "github:nix-community/NUR";
     impermanence.url = "github:nix-community/impermanence";
     chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
   };
