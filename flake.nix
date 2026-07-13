@@ -27,6 +27,10 @@
     niri.url = "github:sodiboo/niri-flake";
     impermanence.url = "github:nix-community/impermanence";
     chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
+    rime-shuangpin-fuzhuma = {
+      url = "github:gaboolic/rime-shuangpin-fuzhuma/1c4750ec9828361fecdee174dac38d26e20ce667";
+      flake = false;
+    };
   };
 
   outputs =

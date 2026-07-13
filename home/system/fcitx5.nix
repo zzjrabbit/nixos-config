@@ -1,16 +1,39 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
+let
+  rimeMoqi = pkgs.stdenvNoCC.mkDerivation {
+    pname = "rime-shuangpin-fuzhuma";
+    version = "2025-08-02";
+    src = inputs.rime-shuangpin-fuzhuma;
+
+    dontConfigure = true;
+    dontBuild = true;
+
+    installPhase = ''
+      mkdir -p $out/share/rime-data
+      cp -r . $out/share/rime-data
+      mv $out/share/rime-data/default.yaml \
+        $out/share/rime-data/rime_moqi_suggestion.yaml
+    '';
+  };
+in
 {
+  home.file.".local/share/fcitx5/rime/default.custom.yaml".text = ''
+    patch:
+      __include: rime_moqi_suggestion:/
+      schema_list:
+        - schema: moqi_wan_zrm
+  '';
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
     fcitx5 = {
       waylandFrontend = true;
-      addons = with pkgs; [
-        fcitx5-gtk
-        qt6Packages.fcitx5-chinese-addons
-        fcitx5-rime
-        rime-data
+      addons = [
+        pkgs.fcitx5-gtk
+        (pkgs.fcitx5-rime.override {
+          rimeDataPkgs = [ pkgs.rime-data rimeMoqi ];
+        })
       ];
       settings = {
         inputMethod = {
@@ -23,19 +46,10 @@
           "Groups/0/Items/0".Name = "keyboard-us";
           "Groups/0/Items/1".Name = "rime";
         };
-        addons = {
-          pinyin = {
-            globalSection = {
-              ShuangpinProfile = "Ziranma";
-              CloudPinyinEnabled = "False";
-              FirstRun = "False";
-            };
-          };
-          classicui.globalSection = {
-            Theme = "adwaita-dark";
-            Font = "Source Han Sans SC 12";
-            "Vertical Candidate List" = "True";
-          };
+        addons.classicui.globalSection = {
+          Theme = "adwaita-dark";
+          Font = "Source Han Sans SC 12";
+          "Vertical Candidate List" = "True";
         };
       };
       themes.adwaita-dark = {

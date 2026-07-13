@@ -70,7 +70,6 @@
       ".local/share/nix"
       ".local/share/zed"
       ".local/share/fcitx5/rime"
-
       ".var/app"
       ".local/share/flatpak"
     ];
