@@ -1,0 +1,7 @@
+WRN 2026-07-13T21:57:47.111 ?.2        server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.2.0
+WRN 2026-07-13T21:57:55.767 ?.2        server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.2.0
+WRN 2026-07-13T22:05:26.363 ?.2        server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.2.0
+WRN 2026-07-13T22:05:26.365 ?.2        server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.2.0
+WRN 2026-07-15T07:39:09.997 c/nvf.267563.0 server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.5.0
+WRN 2026-07-15T07:39:26.113 c/nvf.267563.0 server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.3.0
+WRN 2026-07-15T07:39:26.146 c/nvf.267563.0 server_start:197: Failed to start server: operation not permitted: /run/user/1000/nvf.5.0

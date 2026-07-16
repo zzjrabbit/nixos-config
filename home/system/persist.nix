@@ -44,8 +44,7 @@
       
       ".config/Throne"
       
-      ".cache/nvim"
-      ".local/share/nvim"
+      ".local/share/nvf/sessions"
 
       ".codex"
       

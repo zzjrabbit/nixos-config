@@ -5,12 +5,14 @@
     substituters = [
       "https://cache.nixos.org"
       "https://niri.cachix.org"
+      "https://cache.numtide.com"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
 	];
 
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
@@ -27,6 +29,14 @@
     niri.url = "github:sodiboo/niri-flake";
     impermanence.url = "github:nix-community/impermanence";
     chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    minimal-nvim = {
+      url = "github:Yazeed1s/minimal.nvim";
+      flake = false;
+    };
     rime-shuangpin-fuzhuma = {
       url = "github:gaboolic/rime-shuangpin-fuzhuma/1c4750ec9828361fecdee174dac38d26e20ce667";
       flake = false;

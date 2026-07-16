@@ -19,6 +19,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777699697,
+        "narHash": "sha256-Eg9b/rq/ECYwNwEXs5i9wHyhxNI0JrYx2srdI2uZMaQ=",
+        "ref": "refs/heads/main",
+        "rev": "382052b74656a369c5408822af3f2501e9b1af81",
+        "revCount": 94,
+        "type": "git",
+        "url": "https://git.lix.systems/lix-project/flake-compat.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lix.systems/lix-project/flake-compat.git"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -76,6 +92,37 @@
       "original": {
         "owner": "nix-community",
         "repo": "impermanence",
+        "type": "github"
+      }
+    },
+    "minimal-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667505809,
+        "narHash": "sha256-hR4k0lf0dsPKlVJUM/JLmREv9Z1LZoHXJn+3Ox/Okck=",
+        "owner": "Yazeed1s",
+        "repo": "minimal.nvim",
+        "rev": "22d837b814d3bd22625640ef63cc73b8507f291d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Yazeed1s",
+        "repo": "minimal.nvim",
+        "type": "github"
+      }
+    },
+    "mnw": {
+      "locked": {
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
         "type": "github"
       }
     },
@@ -215,6 +262,28 @@
         "type": "github"
       }
     },
+    "nvf": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "mnw": "mnw",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783767627,
+        "narHash": "sha256-UgQuKee2d5VhXaqectc23i2rarIufUpAVSTA6R8XloY=",
+        "owner": "NotAShelf",
+        "repo": "nvf",
+        "rev": "c55a3a783e6e1ecbbaad607b15a9b7b23d42236f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "nvf",
+        "type": "github"
+      }
+    },
     "rime-shuangpin-fuzhuma": {
       "flake": false,
       "locked": {
@@ -237,8 +306,10 @@
         "chinese-fonts-overlay": "chinese-fonts-overlay",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
+        "minimal-nvim": "minimal-nvim",
         "niri": "niri",
         "nixpkgs": "nixpkgs_4",
+        "nvf": "nvf",
         "rime-shuangpin-fuzhuma": "rime-shuangpin-fuzhuma",
         "sops-nix": "sops-nix"
       }
