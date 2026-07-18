@@ -1,35 +1,17 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  dconf = {
-    settings = {
-      "org/gnome/desktop/interface" = {
-        gtk-theme = "adw-gtk3-dark";
-        color-scheme = "prefer-dark";
-      };
-    };
-  };
+  home.pointerCursor.enable = true;
 
-  gtk = {
-    enable = true;
-    gtk4.theme = config.gtk.theme;
-    font.name = "Fira Code";
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
+  stylix.targets = {
+    nvf = {
+      plugin = "mini-base16";
+      transparentBackground = true;
     };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-  };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
+    # Keep the existing layouts and source their colors from the Stylix palette.
+    fcitx5.enable = false;
+    swaync.enable = false;
+    waybar.addCss = false;
   };
 }

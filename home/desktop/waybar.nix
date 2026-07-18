@@ -1,7 +1,7 @@
 # Waybar configuration module
 # This module configures the Waybar status bar for Wayland
 
-{ ... }:
+{ config, ... }:
 
 {
   programs.waybar = {
@@ -10,12 +10,15 @@
     settings = {
       mainBar = {
         layer = "top";
-        height = 30;
-        spacing = 4;
+        height = 44;
+        spacing = 0;
+        margin-top = 8;
+        margin-left = 14;
+        margin-right = 14;
 
         # Modules positioning
         modules-left = [
-		  "custom/logo"
+          "custom/logo"
           "niri/workspaces"
         ];
         modules-center = [
@@ -71,13 +74,13 @@
           tooltip = false;
           format = "{icon}";
           "format-icons" = {
-            notification = "<span foreground='red'><sup></sup></span>";
+            notification = "<span foreground='#${config.lib.stylix.colors.base08}'><sup></sup></span>";
             none = "";
-            "dnd-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-notification" = "<span foreground='#${config.lib.stylix.colors.base08}'><sup></sup></span>";
             "dnd-none" = "";
-            "inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "inhibited-notification" = "<span foreground='#${config.lib.stylix.colors.base08}'><sup></sup></span>";
             "inhibited-none" = "";
-            "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-inhibited-notification" = "<span foreground='#${config.lib.stylix.colors.base08}'><sup></sup></span>";
             "dnd-inhibited-none" = "";
           };
           "return-type" = "json";
@@ -88,35 +91,48 @@
           escape = true;
         };
 
-		"custom/logo" = {
-			format = "";
-			tooltip = false;
-			"on-click" = "fuzzel";
-		};
+        "custom/logo" = {
+          format = "";
+          tooltip = false;
+          "on-click" = "fuzzel";
+        };
       };
     };
     style = ''
-	  @define-color workspacebackground transparent;
-      @define-color bordercolor #FFFFFF;
-      @define-color textcolor1 #000000;
-      @define-color textcolor2 #FFFFFF;
-      @define-color iconcolor #FFFFFF;
+      @define-color base00 #${config.lib.stylix.colors.base00};
+      @define-color base01 #${config.lib.stylix.colors.base01};
+      @define-color base02 #${config.lib.stylix.colors.base02};
+      @define-color base03 #${config.lib.stylix.colors.base03};
+      @define-color base04 #${config.lib.stylix.colors.base04};
+      @define-color base05 #${config.lib.stylix.colors.base05};
+      @define-color base06 #${config.lib.stylix.colors.base06};
+      @define-color base07 #${config.lib.stylix.colors.base07};
+      @define-color base08 #${config.lib.stylix.colors.base08};
+      @define-color base09 #${config.lib.stylix.colors.base09};
+      @define-color base0A #${config.lib.stylix.colors.base0A};
+      @define-color base0B #${config.lib.stylix.colors.base0B};
+      @define-color base0C #${config.lib.stylix.colors.base0C};
+      @define-color base0D #${config.lib.stylix.colors.base0D};
+      @define-color glass alpha(@base00, 0.01);
+      @define-color glass-hover alpha(@base06, 0.07);
+      @define-color glass-line alpha(@base06, 0.16);
+      @define-color muted alpha(@base05, 0.68);
 
       /* -----------------------------------------------------
        * General
        * ----------------------------------------------------- */
 
       * {
-          font-family: "Fira Code Nerd Font";
           border: none;
-          border-radius: 0px;
+          min-height: 0;
       }
 
       window#waybar {
-          background-color: transparent;
-          border-bottom: 0px solid #ffffff;
-          transition-property: background-color;
-          transition-duration: 0.5s;
+          color: @base05;
+          background: @glass;
+          border: 1px solid @glass-line;
+          border-radius: 16px;
+          box-shadow: 0 6px 20px alpha(@base00, 0.28);
       }
 
       /* -----------------------------------------------------
@@ -124,37 +140,37 @@
        * ----------------------------------------------------- */
 
       #workspaces {
-          background-color: transparent;
+          background: transparent;
+          margin: 5px 0;
+          padding: 2px 3px;
       }
 
       #workspaces button {
           all: initial;
           min-width: 0;
-          box-shadow: inset 0 -3px transparent;
-          
-          padding: 6px 18px;
-          margin: 10px 3px;
-          border-radius: 8px;
-
-		  background-color: transparent;
-		  color: @textcolor2;
+          padding: 5px 12px;
+          margin: 0 2px;
+          border-radius: 7px;
+          background: transparent;
+          color: @muted;
+          transition-property: background-color, color;
+          transition-duration: 160ms;
       }
 
       #workspaces button.active {
-          color: #c0e8ff;
-          background-color: transparent;
-          padding: 2px 32px;
+          color: @base06;
+          background: alpha(@base0D, 0.14);
+          box-shadow: inset 0 -2px alpha(@base0D, 0.78);
       }
 
       #workspaces button:hover {
-          box-shadow: inherit;
-          text-shadow: inherit;
-          color: #c0e8ff;
-          background-color: @workspacesbackground;
+          color: @base06;
+          background: @glass-hover;
       }
       
       #workspaces button.urgent {
-          background-color: @workspacebackground;
+          background-color: @base08;
+          color: @base00;
       }
 
       /* -----------------------------------------------------
@@ -162,55 +178,90 @@
        * ----------------------------------------------------- */
 
       tooltip {
-          border-radius: 4px;
-          background: @background;
+          border: 1px solid @glass-line;
+          border-radius: 9px;
+          background: alpha(@base00, 0.90);
+          box-shadow: 0 5px 18px alpha(@base00, 0.30);
           text-shadow: none;
-		  background-color: transparent;
       }
 
       tooltip label {
-          color: @textcolor2;
+          color: @base05;
+      }
+
+      /* Tray context menus are GTK menus rendered by Waybar. Give them an
+       * explicit opaque palette so neither the GTK fallback theme nor the
+       * wallpaper can tint the Fcitx menu yellow. */
+      menu {
+          color: @base05;
+          background-color: @base01;
+          background-image: none;
+          border: 1px solid @base03;
+          border-radius: 8px;
+          padding: 4px;
+          opacity: 1;
+      }
+
+      menuitem {
+          color: @base05;
+          background-color: @base01;
+          background-image: none;
+          border-radius: 5px;
+          padding: 5px 9px;
+      }
+
+      menuitem:hover {
+          color: @base00;
+          background-color: @base0D;
+      }
+
+      menu separator {
+          min-height: 1px;
+          margin: 4px 6px;
+          background-color: @base03;
       }
 
       #pulseaudio,
       #battery,
+      #keyboard-state,
       #custom-notification,
       #clock {
           font-weight: bold;
-          color: @iconcolor;
-          padding: 4px 10px 4px 10px;
+          color: @base05;
+          padding: 5px 11px;
           font-size: 14px;
-      }
-      
-      #custom-notification {
-		  background-color: transparent;
-          font-size: 14px;
-          color: #ffffff;
-          border-radius: 6px;
-          margin-top: 6px;
-		  margin-bottom: 6px;
-		  margin-left: 3px;
-		  margin-right: 16px;
-          padding: 6px 12px;
+          border-radius: 7px;
+          transition-property: background-color, color;
+          transition-duration: 160ms;
       }
 
-	  #custom-logo {
-			padding-right: 10px;
-  		padding-left: 10px;
-  		margin-left: 16px;
-  		margin-right: 8px;
-      font-size: 15px;
-  		border-radius: 8px 0px 0px 8px;
-  		color: #e0e8ff;
-	  }
+      #pulseaudio:hover,
+      #battery:hover,
+      #keyboard-state:hover,
+      #custom-notification:hover {
+          color: @base06;
+          background: @glass-hover;
+      }
+
+      #custom-notification {
+          margin: 5px 10px 5px 1px;
+      }
+
+      #custom-logo {
+          min-width: 18px;
+          padding: 5px 11px;
+          margin: 5px 8px 5px 7px;
+          font-size: 16px;
+          border-radius: 7px;
+          color: @base0A;
+          background: transparent;
+      }
 
       #clock {
-          background-color: transparent;
-          font-size: 14px;
-          color: @textcolor2;
-          border-radius: 6px;
-          margin: 4px 3px;
-          padding: 12px 24px;
+          color: @base06;
+          background: transparent;
+          margin: 5px 3px;
+          padding: 5px 18px;
       }
 
       /* -----------------------------------------------------
@@ -218,17 +269,11 @@
        * ----------------------------------------------------- */
 
       #pulseaudio {
-		  background-color: transparent;
-          font-size: 14px;
-          color: @textcolor2;
-          border-radius: 4px;
-          margin: 6px 3px;
-          padding: 6px 12px;
+          margin: 5px 1px;
       }
 
       #pulseaudio.muted {
-		  background-color: transparent;
-          color: @textcolor2;
+          color: @muted;
       }
 
       /* -----------------------------------------------------
@@ -236,30 +281,27 @@
        * ----------------------------------------------------- */
 
       #battery {
-		  background-color: transparent;
-          font-size: 14px;
-          color: @textcolor2;
-          border-radius: 6px;
-          margin: 6px 3px;
-          padding: 6px 12px;
+          margin: 5px 1px;
       }
 
       #battery.charging,
       #battery.plugged {
-          color: @textcolor2;
-		  background-color: transparent;
+          color: @base0B;
+      }
+
+      #battery.warning:not(.charging) {
+          color: @base0A;
       }
 
       @keyframes blink {
           to {
-              background-color: rgb(0x10, 0x10, 0x20);
-              color: @textcolor2;
+              background-color: @base01;
+              color: @base08;
           }
       }
 
       #battery.critical:not(.charging) {
-		  background-color: transparent;
-          color: @textcolor2;
+          color: @base08;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -272,19 +314,25 @@
        * ----------------------------------------------------- */
 
       #tray {
-          border-radius: 6px;
-          margin: 4px 3px;
-          padding: 12px 12px;
-		  background-color: transparent;
+          border-radius: 9px;
+          margin: 6px 1px 6px 7px;
+          padding: 5px 12px;
+          background: alpha(@base06, 0.07);
+          border: 1px solid alpha(@base06, 0.12);
+          box-shadow: 0 2px 8px alpha(@base00, 0.20);
       }
 
       #tray > .passive {
           -gtk-icon-effect: dim;
+          opacity: 0.72;
       }
 
       #tray > .needs-attention {
           -gtk-icon-effect: highlight;
-		  background-color: transparent;
+          color: @base0A;
+          background: alpha(@base0A, 0.14);
+          box-shadow: inset 0 -2px alpha(@base0A, 0.70);
+          border-radius: 6px;
       }
     '';
   };

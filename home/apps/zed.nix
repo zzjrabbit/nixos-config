@@ -27,26 +27,16 @@
       }
     ];
     userSettings = {
-      theme = {
-        mode = "system";
-        light = "One Light";
-        dark = "Deep Dark";
-      };
       terminal = {
         shell = {
           program = "dash";
         };
         dock = "bottom";
-        font_family = "Fira Code";
       };
       icon_theme = "Bearded Icon Theme";
       buffer_line_height = { custom = 1.55; };
-      ui_font_size = 18;
       ui_font_weight = 600;
       buffer_font_weight = 800;
-      buffer_font_size = 18;
-      ui_font_family = "Fira Code";
-      buffer_font_family = "Fira Code";
       minimap = { show = "auto"; thumb = "hover"; };
       
       project_panel = {

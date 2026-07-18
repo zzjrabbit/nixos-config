@@ -24,15 +24,15 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     impermanence.url = "github:nix-community/impermanence";
     chinese-fonts-overlay.url = "github:brsvh/chinese-fonts-overlay/main";
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    minimal-nvim = {
-      url = "github:Yazeed1s/minimal.nvim";
-      flake = false;
     };
     rime-shuangpin-fuzhuma = {
       url = "github:gaboolic/rime-shuangpin-fuzhuma/1c4750ec9828361fecdee174dac38d26e20ce667";

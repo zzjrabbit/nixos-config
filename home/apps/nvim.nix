@@ -1,11 +1,53 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 let
-  minimal-nvim = pkgs.vimUtils.buildVimPlugin {
-    pname = "minimal.nvim";
-    version = "0-unstable-2024-10-29";
-    src = inputs.minimal-nvim;
+  # Neovim chrome uses neutral surfaces and restrained, desaturated state
+  # colours. The steps between normal, hover and selected are intentionally
+  # small so one component does not jump from near-black to a bright accent.
+  ui = {
+    bg = "#${config.lib.stylix.colors.base00}";
+    surface = "#17191c";
+    raised = "#202328";
+    hover = "#292d32";
+    selected = "#343940";
+    active = "#41474f";
+    border = "#3a3f45";
+    muted = "#858b92";
+    text = "#c7cacf";
+    bright = "#eceef0";
+    accent = "#a9b0b7";
+    info = "#8fa1a8";
+    success = "#8fa897";
+    warning = "#b3a078";
+    danger = "#b48886";
+    violet = "#9f96aa";
   };
+
+  # Keep file-type icons inside the same subdued semantic palette used by the
+  # rest of Neovim instead of pulling in the much brighter upstream colours.
+  devIcon = icon: color: name: {
+    inherit icon color;
+    name = "Palette${name}";
+  };
+
+  lualineTheme =
+    let
+      segment = fg: bg: { inherit fg bg; };
+      middle = {
+        b = segment ui.text ui.raised;
+        c = segment ui.muted ui.surface;
+      };
+      mode = color: segment ui.bg color;
+      inactive = segment ui.muted ui.surface;
+    in
+    {
+      normal = middle // { a = mode ui.accent; };
+      insert = middle // { a = mode ui.success; };
+      visual = middle // { a = mode ui.violet; };
+      replace = middle // { a = mode ui.danger; };
+      command = middle // { a = mode ui.warning; };
+      inactive = { a = inactive; b = inactive; c = inactive; };
+    };
 
   extraGrammars = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
     bash
@@ -25,35 +67,6 @@ let
     typescript
     yaml
   ];
-
-  colors = {
-    base01 = "#282a2e";
-    base02 = "#373b41";
-    base03 = "#969896";
-    base04 = "#b4b7b4";
-    base05 = "#c5c8c6";
-    base09 = "#de935f";
-    base0B = "#b5bd68";
-    base0D = "#81a2be";
-    base0E = "#b294bb";
-  };
-
-  lualineTheme =
-    let
-      segment = fg: bg: { inherit fg bg; };
-      active = { b = segment colors.base05 colors.base02; };
-      inactive = segment colors.base03 colors.base01;
-    in
-    {
-      normal = active // {
-        a = segment colors.base01 colors.base0D;
-        c = segment colors.base04 colors.base01;
-      };
-      insert = active // { a = segment colors.base01 colors.base0B; };
-      visual = active // { a = segment colors.base01 colors.base0E; };
-      replace = active // { a = segment colors.base01 colors.base09; };
-      inactive = { a = inactive; b = inactive; c = inactive; };
-    };
 
   nvfSettings = { lib, ... }: {
     vim.lineNumberMode = "number";
@@ -139,6 +152,14 @@ let
           theme = lualineTheme;
           globalstatus = true;
           always_show_tabline = false;
+          component_separators = {
+            left = "";
+            right = "";
+          };
+          section_separators = {
+            left = "";
+            right = "";
+          };
         };
         tabline = {
           lualine_a = [
@@ -155,7 +176,42 @@ let
     vim.assistant.copilot.enable = true;
     vim.utility.diffview-nvim.enable = true;
     vim.binds.whichKey.enable = true;
-    vim.visuals.nvim-web-devicons.enable = true;
+    vim.visuals.nvim-web-devicons = {
+      enable = true;
+      setupOpts = {
+        color_icons = true;
+        default = true;
+        override = {
+          default_icon = devIcon "" ui.muted "Default";
+        };
+        override_by_extension = {
+          nix = devIcon "" ui.info "Nix";
+          lua = devIcon "" ui.info "Lua";
+          nu = devIcon "" ui.success "Nushell";
+          sh = devIcon "" ui.success "Sh";
+          bash = devIcon "" ui.success "Bash";
+          zsh = devIcon "" ui.success "Zsh";
+          py = devIcon "" ui.warning "Py";
+          rs = devIcon "" ui.danger "Rs";
+          c = devIcon "" ui.info "C";
+          cpp = devIcon "" ui.info "Cpp";
+          h = devIcon "" ui.violet "H";
+          hpp = devIcon "" ui.violet "Hpp";
+          js = devIcon "" ui.warning "Js";
+          jsx = devIcon "" ui.info "Jsx";
+          ts = devIcon "" ui.info "TypeScript";
+          tsx = devIcon "" ui.info "Tsx";
+          json = devIcon "" ui.warning "Json";
+          toml = devIcon "" ui.warning "Toml";
+          yaml = devIcon "" ui.danger "Yaml";
+          yml = devIcon "" ui.danger "Yml";
+          md = devIcon "" ui.muted "Md";
+          html = devIcon "" ui.danger "Html";
+          css = devIcon "" ui.violet "Css";
+          scss = devIcon "" ui.violet "Scss";
+        };
+      };
+    };
 
     vim.utility.snacks-nvim = {
       enable = true;
@@ -216,19 +272,199 @@ let
       grammars = extraGrammars;
     };
 
-    vim.startPlugins = [ minimal-nvim ];
-    vim.luaConfigRC.theme = lib.nvim.dag.entryBefore [ "pluginConfigs" ] ''
-      vim.cmd.colorscheme("minimal-base16")
-    '';
-
     vim.highlight = {
+      Normal = { bg = "NONE"; fg = ui.text; };
+      NormalNC = { bg = "NONE"; fg = ui.muted; };
+      NormalFloat = { bg = ui.surface; fg = ui.text; };
+      FloatBorder = { bg = ui.surface; fg = ui.border; };
+      FloatTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      Directory = { fg = ui.accent; bold = true; };
+      Title = { fg = ui.bright; bold = true; };
+      Question.fg = ui.info;
+      Conceal.fg = ui.muted;
       SignColumn.bg = "NONE";
-      CursorLine.bg = "NONE";
-      LineNr = { bg = "NONE"; fg = colors.base03; };
-      CursorLineNr = { bg = "NONE"; fg = colors.base05; bold = true; };
-      SnacksTerminal = { bg = colors.base01; fg = colors.base05; };
-      SnacksTerminalBorder = { bg = colors.base01; fg = colors.base03; };
-      SnacksTerminalTitle = { bg = colors.base01; fg = colors.base0D; bold = true; };
+      CursorLine.bg = ui.raised;
+      CursorLineNr = { bg = ui.raised; fg = ui.accent; bold = true; };
+      LineNr = { bg = "NONE"; fg = ui.border; };
+      Visual = { bg = ui.selected; fg = ui.bright; };
+      Search = { bg = ui.hover; fg = ui.text; };
+      IncSearch = { bg = ui.selected; fg = ui.bright; bold = true; };
+      CurSearch = { bg = ui.active; fg = ui.bright; bold = true; underline = true; };
+      Substitute = { bg = ui.selected; fg = ui.bright; bold = true; };
+      MatchParen = { bg = ui.hover; fg = ui.bright; bold = true; };
+      Pmenu = { bg = ui.surface; fg = ui.text; };
+      PmenuSel = { bg = ui.selected; fg = ui.bright; bold = true; };
+      PmenuExtra = { bg = ui.surface; fg = ui.muted; };
+      PmenuKind = { bg = ui.surface; fg = ui.accent; };
+      PmenuSbar.bg = ui.surface;
+      PmenuThumb.bg = ui.border;
+      WildMenu = { bg = ui.selected; fg = ui.bright; bold = true; };
+      QuickFixLine = { bg = ui.hover; fg = ui.bright; bold = true; };
+      Folded = { bg = ui.surface; fg = ui.muted; };
+      FoldColumn = { bg = "NONE"; fg = ui.border; };
+      ColorColumn.bg = ui.surface;
+      NonText.fg = ui.border;
+      SpecialKey.fg = ui.border;
+      Whitespace.fg = ui.border;
+      EndOfBuffer.fg = ui.bg;
+      WinSeparator = { bg = "NONE"; fg = ui.border; };
+      StatusLine = { bg = ui.surface; fg = ui.text; };
+      StatusLineNC = { bg = ui.bg; fg = ui.border; };
+      TabLine = { bg = ui.surface; fg = ui.muted; };
+      TabLineFill.bg = ui.bg;
+      TabLineSel = { bg = ui.selected; fg = ui.bright; bold = true; };
+      MsgArea.fg = ui.text;
+      ModeMsg = { fg = ui.accent; bold = true; };
+      MoreMsg.fg = ui.info;
+      ErrorMsg = { fg = ui.danger; bold = true; };
+      WarningMsg.fg = ui.warning;
+
+      DiagnosticError.fg = ui.danger;
+      DiagnosticWarn.fg = ui.warning;
+      DiagnosticInfo.fg = ui.info;
+      DiagnosticHint.fg = ui.violet;
+      DiagnosticOk.fg = ui.success;
+      DiagnosticVirtualTextError = { bg = "NONE"; fg = ui.danger; };
+      DiagnosticVirtualTextWarn = { bg = "NONE"; fg = ui.warning; };
+      DiagnosticVirtualTextInfo = { bg = "NONE"; fg = ui.info; };
+      DiagnosticVirtualTextHint = { bg = "NONE"; fg = ui.violet; };
+      DiagnosticFloatingError.fg = ui.danger;
+      DiagnosticFloatingWarn.fg = ui.warning;
+      DiagnosticFloatingInfo.fg = ui.info;
+      DiagnosticFloatingHint.fg = ui.violet;
+
+      DiffAdd = { bg = "#18221d"; fg = ui.success; };
+      DiffChange = { bg = "#242219"; fg = ui.warning; };
+      DiffDelete = { bg = "#251b1b"; fg = ui.danger; };
+      DiffText = { bg = "#302b20"; fg = ui.bright; bold = true; };
+      GitSignsAdd.fg = ui.success;
+      GitSignsChange.fg = ui.warning;
+      GitSignsDelete.fg = ui.danger;
+      GitSignsUntracked.fg = ui.accent;
+
+      BlinkCmpMenu = { bg = ui.surface; fg = ui.text; };
+      BlinkCmpMenuBorder = { bg = ui.surface; fg = ui.border; };
+      BlinkCmpMenuSelection = { bg = ui.selected; fg = ui.bright; bold = true; };
+      BlinkCmpLabel.fg = ui.text;
+      BlinkCmpLabelMatch = { fg = ui.accent; bold = true; };
+      BlinkCmpLabelDetail.fg = ui.muted;
+      BlinkCmpLabelDescription.fg = ui.muted;
+      BlinkCmpSource.fg = ui.muted;
+      BlinkCmpKind.fg = ui.accent;
+      BlinkCmpKindFunction.fg = ui.violet;
+      BlinkCmpKindMethod.fg = ui.violet;
+      BlinkCmpKindConstructor.fg = ui.violet;
+      BlinkCmpKindClass.fg = ui.info;
+      BlinkCmpKindInterface.fg = ui.info;
+      BlinkCmpKindStruct.fg = ui.info;
+      BlinkCmpKindEnum.fg = ui.info;
+      BlinkCmpKindModule.fg = ui.info;
+      BlinkCmpKindText.fg = ui.success;
+      BlinkCmpKindString.fg = ui.success;
+      BlinkCmpKindKeyword.fg = ui.warning;
+      BlinkCmpKindOperator.fg = ui.warning;
+      BlinkCmpKindSnippet.fg = ui.danger;
+      BlinkCmpScrollBarGutter.bg = ui.surface;
+      BlinkCmpScrollBarThumb.bg = ui.border;
+      BlinkCmpDoc = { bg = ui.surface; fg = ui.text; };
+      BlinkCmpDocBorder = { bg = ui.surface; fg = ui.border; };
+      BlinkCmpDocSeparator = { bg = ui.surface; fg = ui.border; };
+      BlinkCmpDocCursorLine.bg = ui.hover;
+      BlinkCmpSignatureHelp = { bg = ui.surface; fg = ui.text; };
+      BlinkCmpSignatureHelpBorder = { bg = ui.surface; fg = ui.border; };
+      BlinkCmpSignatureHelpActiveParameter = { fg = ui.accent; bold = true; };
+
+      WhichKeyNormal = { bg = ui.surface; fg = ui.text; };
+      WhichKeyBorder = { bg = ui.surface; fg = ui.border; };
+      WhichKeyTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      WhichKey = { fg = ui.accent; bold = true; };
+      WhichKeyGroup = { fg = ui.violet; bold = true; };
+      WhichKeyDesc.fg = ui.text;
+      WhichKeySeparator.fg = ui.border;
+      WhichKeyValue.fg = ui.muted;
+      WhichKeyIcon.fg = ui.accent;
+      WhichKeyIconAzure.fg = ui.info;
+      WhichKeyIconBlue.fg = ui.info;
+      WhichKeyIconCyan.fg = ui.accent;
+      WhichKeyIconGreen.fg = ui.success;
+      WhichKeyIconGrey.fg = ui.muted;
+      WhichKeyIconOrange.fg = ui.warning;
+      WhichKeyIconPurple.fg = ui.violet;
+      WhichKeyIconRed.fg = ui.danger;
+      WhichKeyIconYellow.fg = ui.warning;
+      DevIconDefault.fg = ui.accent;
+
+      SnacksTerminal = { bg = ui.surface; fg = ui.text; };
+      SnacksTerminalBorder = { bg = ui.surface; fg = ui.border; };
+      SnacksTerminalTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      SnacksInputNormal = { bg = ui.surface; fg = ui.text; };
+      SnacksInputBorder = { bg = ui.surface; fg = ui.border; };
+      SnacksInputTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      SnacksInputIcon.fg = ui.accent;
+      SnacksIndent.fg = ui.border;
+      SnacksIndentScope.fg = ui.accent;
+      SnacksPickerNormal = { bg = ui.surface; fg = ui.text; };
+      SnacksPickerBox = { bg = ui.surface; fg = ui.text; };
+      SnacksPickerBorder = { bg = ui.surface; fg = ui.border; };
+      SnacksPickerTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      SnacksPickerInput = { bg = ui.surface; fg = ui.text; };
+      SnacksPickerInputBorder = { bg = ui.surface; fg = ui.border; };
+      SnacksPickerInputTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      SnacksPickerInputSearch = { fg = ui.accent; bold = true; };
+      SnacksPickerList = { bg = ui.surface; fg = ui.text; };
+      SnacksPickerListCursorLine = { bg = ui.selected; fg = ui.bright; bold = true; };
+      SnacksPickerPreview = { bg = ui.surface; fg = ui.text; };
+      SnacksPickerPreviewCursorLine.bg = ui.hover;
+      SnacksPickerMatch = { fg = ui.accent; bold = true; };
+      SnacksPickerSearch = { bg = ui.hover; fg = ui.bright; bold = true; };
+      SnacksPickerPrompt.fg = ui.accent;
+      SnacksPickerTotals.fg = ui.muted;
+      SnacksPickerSelected = { fg = ui.bright; bold = true; };
+      SnacksPickerUnselected.fg = ui.border;
+      SnacksPickerFile.fg = ui.text;
+      SnacksPickerDirectory = { fg = ui.info; bold = true; };
+      SnacksPickerDir.fg = ui.muted;
+      SnacksPickerPathHidden.fg = ui.border;
+      SnacksPickerPathIgnored.fg = ui.border;
+      SnacksPickerTree.fg = ui.border;
+      SnacksPickerDimmed.fg = ui.muted;
+      SnacksPickerComment.fg = ui.muted;
+      SnacksPickerDesc.fg = ui.muted;
+      SnacksPickerDelim.fg = ui.border;
+      SnacksPickerToggle.fg = ui.info;
+      SnacksPickerSpinner.fg = ui.accent;
+      SnacksPickerCmd.fg = ui.violet;
+      SnacksPickerSpecial.fg = ui.accent;
+      SnacksPickerIdx.fg = ui.muted;
+      SnacksPickerRow.fg = ui.muted;
+      SnacksPickerCol.fg = ui.muted;
+      SnacksPickerGitBranch.fg = ui.violet;
+      SnacksPickerGitStatusAdded.fg = ui.success;
+      SnacksPickerGitStatusModified.fg = ui.warning;
+      SnacksPickerGitStatusDeleted.fg = ui.danger;
+      SnacksPickerGitStatusUntracked.fg = ui.accent;
+      SnacksPickerGitStatusStaged.fg = ui.info;
+      SnacksPickerGitStatusRenamed.fg = ui.info;
+      SnacksPickerGitStatusCopied.fg = ui.violet;
+      SnacksPickerGitStatusUnmerged = { fg = ui.danger; bold = true; };
+      SnacksPickerIcon.fg = ui.accent;
+      SnacksPickerIconFile.fg = ui.text;
+      SnacksPickerIconFunction.fg = ui.violet;
+      SnacksPickerIconMethod.fg = ui.violet;
+      SnacksPickerIconClass.fg = ui.info;
+      SnacksPickerIconInterface.fg = ui.info;
+      SnacksPickerIconStruct.fg = ui.info;
+      SnacksPickerIconModule.fg = ui.info;
+      SnacksPickerIconString.fg = ui.success;
+      SnacksPickerIconKeyword.fg = ui.warning;
+      SnacksPickerIconOperator.fg = ui.warning;
+      SnacksDashboardNormal = { bg = "NONE"; fg = ui.text; };
+      SnacksDashboardHeader.fg = ui.accent;
+      SnacksDashboardKey.fg = ui.violet;
+      SnacksDashboardIcon.fg = ui.info;
+      SnacksDashboardDesc.fg = ui.text;
+      SnacksDashboardDir.fg = ui.muted;
+      SnacksDashboardFooter.fg = ui.muted;
     };
 
     vim.keymaps = [

@@ -1,4 +1,12 @@
-{ ... }: {
+{ config, lib, ... }:
+
+let
+  colors = config.lib.stylix.colors;
+  xdgConfigDirs = lib.concatStringsSep ":" (
+    config.xdg.systemDirs.config ++ [ "/etc/xdg" ]
+  );
+in
+{
   xdg.configFile."niri/config.kdl".text = ''
     input {
         touchpad {
@@ -20,14 +28,19 @@
     
         focus-ring {
             width 1
-            active-color "#50a8ff"
-            inactive-color "#505050"
+            active-color "#${colors.base0D}"
+            inactive-color "#${colors.base03}"
         }
     }
     
     environment {
         QT_QPA_PLATFORM "wayland"
+        QT_QPA_PLATFORMTHEME "qt5ct"
         QT_STYLE_OVERRIDE "kvantum"
+        // Stylix exposes KDE's generated kdeglobals through XDG_CONFIG_DIRS.
+        // Niri is started directly by greetd, so make that search path part of
+        // the compositor environment instead of relying on a login shell.
+        XDG_CONFIG_DIRS "${xdgConfigDirs}"
     }
     
     spawn-at-startup "fcitx5"
@@ -44,20 +57,98 @@
     
     // Enable rounded corners for all windows.
     window-rule {
-        geometry-corner-radius 8
+        geometry-corner-radius 16
         clip-to-geometry true
-        opacity 0.88
+        opacity ${toString config.stylix.opacity.applications}
         draw-border-with-background false
+        shadow {
+          on
+          softness 30
+          spread 1
+          offset x=0 y=8
+          color "#00000055"
+        }
         background-effect {
           blur true
         }
     }
 
+    // Muted floating surfaces. Xray blur keeps these inexpensive by sampling
+    // the wallpaper rather than every window below them.
+    layer-rule {
+        match namespace="^waybar$"
+        geometry-corner-radius 14
+        shadow {
+          on
+          softness 20
+          spread 0
+          offset x=0 y=6
+          color "#00000040"
+        }
+        background-effect {
+          xray true
+          blur true
+          noise 0.012
+          saturation 1.0
+        }
+        popups {
+          geometry-corner-radius 12
+          background-effect {
+            blur true
+            noise 0.018
+            saturation 1.2
+          }
+        }
+    }
+
+    // SwayNC uses separate layer surfaces for the control center and toast
+    // notifications. The latter stays more opaque in CSS for legibility.
+    layer-rule {
+        match namespace="^swaync-control-center$"
+        geometry-corner-radius 18
+        shadow {
+          on
+          softness 34
+          spread 2
+          offset x=0 y=10
+          color "#00000060"
+        }
+        background-effect {
+          xray true
+          blur true
+          noise 0.022
+          saturation 1.35
+        }
+    }
+
+    // Do not blur swaync-notification-window here. SwayNC anchors that layer
+    // surface to both the top and bottom edges even when only one toast is
+    // visible, so compositor blur would paint a full-height strip. Individual
+    // notification cards keep their own opaque glass styling in SwayNC CSS.
+
+    layer-rule {
+        match namespace="^launcher$"
+        geometry-corner-radius 20
+        shadow {
+          on
+          softness 34
+          spread 2
+          offset x=0 y=10
+          color "#00000060"
+        }
+        background-effect {
+          xray true
+          blur true
+          noise 0.018
+          saturation 1.3
+        }
+    }
+
     blur {
-      passes 3
-      offset 3.0
-      noise 0.02
-      saturation 1.5
+      passes 4
+      offset 4.0
+      noise 0.018
+      saturation 1.25
     }
     
     binds {
