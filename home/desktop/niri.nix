@@ -1,5 +1,5 @@
 { ... }: {
-  programs.niri.config = ''
+  xdg.configFile."niri/config.kdl".text = ''
     input {
         touchpad {
             tap

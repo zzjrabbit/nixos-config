@@ -1,13 +1,8 @@
 { inputs, pkgs, ... }:
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-  niriPackage = inputs.niri.packages.${system}.niri-unstable;
-in
 {
   imports =
     [
       ./common_hw.nix
-      inputs.niri.nixosModules.niri
       inputs.home-manager.nixosModules.home-manager
       inputs.impermanence.nixosModules.impermanence
       inputs.sops-nix.nixosModules.sops
@@ -18,6 +13,7 @@ in
       ../modules/proxy.nix
       ../modules/snapper.nix
       ../modules/greetd.nix
+      ../modules/niri.nix
   ];
 
   sops = {
@@ -25,17 +21,10 @@ in
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   };
   
-  programs.niri = {
-    enable = true;
-    package = niriPackage;
-  };
-  systemd.user.services.niri-flake-polkit.enable = false;
-  
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      inputs.niri.overlays.niri
-      inputs.chinese-fonts-overlay.overlays.default # 所有字体
+      inputs.chinese-fonts-overlay.overlays.default
     ];
   };
   
@@ -129,5 +118,5 @@ in
 
   nix.settings.auto-optimise-store = true;
 
-  system.stateVersion = "26.05";
+  system.stateVersion = "26.11";
 }
