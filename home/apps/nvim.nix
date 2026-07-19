@@ -23,6 +23,18 @@ let
     violet = "#9f96aa";
   };
 
+  # Git state needs stronger separation in the explorer than the rest of the
+  # deliberately subdued UI. These colours are used for both the status badge
+  # and the affected file/directory name, including aggregate directory state.
+  explorerGit = {
+    added = "#8fcf9f";
+    modified = "#e0b866";
+    deleted = "#df8581";
+    untracked = "#76b9d0";
+    staged = "#82b8aa";
+    renamed = "#82a9c5";
+  };
+
   # Keep file-type icons inside the same subdued semantic palette used by the
   # rest of Neovim instead of pulling in the much brighter upstream colours.
   devIcon = icon: color: name: {
@@ -220,7 +232,23 @@ let
         picker.enabled = true;
         picker.ui_select = true;
         picker.sources.explorer.hidden = true;
+        picker.sources.explorer.ignored = true;
+        picker.sources.explorer.exclude = [ "**/.git" ];
+        picker.sources.explorer.git_status = true;
+        # Keep aggregate Git state visible after opening a directory so it is
+        # still obvious which subtree contains changed files.
+        picker.sources.explorer.git_status_open = true;
         picker.sources.explorer.layout.hidden = [ "input" ];
+        picker.icons.git = {
+          staged = "󰄬";
+          added = "";
+          deleted = "";
+          ignored = "";
+          modified = "";
+          renamed = "";
+          unmerged = "";
+          untracked = "";
+        };
         scroll.enabled = true;
         indent.enabled = true;
         input.enabled = true;
@@ -424,7 +452,7 @@ let
       SnacksPickerFile.fg = ui.text;
       SnacksPickerDirectory = { fg = ui.info; bold = true; };
       SnacksPickerDir.fg = ui.muted;
-      SnacksPickerPathHidden.fg = ui.border;
+      SnacksPickerPathHidden.fg = ui.text;
       SnacksPickerPathIgnored.fg = ui.border;
       SnacksPickerTree.fg = ui.border;
       SnacksPickerDimmed.fg = ui.muted;
@@ -439,14 +467,16 @@ let
       SnacksPickerRow.fg = ui.muted;
       SnacksPickerCol.fg = ui.muted;
       SnacksPickerGitBranch.fg = ui.violet;
-      SnacksPickerGitStatusAdded.fg = ui.success;
-      SnacksPickerGitStatusModified.fg = ui.warning;
-      SnacksPickerGitStatusDeleted.fg = ui.danger;
-      SnacksPickerGitStatusUntracked.fg = ui.accent;
-      SnacksPickerGitStatusStaged.fg = ui.info;
-      SnacksPickerGitStatusRenamed.fg = ui.info;
-      SnacksPickerGitStatusCopied.fg = ui.violet;
-      SnacksPickerGitStatusUnmerged = { fg = ui.danger; bold = true; };
+      SnacksPickerGitStatus = { fg = ui.bright; bold = true; };
+      SnacksPickerGitStatusAdded = { fg = explorerGit.added; bold = true; };
+      SnacksPickerGitStatusModified = { fg = explorerGit.modified; bold = true; };
+      SnacksPickerGitStatusDeleted = { fg = explorerGit.deleted; bold = true; };
+      SnacksPickerGitStatusUntracked = { fg = explorerGit.untracked; bold = true; };
+      SnacksPickerGitStatusIgnored = { fg = ui.muted; italic = true; };
+      SnacksPickerGitStatusStaged = { fg = explorerGit.staged; bold = true; };
+      SnacksPickerGitStatusRenamed = { fg = explorerGit.renamed; bold = true; };
+      SnacksPickerGitStatusCopied = { fg = explorerGit.renamed; bold = true; };
+      SnacksPickerGitStatusUnmerged = { fg = explorerGit.deleted; bold = true; underline = true; };
       SnacksPickerIcon.fg = ui.accent;
       SnacksPickerIconFile.fg = ui.text;
       SnacksPickerIconFunction.fg = ui.violet;
