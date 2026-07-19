@@ -4,7 +4,7 @@
     ./packages.nix
 
     ./apps/term.nix
-    ./apps/edge.nix
+    ./apps/chromium.nix
     ./apps/zed.nix
     # ./apps/vbox.nix
     ./apps/nvim.nix

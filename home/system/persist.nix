@@ -31,7 +31,7 @@
 	  ".fgfs"
 
       # Application data
-      ".mozilla"
+      ".config/chromium"
       ".config/QQ"
       ".minecraft"
       ".minetest"
@@ -57,10 +57,6 @@
       ".config/Code"
       ".vscode"
 
-      ".config/microsoft-edge"
-      ".cache/microsoft-edge"
-      ".cache/Microsoft"
-        
       ".config/sops"
 
       # System directories that may contain user data

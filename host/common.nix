@@ -14,6 +14,7 @@
     ../modules/snapper.nix
     ../modules/greetd.nix
     ../modules/niri.nix
+    ../modules/chromium.nix
     ../modules/stylix.nix
   ];
 

@@ -8,19 +8,19 @@
     enable = true;
     settings = {
       main = {
-        width = 42;
-        lines = 10;
-        horizontal-pad = 24;
-        vertical-pad = 18;
-        inner-pad = 14;
-        line-height = 22;
+        width = 34;
+        lines = 8;
+        horizontal-pad = 16;
+        vertical-pad = 12;
+        inner-pad = 10;
+        line-height = 20;
         image-size-ratio = 1;
         dpi-aware = true;
         fields = "filename,name,generic,categories,keywords";
       };
       border = {
         width = 1;
-        radius = 20;
+        radius = 14;
       };
       colors = {
         background = lib.mkForce "${config.lib.stylix.colors.base00}8c";

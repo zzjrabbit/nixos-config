@@ -159,7 +159,7 @@ in
         Mod+E { spawn "nautilus"; }
         Mod+Z { spawn "zeditor"; }
         Mod+M { spawn "hmcl"; }
-        Mod+B { spawn "microsoft-edge"; }
+        Mod+B { spawn "chromium"; }
     
         XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
         XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
