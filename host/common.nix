@@ -1,4 +1,23 @@
 { inputs, pkgs, ... }:
+let
+  sopsAgeKeyFile = "/persist/home/raca/.config/sops/age/keys.txt";
+  checkSopsAgeKey = pkgs.writeShellScript "check-sops-age-key" ''
+    set -eu
+
+    key=${sopsAgeKeyFile}
+    if [ ! -f "$key" ]; then
+      echo "Missing SOPS Age identity: $key" >&2
+      exit 1
+    fi
+
+    mode="$(${pkgs.coreutils}/bin/stat -c %a "$key")"
+    owner="$(${pkgs.coreutils}/bin/stat -c %U "$key")"
+    if [ "$mode" != "600" ] || { [ "$owner" != "root" ] && [ "$owner" != "raca" ]; }; then
+      echo "SOPS Age identity must be mode 0600 and owned by root or raca" >&2
+      exit 1
+    fi
+  '';
+in
 {
   imports = [
     ./common_hw.nix
@@ -19,9 +38,28 @@
   ];
 
   sops = {
-    defaultSopsFile = ../../secrets/dpsk_api_key.yaml;
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    defaultSopsFile = ../secrets/dpsk_api_key.yaml;
+    useSystemdActivation = true;
+    age = {
+      keyFile = sopsAgeKeyFile;
+      sshKeyPaths = [ ];
+    };
+    secrets = {
+      dpsk_api_key = {
+        owner = "raca";
+        group = "users";
+        mode = "0400";
+      };
+      e_flow = {
+        sopsFile = ../secrets/e_flow.yaml;
+        owner = "raca";
+        group = "users";
+        mode = "0400";
+      };
+    };
   };
+
+  systemd.services.sops-install-secrets.serviceConfig.ExecStartPre = checkSopsAgeKey;
 
   nixpkgs = {
     config.allowUnfree = true;

@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   imports = [
     ./packages.nix
@@ -24,8 +24,6 @@
     ./system/xdg.nix
     ./system/shell.nix
     ./system/persist.nix
-    ./system/secrets.nix
-    inputs.sops-nix.homeManagerModules.sops
   ];
 
   home.username = "raca";
