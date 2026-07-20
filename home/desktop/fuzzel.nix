@@ -23,7 +23,7 @@
         radius = 14;
       };
       colors = {
-        background = lib.mkForce "${config.lib.stylix.colors.base00}8c";
+        background = lib.mkForce "${config.lib.stylix.colors.base00}66";
         text = lib.mkForce "${config.lib.stylix.colors.base05}ff";
         prompt = lib.mkForce "${config.lib.stylix.colors.base0D}ff";
         placeholder = lib.mkForce "${config.lib.stylix.colors.base04}ff";
