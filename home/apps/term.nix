@@ -3,6 +3,15 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      # Niri clips the window to its rounded geometry. Keep glyphs and the
+      # cursor away from the clipped corners, while dynamic padding keeps the
+      # visual gutter balanced as the tiled window changes size.
+      window.padding = {
+        x = 14;
+        y = 12;
+      };
+      window.dynamic_padding = true;
+      window.decorations = "None";
       terminal.shell = {
         program = "dash";
       };
