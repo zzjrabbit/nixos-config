@@ -2,13 +2,10 @@
 let
   # Preserve the environment variable used by existing e-flow tooling. New
   # secrets default to the uppercase form of their filename.
-  environmentNameOverrides = {
-    e_flow = "E_FLOW_API_KEY";
-  };
   secretExports = lib.concatStringsSep "\n" (lib.mapAttrsToList
     (name: secret:
       let
-        environmentName = environmentNameOverrides.${name} or (lib.toUpper name);
+        environmentName = lib.toUpper name;
       in ''
         if [ -r "${secret.path}" ]; then
           export ${environmentName}="$(cat ${lib.escapeShellArg secret.path})"
