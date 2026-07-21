@@ -90,6 +90,9 @@ let
     vim.options = {
       cursorline = true;
       cursorlineopt = "both";
+      # Neovim only loads project-local configuration after it has been
+      # explicitly approved through its hash-based trust database (`:trust`).
+      exrc = true;
       grepprg = "${lib.getExe pkgs.ripgrep} --vimgrep --no-heading";
       redrawtime = 100;
       shiftwidth = 4;

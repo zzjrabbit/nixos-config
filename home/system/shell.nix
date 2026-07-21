@@ -1,7 +1,5 @@
 { lib, osConfig, ... }:
 let
-  # Preserve the environment variable used by existing e-flow tooling. New
-  # secrets default to the uppercase form of their filename.
   secretExports = lib.concatStringsSep "\n" (lib.mapAttrsToList
     (name: secret:
       let
