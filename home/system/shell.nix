@@ -1,7 +1,20 @@
-{ osConfig, ... }:
+{ lib, osConfig, ... }:
 let
-  dpskApiKey = osConfig.sops.secrets.dpsk_api_key.path;
-  eFlowApiKey = osConfig.sops.secrets.e_flow.path;
+  # Preserve the environment variable used by existing e-flow tooling. New
+  # secrets default to the uppercase form of their filename.
+  environmentNameOverrides = {
+    e_flow = "E_FLOW_API_KEY";
+  };
+  secretExports = lib.concatStringsSep "\n" (lib.mapAttrsToList
+    (name: secret:
+      let
+        environmentName = environmentNameOverrides.${name} or (lib.toUpper name);
+      in ''
+        if [ -r "${secret.path}" ]; then
+          export ${environmentName}="$(cat ${lib.escapeShellArg secret.path})"
+        fi
+      '')
+    osConfig.sops.secrets);
 in {
   programs.nushell = {
     enable = true;
@@ -15,10 +28,7 @@ in {
     if ! [ "$TERM" = "dumb" ]; then
         # Disable C-s freezing the terminal
         stty -ixon
-        if [ -r "${dpskApiKey}" ] && [ -r "${eFlowApiKey}" ]; then
-          export DPSK_API_KEY="$(cat ${dpskApiKey})"
-          export E_FLOW_API_KEY="$(cat ${eFlowApiKey})"
-        fi
+        ${secretExports}
         exec nu
     fi
   '';

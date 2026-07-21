@@ -27,6 +27,33 @@ awk '/^AGE-SECRET-KEY-/{found=1} END{exit !found}' \
   /persist/home/raca/.config/sops/age/keys.txt
 ```
 
-System-level sops-nix performs decryption as root. The resulting API key files
+System-level sops-nix performs decryption as root. The resulting secret files
 are mode `0400` and owned by `raca:users`; Home Manager never reads the SSH host
 private key or the Age identity directly.
+
+## Managing secrets
+
+Secret files are the source of truth. Every `secrets/<name>.yaml` file is
+automatically registered as the sops-nix secret `<name>`, so adding or removing
+a secret does not require editing a Nix file. At login, each available secret
+is also exported using its uppercase name (`example_token` becomes
+`EXAMPLE_TOKEN`). The existing `e_flow` secret keeps its compatibility name
+`E_FLOW_API_KEY`. Names must match `[a-z][a-z0-9_]*`.
+
+After activating this configuration, use the installed helper:
+
+```sh
+# Prompts twice without echoing the value.
+sops-secret add example_token
+
+# Suitable for multiline values such as certificates.
+sops-secret add example_certificate --from-file ./certificate.pem
+
+sops-secret edit example_token
+sops-secret list
+sops-secret remove example_token
+```
+
+The helper encrypts new values before they reach a repository file and stages
+the encrypted addition, update, or deletion in Git. A rebuild/activation is
+still required before the runtime secret files and shell exports change.
