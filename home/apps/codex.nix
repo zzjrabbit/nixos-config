@@ -1,5 +1,15 @@
-{ pkgs, ... } : {
-  home.packages = [ pkgs.codex ];
+{ inputs, pkgs, ... }:
+let
+  agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
+{
+  home.packages = with agents; [
+    claude-code
+    codex
+    gemini-cli
+    opencode
+  ];
+
   # home.file.".codex/config.toml".text = ''
   #   model_reasoning_effort = "high"
   #   model_provider = "e-flowcode"

@@ -35,6 +35,25 @@ let
     renamed = "#82a9c5";
   };
 
+  # Code highlighting uses a wider luminance and hue range than the UI chrome.
+  # Keeping this palette separate makes syntax structure easy to scan without
+  # turning menus, borders and status components into visual noise.
+  syntax = {
+    comment = "#747b84";
+    keyword = "#ef8b87";
+    function = "#82c7ef";
+    type = "#b6c5ea";
+    string = "#98cfae";
+    number = "#dfa66f";
+    constant = "#dfc27d";
+    operator = "#7fcbd8";
+    variable = "#d4d6da";
+    parameter = "#cbb4d5";
+    property = "#aeb8c2";
+    punctuation = "#8d949c";
+    markup = "#d7a0a8";
+  };
+
   # Keep file-type icons inside the same subdued semantic palette used by the
   # rest of Neovim instead of pulling in the much brighter upstream colours.
   devIcon = icon: color: name: {
@@ -78,7 +97,7 @@ let
     tsx
     typescript
     yaml
-  ];
+  ] ++ [ pkgs.tree-sitter-grammars.tree-sitter-lean ];
 
   nvfSettings = { lib, ... }: {
     vim.lineNumberMode = "number";
@@ -97,6 +116,7 @@ let
       redrawtime = 100;
       shiftwidth = 4;
       tabstop = 4;
+      termguicolors = true;
     };
 
     vim.lsp.enable = true;
@@ -191,6 +211,12 @@ let
     vim.assistant.copilot.enable = true;
     vim.utility.diffview-nvim.enable = true;
     vim.binds.whichKey.enable = true;
+    vim.extraPlugins.lean-nvim = {
+      package = pkgs.vimPlugins.lean-nvim;
+      setup = ''
+        require("lean").setup({})
+      '';
+    };
     vim.visuals.nvim-web-devicons = {
       enable = true;
       setupOpts = {
@@ -301,6 +327,7 @@ let
     vim.treesitter = {
       enable = true;
       grammars = extraGrammars;
+      highlight.enable = true;
     };
 
     vim.highlight = {
@@ -349,6 +376,111 @@ let
       MoreMsg.fg = ui.info;
       ErrorMsg = { fg = ui.danger; bold = true; };
       WarningMsg.fg = ui.warning;
+
+      # Vim syntax groups provide a consistent fallback for filetypes without
+      # a Treesitter parser and are also the link targets for semantic groups.
+      Comment = { fg = syntax.comment; italic = true; };
+      Constant.fg = syntax.constant;
+      String.fg = syntax.string;
+      Character.fg = syntax.string;
+      Number.fg = syntax.number;
+      Boolean = { fg = syntax.constant; bold = true; };
+      Float.fg = syntax.number;
+      Identifier.fg = syntax.variable;
+      Function = { fg = syntax.function; bold = true; };
+      Statement.fg = syntax.keyword;
+      Conditional = { fg = syntax.keyword; italic = true; };
+      Repeat = { fg = syntax.keyword; italic = true; };
+      Label.fg = syntax.markup;
+      Operator.fg = syntax.operator;
+      Keyword = { fg = syntax.keyword; italic = true; };
+      Exception = { fg = syntax.keyword; bold = true; };
+      PreProc.fg = syntax.markup;
+      Include.fg = syntax.markup;
+      Define.fg = syntax.markup;
+      Macro = { fg = syntax.markup; bold = true; };
+      Type.fg = syntax.type;
+      StorageClass = { fg = syntax.type; italic = true; };
+      Structure = { fg = syntax.type; bold = true; };
+      Typedef.fg = syntax.type;
+      Special.fg = syntax.operator;
+      SpecialChar.fg = syntax.operator;
+      Tag.fg = syntax.markup;
+      Delimiter.fg = syntax.punctuation;
+      Todo = { bg = ui.hover; fg = syntax.constant; bold = true; };
+
+      # Treesitter captures carry the structural distinctions that the base16
+      # theme flattens, especially calls vs definitions and fields vs locals.
+      "@comment" = { link = "Comment"; };
+      "@comment.documentation" = { fg = syntax.comment; italic = true; };
+      "@constant" = { link = "Constant"; };
+      "@constant.builtin" = { fg = syntax.constant; bold = true; };
+      "@constant.macro" = { link = "Macro"; };
+      "@string" = { link = "String"; };
+      "@string.documentation" = { fg = syntax.string; italic = true; };
+      "@string.escape" = { fg = syntax.operator; bold = true; };
+      "@string.regexp" = { fg = syntax.operator; };
+      "@character" = { link = "Character"; };
+      "@number" = { link = "Number"; };
+      "@number.float" = { link = "Float"; };
+      "@boolean" = { link = "Boolean"; };
+      "@variable" = { fg = syntax.variable; };
+      "@variable.builtin" = { fg = syntax.constant; italic = true; };
+      "@variable.parameter" = { fg = syntax.parameter; italic = true; };
+      "@variable.member" = { fg = syntax.property; };
+      "@property" = { fg = syntax.property; };
+      "@function" = { link = "Function"; };
+      "@function.builtin" = { fg = syntax.function; italic = true; };
+      "@function.call" = { fg = syntax.function; };
+      "@function.macro" = { link = "Macro"; };
+      "@function.method" = { fg = syntax.function; bold = true; };
+      "@function.method.call" = { fg = syntax.function; };
+      "@constructor" = { fg = syntax.type; bold = true; };
+      "@type" = { link = "Type"; };
+      "@type.builtin" = { fg = syntax.type; italic = true; };
+      "@type.definition" = { fg = syntax.type; bold = true; };
+      "@module" = { fg = syntax.type; };
+      "@attribute" = { fg = syntax.markup; italic = true; };
+      "@keyword" = { link = "Keyword"; };
+      "@keyword.function" = { fg = syntax.keyword; bold = true; };
+      "@keyword.operator" = { fg = syntax.operator; italic = true; };
+      "@keyword.return" = { fg = syntax.keyword; bold = true; };
+      "@keyword.import" = { fg = syntax.markup; italic = true; };
+      "@operator" = { link = "Operator"; };
+      "@punctuation.delimiter" = { link = "Delimiter"; };
+      "@punctuation.bracket" = { fg = syntax.punctuation; };
+      "@punctuation.special" = { fg = syntax.operator; };
+      "@tag" = { fg = syntax.markup; bold = true; };
+      "@tag.attribute" = { fg = syntax.property; italic = true; };
+      "@tag.delimiter" = { fg = syntax.punctuation; };
+      "@markup.heading" = { fg = syntax.function; bold = true; };
+      "@markup.link" = { fg = syntax.operator; underline = true; };
+      "@markup.raw" = { fg = syntax.string; };
+      "@markup.list" = { fg = syntax.markup; bold = true; };
+
+      # LSP semantic tokens take precedence over Treesitter when a server
+      # supplies them, so mirror the same roles instead of accepting defaults.
+      "@lsp.type.namespace" = { fg = syntax.type; };
+      "@lsp.type.type" = { link = "Type"; };
+      "@lsp.type.class" = { fg = syntax.type; bold = true; };
+      "@lsp.type.enum" = { fg = syntax.type; bold = true; };
+      "@lsp.type.interface" = { fg = syntax.type; italic = true; };
+      "@lsp.type.struct" = { fg = syntax.type; bold = true; };
+      "@lsp.type.typeParameter" = { fg = syntax.parameter; italic = true; };
+      "@lsp.type.parameter" = { fg = syntax.parameter; italic = true; };
+      "@lsp.type.variable" = { fg = syntax.variable; };
+      "@lsp.type.property" = { fg = syntax.property; };
+      "@lsp.type.enumMember" = { fg = syntax.constant; };
+      "@lsp.type.function" = { link = "Function"; };
+      "@lsp.type.method" = { fg = syntax.function; };
+      "@lsp.type.macro" = { link = "Macro"; };
+      "@lsp.type.keyword" = { link = "Keyword"; };
+      "@lsp.type.comment" = { link = "Comment"; };
+      "@lsp.type.string" = { link = "String"; };
+      "@lsp.type.number" = { link = "Number"; };
+      "@lsp.type.operator" = { link = "Operator"; };
+      "@lsp.mod.deprecated" = { strikethrough = true; };
+      "@lsp.mod.readonly" = { bold = true; };
 
       DiagnosticError.fg = ui.danger;
       DiagnosticWarn.fg = ui.warning;
@@ -456,7 +588,7 @@ let
       SnacksPickerDirectory = { fg = ui.info; bold = true; };
       SnacksPickerDir.fg = ui.muted;
       SnacksPickerPathHidden.fg = ui.text;
-      SnacksPickerPathIgnored.fg = ui.border;
+      SnacksPickerPathIgnored = { fg = ui.muted; italic = true; };
       SnacksPickerTree.fg = ui.border;
       SnacksPickerDimmed.fg = ui.muted;
       SnacksPickerComment.fg = ui.muted;
@@ -545,6 +677,36 @@ let
       }
       {
         mode = "n";
+        key = "<leader><Tab>n";
+        action = "<cmd>tabnew<cr>";
+        desc = "New tab";
+      }
+      {
+        mode = "n";
+        key = "<leader><Tab>h";
+        action = "<cmd>tabprevious<cr>";
+        desc = "Previous tab";
+      }
+      {
+        mode = "n";
+        key = "<leader><Tab>l";
+        action = "<cmd>tabnext<cr>";
+        desc = "Next tab";
+      }
+      {
+        mode = "n";
+        key = "<leader><Tab>c";
+        action = "<cmd>tabclose<cr>";
+        desc = "Close tab";
+      }
+      {
+        mode = "n";
+        key = "<leader><Tab>o";
+        action = "<cmd>tabonly<cr>";
+        desc = "Close other tabs";
+      }
+      {
+        mode = "n";
         key = "<C-h>";
         action = "<cmd>wincmd h<cr>";
         desc = "Focus left window";
@@ -593,6 +755,12 @@ let
         action = "function() require(\"conform\").format({ async = true }) end";
         lua = true;
         desc = "Format";
+      }
+      {
+        mode = "n";
+        key = "<leader>lr";
+        action = "<cmd>LeanRestartFile<cr>";
+        desc = "Restart Lean file";
       }
     ];
   };
