@@ -1,16 +1,24 @@
-{ nixpkgs, inputs, }:
+{ nixpkgs, inputs }:
 
-name: extraModules:
+{
+  name,
+  user ? "raca",
+  extraModules ? [ ],
+}:
 
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   specialArgs = {
     inherit inputs;
+    hostName = name;
+    userName = user;
   };
 
   modules = [
-    ../host/${name}
+    ../modules
+    ../hosts/${name}
+    { networking.hostName = name; }
   ]
   ++ extraModules;
 }

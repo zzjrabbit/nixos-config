@@ -54,8 +54,8 @@
       };
     in {
       nixosConfigurations = {
-        laptop = mkHost "laptop" [];
-        desktop = mkHost "desktop" [];
+        laptop = mkHost { name = "laptop"; };
+        desktop = mkHost { name = "desktop"; };
       };
     };
 }

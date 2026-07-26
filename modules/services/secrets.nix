@@ -1,6 +1,6 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, lib, pkgs, userName, ... }:
 let
-  secretDirectory = ../secrets;
+  secretDirectory = ../../secrets;
   secretDirectoryEntries = builtins.readDir secretDirectory;
   secretFileNames = builtins.filter
     (fileName:
@@ -23,10 +23,10 @@ let
       jq
       sops
     ];
-    text = builtins.readFile ../scripts/sops-secret.sh;
+    text = builtins.readFile ../../scripts/sops-secret.sh;
   };
 
-  sopsAgeKeyFile = "/persist/home/raca/.config/sops/age/keys.txt";
+  sopsAgeKeyFile = "/persist/home/${userName}/.config/sops/age/keys.txt";
   checkSopsAgeKey = pkgs.writeShellScript "check-sops-age-key" ''
     set -eu
 
@@ -38,8 +38,8 @@ let
 
     mode="$(${pkgs.coreutils}/bin/stat -c %a "$key")"
     owner="$(${pkgs.coreutils}/bin/stat -c %U "$key")"
-    if [ "$mode" != "600" ] || { [ "$owner" != "root" ] && [ "$owner" != "raca" ]; }; then
-      echo "SOPS Age identity must be mode 0600 and owned by root or raca" >&2
+    if [ "$mode" != "600" ] || { [ "$owner" != "root" ] && [ "$owner" != "${userName}" ]; }; then
+      echo "SOPS Age identity must be mode 0600 and owned by root or ${userName}" >&2
       exit 1
     fi
   '';
@@ -60,7 +60,7 @@ in {
     };
     secrets = lib.genAttrs secretNames (name: {
       sopsFile = secretDirectory + "/${name}.yaml";
-      owner = "raca";
+      owner = userName;
       group = "users";
       mode = "0400";
     });

@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  programs.niri.enable = true;
-  programs.nm-applet.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -23,9 +20,6 @@
     pavucontrol
     perf-tools
     docker
-    android-tools
-	gtk4
+    gtk4
   ];
-
-  nixpkgs.config.allowUnfree = true;
 }

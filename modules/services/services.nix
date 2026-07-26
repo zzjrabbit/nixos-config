@@ -7,7 +7,7 @@
   services.nohang = {
     enable = true;
   };
-  
+
   # virtualisation.virtualbox.host.enable = true;
   virtualisation = {
     docker = {
@@ -15,19 +15,19 @@
       rootless.enable = true;
     };
   };
-  
+
   networking.enableIPv6 = true;
   networking.firewall = {
     allowPing = true;
     allowedTCPPorts = [ 22 80 443 ];
   };
-  
+
   services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
-  
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -39,7 +39,7 @@
     pulse.enable = true;
   };
   nixpkgs.config.pulseaudio = true;
-  
+
   services.libinput.enable = true;
   services.xserver.enable = true;
   services.udisks2.enable = true;
@@ -54,13 +54,13 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
-  
+
   networking.networkmanager = {
     enable = true;
     dns = "default";
     wifi.powersave = false;
   };
-  
+
   security.polkit.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -77,7 +77,7 @@
       };
     };
   };
-  
+
   services.gvfs = {
     enable = true;
   };

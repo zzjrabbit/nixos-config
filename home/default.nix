@@ -1,4 +1,4 @@
-{ ... }:
+{ userName, ... }:
 {
   imports = [
     ./packages.nix
@@ -7,7 +7,7 @@
     ./apps/chromium.nix
     ./apps/zed.nix
     # ./apps/vbox.nix
-    ./apps/nvim.nix
+    ./apps/nvim
     ./apps/vsc.nix
     ./apps/codex.nix
 
@@ -26,8 +26,8 @@
     ./system/persist.nix
   ];
 
-  home.username = "raca";
-  home.homeDirectory = "/home/raca";
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
 
   home.stateVersion = "26.11";
   programs.home-manager.enable = true;

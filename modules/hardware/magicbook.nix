@@ -1,5 +1,7 @@
-{ pkgs, lib, config, ... }:
+{ config, lib, pkgs, userName, ... }:
 let
+  cfg = config.my.hardware.magicbook;
+
   magicbookPower = pkgs.writeShellApplication {
     name = "magicbook-power";
     runtimeInputs = [
@@ -15,11 +17,11 @@ let
         summary="$1"
         body="$2"
         urgency="''${3:-normal}"
-        user_id="$(id -u raca)" || return 0
+        user_id="$(id -u ${userName})" || return 0
         bus="/run/user/$user_id/bus"
 
         [ -S "$bus" ] || return 0
-        runuser -u raca -- env \
+        runuser -u ${userName} -- env \
           DBUS_SESSION_BUS_ADDRESS="unix:path=$bus" \
           notify-send \
             --app-name="Huawei OSD" \
@@ -118,88 +120,52 @@ let
   };
 in
 {
-  imports = [
-    ../common.nix
-  ];
+  options.my.hardware.magicbook.enable =
+    lib.mkEnableOption "Huawei MagicBook power management (ryzenadj profiles, charge thresholds, firmware power-mode keys)";
 
-  environment.systemPackages = [
-    magicbookPower
-    pkgs.ryzenadj
-  ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      magicbookPower
+      pkgs.ryzenadj
+    ];
 
-  boot.postBootCommands = ''
-    ${pkgs.ryzenadj}/bin/ryzenadj --set-uma-size=256 || true
-  '';
+    boot.postBootCommands = ''
+      ${pkgs.ryzenadj}/bin/ryzenadj --set-uma-size=256 || true
+    '';
 
-  boot.kernelParams = [ "amdgpu.backlight=0" "acpi_backlight=none" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.kernel.sysctl = { "vm.swappiness" = 200; };
-
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  systemd.services.magicbook-power = {
-    description = "Apply Huawei MagicBook power limits";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${lib.getExe magicbookPower} auto";
+    systemd.services.magicbook-power = {
+      description = "Apply Huawei MagicBook power limits";
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${lib.getExe magicbookPower} auto";
+      };
     };
-  };
 
-  systemd.paths.magicbook-power = {
-    wantedBy = [ "multi-user.target" ];
-    pathConfig.PathChanged = "/sys/class/power_supply/ACAD/online";
-  };
-
-  systemd.services.magicbook-charge-thresholds = {
-    description = "Set Huawei MagicBook battery charge thresholds";
-    wantedBy = [ "multi-user.target" ];
-    unitConfig.ConditionPathExists = "/sys/devices/platform/huawei-wmi/charge_control_thresholds";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = magicbookChargeThresholds;
+    systemd.paths.magicbook-power = {
+      wantedBy = [ "multi-user.target" ];
+      pathConfig.PathChanged = "/sys/class/power_supply/ACAD/online";
     };
-  };
 
-  systemd.services.magicbook-power-events = {
-    description = "Handle Huawei MagicBook firmware power-mode events";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "systemd-journald.service" ];
-    serviceConfig = {
-      ExecStart = lib.getExe magicbookPowerEvents;
-      Restart = "always";
-      RestartSec = 1;
+    systemd.services.magicbook-charge-thresholds = {
+      description = "Set Huawei MagicBook battery charge thresholds";
+      wantedBy = [ "multi-user.target" ];
+      unitConfig.ConditionPathExists = "/sys/devices/platform/huawei-wmi/charge_control_thresholds";
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = magicbookChargeThresholds;
+      };
     };
-  };
 
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 300;
-  };
-
-  fileSystems."/persist" = {
-    device = "/dev/disk/by-uuid/88aedad5-6e73-4152-8c6d-d794955447bd";
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = [ "subvol=@" "compress-force=zstd" ];
-  };
-
-  fileSystems."/persist/home" = {
-    device = "/dev/disk/by-uuid/88aedad5-6e73-4152-8c6d-d794955447bd";
-    fsType = "btrfs";
-    options = [ "subvol=@home" "compress-force=zstd" ];
-  };
-
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/88aedad5-6e73-4152-8c6d-d794955447bd";
-    fsType = "btrfs";
-    options = [ "subvol=@nix" "noatime" "compress-force=zstd" ];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/81C9-2693";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    systemd.services.magicbook-power-events = {
+      description = "Handle Huawei MagicBook firmware power-mode events";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "systemd-journald.service" ];
+      serviceConfig = {
+        ExecStart = lib.getExe magicbookPowerEvents;
+        Restart = "always";
+        RestartSec = 1;
+      };
+    };
   };
 }

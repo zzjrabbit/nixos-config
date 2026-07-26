@@ -1,5 +1,26 @@
 # UEFIer's NixOS Configuration
 
+## Layout
+
+```text
+flake.nix          Inputs and one mkHost call per machine
+lib/mkHost.nix     mkHost { name, user ? "raca", extraModules ? [] }
+hosts/<name>/      Per-machine facts only:
+  default.nix        imports + my.* feature toggles
+  hardware.nix       kernel modules, microcode, zram
+  disks.nix          fileSystems and UUIDs
+modules/           Shared NixOS modules, imported wholesale via modules/default.nix
+  core/              always-on: boot, nix, locale, fonts, users, home-manager, packages
+  desktop/           graphical stack, gated by my.desktop.enable
+  hardware/          my.hardware.magicbook.enable, my.hardware.nvidia.enable
+  services/          persist, secrets, snapper, proxy, misc services
+home/              Home Manager configuration (apps/, desktop/, system/)
+```
+
+Hosts opt into features through the `my.*` options; everything under
+`modules/core` and `modules/services` applies to every host (proxy and snapper
+default on and can be disabled per host).
+
 ## SOPS bootstrap and recovery
 
 SOPS uses the dedicated Age identity at:
