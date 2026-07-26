@@ -1,57 +1,95 @@
 { config, inputs, pkgs, ... }:
 
 let
-  # Neovim chrome uses neutral surfaces and restrained, desaturated state
-  # colours. The steps between normal, hover and selected are intentionally
-  # small so one component does not jump from near-black to a bright accent.
+  # Keep Neovim chrome aligned with the cool Event Horizon system palette.
+  # Warm editorial colours are intentionally confined to buffer content below,
+  # so explorers, menus, status components and other UI do not inherit them.
   ui = {
     bg = "#${config.lib.stylix.colors.base00}";
-    surface = "#17191c";
-    raised = "#202328";
-    hover = "#292d32";
-    selected = "#343940";
-    active = "#41474f";
-    border = "#3a3f45";
-    muted = "#858b92";
-    text = "#c7cacf";
-    bright = "#eceef0";
-    accent = "#a9b0b7";
-    info = "#8fa1a8";
-    success = "#8fa897";
-    warning = "#b3a078";
-    danger = "#b48886";
-    violet = "#9f96aa";
+    surface = "#${config.lib.stylix.colors.base01}";
+    raised = "#${config.lib.stylix.colors.base02}";
+    hover = "#2b3036";
+    selected = "#343b44";
+    border = "#${config.lib.stylix.colors.base03}";
+    muted = "#${config.lib.stylix.colors.base04}";
+    text = "#${config.lib.stylix.colors.base05}";
+    bright = "#${config.lib.stylix.colors.base07}";
+    accent = "#${config.lib.stylix.colors.base0D}";
+    info = "#${config.lib.stylix.colors.base0C}";
+    success = "#${config.lib.stylix.colors.base0B}";
+    warning = "#${config.lib.stylix.colors.base0A}";
+    danger = "#${config.lib.stylix.colors.base08}";
+    violet = "#${config.lib.stylix.colors.base0E}";
+  };
+
+  # Warm state backgrounds belong to buffer-local highlights only. Keeping
+  # these separate prevents file trees and floating UI from drifting warm.
+  bufferHighlight = {
+    search = "#5a4229";
+    error = "#2b1b19";
+    warning = "#2b2418";
+    info = "#18262b";
+    hint = "#241f2b";
+    ok = "#19271e";
+    diffAdd = "#19271e";
+    diffChange = "#2b2518";
+    diffDelete = "#2d1b1a";
+    diffText = "#493a20";
+  };
+
+  # Editorial text accents belong to the buffer, not editor chrome. In
+  # particular, Markdown strong text should read as warm paper rather than the
+  # cool near-white used by menus, titles and selected UI elements.
+  bufferText = {
+    strong = "#e8c7a7";
+  };
+
+  # Lualine communicates mode with a cool blue-to-periwinkle range. Keep this
+  # independent from semantic success/warning/error colours so changing mode
+  # does not introduce green, amber or coral into the editor chrome.
+  lualineState = {
+    normal = ui.accent;
+    insert = ui.info;
+    visual = ui.violet;
+    replace = "#8fa7c8";
+    command = "#a8bdca";
   };
 
   # Git state needs stronger separation in the explorer than the rest of the
   # deliberately subdued UI. These colours are used for both the status badge
   # and the affected file/directory name, including aggregate directory state.
   explorerGit = {
-    added = "#8fcf9f";
-    modified = "#e0b866";
-    deleted = "#df8581";
-    untracked = "#76b9d0";
-    staged = "#82b8aa";
-    renamed = "#82a9c5";
+    added = "#${config.lib.stylix.colors.base0B}";
+    modified = "#${config.lib.stylix.colors.base0A}";
+    deleted = "#${config.lib.stylix.colors.base08}";
+    untracked = "#${config.lib.stylix.colors.base0C}";
+    staged = "#${config.lib.stylix.colors.base0D}";
+    renamed = "#${config.lib.stylix.colors.base0E}";
   };
 
-  # Code highlighting uses a wider luminance and hue range than the UI chrome.
-  # Keeping this palette separate makes syntax structure easy to scan without
-  # turning menus, borders and status components into visual noise.
+  # Syntax uses Anthropic-like clay, sand, sage and mineral tones. Every colour
+  # remains comfortable on the charcoal background, while adjacent semantic
+  # roles differ enough in both hue and luminance to be recognised at a glance.
   syntax = {
-    comment = "#747b84";
-    keyword = "#ef8b87";
-    function = "#82c7ef";
-    type = "#b6c5ea";
-    string = "#98cfae";
-    number = "#dfa66f";
-    constant = "#dfc27d";
-    operator = "#7fcbd8";
-    variable = "#d4d6da";
-    parameter = "#cbb4d5";
-    property = "#aeb8c2";
-    punctuation = "#8d949c";
-    markup = "#d7a0a8";
+    comment = "#7f858d";
+    keyword = "#eb8b7a";
+    function = "#8fc9e3";
+    type = "#d7b79c";
+    class = "#dfa3b2";
+    enum = "#e1ba6e";
+    interface = "#9bc9ad";
+    struct = "#b8a9d8";
+    typeParameter = "#d1a5c4";
+    namespace = "#92becf";
+    string = "#9dccae";
+    number = "#e3a06b";
+    constant = "#d9c176";
+    operator = "#79c7ce";
+    variable = "#ddd8d1";
+    parameter = "#c8afd9";
+    property = "#adbed0";
+    punctuation = "#9298a0";
+    markup = "#e3a0a3";
   };
 
   # Keep file-type icons inside the same subdued semantic palette used by the
@@ -72,11 +110,11 @@ let
       inactive = segment ui.muted ui.surface;
     in
     {
-      normal = middle // { a = mode ui.accent; };
-      insert = middle // { a = mode ui.success; };
-      visual = middle // { a = mode ui.violet; };
-      replace = middle // { a = mode ui.danger; };
-      command = middle // { a = mode ui.warning; };
+      normal = middle // { a = mode lualineState.normal; };
+      insert = middle // { a = mode lualineState.insert; };
+      visual = middle // { a = mode lualineState.visual; };
+      replace = middle // { a = mode lualineState.replace; };
+      command = middle // { a = mode lualineState.command; };
       inactive = { a = inactive; b = inactive; c = inactive; };
     };
 
@@ -112,6 +150,8 @@ let
       # Neovim only loads project-local configuration after it has been
       # explicitly approved through its hash-based trust database (`:trust`).
       exrc = true;
+      endofline = true;
+      fixendofline = true;
       grepprg = "${lib.getExe pkgs.ripgrep} --vimgrep --no-heading";
       redrawtime = 100;
       shiftwidth = 4;
@@ -332,10 +372,14 @@ let
 
     vim.highlight = {
       Normal = { bg = "NONE"; fg = ui.text; };
-      NormalNC = { bg = "NONE"; fg = ui.muted; };
+      # Keep inactive splits readable; borders and cursorline communicate focus
+      # without dimming an entire buffer to comment-level contrast.
+      NormalNC = { bg = "NONE"; fg = ui.text; };
       NormalFloat = { bg = ui.surface; fg = ui.text; };
       FloatBorder = { bg = ui.surface; fg = ui.border; };
       FloatTitle = { bg = ui.surface; fg = ui.bright; bold = true; };
+      FloatFooter = { bg = ui.surface; fg = ui.muted; italic = true; };
+      FloatShadow = { bg = ui.bg; blend = 55; };
       Directory = { fg = ui.accent; bold = true; };
       Title = { fg = ui.bright; bold = true; };
       Question.fg = ui.info;
@@ -345,15 +389,17 @@ let
       CursorLineNr = { bg = ui.raised; fg = ui.accent; bold = true; };
       LineNr = { bg = "NONE"; fg = ui.border; };
       Visual = { bg = ui.selected; fg = ui.bright; };
-      Search = { bg = ui.hover; fg = ui.text; };
-      IncSearch = { bg = ui.selected; fg = ui.bright; bold = true; };
-      CurSearch = { bg = ui.active; fg = ui.bright; bold = true; underline = true; };
-      Substitute = { bg = ui.selected; fg = ui.bright; bold = true; };
-      MatchParen = { bg = ui.hover; fg = ui.bright; bold = true; };
+      Search = { bg = bufferHighlight.search; fg = ui.bright; bold = true; };
+      IncSearch = { bg = ui.warning; fg = ui.bg; bold = true; };
+      CurSearch = { bg = ui.accent; fg = ui.bg; bold = true; underline = true; };
+      Substitute = { bg = ui.danger; fg = ui.bg; bold = true; };
+      MatchParen = { bg = ui.selected; fg = ui.warning; bold = true; underline = true; };
       Pmenu = { bg = ui.surface; fg = ui.text; };
       PmenuSel = { bg = ui.selected; fg = ui.bright; bold = true; };
       PmenuExtra = { bg = ui.surface; fg = ui.muted; };
       PmenuKind = { bg = ui.surface; fg = ui.accent; };
+      PmenuMatch = { fg = ui.accent; bold = true; };
+      PmenuMatchSel = { bg = ui.selected; fg = ui.warning; bold = true; };
       PmenuSbar.bg = ui.surface;
       PmenuThumb.bg = ui.border;
       WildMenu = { bg = ui.selected; fg = ui.bright; bold = true; };
@@ -368,6 +414,8 @@ let
       WinSeparator = { bg = "NONE"; fg = ui.border; };
       StatusLine = { bg = ui.surface; fg = ui.text; };
       StatusLineNC = { bg = ui.bg; fg = ui.border; };
+      WinBar = { bg = "NONE"; fg = ui.text; bold = true; };
+      WinBarNC = { bg = "NONE"; fg = ui.muted; };
       TabLine = { bg = ui.surface; fg = ui.muted; };
       TabLineFill.bg = ui.bg;
       TabLineSel = { bg = ui.selected; fg = ui.bright; bold = true; };
@@ -376,6 +424,12 @@ let
       MoreMsg.fg = ui.info;
       ErrorMsg = { fg = ui.danger; bold = true; };
       WarningMsg.fg = ui.warning;
+      Error = { fg = ui.danger; bold = true; };
+      Underlined = { fg = ui.info; underline = true; };
+      SpellBad = { undercurl = true; sp = ui.danger; };
+      SpellCap = { undercurl = true; sp = ui.warning; };
+      SpellLocal = { undercurl = true; sp = ui.info; };
+      SpellRare = { undercurl = true; sp = ui.violet; };
 
       # Vim syntax groups provide a consistent fallback for filetypes without
       # a Treesitter parser and are also the link targets for semantic groups.
@@ -388,20 +442,20 @@ let
       Float.fg = syntax.number;
       Identifier.fg = syntax.variable;
       Function = { fg = syntax.function; bold = true; };
-      Statement.fg = syntax.keyword;
-      Conditional = { fg = syntax.keyword; italic = true; };
-      Repeat = { fg = syntax.keyword; italic = true; };
+      Statement = { fg = syntax.keyword; bold = true; };
+      Conditional.fg = syntax.keyword;
+      Repeat.fg = syntax.keyword;
       Label.fg = syntax.markup;
       Operator.fg = syntax.operator;
-      Keyword = { fg = syntax.keyword; italic = true; };
+      Keyword = { fg = syntax.keyword; bold = true; };
       Exception = { fg = syntax.keyword; bold = true; };
       PreProc.fg = syntax.markup;
       Include.fg = syntax.markup;
       Define.fg = syntax.markup;
       Macro = { fg = syntax.markup; bold = true; };
       Type.fg = syntax.type;
-      StorageClass = { fg = syntax.type; italic = true; };
-      Structure = { fg = syntax.type; bold = true; };
+      StorageClass = { fg = syntax.keyword; italic = true; };
+      Structure.fg = syntax.struct;
       Typedef.fg = syntax.type;
       Special.fg = syntax.operator;
       SpecialChar.fg = syntax.operator;
@@ -420,13 +474,19 @@ let
       "@string.documentation" = { fg = syntax.string; italic = true; };
       "@string.escape" = { fg = syntax.operator; bold = true; };
       "@string.regexp" = { fg = syntax.operator; };
+      "@string.special" = { fg = syntax.constant; };
+      "@string.special.path" = { fg = syntax.string; underline = true; };
+      "@string.special.symbol" = { fg = syntax.constant; };
+      "@string.special.url" = { fg = syntax.operator; underline = true; };
       "@character" = { link = "Character"; };
+      "@character.special" = { fg = syntax.operator; };
       "@number" = { link = "Number"; };
       "@number.float" = { link = "Float"; };
       "@boolean" = { link = "Boolean"; };
       "@variable" = { fg = syntax.variable; };
       "@variable.builtin" = { fg = syntax.constant; italic = true; };
       "@variable.parameter" = { fg = syntax.parameter; italic = true; };
+      "@variable.parameter.builtin" = { fg = syntax.constant; italic = true; };
       "@variable.member" = { fg = syntax.property; };
       "@property" = { fg = syntax.property; };
       "@function" = { link = "Function"; };
@@ -435,38 +495,66 @@ let
       "@function.macro" = { link = "Macro"; };
       "@function.method" = { fg = syntax.function; bold = true; };
       "@function.method.call" = { fg = syntax.function; };
-      "@constructor" = { fg = syntax.type; bold = true; };
+      "@constructor" = { fg = syntax.class; bold = true; };
       "@type" = { link = "Type"; };
       "@type.builtin" = { fg = syntax.type; italic = true; };
       "@type.definition" = { fg = syntax.type; bold = true; };
-      "@module" = { fg = syntax.type; };
+      "@type.qualifier" = { fg = syntax.keyword; italic = true; };
+      "@module" = { fg = syntax.namespace; };
+      "@module.builtin" = { fg = syntax.namespace; italic = true; };
       "@attribute" = { fg = syntax.markup; italic = true; };
+      "@attribute.builtin" = { fg = syntax.markup; };
       "@keyword" = { link = "Keyword"; };
+      "@keyword.coroutine" = { fg = syntax.keyword; bold = true; };
+      "@keyword.conditional" = { fg = syntax.keyword; };
+      "@keyword.repeat" = { fg = syntax.keyword; };
+      "@keyword.exception" = { fg = syntax.keyword; };
       "@keyword.function" = { fg = syntax.keyword; bold = true; };
-      "@keyword.operator" = { fg = syntax.operator; italic = true; };
+      "@keyword.operator" = { fg = syntax.operator; };
       "@keyword.return" = { fg = syntax.keyword; bold = true; };
-      "@keyword.import" = { fg = syntax.markup; italic = true; };
+      "@keyword.import" = { fg = syntax.markup; bold = true; };
+      "@keyword.type" = { fg = syntax.keyword; };
+      "@keyword.modifier" = { fg = syntax.keyword; italic = true; };
+      "@keyword.debug" = { fg = ui.warning; };
+      "@keyword.directive" = { fg = syntax.markup; };
+      "@keyword.directive.define" = { fg = syntax.markup; italic = true; };
+      "@label" = { link = "Label"; };
       "@operator" = { link = "Operator"; };
       "@punctuation.delimiter" = { link = "Delimiter"; };
       "@punctuation.bracket" = { fg = syntax.punctuation; };
       "@punctuation.special" = { fg = syntax.operator; };
+      "@punctuation.special.markdown" = { fg = syntax.markup; };
       "@tag" = { fg = syntax.markup; bold = true; };
       "@tag.attribute" = { fg = syntax.property; italic = true; };
       "@tag.delimiter" = { fg = syntax.punctuation; };
       "@markup.heading" = { fg = syntax.function; bold = true; };
+      "@markup.strong" = { fg = bufferText.strong; bold = true; };
+      "@markup.italic" = { fg = ui.text; italic = true; };
+      "@markup.strikethrough" = { fg = ui.muted; strikethrough = true; };
       "@markup.link" = { fg = syntax.operator; underline = true; };
+      "@markup.link.label" = { fg = syntax.markup; };
+      "@markup.link.url" = { fg = syntax.operator; underline = true; };
       "@markup.raw" = { fg = syntax.string; };
       "@markup.list" = { fg = syntax.markup; bold = true; };
+      "@markup.quote" = { fg = syntax.comment; italic = true; };
+      "@comment.error" = { fg = ui.danger; bold = true; };
+      "@comment.warning" = { fg = ui.warning; bold = true; };
+      "@comment.todo" = { fg = syntax.constant; bold = true; };
+      "@comment.note" = { fg = ui.info; bold = true; };
+      "@diff.plus" = { fg = ui.success; };
+      "@diff.minus" = { fg = ui.danger; };
+      "@diff.delta" = { fg = ui.warning; };
 
       # LSP semantic tokens take precedence over Treesitter when a server
       # supplies them, so mirror the same roles instead of accepting defaults.
-      "@lsp.type.namespace" = { fg = syntax.type; };
+      "@lsp.type.namespace" = { fg = syntax.namespace; };
+      "@lsp.type.module" = { fg = syntax.namespace; };
       "@lsp.type.type" = { link = "Type"; };
-      "@lsp.type.class" = { fg = syntax.type; bold = true; };
-      "@lsp.type.enum" = { fg = syntax.type; bold = true; };
-      "@lsp.type.interface" = { fg = syntax.type; italic = true; };
-      "@lsp.type.struct" = { fg = syntax.type; bold = true; };
-      "@lsp.type.typeParameter" = { fg = syntax.parameter; italic = true; };
+      "@lsp.type.class" = { fg = syntax.class; };
+      "@lsp.type.enum" = { fg = syntax.enum; };
+      "@lsp.type.interface" = { fg = syntax.interface; };
+      "@lsp.type.struct" = { fg = syntax.struct; };
+      "@lsp.type.typeParameter" = { fg = syntax.typeParameter; italic = true; };
       "@lsp.type.parameter" = { fg = syntax.parameter; italic = true; };
       "@lsp.type.variable" = { fg = syntax.variable; };
       "@lsp.type.property" = { fg = syntax.property; };
@@ -478,32 +566,75 @@ let
       "@lsp.type.comment" = { link = "Comment"; };
       "@lsp.type.string" = { link = "String"; };
       "@lsp.type.number" = { link = "Number"; };
+      "@lsp.type.regexp" = { fg = syntax.operator; };
       "@lsp.type.operator" = { link = "Operator"; };
+      "@lsp.type.decorator" = { fg = syntax.markup; italic = true; };
+      "@lsp.type.event" = { fg = syntax.constant; };
+      "@lsp.type.label" = { link = "Label"; };
+      # Common language-server extensions (notably rust-analyzer) retain the
+      # same semantic vocabulary instead of falling back to editor defaults.
+      "@lsp.type.builtinType" = { fg = syntax.type; italic = true; };
+      "@lsp.type.typeAlias" = { fg = syntax.type; };
+      "@lsp.type.union" = { fg = syntax.struct; };
+      "@lsp.type.generic" = { fg = syntax.typeParameter; italic = true; };
+      "@lsp.type.lifetime" = { fg = syntax.parameter; italic = true; };
+      "@lsp.type.selfKeyword" = { fg = syntax.constant; italic = true; };
+      "@lsp.type.boolean" = { link = "Boolean"; };
+      "@lsp.type.escapeSequence" = { fg = syntax.operator; bold = true; };
+      "@lsp.type.formatSpecifier" = { fg = syntax.operator; };
+      "@lsp.type.punctuation" = { fg = syntax.punctuation; };
       "@lsp.mod.deprecated" = { strikethrough = true; };
-      "@lsp.mod.readonly" = { bold = true; };
+      "@lsp.mod.readonly" = { fg = syntax.constant; };
+      "@lsp.mod.defaultLibrary" = { italic = true; };
+      "@lsp.mod.documentation" = { italic = true; };
 
-      DiagnosticError.fg = ui.danger;
-      DiagnosticWarn.fg = ui.warning;
+      DiagnosticError = { fg = ui.danger; bold = true; };
+      DiagnosticWarn = { fg = ui.warning; bold = true; };
       DiagnosticInfo.fg = ui.info;
       DiagnosticHint.fg = ui.violet;
       DiagnosticOk.fg = ui.success;
-      DiagnosticVirtualTextError = { bg = "NONE"; fg = ui.danger; };
-      DiagnosticVirtualTextWarn = { bg = "NONE"; fg = ui.warning; };
-      DiagnosticVirtualTextInfo = { bg = "NONE"; fg = ui.info; };
-      DiagnosticVirtualTextHint = { bg = "NONE"; fg = ui.violet; };
+      DiagnosticSignError = { fg = ui.danger; bold = true; };
+      DiagnosticSignWarn = { fg = ui.warning; bold = true; };
+      DiagnosticSignInfo = { fg = ui.info; bold = true; };
+      DiagnosticSignHint = { fg = ui.violet; bold = true; };
+      DiagnosticSignOk = { fg = ui.success; bold = true; };
+      DiagnosticVirtualTextError = { bg = bufferHighlight.error; fg = ui.danger; };
+      DiagnosticVirtualTextWarn = { bg = bufferHighlight.warning; fg = ui.warning; };
+      DiagnosticVirtualTextInfo = { bg = bufferHighlight.info; fg = ui.info; };
+      DiagnosticVirtualTextHint = { bg = bufferHighlight.hint; fg = ui.violet; };
+      DiagnosticVirtualTextOk = { bg = bufferHighlight.ok; fg = ui.success; };
       DiagnosticFloatingError.fg = ui.danger;
       DiagnosticFloatingWarn.fg = ui.warning;
       DiagnosticFloatingInfo.fg = ui.info;
       DiagnosticFloatingHint.fg = ui.violet;
+      DiagnosticFloatingOk.fg = ui.success;
+      DiagnosticUnderlineError = { undercurl = true; sp = ui.danger; };
+      DiagnosticUnderlineWarn = { undercurl = true; sp = ui.warning; };
+      DiagnosticUnderlineInfo = { undercurl = true; sp = ui.info; };
+      DiagnosticUnderlineHint = { undercurl = true; sp = ui.violet; };
+      DiagnosticUnderlineOk = { undercurl = true; sp = ui.success; };
+      DiagnosticDeprecated = { fg = ui.muted; strikethrough = true; };
+      DiagnosticUnnecessary.fg = ui.muted;
 
-      DiffAdd = { bg = "#18221d"; fg = ui.success; };
-      DiffChange = { bg = "#242219"; fg = ui.warning; };
-      DiffDelete = { bg = "#251b1b"; fg = ui.danger; };
-      DiffText = { bg = "#302b20"; fg = ui.bright; bold = true; };
-      GitSignsAdd.fg = ui.success;
-      GitSignsChange.fg = ui.warning;
-      GitSignsDelete.fg = ui.danger;
-      GitSignsUntracked.fg = ui.accent;
+      LspReferenceText.bg = ui.raised;
+      LspReferenceRead = { bg = ui.raised; underline = true; };
+      LspReferenceWrite = { bg = ui.selected; bold = true; underline = true; };
+      LspSignatureActiveParameter = { fg = ui.accent; bold = true; underline = true; };
+      LspInlayHint = { bg = ui.raised; fg = ui.muted; italic = true; };
+      LspCodeLens = { fg = ui.muted; italic = true; };
+      LspCodeLensSeparator.fg = ui.border;
+
+      DiffAdd = { bg = bufferHighlight.diffAdd; fg = explorerGit.added; };
+      DiffChange = { bg = bufferHighlight.diffChange; fg = explorerGit.modified; };
+      DiffDelete = { bg = bufferHighlight.diffDelete; fg = explorerGit.deleted; };
+      DiffText = { bg = bufferHighlight.diffText; fg = ui.bright; bold = true; };
+      Added.fg = explorerGit.added;
+      Changed.fg = explorerGit.modified;
+      Removed.fg = explorerGit.deleted;
+      GitSignsAdd.fg = explorerGit.added;
+      GitSignsChange.fg = explorerGit.modified;
+      GitSignsDelete.fg = explorerGit.deleted;
+      GitSignsUntracked.fg = explorerGit.untracked;
 
       BlinkCmpMenu = { bg = ui.surface; fg = ui.text; };
       BlinkCmpMenuBorder = { bg = ui.surface; fg = ui.border; };
@@ -514,19 +645,25 @@ let
       BlinkCmpLabelDescription.fg = ui.muted;
       BlinkCmpSource.fg = ui.muted;
       BlinkCmpKind.fg = ui.accent;
-      BlinkCmpKindFunction.fg = ui.violet;
-      BlinkCmpKindMethod.fg = ui.violet;
+      BlinkCmpKindFunction.fg = ui.accent;
+      BlinkCmpKindMethod.fg = ui.accent;
       BlinkCmpKindConstructor.fg = ui.violet;
-      BlinkCmpKindClass.fg = ui.info;
+      BlinkCmpKindClass.fg = ui.violet;
       BlinkCmpKindInterface.fg = ui.info;
-      BlinkCmpKindStruct.fg = ui.info;
-      BlinkCmpKindEnum.fg = ui.info;
+      BlinkCmpKindStruct.fg = ui.violet;
+      BlinkCmpKindEnum.fg = ui.warning;
+      BlinkCmpKindEnumMember.fg = ui.warning;
       BlinkCmpKindModule.fg = ui.info;
+      BlinkCmpKindTypeParameter.fg = ui.violet;
+      BlinkCmpKindVariable.fg = ui.text;
+      BlinkCmpKindField.fg = ui.info;
+      BlinkCmpKindProperty.fg = ui.info;
+      BlinkCmpKindConstant.fg = ui.warning;
       BlinkCmpKindText.fg = ui.success;
       BlinkCmpKindString.fg = ui.success;
-      BlinkCmpKindKeyword.fg = ui.warning;
-      BlinkCmpKindOperator.fg = ui.warning;
-      BlinkCmpKindSnippet.fg = ui.danger;
+      BlinkCmpKindKeyword.fg = ui.danger;
+      BlinkCmpKindOperator.fg = ui.info;
+      BlinkCmpKindSnippet.fg = ui.violet;
       BlinkCmpScrollBarGutter.bg = ui.surface;
       BlinkCmpScrollBarThumb.bg = ui.border;
       BlinkCmpDoc = { bg = ui.surface; fg = ui.text; };
@@ -614,15 +751,15 @@ let
       SnacksPickerGitStatusUnmerged = { fg = explorerGit.deleted; bold = true; underline = true; };
       SnacksPickerIcon.fg = ui.accent;
       SnacksPickerIconFile.fg = ui.text;
-      SnacksPickerIconFunction.fg = ui.violet;
-      SnacksPickerIconMethod.fg = ui.violet;
-      SnacksPickerIconClass.fg = ui.info;
+      SnacksPickerIconFunction.fg = ui.accent;
+      SnacksPickerIconMethod.fg = ui.accent;
+      SnacksPickerIconClass.fg = ui.violet;
       SnacksPickerIconInterface.fg = ui.info;
-      SnacksPickerIconStruct.fg = ui.info;
+      SnacksPickerIconStruct.fg = ui.violet;
       SnacksPickerIconModule.fg = ui.info;
       SnacksPickerIconString.fg = ui.success;
-      SnacksPickerIconKeyword.fg = ui.warning;
-      SnacksPickerIconOperator.fg = ui.warning;
+      SnacksPickerIconKeyword.fg = ui.danger;
+      SnacksPickerIconOperator.fg = ui.info;
       SnacksDashboardNormal = { bg = "NONE"; fg = ui.text; };
       SnacksDashboardHeader.fg = ui.accent;
       SnacksDashboardKey.fg = ui.violet;
