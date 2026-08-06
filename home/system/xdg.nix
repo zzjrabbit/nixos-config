@@ -11,7 +11,7 @@
     };
     configFile = {
       "xfce4/helpers.rc".text = ''
-        TerminalEmulator=alacritty
+        TerminalEmulator=foot
       '';
     };
   };

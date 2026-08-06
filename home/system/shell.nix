@@ -16,7 +16,7 @@ in {
     extraConfig = builtins.readFile ./config.nu;
   };
   home.file.".profile".text = ''
-    export VTERM='alacritty'
+    export VTERM='foot'
     export ENV='$HOME/.config/dashrc'
   '';
   home.file.".config/dashrc".text = ''

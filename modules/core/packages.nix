@@ -4,7 +4,7 @@
     vim
     wget
     waybar
-    alacritty
+    foot
     git
     xwayland-satellite
     scrcpy

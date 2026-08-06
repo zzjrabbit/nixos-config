@@ -154,7 +154,7 @@ in
     binds {
         Mod+Shift+Slash { show-hotkey-overlay; }
     
-        Mod+T { spawn "alacritty"; }
+        Mod+T { spawn "foot"; }
         Mod+Return { spawn "fuzzel"; }
         Mod+E { spawn "nautilus"; }
         Mod+Z { spawn "zeditor"; }

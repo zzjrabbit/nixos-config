@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   vim.lsp.enable = true;
 
@@ -29,5 +30,16 @@
     python.enable = true;
     rust.enable = true;
     toml.enable = true;
+    typst = {
+      enable = true;
+      extensions = {
+        typst-preview-nvim = {
+          setupOpts = {
+            open_cmd = "${pkgs.surf}/bin/surf -m %s";
+          };
+          enable = true;
+        };
+      };
+    };
   };
 }

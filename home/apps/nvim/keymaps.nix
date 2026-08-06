@@ -129,5 +129,11 @@
       action = "<cmd>LeanRestartFile<cr>";
       desc = "Restart Lean file";
     }
+    {
+      mode = "n";
+      key = "<leader>p";
+      action = "<cmd>TypstPreview<cr>";
+      desc = "Preview Typst file";
+    }
   ];
 }
