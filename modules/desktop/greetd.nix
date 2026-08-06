@@ -1,27 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 {
   config = lib.mkIf config.my.desktop.enable {
-    services.greetd = {
+    # ReGreet's NixOS module configures greetd with a Cage compositor and
+    # launches ReGreet as the default session.
+    services.displayManager.regreet = {
       enable = true;
-      useTextGreeter = true;
-      settings = {
-        default_session = let
-          tuigreet = "${lib.getExe pkgs.tuigreet}";
-          baseSessionsDir = "${config.services.displayManager.sessionData.desktops}";
-          xSessions = "${baseSessionsDir}/share/xsessions";
-          waylandSessions = "${baseSessionsDir}/share/wayland-sessions";
-          tuigreetOptions = [
-            "--time"
-            "--remember"
-            "--remember-session"
-            "--sessions ${waylandSessions}:${xSessions}"
-          ];
-          flags = lib.concatStringsSep " " tuigreetOptions;
-        in {
-          command = "${tuigreet} ${flags}";
-          user = "greeter";
-        };
-      };
+
+      # ReGreet stores the last user/session in /var/lib/regreet/state.toml.
+      # Reuse it on the next login, equivalent to tuigreet's remember flags.
+      settings.skip_selection = true;
     };
   };
 }

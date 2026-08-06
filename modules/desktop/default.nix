@@ -8,5 +8,5 @@
   ];
 
   options.my.desktop.enable =
-    lib.mkEnableOption "the graphical desktop stack (niri, greetd, stylix, chromium)";
+    lib.mkEnableOption "the graphical desktop stack (niri, greetd/regreet, stylix, chromium)";
 }
