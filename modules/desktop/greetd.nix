@@ -1,6 +1,9 @@
 { config, lib, ... }:
 {
   config = lib.mkIf config.my.desktop.enable {
+    services.greetd = {
+        enable = true;
+    };
     # ReGreet's NixOS module configures greetd with a Cage compositor and
     # launches ReGreet as the default session.
     services.displayManager.regreet = {

@@ -5,7 +5,8 @@
 
   config = lib.mkIf config.my.hardware.nvidia.enable {
     hardware.nvidia = {
-      open = true;
+      # GTX 1060 (Pascal) predates NVIDIA's supported open kernel modules.
+      open = false;
       modesetting.enable = true;
       nvidiaSettings = false;
     };

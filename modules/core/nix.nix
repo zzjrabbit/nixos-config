@@ -15,12 +15,14 @@
   nix.settings.trusted-users = [ userName ];
 
   nix.settings.substituters = [
+    "https://attic.xuyh0120.win/lantian"
     "https://niri.cachix.org"
     "https://cache.nixos.org"
     "https://cache.numtide.com"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
   ];
   nix.settings.trusted-public-keys = [
+    "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="

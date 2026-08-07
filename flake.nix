@@ -3,12 +3,14 @@
 
   nixConfig = {
     substituters = [
+      "https://attic.xuyh0120.win/lantian"
       "https://cache.nixos.org"
       "https://cache.numtide.com"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
 	];
 
     trusted-public-keys = [
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
@@ -16,6 +18,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Keep this input independent from nixpkgs so its prebuilt kernels and
+    # patches are evaluated against the revision they were built for.
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/e2c327cc00fd5243685fee69e90e4c7eb2f6e8ba";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

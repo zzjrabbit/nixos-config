@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   colors = config.lib.stylix.colors;
@@ -42,8 +42,13 @@ in
         // the compositor environment instead of relying on a login shell.
         XDG_CONFIG_DIRS "${xdgConfigDirs}"
     }
-    
-    spawn-at-startup "fcitx5"
+
+    // Pin Niri's on-demand X11 compatibility layer to the package selected by
+    // this flake instead of whichever satellite happens to appear first in
+    // PATH. This affects Xwayland clients only.
+    xwayland-satellite {
+        path "${lib.getExe pkgs.xwayland-satellite}"
+    }
     
     output "BOE 0x0877 Unknown" {
         scale 1.0
@@ -160,6 +165,11 @@ in
         Mod+Z { spawn "zeditor"; }
         Mod+M { spawn "hmcl"; }
         Mod+B { spawn "chromium"; }
+        // Mod+Q is reserved for close-window.  Use an explicit Wayland/IME
+        // command for QQ; the Nix wrapper still supplies its own defaults.
+        Mod+Shift+Q {
+          spawn "qq" "--ozone-platform=wayland" "--enable-features=WaylandWindowDecorations" "--enable-wayland-ime=true" "--wayland-text-input-version=3";
+        }
     
         XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
         XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

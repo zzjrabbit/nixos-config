@@ -1,4 +1,4 @@
-{ lib, pkgs, modulesPath, ... }:
+{ lib, modulesPath, inputs, ... }:
 
 {
   imports = [
@@ -9,8 +9,11 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
+
+  # Exposes pkgs.cachyosKernels while retaining the upstream-pinned package
+  # set needed for the provider's binary cache.
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
 
   fileSystems."/" = {
     device = "none";
