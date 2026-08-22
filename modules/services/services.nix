@@ -45,7 +45,19 @@
   services.udisks2.enable = true;
   services.printing.enable = true;
 
-  environment.systemPackages = [ pkgs.fprintd pkgs.imagemagick ];
+  hardware.sane = {
+    enable = true;
+    # Brother DCP-T436W uses Brother's brscan5 SANE backend. AirScan lets
+    # network-connected devices be discovered through the existing Avahi setup.
+    brscan5.enable = true;
+    extraBackends = [ pkgs.sane-airscan ];
+  };
+
+  environment.systemPackages = [
+    pkgs.fprintd
+    pkgs.imagemagick
+    pkgs.simple-scan
+  ];
   services.fprintd = {
     enable = true;
     package = pkgs.fprintd-tod;

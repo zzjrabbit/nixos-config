@@ -4,6 +4,23 @@
     config.allowUnfree = true;
     overlays = [
       inputs.chinese-fonts-overlay.overlays.default
+      # googlefonts retagged nanoemoji v0.16.0 without a corresponding
+      # nixpkgs hash update. Keep the current nixpkgs while using the
+      # tarball hash actually served by GitHub.
+      (final: prev: {
+        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+          (pyfinal: pyprev: {
+            nanoemoji = pyprev.nanoemoji.overrideAttrs (_: {
+              src = final.fetchFromGitHub {
+                owner = "googlefonts";
+                repo = "nanoemoji";
+                tag = "v0.16.0";
+                hash = "sha256-FysyKC01XBnRiur5RR9fcsTxQqE8x0JJHSoe3q6JtKc=";
+              };
+            });
+          })
+        ];
+      })
     ];
   };
 
