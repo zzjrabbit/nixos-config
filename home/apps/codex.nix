@@ -36,13 +36,23 @@ let
   # Patch them in place so every built-in mode remains selectable while using
   # the shared OpenAI-compatible GPT route and key-free DuckDuckGo MCP backend.
   dshPackage = agents.dsh.overrideAttrs (old: {
-    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.patch ];
+    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.jq pkgs.patch ];
     postInstall = (old.postInstall or "") + ''
       session_manager_dir="$out/lib/node_modules/@deepseek-ai/dsh/node_modules/@raca/dsh-session-manager"
       mkdir -p "$session_manager_dir"
       cp -R ${./dsh/session-manager-plugin}/. "$session_manager_dir/"
       test -f "$session_manager_dir/lib/index.js"
       test -f "$session_manager_dir/lib/client.js"
+
+      # dsh only exposes packages in its declared dependency closure to profile
+      # configs.  Merely copying the plugin into node_modules leaves the bare
+      # package name unresolved when the generated profile is loaded from
+      # ~/.dsh/profiles/web.
+      dsh_manifest="$out/lib/node_modules/@deepseek-ai/dsh/package.json"
+      jq '.dependencies["@raca/dsh-session-manager"] = "0.1.0"' \
+        "$dsh_manifest" > "$dsh_manifest.tmp"
+      mv "$dsh_manifest.tmp" "$dsh_manifest"
+      test "$(jq -r '.dependencies["@raca/dsh-session-manager"]' "$dsh_manifest")" = 0.1.0
 
       math_compaction_dir="$out/lib/node_modules/@deepseek-ai/dsh/node_modules/@raca/dsh-math-compaction"
       mkdir -p "$(dirname "$math_compaction_dir")"
