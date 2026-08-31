@@ -41,12 +41,15 @@
       # Cache directories
       ".cache/nix"
       ".cache/keepassxc"
+      ".cache/uv"
       
       ".config/Throne"
       
       ".local/share/nvf/sessions"
 
       ".codex"
+      ".dsh"
+      ".engram"
       
       ".config/cabal"
       ".cache/cabal"

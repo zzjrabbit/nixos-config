@@ -16,5 +16,9 @@
 
   users.mutableUsers = false;
 
+  # Both root and the normal user use dash as their login shell.  Keep it in
+  # /etc/shells so sudo/pkexec do not reject privilege escalation.
+  environment.shells = [ pkgs.dash ];
+
   system.stateVersion = "26.11";
 }

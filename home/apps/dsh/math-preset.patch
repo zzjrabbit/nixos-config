@@ -1,0 +1,116 @@
+--- a/agent.cordis.yml
++++ b/agent.cordis.yml
+@@ -24,8 +24,13 @@
+ - id: persona
+   name: '@deepseek-ai/dsh-persona'
+   config:
+-    text: >-
+-      You are a coding agent powered by the {{model}} model. Your working directory is {{cwd}}.
++    text: |-
++      You are an adaptive mathematical study, note-taking, and coding agent powered by the {{model}} model.
++      Your active workspace is {{cwd}}; use it as the default root for file operations instead of assuming a fixed notes directory.
++      First classify the request from the user's intent and nearby project files. Do not force ordinary coding or general questions into a mathematical-notes workflow.
++      For substantive mathematical study, explanation, or personal-note work, load the math-study skill before proceeding.
++      Load the Typst or Lean skill only when the task or detected project structure needs it.
++      Resolve any notes project from an explicit user path, referenced files, or the active workspace. Ask only when file work is requested and those signals remain ambiguous.
+ 
+ - id: agent-instructions
+   name: '@deepseek-ai/dsh-agent-instructions'
+@@ -143,6 +148,15 @@
+   config:
+     - id: compaction-basic
+-      name: '@deepseek-ai/dsh-compaction-basic'
++      name: '@mathCompactionModule@'
++      config:
++        thresholdRatio: 0.70
++        retainRatio: 0.20
++        summarizationProvider: openai-compact
++        summarizationModel: gpt-5.6-luna
++        maxTokens: 8192
++        compactionRetries: 2
++        maxOverflowRetries: 2
++        auto: true
+ 
+     - id: command-compact
+       name: '@deepseek-ai/dsh-command-compact'
+@@ -243,10 +257,65 @@
+   config:
+     allowParallelInProgress: true
+ 
+-# The `web` service and its search provider stay in the host composition; only
+-# the model-facing tool is per-session.
+-- id: tool-web
+-  name: '@deepseek-ai/dsh-tool-web'
++# Local persistent memory. Only the seven core tools are exposed to keep the
++# always-present schema small.
++- id: mcp-engram
++  name: '@deepseek-ai/dsh-mcp-client'
++  config:
++    serverName: engram
++    transport: stdio
++    command: '@engramExecutable@'
++    args:
++      - mcp
++      - --project
++      - math-notes
++      - --tools=mem_save,mem_search,mem_context,mem_session_summary,mem_get_observation,mem_save_prompt,mem_current_project
++    cwd: !!js process.env.DSH_CWD ?? process.cwd()
++    env:
++      ENGRAM_DATA_DIR: '@engramDataDirectory@'
++      ENGRAM_PROJECT: math-notes
++    toolCallTimeoutMs: 30000
++    failOnStartupError: true
++    reconnect:
++      enabled: true
++      initialDelayMs: 500
++      maxDelayMs: 30000
++      maxAttempts: 10
++
++# Warm Lean feedback for snippets, declarations, proof states, and tactics.
++- id: mcp-lean-probe
++  name: '@deepseek-ai/dsh-mcp-client'
++  config:
++    serverName: lean-probe
++    transport: stdio
++    command: '@uvxExecutable@'
++    args: [--from, 'lean-probe==0.4.0', lean-probe, mcp]
++    env:
++      LEAN_PROBE_AUTO_BUILD: '0'
++      UV_PYTHON: '@pythonExecutable@'
++      UV_PYTHON_DOWNLOADS: never
++      UV_NO_MANAGED_PYTHON: '1'
++      UV_ISOLATED: '1'
++    toolCallTimeoutMs: 600000
++
++# API-key-free web search and bounded page extraction.
++- id: mcp-duckduckgo
++  name: '@deepseek-ai/dsh-mcp-client'
+   config:
+-    fetch: false
+-    searchTimeoutMs: 60000
++    serverName: duckduckgo-math-notes
++    transport: stdio
++    command: '@uvxExecutable@'
++    args:
++      - --from
++      - 'duckduckgo-mcp-server[browser]==0.6.1'
++      - duckduckgo-mcp-server
++      - --fetch-backend
++      - auto
++    env:
++      DDG_REGION: wt-wt
++      DDG_SAFE_SEARCH: MODERATE
++      UV_PYTHON: '@pythonExecutable@'
++      UV_PYTHON_DOWNLOADS: never
++      UV_NO_MANAGED_PYTHON: '1'
++      UV_ISOLATED: '1'
++    toolCallTimeoutMs: 120000
+--- a/preset.yml
++++ b/preset.yml
+@@ -1,3 +1,3 @@
+-name: 标准模式
+-description: 功能完整的编码 Agent，支持文件编辑、Shell、文件与网页检索、Skills、计划、目标、子代理和工作流。
+-order: 1
++name: 数学笔记
++description: 自动记忆学习进度，支持 Typst、Lean、无密钥网页检索和长期上下文压缩。
++order: 0

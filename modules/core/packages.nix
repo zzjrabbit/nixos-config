@@ -13,7 +13,6 @@
     swaybg
     networkmanagerapplet
     hypridle
-    polkit_gnome
     krb5
     perf
     heaptrack

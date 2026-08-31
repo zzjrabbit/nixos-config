@@ -1,0 +1,76 @@
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -216,43 +216,52 @@
+ * request, so the provider's KV cache is reused instead of invalidated.
+ */
+ const COMPACTION_INSTRUCTION = [
+-	"You are now acting as a compaction engine for this AI coding assistant. Condense the conversation ABOVE into a structured checkpoint that lets another model resume the work with no loss of essential context.",
++	"You are now acting as a compaction engine for a mathematical study and note-taking assistant. Condense the conversation ABOVE into a structured checkpoint that lets another model continue the mathematics accurately without losing learning state, notation, proof state, or note-project context.",
+ 	"",
+-	"Output EXACTLY the Markdown structure below: keep every section, in order. Use terse bullets, not prose paragraphs. Write \"(none)\" for an empty section — never drop a section.",
++	"Output EXACTLY the Markdown structure below: keep every section, in order. Use terse bullets rather than prose paragraphs. Write \"(none)\" for an empty section — never drop a section.",
+ 	"",
+-	"## Primary Request and Intent",
+-	"- [the user's original and evolving goals; quote verbatim where the exact wording matters]",
++	"## Current Mathematical Goal",
++	"- [the user's original and evolving study, proof, exercise, or note-editing goal; quote exact wording when it matters]",
+ 	"",
+-	"## Key Technical Concepts",
+-	"- [technologies, frameworks, patterns, and conventions in play]",
++	"## Definitions and Notation",
++	"- [precise definitions, symbols, domains, quantifiers, conventions, and local notation currently in force]",
+ 	"",
+-	"## Files and Code",
+-	"- [exact path: why it matters, key changes or snippets]",
++	"## Established Results",
++	"- [facts proved or accepted in the conversation, theorem dependencies, and the exact hypotheses still required]",
+ 	"",
+-	"## Errors and Fixes",
+-	"- [error: how it was resolved, plus any related user feedback]",
++	"## Examples and Counterexamples",
++	"- [worked examples, boundary cases, and counterexamples that rule out tempting but false claims]",
+ 	"",
+-	"## Pending Jobs",
+-	"- [explicitly requested work not yet completed]",
++	"## Proof State and Open Gaps",
++	"- [completed proof steps, current strategy, unresolved subgoals, failed approaches and why they failed; include exact Lean goals or errors when relevant]",
+ 	"",
+-	"## Current Work",
+-	"- [precisely what was in progress at this checkpoint]",
++	"## Learner State",
++	"- [concepts demonstrably mastered, recurring misconceptions and corrections, and points whose understanding remains uncertain]",
+ 	"",
+-	"## Next Step",
+-	"- [the single next action, directly in line with the most recent request, or \"(none)\"]",
++	"## Notes and Project State",
++	"- [exact Typst or Lean paths, theorem labels, namespaces, naming conventions, edits, compiler status, and important tool results]",
++	"",
++	"## Durable Memory State",
++	"- [Engram memories already written, stable topic_key values in use, and meaningful learning state that still needs to be saved]",
+ 	"",
+-	"## Critical Context",
+-	"- [decisions and their rationale, constraints, user preferences, open questions, data needed to continue]",
++	"## User Preferences and Constraints",
++	"- [notation, language, presentation preferences, exact constraints, corrections, and decisions that future work must respect]",
++	"",
++	"## Next Step",
++	"- [the single next mathematical or note-management action directly aligned with the most recent request, or \"(none)\"]",
+ 	"",
+ 	"Rules:",
+-	"- Write concise English engineering prose. Preserve exact file paths, commands, error strings, identifiers, numeric values, function signatures, and syntax fragments.",
+-	"- Capture user feedback and explicit instructions faithfully, especially corrections.",
++	"- Use the user's working language. Preserve mathematical notation, formulas, quantifiers, hypotheses, theorem statements, exact file paths, labels, identifiers, commands, and error strings.",
++	"- Never silently strengthen or weaken a theorem, exchange existence and universality, drop a domain restriction, or present intuition or conjecture as an established fact.",
++	"- Distinguish proved results, accepted background facts, intuition, conjectures, and uncertain learner understanding.",
++	"- Capture user feedback and explicit instructions faithfully, especially corrections and notation choices.",
++	"- Keep full note prose and long derivations in project files rather than copying them into the checkpoint; retain only the state needed to resume them accurately.",
+ 	"- Do NOT mention this summarization request or that the context was compacted.",
+ 	"- Output only the checkpoint text: do not call any tool or take any other action.",
+ 	`- If the conversation already contains a ${SUMMARY_OPEN_TAG} block, it is a PRIOR checkpoint. Do not copy it forward verbatim: preserve still-true facts, drop stale ones, and merge newer information into a single consolidated summary under the same structure.`
+ ].join("\n");
+ /** Framing that makes the replacement user message established context. */
+-const CHECKPOINT_PREAMBLE = "This is an automatically generated checkpoint condensing an earlier span of the conversation to free up context. Treat the captured context as established background and build on it without restating it. Continue the task directly from the messages that follow, without acknowledging this checkpoint.";
++const CHECKPOINT_PREAMBLE = "This is an automatically generated checkpoint condensing an earlier span of a mathematical study conversation to free up context. Treat the captured definitions, notation, established results, proof state, learner state, and project state as established background. Continue directly from the messages that follow without restating or acknowledging this checkpoint. Before substantive work, use the math-study memory protocol to recover Engram context when the checkpoint says durable memory may be incomplete.";
+ /**
+ * Run the default cache-reusing `ctx.llm.stream()` summarization call: replay
+ * the conversation prefix, then append the compaction instruction as the final
