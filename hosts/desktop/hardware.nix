@@ -1,7 +1,15 @@
 { lib, config, pkgs, ... }:
 {
-  # This Skylake CPU supports x86_64-v3.  Keep it on the same pre-regression
-  # CachyOS 7.1.5 BORE kernel as the laptop.
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-x86_64-v3;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # This installation is intended to move between desktop PCs.  The stock
+  # kernel is built for baseline x86_64 and receives the broadest in-tree
+  # hardware and out-of-tree NVIDIA testing.  Do not use a CPU-specific v3
+  # CachyOS kernel here: it can fail before the initrd on older machines.
+  boot.kernelPackages = pkgs.linuxPackages;
+
+  # Shipping both microcode families is safe; the kernel applies only the one
+  # matching the CPU in the machine currently booting this installation.
+  hardware.cpu = {
+    amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  };
 }

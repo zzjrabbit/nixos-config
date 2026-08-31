@@ -16,4 +16,26 @@
     desktop.enable = true;
     hardware.nvidia.enable = true;
   };
+
+  # GRUB exposes these as recovery choices.  They make one portable system
+  # recoverable on unsupported/quirky GPUs without editing the store from
+  # another machine.
+  specialisation = {
+    nouveau.configuration = {
+      system.nixos.tags = [ "nouveau" ];
+      my.hardware.nvidia.enable = lib.mkForce false;
+      services.xserver.videoDrivers = lib.mkForce [ "modesetting" ];
+      boot.kernelParams = [ "nouveau.modeset=1" ];
+    };
+
+    console.configuration = {
+      system.nixos.tags = [ "console" ];
+      my.hardware.nvidia.enable = lib.mkForce false;
+      boot.kernelParams = [ "nomodeset" ];
+      services.greetd.enable = lib.mkForce false;
+      services.displayManager.regreet.enable = lib.mkForce false;
+      services.xserver.enable = lib.mkForce false;
+      systemd.defaultUnit = lib.mkForce "multi-user.target";
+    };
+  };
 }

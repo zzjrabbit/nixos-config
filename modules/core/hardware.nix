@@ -6,7 +6,17 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
+  # Keep the portable installation bootable behind common SATA, NVMe, Intel
+  # VMD/RST and USB storage controllers.  all-hardware.nix adds older drivers.
+  boot.initrd.availableKernelModules = [
+    "ahci"
+    "nvme"
+    "vmd"
+    "xhci_pci"
+    "usb_storage"
+    "uas"
+    "sd_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.extraModulePackages = [ ];
   boot.supportedFilesystems = [ "ntfs" ];

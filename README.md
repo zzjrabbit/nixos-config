@@ -79,6 +79,44 @@ The helper encrypts new values before they reach a repository file and stages
 the encrypted addition, update, or deletion in Git. A rebuild/activation is
 still required before the runtime secret files and shell exports change.
 
+## Portable desktop boot strategy
+
+The `desktop` host is designed as a UEFI-removable NixOS installation rather
+than for one motherboard. It therefore uses:
+
+- the stock baseline-x86_64 NixOS kernel instead of the CPU-specific CachyOS
+  x86_64-v3 kernel used by the laptop;
+- both AMD and Intel CPU microcode, plus SATA/NVMe/Intel VMD/USB storage
+  drivers in the initrd;
+- NVIDIA's proprietary 580 legacy branch, because the default 590+ branch no
+  longer drives the Pascal-based GTX 1060;
+- the generic modesetting X driver alongside NVIDIA, so Intel/AMD and hybrid
+  graphics paths remain available;
+- GRUB specialisations named `nouveau` and `console` as recovery paths.
+
+After changing the desktop configuration, install it onto the portable system
+with:
+
+```sh
+sudo nixos-rebuild boot --flake .#desktop
+```
+
+On a normal GTX 1060 system, first try the untagged/default GRUB entry. If the
+screen goes black while the proprietary driver starts, reboot and select the
+same generation tagged `nouveau`. If no graphical path works, select the entry
+tagged `console`; it disables modesetting and the display manager and boots to
+a text login for diagnosis. After logging in, useful checks are:
+
+```sh
+lspci -nnk | sed -n '/VGA\|3D controller/,+3p'
+journalctl -b -p warning
+journalctl -b -u greetd
+```
+
+The removable GRUB setup is UEFI-only. Firmware must have UEFI boot enabled;
+Secure Boot must remain disabled unless the NVIDIA module and boot chain are
+signed separately.
+
 ## Troubleshooting
 
 ### blink.cmp update stalls during Cargo vendor verification
