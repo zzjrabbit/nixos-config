@@ -78,3 +78,44 @@ sops-secret remove example_token
 The helper encrypts new values before they reach a repository file and stages
 the encrypted addition, update, or deletion in Git. A rebuild/activation is
 still required before the runtime secret files and shell exports change.
+
+## Troubleshooting
+
+### blink.cmp update stalls during Cargo vendor verification
+
+`blink.cmp` includes the Rust-based `blink-fuzzy-lib`, so a Nixpkgs update may
+build `blink-fuzzy-lib-*-vendor-staging` before compiling the plugin. The
+`vendor-staging` derivation downloads Cargo dependencies from hosts such as
+`index.crates.io` and `static.crates.io`; the following `vendor` derivation
+mainly verifies and assembles those dependencies offline.
+
+If this step times out even though Throne is running in TUN mode, check IPv6
+first. This configuration enables system IPv6, while Throne may have its
+separate **VPN IPv6** option disabled. Cargo hosts publish AAAA records, so their
+traffic can then use the physical interface instead of an IPv4-only TUN.
+
+1. Enable **VPN IPv6** in Throne's TUN/VPN settings.
+2. Fully stop and restart TUN (or restart ThroneCore).
+3. Verify that Throne installed IPv6 policy routing in addition to the main
+   route:
+
+   ```sh
+   ip -6 rule
+   ip -6 route show table all
+   ```
+
+4. Retry the build with logs enabled:
+
+   ```sh
+   nix build .#nixosConfigurations.laptop.config.system.build.toplevel -L
+   ```
+
+`programs.throne.tunMode.enable = true` only grants ThroneCore the capabilities
+needed to create a TUN device; it does not declaratively enable global routing
+or IPv6 interception. Those settings remain controlled by Throne itself.
+
+If IPv6 TUN is active and `vendor-staging` still cannot download dependencies,
+check whether `nix-daemon.service` has explicit `HTTP_PROXY`/`HTTPS_PROXY`
+settings. Adding a daemon proxy is a fallback rather than the first fix because
+the daemon starts before the user-session Throne process and downloads will
+fail whenever the local proxy is not running.

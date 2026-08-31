@@ -157,7 +157,7 @@ let
     # plus a small current-session archive action in the conversation header.
     - insert:
         - id: session-manager
-          name: '${dshPackage}/lib/node_modules/@deepseek-ai/dsh/node_modules/@raca/dsh-session-manager/lib/index.js'
+          name: '@raca/dsh-session-manager'
           config:
             trashRoot: !!js dshHomePath('session-trash')
             pendingPath: !!js dshHomePath('session-manager/pending-delete.json')
